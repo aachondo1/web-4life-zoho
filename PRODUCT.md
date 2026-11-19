@@ -45,7 +45,7 @@ Lo que 4Life puede decir y un banco no:
 - **Refinanciamiento:** de cualquier banco o mutuaria, y de 4Life. "Portabilidad" para personas = refinanciamiento.
 - **Fines generales:** libre disposición (unir deudas, remodelar, negocio, educación), propiedad a nombre del solicitante.
 - **FOGAES:** activo al lanzamiento, solo primera vivienda, rebaja de tasa del programa, plazo hasta 30 años con dividendo flexible.
-- **No publicar:** tasas propias, números propios de costeo, el tope de UF 30.000, costos o comisión de prepago en refinanciamiento. No destacar el pie de 20 %. No vincular DS1/DS19 a un crédito 4Life mientras no se ofrezcan.
+- **No publicar:** tasas propias, números propios de costeo, el tope de UF 30.000, costos o comisión de prepago en refinanciamiento. No destacar el pie de 20 %. No vincular DS1/DS19 a un crédito 4Life mientras no se ofrezcan. No nombrar DICOM ni otros registros comerciales: se habla de "moras", "situación morosa" o "alguna vez tuve moras" (decidido 19-11-2026).
 - **Contacto:** en páginas de producto el único camino es el simulador. No mostrar correos; usar una página con formulario de contacto. No repetir en páginas de producto preguntas de calificación que el simulador vuelve a hacer. WhatsApp vs simulador en el home: **sin decidir**.
 - **Datos personales:** se quedan en la herramienta que los captura (Zoho CRM), sin servidores intermedios. Un solo canal de desuscripción para comunicaciones comerciales.
 - **Legal:** Ley 19.628 y Ley 21.719 (dic 2026): consentimiento, banner de cookies, política de privacidad en reescritura. Toda simulación es referencial, sujeta a evaluación y tasación, y muestra la CAE. Textos claros y no engañosos (CMF/SERNAC).
