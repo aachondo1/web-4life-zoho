@@ -1,4 +1,4 @@
-<!-- v2026.11.19-2 · Página Segunda vivienda o inversión (/credito-hipotecario-segunda-vivienda-o-inversion) · un solo snippet de código. Textos según brief SEO v2 (18-11; comercial confirmó otro crédito vigente y arriendo como ingreso): sin topes de monto ni % de financiamiento, sin rentabilidades ni subsidios, plazo "hasta 40 años con dividendo flexible". Estilos: bloque "Página Segunda vivienda" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Simula con el crédito tradicional; el pie mínimo viene del motor (/limites?producto=tradicional) y el texto trae el valor de respaldo (20%). -->
+<!-- v2026.11.19-3 · Página Segunda vivienda o inversión (/credito-hipotecario-segunda-vivienda-o-inversion) · un solo snippet de código. Textos según brief SEO v2 (18-11; comercial confirmó otro crédito vigente y arriendo como ingreso): sin topes de monto ni % de financiamiento, sin rentabilidades ni subsidios, plazo "hasta 40 años con dividendo flexible". Estilos: bloque "Página Segunda vivienda" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Simula con el crédito tradicional; el pie mínimo está fijo en 20 %. -->
 <div class="f4 f4v2" id="sv-root">
 
 <section class="sv-hero" aria-labelledby="sv-t-hero">
@@ -75,7 +75,7 @@
     </div>
     <div class="v-well">
       <dl class="v-ruled">
-        <div><dt>Un pie propio</dt><dd>Con ahorro u otros recursos propios. El mínimo es de <span data-sv="pie">20</span>%.</dd></div>
+        <div><dt>Un pie propio</dt><dd>Con ahorro u otros recursos propios. El mínimo es de 20%.</dd></div>
         <div><dt>Ingresos que respalden el dividendo</dt><dd>Cada caso se evalúa según el origen de tus ingresos. Si ya tienes un crédito hipotecario, en 4Life o en otra institución, se considera en la evaluación. Si vas a arrendar, el arriendo también puede considerarse.</dd></div>
         <div><dt>Casa o departamento</dt><dd>Nuevo o usado, en buenas condiciones.</dd></div>
         <div><dt>Un plazo que te acomode</dt><dd>Hasta 40 años con dividendo flexible: pagas un dividendo equivalente a un plazo de 8 a 40 años, y lo extra va a capital.</dd></div>
@@ -130,8 +130,6 @@
       <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q4">¿Consideran el arriendo como ingreso?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q4"><p>Sí, el arriendo puede considerarse como ingreso en la evaluación. Cuánto se considera depende de las políticas de crédito vigentes y de tu caso. Un ejecutivo de 4Life te lo explica al revisar tus antecedentes.</p></div></div>
       <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q5">¿Me aseguran que el arriendo pague el dividendo?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q5"><p>No. El dividendo se paga aunque la propiedad esté sin arrendar. Antes de invertir, haz tus números con todos los gastos.</p></div></div>
       <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q6">¿Qué plazo puedo elegir?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q6"><p>Hasta 40 años, según tu edad: el crédito debe terminar antes de que cumplas 80 años. Un plazo más largo baja el dividendo mensual, pero en total pagas más intereses.</p></div></div>
-      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q7">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q7"><p>No. La simulación no constituye una solicitud de crédito ni una aprobación.</p></div></div>
-      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q8">¿Si hoy no califico, puedo volver a simular?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q8"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
       <p class="sv-faq-mas">¿Ya tienes una propiedad y quieres usarla para obtener fondos? <a href="/fines-generales" data-track="segunda_faq_fines">Mira el crédito para fines generales</a></p>
     </div>
     <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
@@ -150,47 +148,4 @@
   </div>
 </section>
 
-<script>
-/* Pie mínimo del crédito tradicional desde el motor (el mismo que usa /simular). Si el motor no responde, queda el texto de respaldo (20%). El valor máximo solo sirve para esconder ejemplos que lo superen; no se muestra en la página. */
-(function () {
-  var root = document.getElementById("sv-root");
-  if (!root || root.getAttribute("data-sv-ok")) return;
-  root.setAttribute("data-sv-ok", "1");
-  var MOTOR = "https://motor4life-944155992.development.catalystserverless.com/server/motor_4life/";
-  var PIE = 0.20, VMAX = 30000, UF = 0;
-  function nro(x) { return typeof x === "number" && x > 0; }
-  function f0(n) { return Math.round(n).toLocaleString("es-CL"); }
-  function set(k, v) { [].forEach.call(root.querySelectorAll('[data-sv="' + k + '"]'), function (e) { e.textContent = v; }); }
-  function out(k) { return root.querySelector('[data-sv-out="' + k + '"]'); }
-  function mm(uf) { var m = uf * UF / 1e6; return "unos $" + m.toLocaleString("es-CL", { maximumFractionDigits: m < 10 ? 1 : 0 }) + " millones"; }
-
-  /* Calculadora del pie: valor elegido x pie mínimo */
-  function pintar() {
-    var r = root.querySelector('input[name="sv-valor"]:checked'); if (!r) return;
-    var v = +r.value, pie = v * PIE, cred = v - pie;
-    out("pie").textContent = f0(pie);
-    out("cred").textContent = f0(cred);
-    var bar = root.querySelector(".sv-bar-pie"); if (bar) bar.style.setProperty("--p", PIE);
-    [["pie_clp", pie], ["cred_clp", cred]].forEach(function (x) { var e = out(x[0]); if (e && UF) { e.textContent = mm(x[1]); e.hidden = false; } });
-  }
-  [].forEach.call(root.querySelectorAll('input[name="sv-valor"]'), function (i) { i.addEventListener("change", pintar); });
-  /* Valores por sobre el máximo del motor se esconden */
-  function topar() { [].forEach.call(root.querySelectorAll('input[name="sv-valor"]'), function (i) { if (+i.value > VMAX) i.parentNode.hidden = true; }); }
-
-  fetch(MOTOR + "limites?producto=tradicional").then(function (r) { return r.json(); }).then(function (j) {
-    ((j && j.limites && j.limites.campos) || []).forEach(function (c) {
-      if (c.id === "valor_uf" && nro(c.max)) VMAX = c.max;
-      if (c.id === "pie_uf" && c.min && nro(c.min.pct) && c.min.pct < 1) PIE = c.min.pct;
-    });
-    set("pie", f0(PIE * 100));
-    topar(); pintar();
-  }).catch(function () {});
-
-  /* Equivalencia en pesos con la UF del día desde el motor (GET /uf: CMF, con respaldo). Es la misma UF que usa /simular. Si el motor no responde o entrega su valor de respaldo, los pesos no se muestran. */
-  fetch(MOTOR + "uf").then(function (r) { return r.json(); }).then(function (j) {
-    if (j && nro(j.valor) && j.fuente !== "respaldo") { UF = j.valor; pintar(); }
-  }).catch(function () {});
-  pintar();
-})();
-</script>
 </div>
