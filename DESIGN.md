@@ -45,6 +45,12 @@ typography:
     fontWeight: 700
     lineHeight: 1.12
     letterSpacing: "-0.01em"
+  button:
+    fontFamily: "Asap, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "0.04em"
   title:
     fontFamily: "Asap, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.25rem"
@@ -88,6 +94,7 @@ components:
   button-primary:
     backgroundColor: "{colors.red}"
     textColor: "{colors.on-color}"
+    typography: "{typography.button}"
     rounded: "{rounded.btn}"
     padding: "16px 40px"
     height: "52px"
@@ -151,13 +158,13 @@ Todo el sistema sale del logo: la curva celeste de la sonrisa y el punto coral. 
 
 La página se lee como una conversación tranquila: bandas celestes que cuentan la idea con titulares grandes en blanco, pausas blancas o gris claro donde se explica el detalle, y un botón rojo que dice qué hacer después. La densidad es baja, con mucho aire, porque la persona llega con dudas y el sistema le responde de a una.
 
-Este documento reemplaza la paleta del brandbook v2 (noviembre 2026), que tomaba el azul rey #295BE9 de 4Life Seguros. Juan lo sintió poco 4life: la marca es celeste con texto blanco y botón rojo. Tipografía, forma, íconos y voz del v2 siguen vigentes; la base de componentes es el sistema `.f4v2` (FOGAES, productos), que Juan eligió sobre el Home v4.
+Rige para todo 4life: sitio, correos, redes, folletos y presentaciones (decidido 19-11-2026). Este documento reemplaza la paleta del brandbook v2 (noviembre 2026), que tomaba el azul rey #295BE9 de 4Life Seguros. Juan lo sintió poco 4life: la marca es celeste con texto blanco y botón rojo. Tipografía, forma, íconos y voz del v2 siguen vigentes; la base de componentes es el sistema `.f4v2` (FOGAES, productos), que Juan eligió sobre el Home v4.
 
 **Key Characteristics:**
 - Celeste de fondo con texto blanco como superficie principal de marca.
 - Fotos con degradado celeste y texto blanco encima.
 - Botón principal rojo, uno por vista.
-- Asap en todo, titulares en 700 con interletrado levemente cerrado.
+- Asap en todo, titulares en 700 con interletrado levemente cerrado; botones en MAYÚSCULAS.
 - Esquinas apenas redondeadas (6 y 8 px), casi sin sombras.
 - Contraste WCAG AA en cada par de color.
 
@@ -205,8 +212,9 @@ Celeste dominante en dos tonos, rojo como única voz de acción y neutros cálid
 ### Hierarchy
 - **Display hero** (700, clamp(2.75rem → 5rem), 1,08, −0,01em): titular del hero del home, en blanco sobre celeste o sobre foto con degradado.
 - **Display** (700, clamp(2.25rem → 2.75rem), 1,08): h1 de páginas de producto y del hero interior.
-- **Headline** (700, clamp(1.625rem → 2rem), 1,12, máximo 18ch): títulos de sección.
-- **Title** (700, 1,25rem, 1,2): títulos de tarjeta, pregunta de FAQ, texto de botón.
+- **Headline** (700, clamp(1.625rem → 2rem), 1,12, máximo 18ch): títulos de sección, con mayúscula en cada palabra principal («Preguntas Frecuentes», «Calcula tu Dividendo»); artículos, preposiciones y conjunciones van en minúscula. Titulares de hero y de producto van en oración.
+- **Title** (700, 1,25rem, 1,2): títulos de tarjeta y pregunta de FAQ.
+- **Button** (700, 1rem, MAYÚSCULAS, 0,04em): texto de todos los botones.
 - **Lead** (400, clamp(1.125rem → 1.3125rem), 1,5, máximo 60ch): bajada bajo el titular.
 - **Body** (400, 1,0625rem, 1,55, 65–75ch): párrafos.
 - **Label** (700, 0,875rem): etiquetas de formulario, sellos, chips.
@@ -251,7 +259,7 @@ La curva de la sonrisa y el punto no se redibujan como adorno: viven en el logo.
 ### Buttons
 Directos y cálidos: una acción clara, sin adornos.
 - **Shape:** esquinas de 6 px, 52 px de alto mínimo (44 px en barras compactas).
-- **Primario:** Rojo Acción con texto blanco en Asap 600 de 1,125–1,25rem, en oración (sin mayúsculas forzadas, como en `.f4v2`), relleno de 16 × 40 px. Uno por vista.
+- **Primario:** Rojo Acción con texto blanco en Asap 700 de 16 px, en MAYÚSCULAS con interletrado de 0,04em (el texto se escribe en oración y el CSS lo pone en mayúsculas), relleno de 16 × 40 px. Uno por vista.
 - **Hover / Focus:** Rojo Hondo en hover; se hunde 1 px al presionar. Foco con anillo de 2 px y 2 px de separación: blanco sobre celeste o foto, Celeste Profundo sobre blanco o gris.
 - **Secundario sobre celeste:** contorno blanco de 2 px y texto blanco; hover a fondo blanco con texto Celeste Tinta.
 - **Secundario sobre blanco:** contorno de 2 px y texto en Celeste Profundo; hover a Celeste Bruma.
@@ -264,7 +272,7 @@ La superficie de marca.
 - Íconos de beneficio en blanco (`bi-check-circle`). El botón rojo se recorta bien sobre ambos celestes por tono.
 
 ### Hero con foto
-Foto de marca a sangre con el degradado celeste de Shapes, titular Display hero en blanco, bajada en Lead blanco y un botón rojo. Sin slider automático.
+Foto de marca fija a sangre con el degradado celeste de Shapes, titular Display hero en blanco, bajada en Lead blanco y un botón rojo. Sin slider (decidido 19-11-2026).
 
 ### Cards / Containers
 - **Corner Style:** 8 px.
@@ -289,7 +297,7 @@ Cuadro de 56 px en Celeste Profundo con ícono blanco de Bootstrap Icons 1.13.1,
 Fondo Celeste Bruma, filete izquierdo de 4 px en Celeste Profundo, texto Tinta Suave o Celeste Tinta. Para la nota de simulación referencial, CAE y evaluación.
 
 ### Footer
-Fondo #1E1E1E, texto #BFBEBE, logo reverso junto al de 4Life Seguros. Redes en cuadrados de 40 px en Celeste Profundo.
+Fondo casi negro #1E1E1E (se mantiene en la v3: cierra la página y el logo reverso se lee bien), texto #BFBEBE, logo reverso junto al de 4Life Seguros. Redes en cuadrados de 40 px en Celeste Profundo.
 
 ## Do's and Don'ts
 

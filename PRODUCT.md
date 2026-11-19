@@ -51,7 +51,10 @@ Lo que 4Life puede decir y un banco no:
 - **Legal:** Ley 19.628 y Ley 21.719 (dic 2026): consentimiento, banner de cookies, política de privacidad en reescritura. Toda simulación es referencial, sujeta a evaluación y tasación, y muestra la CAE. Textos claros y no engañosos (CMF/SERNAC).
 - UF del sitio desde la CMF.
 - No tocar lo que Juan marca como terminado (p. ej. snippet "4L - Simulador").
-- **Sin decidir:** mayúsculas en títulos de sección (brandbook: cada palabra principal; crítica: solo inicial); si el hero del home es estático; fecha de DNS.
+- Títulos de sección con mayúscula en cada palabra principal (decidido 19-11-2026).
+- Hero del home: foto fija, sin slider (decidido 19-11-2026).
+- El simulador se pasa a la paleta celeste solo en colores (bloque `#s4l-sim` del CSS), sin tocar el snippet ni su lógica (autorizado 19-11-2026).
+- **Sin decidir:** fecha de DNS.
 
 ## Brand Commitments
 
@@ -59,6 +62,7 @@ Lo que 4Life puede decir y un banco no:
 - Lema vigente: **"Tu nuevo hogar comienza aquí"** (reemplaza a "Tu hogar, nuestro compromiso").
 - Voz: español de Chile, **tuteo siempre** (nunca "usted" ni "vos"), primera persona plural cuando actúa la marca. Experto que acompaña: cercano, claro, explica cada término en una frase. Conecta con el hogar y la tranquilidad, no con el producto financiero. Cifras en formato chileno (UF 1.000, 75 %). Sin emojis ni urgencia artificial.
 - Marca hermana de 4Life Seguros de Vida: comparte identidad. Existe un **brandbook v2** (design system "4life", contraste AA) y logos color y reverso. Su paleta de azul rey #295BE9 quedó reemplazada (19-11-2026) por la celeste de DESIGN.md: celeste de fondo con texto blanco, degradado celeste sobre fotos y botón rojo; el logo nunca va sobre azul, coral ni fotos cargadas.
+- El brandbook v3 rige para todo 4life (sitio, correos, redes, folletos, presentaciones); piezas fuera de la paleta, como el folleto azul marino y dorado, quedan fuera de marca.
 - Juan prefirió el sistema visual `.f4v2` (página FOGAES, simulador) sobre el Home v4, que no publicó.
 
 ## Evidence on Hand
