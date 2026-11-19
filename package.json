@@ -1,0 +1,14 @@
+{
+  "name": "web-4life-zoho",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "auditar": "node auditoria/auditar.mjs"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "chrome-launcher": "^1.1.2",
+    "lighthouse": "^12.2.0",
+    "playwright": "1.63.0"
+  }
+}
