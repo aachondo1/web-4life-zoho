@@ -1,4 +1,4 @@
-<!-- v2026.11.19 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Portada al brandbook v3 (19-11): foto con degradado celeste, texto blanco, botón rojo; mosaico de 3 preguntas bajo la portada. Texto alineado al brief v3 (18-11): 40 años con dividendo flexible, pie 20%, financiamiento hasta UF 30.000, sin comparaciones con bancos ni promesas de tiempo. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. El valor de financiamiento viene del motor (/limites?producto=tradicional); el texto trae valores de respaldo. -->
+<!-- v2026.11.19-2 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Portada al brandbook v3 (19-11): foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Texto alineado al brief v3 (18-11): 40 años con dividendo flexible, pie 20%, financiamiento hasta UF 30.000, sin comparaciones con bancos ni promesas de tiempo. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. El valor de financiamiento viene del motor (/limites?producto=tradicional); el texto trae valores de respaldo. -->
 <div class="f4 f4v2" id="ct-root">
 
 <section class="ct-cover" aria-labelledby="ct-t-hero">
@@ -8,7 +8,7 @@
       <h1 id="ct-t-hero">Crédito hipotecario tradicional para comprar tu casa o departamento</h1>
       <p class="lead">Compra casa o departamento, nueva o usada, con <strong>4Life Crédito Hipotecario</strong>. Plazo de 40 años con dividendo flexible. Simula en minutos y un ejecutivo revisa tu caso contigo.</p>
       <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_hero">Simula tu crédito</a>
-      <p class="small ct-cover-hint">Gratis y sin compromiso. Financiamiento de hasta UF <span data-ct="vmax">30.000</span>.</p>
+      <p class="small ct-cover-hint">Gratis y sin compromiso</p>
     </div>
   </div>
 </section>
@@ -16,6 +16,17 @@
 <section class="ct-qs-sec" aria-label="Lo que más nos preguntan">
   <div class="container">
     <ul class="ct-qs">
+      <li class="ct-q ct-q-a">
+        <a href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_q_comprar">
+          <img src="/ct-comprar.jpg" alt="Familia con cajas de mudanza en su nueva casa" width="1200" height="960" loading="lazy" onerror="this.remove()">
+          <span class="ct-q-txt">
+            <span class="ct-q-ask">¿Qué puedo comprar?</span>
+            <span class="ct-q-ans">Casa o depto, nuevo o usado</span>
+            <span class="ct-q-sub">Financiamiento de hasta UF <span data-ct="vmax">30.000</span>.</span>
+            <span class="ct-q-go">Simula tu crédito <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+      </li>
       <li class="ct-q ct-q-b">
         <a href="#ct-t-casos" data-track="tradicional_q_boletas">
           <img src="/ct-boletas.jpg" alt="Teléfono con calculadora junto a un notebook" width="720" height="600" loading="lazy" onerror="this.remove()">

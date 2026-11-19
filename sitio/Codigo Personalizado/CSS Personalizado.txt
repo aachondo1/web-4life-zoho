@@ -1,4 +1,4 @@
-/* v2026.11.19-2 */
+/* v2026.11.19-3 */
 /* 4Life Crédito Hipotecario · estilos del sitio (brandbook v2, nov 2026: base 4Life Seguros) */
 /* Asap se carga en Código de encabezado (link + preconnect), no aquí con @import */
 
@@ -1402,7 +1402,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 }
 /* ===== fin Página Fines generales ===== */
 
-/* v2026.11.19 */
+/* v2026.11.19-2 */
 /* ===== 4Life · Página Crédito hipotecario tradicional — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Todo va acotado a #ct-root: no toca el home, /simular ni las otras páginas. */
 
@@ -1427,16 +1427,25 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ct-root .ct-cover-hint { margin-top: var(--space-md); font-weight: 400; color: var(--color-on-ink); }
 #ct-root .ct-cover :focus-visible { outline-color: var(--color-on-ink); }
 
-/* Lo que más nos preguntan: tres fotos-pregunta sobre blanco, bajo la portada */
+/* Lo que más nos preguntan: cuatro fotos-pregunta sobre blanco, bajo la portada (la foto de la familia se repite con la portada, por ahora: decisión de Juan 19-11) */
 #ct-root .ct-qs-sec { background: var(--color-paper); padding-block: var(--space-xl) 0; }
-#ct-root .ct-qs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 300px; gap: var(--space-md); }
+#ct-root .ct-qs { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); grid-template-rows: 264px 264px; gap: var(--space-md); }
+#ct-root .ct-q-a { grid-column: 1; grid-row: 1 / span 2; }
+#ct-root .ct-q-b { grid-column: 2; grid-row: 1; }
+#ct-root .ct-q-c { grid-column: 3; grid-row: 1; }
+#ct-root .ct-q-d { grid-column: 2 / span 2; grid-row: 2; }
 #ct-root .ct-q a { position: relative; display: flex; align-items: flex-end; height: 100%; overflow: hidden; border-radius: var(--radius-card); background: var(--color-field-deep); color: var(--color-on-ink); text-decoration: none; isolation: isolate; }
 #ct-root .ct-q img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 600ms var(--ease-out); }
+#ct-root .ct-q-a img { object-position: 55% 50%; }
 #ct-root .ct-q-d img { object-position: 50% 40%; }
 #ct-root .ct-q a::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 15%, color-mix(in oklab, var(--color-field-deep) 55%, transparent) 45%, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 78%); }
+#ct-root .ct-q-d a::before { background: linear-gradient(90deg, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 30%, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 75%); }
 #ct-root .ct-q-txt { display: grid; gap: var(--space-2xs); padding: var(--space-lg); width: 100%; }
+#ct-root .ct-q-a .ct-q-txt { padding: var(--space-xl); gap: var(--space-xs); }
+#ct-root .ct-q-d .ct-q-txt { align-self: stretch; align-content: end; max-width: 30ch; }
 #ct-root .ct-q-ask { font: 600 var(--text-md)/1.3 var(--font-outlier); color: var(--color-on-ink-2); }
 #ct-root .ct-q-ans { font: 800 clamp(1.5rem, 1.3vw + 1rem, 2rem)/1.08 var(--font-display); letter-spacing: -0.015em; color: var(--color-on-ink); text-wrap: balance; }
+#ct-root .ct-q-a .ct-q-ans { font-size: clamp(2rem, 2.4vw + 1rem, 3rem); max-width: 14ch; }
 #ct-root .ct-q-sub { color: var(--color-on-ink-2); font-size: var(--text-md); line-height: 1.45; max-width: 40ch; }
 #ct-root .ct-q-go { justify-self: start; display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-sm); padding-bottom: 3px; border-bottom: var(--rule-bar) solid var(--color-on-ink); font: 600 var(--text-md)/1.2 var(--font-outlier); color: var(--color-on-ink); }
 #ct-root .ct-q-go .bi { transition: transform var(--dur-short) var(--ease-out); }
@@ -1496,12 +1505,12 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #ct-root .ct-cover-photo img { object-position: 60% 50%; -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 45%); mask-image: linear-gradient(0deg, transparent 0%, #000 45%); }
   #ct-root .ct-cover-in { position: relative; min-height: 0; margin-top: -32px; padding-block: 0 var(--space-xl); }
   #ct-root .ct-cover-text { width: 100%; }
-  #ct-root .ct-qs { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 260px 240px; gap: var(--space-sm); }
-  #ct-root .ct-q-b { grid-column: 1; grid-row: 1; }
-  #ct-root .ct-q-c { grid-column: 2; grid-row: 1; }
-  #ct-root .ct-q-d { grid-column: 1 / span 2; grid-row: 2; }
-  #ct-root .ct-q-d a::before { background: linear-gradient(90deg, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 30%, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 75%); }
-  #ct-root .ct-q-d .ct-q-txt { align-self: stretch; align-content: end; max-width: 30ch; }
+  #ct-root .ct-qs { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 360px 240px 240px; gap: var(--space-sm); }
+  #ct-root .ct-q-a { grid-column: 1 / span 2; grid-row: 1; }
+  #ct-root .ct-q-b { grid-column: 1; grid-row: 2; }
+  #ct-root .ct-q-c { grid-column: 2; grid-row: 2; }
+  #ct-root .ct-q-d { grid-column: 1 / span 2; grid-row: 3; }
+  #ct-root .ct-q-a .ct-q-txt { padding: var(--space-lg); }
   #ct-root .ct-casos-photo { aspect-ratio: 16 / 10; max-width: none; }
   #ct-root .ct-casos-photo img { object-position: 50% 35%; }
   #ct-root .fg-close-photo { width: 100%; }
@@ -1511,7 +1520,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #ct-root .ct-cover .v-btn { width: 100%; }
   #ct-root .ct-cover-hint { text-align: center; }
   #ct-root .ct-qs-sec { padding-top: var(--space-lg); }
-  #ct-root .ct-qs { grid-template-rows: 220px 220px; }
+  #ct-root .ct-qs { grid-template-rows: 320px 220px 220px; }
   #ct-root .ct-q-txt { padding: var(--space-md); }
   #ct-root .ct-q-b .ct-q-ans, #ct-root .ct-q-c .ct-q-ans { font-size: 1.375rem; }
   #ct-root .ct-q-b .ct-q-go, #ct-root .ct-q-c .ct-q-go { font-size: var(--text-sm); }
