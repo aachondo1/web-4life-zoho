@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Sitio existente en **Zoho Sites** (Zoho One), sitio "demo4life" (demo4life1.zohosites.com), aún no lanzado en 4lifehipotecario.cl. Las páginas se arman con snippets HTML propios y chicos por sección, con estilos aislados por prefijo de clase (`f4` / `fl-`), más un Custom CSS global (`custom-css-4life.css`). Cabecera y pie nativos del tema. Prospectos a **Zoho CRM** (función `sim4life_registro`). Fuente única del código: carpeta OneDrive "Trabajo Onboarding\Pagina Web 4Lifehipotecario en Zoho" (no GitHub).
+Sitio existente en **Zoho Sites** (Zoho One), sitio "demo4life" (demo4life1.zohosites.com), aún no lanzado en 4lifehipotecario.cl. Las páginas se arman con snippets HTML propios y chicos por sección, con estilos aislados por prefijo de clase (`f4` / `fl-`), más un Custom CSS global (`custom-css-4life.css`). Cabecera y pie nativos del tema. Prospectos a **Zoho CRM** (función `sim4life_registro`). Código: la carpeta OneDrive "Trabajo Onboarding\Pagina Web 4Lifehipotecario en Zoho" es la principal (registro oficial); el repo GitHub `aachondo1/web-4life-zoho` es la copia de trabajo donde se edita con Claude, una conversación por página. Flujo: GitHub → OneDrive → Zoho Sites. En el repo los snippets van en `sitio/<Página>/`; fotos, PDF, zips y funciones del CRM quedan solo en OneDrive.
 
 ## Users
 

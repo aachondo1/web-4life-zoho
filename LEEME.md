@@ -2,6 +2,8 @@
 
 Esta carpeta es la **fuente única** del código del sitio (decidido el 13-11-2026). Lo que está aquí es lo que está publicado en Zoho Sites, o lo que está listo para publicarse (ver `CHANGELOG.md`).
 
+Las páginas se trabajan con Claude en la copia de GitHub (`aachondo1/web-4life-zoho`, carpeta `sitio/`) y de ahí se copian a esta carpeta antes de publicar en Zoho. Flujo: GitHub → OneDrive → Zoho. Ver `README.md` del repo.
+
 - Sitio de trabajo: `demo4life1.zohosites.com` (dominio final: `4lifehipotecario.cl`, cambio de DNS pendiente)
 - El motor de cálculo **no** está aquí: vive en `Trabajo Onboarding\Motor Hipotecaria` (ver su `VERSION.md`).
 - Documento de arquitectura: `Proyectos 4Life\arquitectura-zoho-4life.md`.
