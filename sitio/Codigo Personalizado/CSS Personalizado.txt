@@ -1,4 +1,4 @@
-/* v2026.11.19 */
+/* v2026.11.19-2 */
 /* 4Life Crédito Hipotecario · estilos del sitio (brandbook v2, nov 2026: base 4Life Seguros) */
 /* Asap se carga en Código de encabezado (link + preconnect), no aquí con @import */
 
@@ -1402,7 +1402,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 }
 /* ===== fin Página Fines generales ===== */
 
-/* v2026.11.18-4 */
+/* v2026.11.19 */
 /* ===== 4Life · Página Crédito hipotecario tradicional — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Todo va acotado a #ct-root: no toca el home, /simular ni las otras páginas. */
 
@@ -1413,31 +1413,30 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ct-root h2 { margin-bottom: var(--space-sm); }
 #ct-root ::selection { background: var(--color-gold-2); color: var(--color-ink); }
 
-/* Portada: promesa arriba, mosaico de cuatro preguntas con foto debajo */
-#ct-root .ct-hero { background: var(--color-field-soft); padding-block: var(--space-xl) var(--space-2xl); }
-#ct-root .ct-hero-top { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--space-2xl); align-items: end; margin-bottom: var(--space-xl); }
-#ct-root .ct-hero h1 { max-width: 20ch; margin-bottom: var(--space-md); }
-#ct-root .ct-hero .lead { max-width: 52ch; }
-#ct-root .ct-hero-acts { display: grid; justify-items: end; gap: var(--space-xs); }
-#ct-root .ct-hero-acts .small { font-weight: 400; color: var(--color-ink-2); }
+/* Portada (brandbook v3, 19-11): foto a sangre con degradado celeste, texto blanco y botón rojo. Mismo patrón que .h-cover del home.
+   Clase .ct-cover (no .ct-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores. */
+#ct-root .ct-cover { position: relative; isolation: isolate; overflow: hidden; background: var(--color-field-deep); color: var(--color-on-ink); }
+#ct-root .ct-cover-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 60%; margin: 0; z-index: -2; }
+#ct-root .ct-cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; display: block; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+#ct-root .ct-cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 45%, rgba(49,140,221,.15) 100%); }
+#ct-root .ct-cover-in { min-height: clamp(440px, 38vw, 540px); display: flex; align-items: center; padding-block: var(--space-2xl); }
+#ct-root .ct-cover-text { width: min(600px, 48%); }
+#ct-root .ct-cover h1 { color: var(--color-on-ink); max-width: 18ch; margin-bottom: var(--space-md); }
+#ct-root .ct-cover .lead { color: var(--color-on-ink); max-width: 46ch; margin-bottom: var(--space-xl); }
+#ct-root .ct-cover strong { color: var(--color-on-ink); }
+#ct-root .ct-cover-hint { margin-top: var(--space-md); font-weight: 400; color: var(--color-on-ink); }
+#ct-root .ct-cover :focus-visible { outline-color: var(--color-on-ink); }
 
-#ct-root .ct-qs { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); grid-template-rows: 264px 264px; gap: var(--space-md); }
-#ct-root .ct-q-a { grid-column: 1; grid-row: 1 / span 2; }
-#ct-root .ct-q-b { grid-column: 2; grid-row: 1; }
-#ct-root .ct-q-c { grid-column: 3; grid-row: 1; }
-#ct-root .ct-q-d { grid-column: 2 / span 2; grid-row: 2; }
+/* Lo que más nos preguntan: tres fotos-pregunta sobre blanco, bajo la portada */
+#ct-root .ct-qs-sec { background: var(--color-paper); padding-block: var(--space-xl) 0; }
+#ct-root .ct-qs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 300px; gap: var(--space-md); }
 #ct-root .ct-q a { position: relative; display: flex; align-items: flex-end; height: 100%; overflow: hidden; border-radius: var(--radius-card); background: var(--color-field-deep); color: var(--color-on-ink); text-decoration: none; isolation: isolate; }
 #ct-root .ct-q img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 600ms var(--ease-out); }
-#ct-root .ct-q-a img { object-position: 55% 50%; }
 #ct-root .ct-q-d img { object-position: 50% 40%; }
 #ct-root .ct-q a::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 15%, color-mix(in oklab, var(--color-field-deep) 55%, transparent) 45%, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 78%); }
-#ct-root .ct-q-d a::before { background: linear-gradient(90deg, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 30%, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 75%); }
 #ct-root .ct-q-txt { display: grid; gap: var(--space-2xs); padding: var(--space-lg); width: 100%; }
-#ct-root .ct-q-a .ct-q-txt { padding: var(--space-xl); gap: var(--space-xs); }
-#ct-root .ct-q-d .ct-q-txt { align-self: stretch; align-content: end; max-width: 30ch; }
 #ct-root .ct-q-ask { font: 600 var(--text-md)/1.3 var(--font-outlier); color: var(--color-on-ink-2); }
 #ct-root .ct-q-ans { font: 800 clamp(1.5rem, 1.3vw + 1rem, 2rem)/1.08 var(--font-display); letter-spacing: -0.015em; color: var(--color-on-ink); text-wrap: balance; }
-#ct-root .ct-q-a .ct-q-ans { font-size: clamp(2rem, 2.4vw + 1rem, 3rem); max-width: 14ch; }
 #ct-root .ct-q-sub { color: var(--color-on-ink-2); font-size: var(--text-md); line-height: 1.45; max-width: 40ch; }
 #ct-root .ct-q-go { justify-self: start; display: inline-flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-sm); padding-bottom: 3px; border-bottom: var(--rule-bar) solid var(--color-on-ink); font: 600 var(--text-md)/1.2 var(--font-outlier); color: var(--color-on-ink); }
 #ct-root .ct-q-go .bi { transition: transform var(--dur-short) var(--ease-out); }
@@ -1445,7 +1444,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ct-root .ct-q a:hover .bi-arrow-right { transform: translateX(4px); }
 #ct-root .ct-q a:hover .bi-arrow-down { transform: translateY(3px); }
 #ct-root .ct-q a:active { transform: translateY(1px); }
-#ct-root .ct-q a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+#ct-root .ct-q a:focus-visible { outline: 2px solid var(--color-field); outline-offset: 2px; }  /* sobre blanco: foco Celeste Profundo */
 
 /* Miramos tu caso completo: foto vertical + perfiles */
 #ct-root .ct-casos-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
@@ -1490,24 +1489,29 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 
 @media (max-width: 60rem) {
   #ct-root { --section-gap: 48px; --section-gap-s: 48px; }
-  #ct-root .ct-hero-top, #ct-root .ct-casos-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
-  #ct-root .ct-hero-acts { justify-items: start; }
-  #ct-root .ct-qs { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 360px 240px 240px; gap: var(--space-sm); }
-  #ct-root .ct-q-a { grid-column: 1 / span 2; grid-row: 1; }
-  #ct-root .ct-q-b { grid-column: 1; grid-row: 2; }
-  #ct-root .ct-q-c { grid-column: 2; grid-row: 2; }
-  #ct-root .ct-q-d { grid-column: 1 / span 2; grid-row: 3; }
-  #ct-root .ct-q-a .ct-q-txt { padding: var(--space-lg); }
+  #ct-root .ct-casos-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  /* Portada en móvil: foto arriba fundida hacia abajo en Celeste Tinta, texto blanco sobre fondo sólido */
+  #ct-root .ct-cover::before { display: none; }
+  #ct-root .ct-cover-photo { position: relative; width: 100%; aspect-ratio: 4 / 3; z-index: 0; }
+  #ct-root .ct-cover-photo img { object-position: 60% 50%; -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 45%); mask-image: linear-gradient(0deg, transparent 0%, #000 45%); }
+  #ct-root .ct-cover-in { position: relative; min-height: 0; margin-top: -32px; padding-block: 0 var(--space-xl); }
+  #ct-root .ct-cover-text { width: 100%; }
+  #ct-root .ct-qs { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 260px 240px; gap: var(--space-sm); }
+  #ct-root .ct-q-b { grid-column: 1; grid-row: 1; }
+  #ct-root .ct-q-c { grid-column: 2; grid-row: 1; }
+  #ct-root .ct-q-d { grid-column: 1 / span 2; grid-row: 2; }
+  #ct-root .ct-q-d a::before { background: linear-gradient(90deg, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 30%, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 75%); }
+  #ct-root .ct-q-d .ct-q-txt { align-self: stretch; align-content: end; max-width: 30ch; }
   #ct-root .ct-casos-photo { aspect-ratio: 16 / 10; max-width: none; }
   #ct-root .ct-casos-photo img { object-position: 50% 35%; }
   #ct-root .fg-close-photo { width: 100%; }
   #ct-root .fg-close-photo img { opacity: .28; -webkit-mask-image: none; mask-image: none; }
 }
 @media (max-width: 40rem) {
-  #ct-root .ct-hero { padding-block: var(--space-lg) var(--space-xl); }
-  #ct-root .ct-hero-acts .v-btn { width: 100%; }
-  #ct-root .ct-hero-acts { justify-items: stretch; text-align: center; }
-  #ct-root .ct-qs { grid-template-rows: 320px 220px 220px; }
+  #ct-root .ct-cover .v-btn { width: 100%; }
+  #ct-root .ct-cover-hint { text-align: center; }
+  #ct-root .ct-qs-sec { padding-top: var(--space-lg); }
+  #ct-root .ct-qs { grid-template-rows: 220px 220px; }
   #ct-root .ct-q-txt { padding: var(--space-md); }
   #ct-root .ct-q-b .ct-q-ans, #ct-root .ct-q-c .ct-q-ans { font-size: 1.375rem; }
   #ct-root .ct-q-b .ct-q-go, #ct-root .ct-q-c .ct-q-go { font-size: var(--text-sm); }

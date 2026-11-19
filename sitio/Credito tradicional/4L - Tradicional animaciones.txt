@@ -1,4 +1,4 @@
-<!-- v2026.11.18-2 · Animaciones de la página Crédito hipotecario tradicional · snippet aparte: va ARRIBA del snippet "4L - Credito tradicional", en la misma página. Si algo falla, se borra este snippet y la página queda quieta y completa. Solo corre si el navegador no pide menos movimiento. -->
+<!-- v2026.11.19 · Animaciones de la página Crédito hipotecario tradicional · snippet aparte: va ARRIBA del snippet "4L - Credito tradicional", en la misma página. Si algo falla, se borra este snippet y la página queda quieta y completa. Solo corre si el navegador no pide menos movimiento. -->
 <style>
 /* Se activa con la clase .ct-anim en <html>. Las entradas usan fill "backwards": al terminar sueltan la foto y el hover sigue funcionando. */
 @keyframes ct-enfoque { from { transform: scale(1.08); filter: blur(8px) saturate(.6); } to { transform: none; filter: none; } }
@@ -10,9 +10,8 @@
 
 /* Mosaico que responde: la foto se enfoca, aparece la pregunta y la respuesta se descubre; una foto tras otra */
 .ct-anim #ct-root .ct-q { --d: 0ms; }
-.ct-anim #ct-root .ct-q-b { --d: 120ms; }
-.ct-anim #ct-root .ct-q-c { --d: 240ms; }
-.ct-anim #ct-root .ct-q-d { --d: 360ms; }
+.ct-anim #ct-root .ct-q-c { --d: 120ms; }
+.ct-anim #ct-root .ct-q-d { --d: 240ms; }
 .ct-anim #ct-root .ct-q img { animation: ct-enfoque 900ms var(--ease-out) var(--d) backwards; }
 .ct-anim #ct-root .ct-q-ask { animation: ct-aparece 300ms var(--ease-out) calc(var(--d) + 150ms) backwards; }
 .ct-anim #ct-root .ct-q-ans { animation: ct-responde 600ms var(--ease-out) calc(var(--d) + 330ms) backwards; }
