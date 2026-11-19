@@ -1,4 +1,4 @@
-<!-- v2026.11.19-11 · Crítica 2 (19-11): Requisitos y Costos fundidos en "Lo que Necesitas y lo que Pagas" antes de Así Funciona; preguntas frecuentes en 6; barra 8–40 estática y proporcional; bajada de portada con beneficio. · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Pasada de la crítica Impeccable (19-11): banda propia "Tu Dividendo, a tu Ritmo" con la barra de 8 a 40 años; Qué Necesitas fundida con las condiciones generales; costos en 3 filas; sin tope UF ni promesas de tiempo; un solo botón rojo por vista (portada, Así funciona y cierre). Portada al brandbook v3: foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Plazo de hasta 40 años según edad. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. -->
+<!-- v2026.11.19-12 · Crítica 3 (19-11): la página dice qué pasa al simular (avanzas, nos dejas tus datos y te acompañamos), sin prometer un ejecutivo; preguntas sin repetición. · Crítica 2 (19-11): Requisitos y Costos fundidos en "Lo que Necesitas y lo que Pagas" antes de Así Funciona; preguntas frecuentes en 6; barra 8–40 estática y proporcional; bajada de portada con beneficio. · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Pasada de la crítica Impeccable (19-11): banda propia "Tu Dividendo, a tu Ritmo" con la barra de 8 a 40 años; Qué Necesitas fundida con las condiciones generales; costos en 3 filas; sin tope UF ni promesas de tiempo; un solo botón rojo por vista (portada, Así funciona y cierre). Portada al brandbook v3: foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Plazo de hasta 40 años según edad. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. -->
 <div class="f4 f4v2" id="ct-root">
 
 <section class="ct-cover" aria-labelledby="ct-t-hero">
@@ -8,7 +8,7 @@
       <h1 id="ct-t-hero">Crédito hipotecario tradicional para comprar tu casa o departamento</h1>
       <p class="lead">Con <strong>4Life Crédito Hipotecario</strong> tienes hasta 40 años de plazo, un dividendo que se adapta a ti y una evaluación que mira tu caso completo, también si trabajas con boletas.</p>
       <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_hero">Simula tu crédito</a>
-      <p class="small ct-cover-hint">Gratis y sin compromiso</p>
+      <p class="small ct-cover-hint">Avanza en el simulador, déjanos tus datos y te acompañamos con tu crédito. Gratis y sin compromiso.</p>
     </div>
   </div>
 </section>
@@ -18,7 +18,7 @@
     <ul class="ct-qs">
       <li class="ct-q ct-q-a">
         <a href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_q_comprar">
-          <img src="/ct-comprar.jpg" alt="Familia con cajas de mudanza en su nueva casa" width="1200" height="960" loading="lazy" onerror="this.remove()">
+          <img src="/ct-comprar.jpg" alt="" width="1200" height="960" loading="lazy" onerror="this.remove()">
           <span class="ct-q-txt">
             <span class="ct-q-ask">¿Qué puedes comprar?</span>
             <span class="ct-q-ans">Casa o depto, nuevo o usado</span>
@@ -29,7 +29,7 @@
       </li>
       <li class="ct-q ct-q-b ct-q-in">
         <a href="#ct-t-casos" data-track="tradicional_q_boletas">
-          <img src="/ct-boletas.jpg" alt="Teléfono con calculadora junto a un notebook" width="720" height="600" loading="lazy" onerror="this.remove()">
+          <img src="/ct-boletas.jpg" alt="" width="720" height="600" loading="lazy" onerror="this.remove()">
           <span class="ct-q-txt">
             <span class="ct-q-ask">¿Trabajas con boletas?</span>
             <span class="ct-q-ans">Evaluamos tu caso</span>
@@ -39,7 +39,7 @@
       </li>
       <li class="ct-q ct-q-c ct-q-in">
         <a href="#ct-t-div" data-track="tradicional_q_plazo">
-          <img src="/ct-plazo.jpg" alt="Santiago con la cordillera nevada de fondo" width="720" height="600" loading="lazy" onerror="this.remove()">
+          <img src="/ct-plazo.jpg" alt="" width="720" height="600" loading="lazy" onerror="this.remove()">
           <span class="ct-q-txt">
             <span class="ct-q-ask">¿En cuánto tiempo pagas?</span>
             <span class="ct-q-ans">Hasta 40 años</span>
@@ -49,10 +49,10 @@
       </li>
       <li class="ct-q ct-q-d">
         <a href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_q_ejecutivo">
-          <img src="/ct-ejecutivo.jpg" alt="Ejecutivo de 4Life estrecha la mano de un cliente" width="1280" height="560" loading="lazy" onerror="this.remove()">
+          <img src="/ct-ejecutivo.jpg" alt="" width="1280" height="560" loading="lazy" onerror="this.remove()">
           <span class="ct-q-txt">
             <span class="ct-q-ask">¿Quién te acompaña?</span>
-            <span class="ct-q-ans">Un ejecutivo de 4Life</span>
+            <span class="ct-q-ans">4Life, de principio a fin</span>
             <span class="ct-q-sub">Desde tu simulación hasta la firma.</span>
             <span class="ct-q-go">Simula tu crédito <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
           </span>
@@ -70,10 +70,10 @@
       <p class="ct-div-claim">Un dividendo que te acompaña durante toda la vida de tu crédito y se adapta a tu momento.</p>
     </div>
     <figure class="ct-track" aria-labelledby="ct-track-cap">
-      <figcaption id="ct-track-cap" class="ct-track-cap">Cada mes eliges tu dividendo dentro de este rango</figcaption>
+      <figcaption id="ct-track-cap" class="ct-track-cap">Cada mes eliges tu dividendo dentro de este rango<span class="ct-sr">: equivalente a un plazo de entre 8 y 40 años</span></figcaption>
       <div class="ct-track-bar" aria-hidden="true">
         <span class="ct-track-fill"></span>
-        <span class="ct-track-you"><span class="ct-track-you-tag">Tú eliges</span></span>
+        <span class="ct-track-you"><span class="ct-track-you-tag">Tú eliges (ej.: 25)</span></span>
       </div>
       <ol class="ct-track-ticks" aria-hidden="true">
         <li style="--x:0">8</li><li style="--x:.21875">15</li><li style="--x:.375">20</li><li style="--x:.53125">25</li><li style="--x:.6875">30</li><li style="--x:.84375">35</li><li style="--x:1">40 años</li>
@@ -146,19 +146,19 @@
   <div class="container ct-road-grid">
     <div class="ct-road-intro">
       <h2 id="ct-t-pasos">Así Funciona</h2>
-      <p class="lead">Un ejecutivo de 4Life te acompaña de principio a fin.</p>
+      <p class="lead">Te acompañamos de principio a fin.</p>
     </div>
     <ol class="v-stops">
       <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de tu vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Información de la propiedad y de tu situación actual, para ver tu dividendo y que tu ejecutivo te contacte.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Postulamos juntos</h3><p>Tu ejecutivo te guía con la documentación que necesitas y te ayuda a reunirla más rápido.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Información de la propiedad y de tu situación actual, para ver tu dividendo y seguir con tu crédito.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Postulamos juntos</h3><p>Te guiamos con la documentación que necesitas y te ayudamos a reunirla más rápido.</p></li>
       <li class="v-stop"><span class="small">Paso</span><h3>Te damos una respuesta</h3><p>Con tu documentación completa, te damos una respuesta con tu tasa y tu dividendo.</p></li>
       <li class="v-stop"><span class="small">Paso</span><h3>Aceptas y revisamos la propiedad</h3><p>Pagas los gastos operacionales y hacemos la tasación (el valor de la propiedad según un tasador) y el estudio de títulos (la revisión legal de la propiedad).</p></li>
       <li class="v-stop"><span class="small">Paso</span><h3>Firmas y te mudas</h3><p>Firmas la escritura y ya puedes vivir en tu nuevo hogar.</p></li>
     </ol>
     <div class="ct-road-foot">
       <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_pasos">Simula tu crédito</a>
-      <p class="ct-privacy">Al simular, usamos tus datos para preparar tu simulación y para que un ejecutivo de 4Life te contacte. Revisa cómo los tratamos en nuestra <a href="/privacidad-y-cookies">política de privacidad</a>.</p>
+      <p class="ct-privacy">Al simular, usamos tus datos para preparar tu simulación y para que 4Life te contacte. Revisa cómo los tratamos en nuestra <a href="/privacidad-y-cookies">política de privacidad</a>.</p>
     </div>
   </div>
 </section>
@@ -178,8 +178,8 @@
       </nav>
     </div>
     <div class="f4-acc">
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q10">¿Puedo pedir el crédito si alguna vez tuve moras?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q10"><p>Sí, podemos evaluarte. Si tu situación morosa ya está regularizada y hoy tienes tus compromisos financieros al día, revisamos tu caso completo. El resultado depende de la evaluación y de las políticas de crédito vigentes.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q6">¿Qué documentos necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q6"><p>Depende de tu caso. Como referencia, para acreditar tu renta, por contrato se piden las últimas 6 liquidaciones de sueldo, y por honorarios, la declaración de renta (F22). Además, pedimos 24 meses de ingresos estables, por antigüedad o continuidad laboral. Te confirmamos la lista al postular.</p></div></div>
+      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q10">¿Puedo pedir el crédito si alguna vez tuve moras?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q10"><p>Sí, podemos evaluarte. El resultado depende de la evaluación de tu caso y de las políticas de crédito vigentes.</p></div></div>
+      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q6">¿Qué documentos necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q6"><p>Depende de tu caso. Como referencia, para acreditar tu renta, por contrato se piden las últimas 6 liquidaciones de sueldo, y por honorarios, la declaración de renta (F22). Te confirmamos la lista al postular.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q5">¿Cuánto financia el crédito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q5"><p>Depende del valor de la propiedad, del pie con que cuentas y de la evaluación de tu caso. El simulador te muestra una referencia con tus datos.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q8">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q8"><p>No. La simulación es gratuita y orientativa. No es una solicitud de crédito ni una aprobación.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q9">¿Si hoy no califico, puedo volver a simular?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q9"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
@@ -195,7 +195,7 @@
     <div class="v-close-in">
       <div>
         <h2 id="ct-t-cierre">Tu nuevo hogar comienza aquí</h2>
-        <p class="ct-close-lead">Simula tu crédito y te acompañamos hasta la firma.</p>
+        <p class="ct-close-lead">Avanza en el simulador, déjanos tus datos y te acompañamos hasta la firma.</p>
       </div>
       <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_cierre">Simula tu crédito</a>
     </div>

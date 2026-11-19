@@ -1,4 +1,4 @@
-/* v2026.11.19-10 */
+/* v2026.11.19-11 */
 /* 4Life Crédito Hipotecario · estilos del sitio (brandbook v2, nov 2026: base 4Life Seguros) */
 /* Asap se carga en Código de encabezado (link + preconnect), no aquí con @import */
 
@@ -1402,7 +1402,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 }
 /* ===== fin Página Fines generales ===== */
 
-/* v2026.11.19-11 */
+/* v2026.11.19-12 */
 /* ===== 4Life · Página Crédito hipotecario tradicional — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Todo va acotado a #ct-root: no toca el home, /simular ni las otras páginas. */
 
@@ -1430,7 +1430,8 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ct-root .ct-cover :focus-visible { outline-color: var(--color-on-ink); }
 
 /* Lo que más nos preguntan: cuatro fotos-pregunta sobre blanco, bajo la portada (la foto de la familia se repite con la portada, por ahora: decisión de Juan 19-11) */
-#ct-root .ct-qs-sec { background: var(--color-paper); padding-block: var(--space-xl); }
+#ct-root .ct-qs-sec { background: var(--color-paper); padding-block: var(--space-xl) var(--space-2xl); }  /* más aire antes de la banda celeste */
+#ct-root .ct-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 #ct-root .ct-qs { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); grid-template-rows: 280px 280px; gap: var(--space-md); }
 #ct-root .ct-q-a { grid-column: 1; grid-row: 1 / span 2; }
 #ct-root .ct-q-b { grid-column: 2; grid-row: 1; }
@@ -1598,6 +1599,13 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #ct-root .ct-q-d a::before { background: linear-gradient(180deg, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 8%, color-mix(in oklab, var(--color-field-deep) 62%, transparent) 30%, color-mix(in oklab, var(--color-field-deep) 88%, transparent) 46%, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 100%); }
   #ct-root .ct-q-d .ct-q-txt { max-width: none; }
   #ct-root .ct-need-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  /* Preguntas en una columna: "¿Buscas otra cosa?" baja después de las respuestas */
+  #ct-root .v-faq-grid > div:first-child { display: contents; }
+  #ct-root .v-faq-grid { row-gap: 0; }
+  #ct-root .v-faq-grid > div:first-child > .lead { margin-bottom: var(--space-lg); }
+  #ct-root .v-faq-grid h2, #ct-root .v-faq-grid > div:first-child > .lead { order: 1; }
+  #ct-root .v-faq-grid .f4-acc { order: 2; }
+  #ct-root .v-faq-grid .ct-otros { order: 3; margin-top: var(--space-lg); }
   #ct-root .ct-q-a .ct-q-txt { padding: var(--space-lg); }
   #ct-root .ct-q-a a::before { background: linear-gradient(180deg, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 0%, color-mix(in oklab, var(--color-field-deep) 62%, transparent) 14%, color-mix(in oklab, var(--color-field-deep) 88%, transparent) 26%, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 100%); }
   #ct-root .ct-casos-photo { aspect-ratio: 16 / 10; max-width: none; }
@@ -1608,8 +1616,10 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #ct-root .fg-close-photo img { opacity: 1; -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 55%); mask-image: linear-gradient(0deg, transparent 0%, #000 55%); }
 }
 @media (max-width: 40rem) {
-  #ct-root .ct-cover .v-btn { width: 100%; }
+  #ct-root :is(.ct-cover, .ct-road-foot, .ct-close) .v-btn { width: 100%; justify-self: stretch; }  /* mismos botones rojos a todo el ancho en celular */
+  #ct-root .ct-road-foot { align-items: stretch; }
   #ct-root .ct-cover-hint { text-align: center; }
+  #ct-root .ct-q .ct-q-go { line-height: 1.25; }
   #ct-root .ct-qs-sec { padding-top: var(--space-lg); }
   #ct-root .ct-qs { grid-template-rows: 248px 248px; }
   #ct-root .ct-q-sub { display: none; }
