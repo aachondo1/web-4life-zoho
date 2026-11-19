@@ -87,8 +87,8 @@
         <div class="sv-bar-cred"><span>Crédito 4Life</span></div>
       </div>
       <dl class="sv-out" aria-live="polite">
-        <div class="is-pie"><dt>Tu pie</dt><dd>UF <span data-sv-out="pie">800</span></dd><dd class="sv-clp" data-sv-out="pie_clp" hidden></dd></div>
         <div><dt>Crédito 4Life</dt><dd>UF <span data-sv-out="cred">3.200</span></dd><dd class="sv-clp" data-sv-out="cred_clp" hidden></dd></div>
+        <div class="is-pie"><dt>Tu pie</dt><dd>UF <span data-sv-out="pie">800</span></dd><dd class="sv-clp" data-sv-out="pie_clp" hidden></dd></div>
       </dl>
       <p class="small sv-calc-note">Ejemplo referencial. El pie mínimo es de <span data-sv="pie">20</span>% y lo define la política de crédito vigente. Tu dividendo depende del plazo, la tasa y la evaluación de tu caso: lo ves en el simulador.</p>
     </div>

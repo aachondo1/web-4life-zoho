@@ -137,8 +137,9 @@
 #sv-root .sv-decide { margin: calc(var(--space-lg) * -0.5) 0 var(--space-lg); max-width: 52ch; font-weight: 600; color: var(--color-ink); }
 #sv-root .sv-faq-mas { margin-top: var(--space-lg); color: var(--color-ink-2); }
 #sv-root .sv-faq-mas a { color: var(--color-field); font-weight: 600; }
-/* v2026.11.19: pasada de crítica. Un rojo por página (hero y cierre); el resto del rojo pasa a celeste y los botones de la banda celeste van en contorno blanco */
+/* v2026.11.19: pasada de crítica. Un rojo por pantalla: portada y cierre van en pantallas distintas; el resto del rojo pasa a celeste y los botones de la banda celeste van en contorno blanco. El pie se lee después del crédito */
 #sv-root .v-stop:first-child::before { background: var(--color-field); border-color: var(--color-on-ink); }
 #sv-root .v-road .v-btn { background: transparent; color: var(--color-on-ink); box-shadow: inset 0 0 0 2px var(--color-on-ink); }
 #sv-root .v-road .v-btn:hover { background: var(--color-on-ink); color: var(--color-field-deep); }
+#sv-root .sv-out .is-pie dd { font: 700 var(--text-lg)/1.2 var(--font-display); letter-spacing: 0; color: var(--color-field-deep); }
 /* ===== fin Página Segunda vivienda ===== */
