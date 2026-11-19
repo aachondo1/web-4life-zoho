@@ -1,0 +1,46 @@
+name: Auditoría técnica del sitio
+
+on:
+  schedule:
+    - cron: '17 10 * * 1-5'   # lunes a viernes, ~07:17 hora de Chile
+  workflow_dispatch:           # botón "Run workflow" en la pestaña Actions
+    inputs:
+      base_url:
+        description: 'URL base a auditar'
+        default: 'https://demo4life1.zohosites.com'
+  push:
+    branches: [main]
+    paths-ignore: ['reportes/**', '**.md']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auditoria
+  cancel-in-progress: true
+
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Auditar
+        env:
+          BASE_URL: ${{ github.event.inputs.base_url || 'https://demo4life1.zohosites.com' }}
+        run: npm run auditar
+      - name: Resumen en la corrida
+        run: cat reportes/ultimo.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Guardar reporte en el repo
+        run: |
+          git config user.name "auditoria-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add reportes
+          git diff --cached --quiet || git commit -m "Reporte de auditoría $(date +%F)"
+          git pull --rebase -q && git push

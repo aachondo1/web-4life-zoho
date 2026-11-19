@@ -1246,6 +1246,9 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #gf-root .gf-where a:hover { background: var(--color-field); border-color: var(--color-field); color: var(--color-on-ink); }
 #gf-root .gf-where .bi { font-size: 1.05em; color: var(--color-accent); transition: color var(--dur-micro) var(--ease-out); }
 #gf-root .gf-where a:hover .bi { color: var(--color-on-ink); }
+#gf-root .gf-where a[aria-pressed="true"] { background: var(--color-field); border-color: var(--color-field); color: var(--color-on-ink); }
+#gf-root .gf-where a[aria-pressed="true"] .bi { color: var(--color-on-ink); }
+#gf-root .gf-where a[aria-pressed="true"] .bi::before { content: "\F26A"; }
 #gf-root .gf-hero-photo { aspect-ratio: 2 / 1; max-width: 620px; }
 #gf-root .gf-hero-photo img { position: absolute; inset: 0; object-position: 50% 20%; }
 
@@ -1268,17 +1271,12 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 
 /* Encabezado de sección: título a la izquierda, bajada a la derecha */
 #gf-root .gf-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: end; margin-bottom: var(--space-xl); }
-#gf-root .gf-head h2 { max-width: 20ch; }
+#gf-root .gf-head h2, #gf-root .v-why-grid h2, #gf-root .v-road h2, #gf-root .v-close h2 { max-width: 24ch; }
 #gf-root .gf-head .lead { max-width: 52ch; }
 
-/* Qué es: definición + tres datos en fila */
+/* Qué es: definición arriba de Dos formas */
 #gf-root .gf-body { color: var(--color-ink-2); font-size: var(--text-lead); line-height: 1.5; max-width: 60ch; }
-#gf-root .gf-what .gf-head { align-items: start; }
-#gf-root .gf-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl); border-top: var(--rule-bar) solid var(--color-field); }
-#gf-root .gf-facts li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-md); padding-top: var(--space-lg); }
-#gf-root .gf-facts .bi { font-size: 1.75rem; line-height: 1; color: var(--color-accent); margin-top: 2px; }
-#gf-root .gf-facts h3 { margin-bottom: var(--space-2xs); }
-#gf-root .gf-facts p { color: var(--color-ink-2); max-width: 34ch; }
+#gf-root .gf-head.gf-what { align-items: start; margin-bottom: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: var(--rule-hair) solid color-mix(in oklab, var(--color-ink) 14%, transparent); }
 
 /* Dos formas: pestañas por caso (sin deuda / pagando) + camino de 4 pasos. Sin JS se ven los dos casos uno debajo del otro */
 #gf-root .gf-ways { background: var(--color-paper-3); scroll-margin-top: 80px; }
@@ -1304,7 +1302,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #gf-root .gf-flow li:not(:last-child)::before { content: ""; position: absolute; left: 23px; top: 48px; bottom: calc(-1 * var(--space-lg)); width: 2px; background: var(--color-gold-2, var(--color-rule)); }
 #gf-root .gf-dot { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--color-field-soft); color: var(--color-field); font-size: 1.375rem; position: relative; z-index: 1; }
 #gf-root .gf-flow .is-cash .gf-dot { background: var(--color-coral, var(--color-accent)); color: var(--color-on-ink); }
-#gf-root .gf-flow h4 { margin: 0 0 2px; padding-top: 4px; font: 700 1.0625rem/1.3 var(--font-display); color: var(--color-ink); }
+#gf-root .gf-flow h4 { margin: 0 0 2px; padding-top: 2px; font: 700 1.1875rem/1.3 var(--font-display); color: var(--color-ink); }
 #gf-root .gf-flow p { color: var(--color-ink-2); max-width: 44ch; }
 
 /* Usos: cuatro fotos en fila, texto bajo cada una */
@@ -1323,11 +1321,11 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #gf-root .gf-amount .v-why-grid { grid-template-rows: auto 1fr; }
 #gf-root .gf-amount .v-well { grid-column: 2; grid-row: 1 / span 2; }
 #gf-root .gf-amount-side { grid-column: 1; grid-row: 2; align-self: start; }
-#gf-root .gf-note { margin-top: var(--space-lg); color: var(--color-ink-2); max-width: 40ch; }
-#gf-root .gf-honest { margin-top: var(--space-md); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-ink-2); font-size: 0.9375rem; max-width: 40ch; }
-#gf-root .gf-honest strong { color: var(--color-ink); }
+#gf-root .gf-warn { margin: var(--space-lg) 0; padding: var(--space-sm) var(--space-md); border-left: 4px solid var(--color-field); border-radius: var(--radius-pill); background: var(--color-field-soft); color: var(--color-ink-2); max-width: 42ch; }
+#gf-root .gf-warn strong { color: var(--color-ink); }
 
 /* Qué necesitas: tres columnas con filete azul (igual que Refinanciamiento) */
+#gf-root .gf-needs { margin-top: var(--space-2xl); padding-top: var(--space-2xl); border-top: var(--rule-hair) solid color-mix(in oklab, var(--color-ink) 14%, transparent); }
 #gf-root .gf-needs h2 { margin-bottom: var(--space-lg); max-width: none; }
 #gf-root .gf-needs-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl); }
 #gf-root .gf-needs-list li { border-top: var(--rule-bar) solid var(--color-field); padding-top: var(--space-md); }
@@ -1353,8 +1351,6 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #gf-root .gf-case { gap: 0; }
   #gf-root .gf-case-text { display: contents; }
   #gf-root .gf-case h3 { order: 1; } #gf-root .gf-case-text > p:not(.gf-go-help) { order: 2; } #gf-root .gf-flow { order: 3; margin-bottom: var(--space-lg); } #gf-root .gf-case .v-btn { order: 4; justify-self: start; } #gf-root .gf-go-help { order: 5; }
-  #gf-root .gf-facts { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  #gf-root .gf-facts li { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
   #gf-root .gf-hero-text { padding-top: 0; }
   #gf-root .gf-hero-photo { display: none; }
   #gf-root .gf-uses-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
@@ -1367,6 +1363,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #gf-root .gf-where { flex-direction: column; align-items: stretch; }
   #gf-root .gf-form { padding: var(--space-md); }
   #gf-root .gf-frame iframe { height: 720px; }
+  #gf-root .gf-frame-wait { min-height: 220px; }
   #gf-root .gf-tabs { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
   #gf-root .gf-tabs [role="tab"] { min-height: 64px; padding: var(--space-sm) var(--space-md); }
   #gf-root .gf-tabs [role="tab"][aria-selected="true"] { padding: calc(var(--space-sm) - 1px) calc(var(--space-md) - 1px); }
