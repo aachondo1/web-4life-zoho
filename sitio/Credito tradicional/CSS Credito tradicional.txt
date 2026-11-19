@@ -1,4 +1,4 @@
-/* v2026.11.19-3 */
+/* v2026.11.19-4 */
 /* ===== 4Life · Página Crédito hipotecario tradicional — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Todo va acotado a #ct-root: no toca el home, /simular ni las otras páginas. */
 
@@ -62,7 +62,7 @@
 #ct-root .ct-perfiles dt { display: flex; align-items: center; gap: var(--space-sm); font: 700 var(--text-md)/1.3 var(--font-display); color: var(--color-ink); }
 #ct-root .ct-perfiles dt .bi { font-size: 1.25rem; color: var(--color-field); }
 #ct-root .ct-perfiles dd { color: var(--color-ink-2); }
-/* Aviso "¿Estuviste en DICOM?" (v2026.11.19-3): nota de marca, Celeste Bruma con filete izquierdo Celeste Profundo */
+/* Aviso "¿Alguna vez tuviste moras?" (v2026.11.19-4; se habla de moras, sin nombrar registros comerciales): nota de marca, Celeste Bruma con filete izquierdo Celeste Profundo */
 #ct-root .ct-aviso { max-width: 620px; margin: calc(-1 * var(--space-md)) 0 var(--space-xl); padding: var(--space-md) var(--space-lg); background: var(--color-field-soft); border-left: 4px solid var(--color-field); border-radius: 0 var(--radius-card) var(--radius-card) 0; }
 #ct-root .ct-aviso-t { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-2xs); font: 700 var(--text-md)/1.3 var(--font-display); color: var(--color-ink); }
 #ct-root .ct-aviso-t .bi { font-size: 1.25rem; color: var(--color-field); }
