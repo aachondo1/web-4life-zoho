@@ -1,0 +1,199 @@
+<!-- v2026.11.18-3 · Página Refinanciamiento (/refinanciamiento-hipotecario) · textos según brief SEO v1 (18-11). Un solo snippet de código. Estilos: bloque "Página Refinanciamiento" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Formulario: pega la URL del iframe de Zoho Forms en FORM_URL (script al final). -->
+<div class="f4 f4v2" id="rf-root">
+
+<section class="rf-hero" aria-labelledby="rf-t-hero">
+  <div class="container rf-hero-grid">
+    <div class="rf-hero-text">
+      <h1 id="rf-t-hero">Refinanciamiento hipotecario: revisa si puedes mejorar tu crédito</h1>
+      <p class="lead">Refinancia tu crédito hipotecario con <strong>4Life Crédito Hipotecario</strong>, esté en cualquier banco, en una mutuaria o ya con nosotros. Déjanos tus datos y un ejecutivo revisa tu crédito actual y te presenta una propuesta, sin compromiso.</p>
+      <ul class="rf-where" aria-label="¿Dónde tienes hoy tu crédito?">
+        <li><a href="#rf-t-4life" data-track="refi_hero_4life"><i class="bi bi-house-heart" aria-hidden="true"></i>Mi crédito está en 4Life</a></li>
+        <li><a href="#rf-t-otra" data-track="refi_hero_otra"><i class="bi bi-arrow-left-right" aria-hidden="true"></i>Mi crédito está en otra institución</a></li>
+      </ul>
+      <figure class="v-photo rf-hero-photo"><img src="/rf-hero.jpg" alt="Una pareja muestra el folleto de refinanciamiento de 4Life a un ejecutivo" width="1000" height="500" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
+    </div>
+
+    <div class="rf-form" id="rf-form" tabindex="-1" aria-labelledby="rf-t-form">
+      <h2 id="rf-t-form">Revisa si te conviene refinanciar</h2>
+      <p class="rf-form-sub">Déjanos tus datos y un ejecutivo de 4Life revisa tu caso y te presenta una propuesta. Sin compromiso.</p>
+      <div class="rf-frame">
+        <iframe data-rf-frame title="Formulario de refinanciamiento de 4Life Crédito Hipotecario" loading="eager" allow="clipboard-write" hidden></iframe>
+        <div class="rf-frame-wait" data-rf-wait>
+          <p><strong>Estamos actualizando este formulario.</strong></p>
+          <p class="small">Mientras tanto, puedes <a href="/simular?producto=tradicional&amp;origen=refinanciamiento" data-track="refi_form_simular">simular tu crédito</a> y un ejecutivo te contacta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec rf-what" aria-labelledby="rf-t-que">
+  <div class="container rf-what-grid">
+    <figure class="v-photo rf-what-photo"><img src="/rf-que-es.jpg" alt="Un reloj junto a monedas apiladas y una casa de madera" width="640" height="800" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <div class="rf-what-text">
+      <h2 id="rf-t-que">Qué es refinanciar un crédito hipotecario</h2>
+      <p class="v-statement">Es reemplazar tu crédito hipotecario actual por uno nuevo, con condiciones que se ajusten mejor a tu situación.</p>
+      <p class="rf-body">El nuevo crédito paga el anterior y quedas con un solo dividendo. Puedes hacerlo si tu crédito está en un banco, en una mutuaria o en 4Life. Cuando el cambio es a otra institución, también se conoce como <strong>portabilidad hipotecaria</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec rf-review" aria-labelledby="rf-t-revisar">
+  <div class="container">
+    <h2 id="rf-t-revisar">Qué puedes revisar al refinanciar</h2>
+    <ul class="rf-gains">
+      <li><i class="bi bi-wallet2" aria-hidden="true"></i><div><h3>Tu dividendo</h3><p>Ajustarlo a tu presupuesto actual.</p></div></li>
+      <li><i class="bi bi-percent" aria-hidden="true"></i><div><h3>Tu tasa</h3><p>Revisar si hoy puedes acceder a otras condiciones.</p></div></li>
+      <li><i class="bi bi-calendar3" aria-hidden="true"></i><div><h3>Tu plazo</h3><p>Hasta 40 años, con dividendo flexible.</p></div></li>
+    </ul>
+    <p class="rf-cross">¿Necesitas dinero adicional? <a href="/fines-generales" data-track="refi_fines_generales">Mira el crédito para fines generales</a></p>
+  </div>
+</section>
+
+<section class="v-sec rf-paths" aria-labelledby="rf-t-paths">
+  <div class="container">
+    <div class="rf-paths-head">
+      <h2 id="rf-t-paths">Refinancia desde donde estés</h2>
+      <p class="lead">Refinanciamos créditos hipotecarios de cualquier banco o mutuaria, y también de 4Life.</p>
+    </div>
+    <div class="rf-paths-grid">
+      <article class="rf-path" aria-labelledby="rf-t-4life">
+        <figure class="v-photo"><img src="/rf-cliente.jpg" alt="Folleto de 4Life Crédito Hipotecario: ¿Sabías que puedes mejorar tu crédito hipotecario?" width="800" height="533" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <h3 id="rf-t-4life" tabindex="-1">Tu crédito ya está en 4Life</h3>
+        <p>Revisamos tu crédito vigente y te proponemos nuevas condiciones de dividendo, tasa o plazo.</p>
+        <ul class="rf-ticks">
+          <li>Actualizas tu documentación básica</li>
+          <li>Un ejecutivo revisa tu crédito</li>
+          <li>Te presenta una propuesta</li>
+        </ul>
+        <a class="v-quiet" href="#rf-form" data-rf-go data-track="refi_camino_4life">Revisar mi crédito 4Life</a>
+      </article>
+      <article class="rf-path" aria-labelledby="rf-t-otra">
+        <figure class="v-photo"><img src="/rf-otra.jpg" alt="Una casa de madera sobre un documento hipotecario, con llaves" width="800" height="533" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <h3 id="rf-t-otra" tabindex="-1">Tu crédito está en otra institución</h3>
+        <p>Es una postulación como la de un <a href="/credito-hipotecario-tradicional" data-track="refi_tradicional">crédito hipotecario nuevo</a>. Revisamos tus ingresos y tu propiedad. Los plazos de cierre dependen también de la institución que hoy tiene tu crédito.</p>
+        <ul class="rf-ticks">
+          <li>Desde cualquier banco o mutuaria</li>
+          <li>Revisamos tus ingresos y tu propiedad</li>
+          <li>Ves la propuesta antes de decidir</li>
+        </ul>
+        <a class="v-quiet" href="#rf-form" data-rf-go data-track="refi_camino_otra">Traer mi crédito a 4Life</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec rf-when" aria-labelledby="rf-t-when">
+  <div class="container v-why-grid">
+    <div>
+      <h2 id="rf-t-when">¿Te conviene refinanciar?</h2>
+      <p class="lead">Puede convenirte si te pasa alguna de estas cosas.</p>
+    </div>
+    <div class="v-well">
+      <dl class="v-ruled">
+        <div><dt>Tu dividendo te queda apretado</dt><dd>Quieres ajustarlo a tu presupuesto de hoy.</dd></div>
+        <div><dt>Quieres cambiar el plazo</dt><dd>Alargarlo o acortarlo según lo que buscas.</dd></div>
+        <div><dt>Tu situación cambió</dt><dd>Desde que tomaste el crédito cambiaron tus ingresos o tus planes.</dd></div>
+      </dl>
+    </div>
+    <div class="rf-when-side">
+      <a class="v-btn" href="#rf-form" data-rf-go data-track="refi_conviene">Quiero refinanciar</a>
+      <p class="rf-note">La propuesta te muestra el dividendo, la tasa, el CAE y los costos, para que decidas con toda la información.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec rf-needs" aria-labelledby="rf-t-needs">
+  <div class="container">
+    <h2 id="rf-t-needs">Qué necesitas</h2>
+    <ul class="rf-needs-list">
+      <li><h3>Si eres cliente de 4Life</h3><p>Actualizar tu documentación básica.</p></li>
+      <li><h3>Si vienes de otra institución</h3><p>Los mismos antecedentes de un crédito nuevo. Por contrato, 6 liquidaciones de sueldo; por honorarios, la declaración de renta (F22). Cada caso se evalúa según el origen de tus ingresos.</p></li>
+      <li><h3>Tu propiedad y tu crédito actual</h3><p>El certificado de deuda de tu crédito, que pides en la institución que hoy lo tiene. Un ejecutivo te indica qué otros antecedentes necesitas.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-road" aria-labelledby="rf-t-pasos">
+  <div class="container">
+    <h2 id="rf-t-pasos">Cómo refinanciar con 4Life</h2>
+    <p class="lead">Ves la propuesta antes de decidir.</p>
+    <ol class="v-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Completa el formulario de esta página.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Revisamos tu caso</h3><p>Tu crédito actual y tus antecedentes.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Te presentamos una propuesta</h3><p>Con dividendo, tasa, CAE y costos.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Firmas</h3><p>Nos encargamos del trámite de inscripción. Tú pagas los gastos y vas a firmar.</p></li>
+    </ol>
+    <a class="v-btn" href="#rf-form" data-rf-go data-track="refi_pasos">Quiero refinanciar</a>
+  </div>
+</section>
+
+<section class="v-sec v-faq" aria-labelledby="rf-t-faq">
+  <div class="container v-faq-grid">
+    <div><h2 id="rf-t-faq">Preguntas frecuentes</h2><p class="lead">Lo que más nos preguntan sobre refinanciar en 4Life.</p></div>
+    <div class="f4-acc">
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q1">¿Puedo refinanciar si mi crédito está en otro banco o mutuaria?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q1"><p>Sí. Refinanciamos créditos hipotecarios de cualquier banco o mutuaria. Es una postulación como la de un crédito nuevo, y un ejecutivo te acompaña en el proceso.</p></div></div>
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q2">¿Y si mi crédito ya está en 4Life?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q2"><p>También puedes refinanciar. Solo actualizas tu documentación básica y un ejecutivo revisa tu caso.</p></div></div>
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q3">¿Qué es la portabilidad hipotecaria?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q3"><p>Es como se conoce al refinanciamiento con otra institución: el nuevo crédito paga el anterior y quedas con un solo dividendo.</p></div></div>
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q4">¿Cuánto tarda?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q4"><p>Depende de tu caso. Si vienes de otra institución, el cierre también depende de la institución que hoy tiene tu crédito.</p></div></div>
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q5">¿Qué plazo puedo elegir?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q5"><p>Hasta 40 años, con dividendo flexible. Un plazo más largo baja el dividendo mensual, pero en total pagas más intereses.</p></div></div>
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q6">¿Puedo obtener dinero adicional al refinanciar?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q6"><p>Si lo que buscas es obtener fondos con tu propiedad, revisa el <a href="/fines-generales">crédito para fines generales</a>.</p></div></div>
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q7">¿Dejar mis datos me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q7"><p>No. Un ejecutivo revisa tu caso y te presenta una propuesta. Tú decides si sigues.</p></div></div>
+      <div class="f4-acc-item"><h3 class="rf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="rf-q8">¿Si hoy no califico, puedo volver a intentarlo?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="rf-q8"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
+    </div>
+    <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
+  </div>
+</section>
+
+<section class="v-close rf-close" aria-labelledby="rf-t-cierre">
+  <div class="rf-close-photo"><img src="/rf-cierre.jpg" alt="Un ejecutivo de 4Life estrecha la mano de un cliente" width="800" height="800" loading="lazy" onerror="this.parentNode.remove()"></div>
+  <div class="container">
+    <div class="v-close-in">
+      <h2 id="rf-t-cierre">Tu nuevo crédito comienza aquí</h2>
+      <a class="v-btn" href="#rf-form" data-rf-go data-track="refi_cierre">Quiero refinanciar</a>
+    </div>
+    <p class="small rf-legal">Las condiciones son referenciales y están sujetas a evaluación crediticia, tasación y políticas de crédito vigentes. La solicitud de información no constituye una aprobación de crédito.</p>
+  </div>
+</section>
+
+<script>
+/* Formulario de Zoho Forms en iframe. Pega aquí la URL del iframe (Zoho Forms → Compartir → Insertar → iFrame, solo el valor de src). Vacío = se muestra el aviso con enlace al simulador. */
+(function () {
+  var FORM_URL = "";
+  var root = document.getElementById("rf-root");
+  if (!root || root.getAttribute("data-rf-ok")) return;
+  root.setAttribute("data-rf-ok", "1");
+  var frame = root.querySelector("[data-rf-frame]"), wait = root.querySelector("[data-rf-wait]"), box = root.querySelector("#rf-form");
+
+  /* UTM y clics de anuncios: los que guarda el script global (f4_utm) + los de esta URL. Viajan al formulario como parámetros; en Zoho Forms crea campos ocultos con estos mismos nombres. */
+  if (FORM_URL && frame) {
+    var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"], p = {}, q = new URLSearchParams(location.search);
+    try { p = JSON.parse(sessionStorage.getItem("f4_utm") || "{}"); } catch (e) {}
+    var u = new URL(FORM_URL);
+    keys.forEach(function (k) { var v = q.get(k) || p[k]; if (v) u.searchParams.set(k, v); });
+    u.searchParams.set("origen", "refinanciamiento");
+    frame.src = u.toString();
+    frame.hidden = false;
+    if (wait) wait.remove();
+    /* Alto automático: Zoho Forms avisa su alto con postMessage ("perma|alto" o "perma|alto|scroll") */
+    window.addEventListener("message", function (e) {
+      if (!/zoho|zohopublic/.test(e.origin) || typeof e.data !== "string") return;
+      var d = e.data.split("|"), h = parseInt(d[1], 10);
+      if (d.length >= 2 && h > 200) frame.style.height = (h + 16) + "px";
+    });
+  }
+
+  /* Botones "Quiero refinanciar": llevan al formulario y lo dejan con el foco */
+  [].forEach.call(root.querySelectorAll("[data-rf-go]"), function (a) {
+    a.addEventListener("click", function (e) {
+      if (!box) return;
+      e.preventDefault();
+      var quiet = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      box.scrollIntoView({ behavior: quiet ? "auto" : "smooth", block: "start" });
+      box.focus({ preventScroll: true });
+      box.classList.remove("is-called"); void box.offsetWidth; box.classList.add("is-called");
+    });
+  });
+})();
+</script>
+</div>

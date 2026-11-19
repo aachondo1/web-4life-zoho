@@ -1,0 +1,181 @@
+<!-- v2026.11.19 · Página Subsidio DS19 (/subsidio-ds19) · un solo snippet. Estilos: "CSS Subsidio DS19" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); /ds19-centro.jpg y /ds19-biobio.jpg aún no existen: mientras no se suban, esas zonas se ven sin foto. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
+<div class="f4 f4v2" id="ds-root">
+
+<section class="ds-hero" aria-labelledby="ds-t-hero">
+  <div class="container ds-hero-grid">
+    <div class="ds-hero-text">
+      <h1 id="ds-t-hero">Casa nueva con subsidio DS19, sin llamados ni esperas</h1>
+      <p class="ds-zline" data-ds-zline hidden></p>
+      <p class="lead">Eliges el proyecto, te inscribes ahí mismo y el subsidio va con la vivienda.</p>
+      <div class="v-actions">
+        <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_hero">Simula con DS19</a>
+        <a class="v-quiet" href="#ds-t-req" data-track="ds19_hero_requisitos">¿Cumples los requisitos?</a>
+      </div>
+      <p class="ds-cities" data-ds-cities>Concepción · Temuco · Antofagasta · Talca · Puerto Montt</p>
+      <figure class="v-photo ds-hero-photo" data-ds-photo hidden><img alt="" width="1200" height="480" decoding="async"></figure>
+    </div>
+
+    <figure class="ds-pay" aria-labelledby="ds-pay-cap">
+      <p class="ds-pay-cap" id="ds-pay-cap">Así se paga una casa DS19 de <strong>UF 2.200</strong></p>
+      <div class="ds-bar" role="img" aria-label="Ejemplo: vivienda de UF 2.200. Tu ahorro UF 80 más subsidio DS19 UF 350 forman un pie de UF 430; el saldo de UF 1.770, cerca del 80 % del precio, se paga con crédito hipotecario.">
+        <div class="ds-bracket" style="--w:19.5%" aria-hidden="true"><span>Tu pie: UF 430</span></div>
+        <div class="ds-track" aria-hidden="true">
+          <span class="ds-seg is-aho" style="--w:3.6%"></span><span class="ds-seg is-sub" style="--w:15.9%"></span><span class="ds-seg is-cre" style="--w:80.5%"></span>
+        </div>
+      </div>
+      <dl class="ds-eq">
+        <div><dt><span class="ds-op" aria-hidden="true"></span><i class="ds-sw is-aho" aria-hidden="true"></i>Tu ahorro</dt><dd>UF 80</dd></div>
+        <div><dt><span class="ds-op">+</span><i class="ds-sw is-sub" aria-hidden="true"></i>Subsidio DS19</dt><dd>desde UF 350</dd></div>
+        <div><dt><span class="ds-op">+</span><i class="ds-sw is-cre" aria-hidden="true"></i>Crédito por el saldo</dt><dd>UF 1.770</dd></div>
+        <div class="ds-eq-total"><dt><span class="ds-op">=</span><i class="ds-sw" aria-hidden="true"></i>Precio de la vivienda</dt><dd>UF 2.200</dd></div>
+      </dl>
+      <figcaption class="ds-foot">Ejemplo con números redondos y sin tasas. Montos según comuna y año del proyecto; pueden sumarse bonos del programa.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="v-sec ds-req" aria-labelledby="ds-t-req">
+  <div class="container v-why-grid">
+    <div>
+      <h2 id="ds-t-req">¿Puedes usar el DS19?</h2>
+      <p class="lead">Si cumples estas condiciones, ya puedes buscar tu proyecto. No necesitas haber ganado un subsidio antes.</p>
+    </div>
+    <div class="v-well">
+      <dl class="v-ruled">
+        <div><dt>Registro Social de Hogares</dt><dd>Estás en el Registro Social de Hogares (RSH), hasta el tramo del 90%. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</dd></div>
+        <div><dt>Sin vivienda propia</dt><dd>Ni tú ni tu grupo familiar declarado son dueños de una vivienda.</dd></div>
+        <div><dt>Primer subsidio</dt><dd>No has usado antes un subsidio habitacional. Si tienes un DS1 sin usar, también puede servirte: confírmalo en la sala de ventas.</dd></div>
+        <div><dt>Ahorro mínimo</dt><dd>UF 40 si la vivienda cuesta entre UF 1.600 y 1.800; UF 80 si cuesta más de UF 1.800. En tu libreta o cuenta de ahorro para la vivienda.</dd></div>
+        <div><dt>Precio dentro del tope</dt><dd data-ds-tope>Hasta UF 2.600, o UF 2.800 en comunas seleccionadas, según comuna y año del proyecto.</dd></div>
+        <div><dt>Crédito por el saldo</dt><dd>Lo que no cubren tu ahorro y el subsidio se paga con un crédito hipotecario. Eres mayor de 18 años, con cédula vigente (extranjeros con residencia definitiva).</dd></div>
+      </dl>
+    </div>
+    <div class="ds-req-cta">
+      <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_requisitos">Simula con DS19</a>
+      <p class="ds-req-note">En el simulador ves cómo se paga tu casa y un ejecutivo de <strong>4Life Crédito Hipotecario</strong> revisa tu caso. Todavía no ofrecemos crédito con DS19: te contactamos apenas esté disponible.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-road ds-road" aria-labelledby="ds-t-pasos">
+  <div class="container">
+    <h2 id="ds-t-pasos">Cómo funciona el DS19</h2>
+    <p class="lead">No esperas un llamado ni un puntaje: te inscribes todo el año, mientras queden cupos en el proyecto.</p>
+    <ol class="v-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Elige un proyecto DS19</h3><p>En tu ciudad. El MINVU publica el listado y las inmobiliarias también.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Inscríbete en la sala de ventas</h3><p>Confirma que hay cupo en tu tramo y te inscribes en el proyecto y en el sistema DS19 del MINVU.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Crédito por el saldo</h3><p>Reservas y apruebas un crédito hipotecario por lo que no cubren tu ahorro y el subsidio.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Escrituras</h3><p>Firmas cuando el proyecto está listo y el subsidio se aplica a tu vivienda.</p></li>
+    </ol>
+    <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_pasos">Simula con DS19</a>
+  </div>
+</section>
+
+<section class="v-sec ds-why" aria-labelledby="ds-t-why">
+  <div class="container">
+    <h2 id="ds-t-why">Con el DS19 sabes qué casa compras desde el primer día</h2>
+    <div class="ds-table-wrap">
+      <table class="ds-table">
+        <caption class="sr">Comparación entre DS19, subsidio DS1 y compra sin subsidio</caption>
+        <thead><tr><th scope="col"><span class="sr">Tema</span></th><th scope="col" class="is-ds">DS19</th><th scope="col">DS1 (sectores medios)</th><th scope="col">Compra sin subsidio</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Cómo se obtiene</th><td class="is-ds" data-l="DS19">Te inscribes directo en el proyecto, todo el año</td><td data-l="DS1">Postulas a un llamado con fechas y esperas resultados</td><td data-l="Sin subsidio">No aplica</td></tr>
+          <tr><th scope="row">Qué sabes al partir</th><td class="is-ds" data-l="DS19">La vivienda, su precio y tu subsidio</td><td data-l="DS1">Solo el monto del certificado; la casa se busca después</td><td data-l="Sin subsidio">La vivienda y su precio</td></tr>
+          <tr><th scope="row">Riesgo principal</th><td class="is-ds" data-l="DS19">Que se agoten los cupos</td><td data-l="DS1">No salir seleccionado o que venza el certificado</td><td data-l="Sin subsidio">Pie alto y crédito más grande</td></tr>
+          <tr><th scope="row">Aporte del Estado</th><td class="is-ds" data-l="DS19">Subsidio y bonos del programa</td><td data-l="DS1">Certificado de subsidio</td><td data-l="Sin subsidio">Ninguno</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="ds-reasons">
+      <li><strong>Menos pie propio.</strong> El subsidio y tu ahorro cubren una parte del precio, así que el crédito es menor que en una compra normal.</li>
+      <li><strong>Vivienda nueva y bien ubicada.</strong> El programa exige proyectos cerca de servicios, transporte y colegios.</li>
+      <li><strong>Barrio mixto.</strong> Familias de distintos ingresos en el mismo proyecto, no un conjunto aislado.</li>
+      <li><strong>Un solo interlocutor.</strong> La inmobiliaria te guía en la inscripción; no tienes que perseguir al SERVIU.</li>
+      <li><strong>No necesitas subsidio previo.</strong> Basta el RSH, el ahorro y no tener vivienda propia.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-sec ds-mut" aria-labelledby="ds-t-mut">
+  <div class="container">
+    <h2 id="ds-t-mut" class="v-statement">Una mutuaria presta para tu casa como un banco, y la fiscaliza la misma autoridad</h2>
+    <ul class="v-facts ds-facts3">
+      <li><strong>Fiscalizada por la CMF.</strong> Una administradora de mutuos hipotecarios otorga créditos hipotecarios y está registrada y fiscalizada por la Comisión para el Mercado Financiero (CMF), como el resto del mercado hipotecario.</li>
+      <li><strong>Del grupo 4Life.</strong> 4Life Crédito Hipotecario es del mismo grupo que 4Life Seguros de Vida.</li>
+      <li><strong>Miramos tu caso completo.</strong> Evaluamos boletas de honorarios, turnos e ingresos variables, casos que un banco a veces deja fuera.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-sec v-faq ds-faq" aria-labelledby="ds-t-faq">
+  <div class="container v-faq-grid">
+    <div><h2 id="ds-t-faq">Preguntas frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el subsidio DS19.</p></div>
+    <div class="f4-acc" data-ds-faq>
+      <div class="f4-acc-item" data-q="ahorro"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q1">¿Cuánto ahorro necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q1"><p>Depende del precio: UF 40 para viviendas de UF 1.600 a 1.800 y UF 80 para las de más de UF 1.800, en tu cuenta de ahorro para la vivienda. Mientras más ahorro tengas, menor es el crédito.</p></div></div>
+      <div class="f4-acc-item" data-q="boletas"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q2">¿Puedo con boletas de honorarios o trabajo por turnos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q2"><p>Sí, se puede revisar. Las boletas, los turnos y los ingresos variables no son motivo para descartarte: en 4Life miramos tu caso completo. El ejecutivo te dice qué documentos necesitas.</p></div></div>
+      <div class="f4-acc-item" data-q="deudas"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q3">¿Qué pasa si tuve deudas?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q3"><p>Una deuda antigua no siempre te deja fuera; lo que más pesa es cómo está tu situación hoy. Cuéntaselo al ejecutivo antes de reservar, para revisarlo con tiempo.</p></div></div>
+      <div class="f4-acc-item" data-q="cupos"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q4">¿Se acaban los cupos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q4"><p>Sí. Cada proyecto tiene cupos por tramo y la inscripción cierra cuando se agotan. No hay fecha de cierre: te puedes inscribir todo el año mientras queden. En la sala de ventas te dicen cuántos quedan en tu tramo.</p></div></div>
+      <div class="f4-acc-item" data-q="ds1"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q5">¿Qué diferencia hay con el DS1?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q5"><p>Con el DS1 postulas a un llamado, esperas resultados y, si sales seleccionado, buscas casa con tu certificado. Con el DS19 eliges primero la vivienda y el subsidio va con ella. Si tienes un DS1 sin usar, también puede servirte en un proyecto DS19: confírmalo en la sala de ventas.</p></div></div>
+      <div class="f4-acc-item" data-q="rsh"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q6">¿Qué es el Registro Social de Hogares?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q6"><p>Es el registro del Estado que ubica a tu hogar en un tramo según sus ingresos y otros datos. Para el DS19 sin subsidio previo necesitas estar hasta el tramo del 90%. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</p></div></div>
+      <div class="f4-acc-item" data-q="4life"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q7">¿4Life ya financia viviendas con DS19?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q7"><p>Todavía no. Estamos preparando el crédito con subsidio DS19. Si dejas tu simulación, un ejecutivo de 4Life te contacta apenas esté disponible para revisar tu caso.</p></div></div>
+    </div>
+    <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
+  </div>
+</section>
+
+<section class="v-close ds-close" aria-labelledby="ds-t-cierre">
+  <div class="container">
+    <div class="v-close-in">
+      <div>
+        <h2 id="ds-t-cierre">¿Ya tienes un proyecto DS19 en vista?</h2>
+        <p class="ds-close-lead">Simula con los datos de la cotización y revisamos contigo si calificas.</p>
+      </div>
+      <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_cierre">Simula con DS19</a>
+    </div>
+    <p class="small ds-close-legal">Valores en UF referenciales, según comuna y año del proyecto (MINVU). 4Life Crédito Hipotecario aún no ofrece crédito con subsidio DS19; cualquier crédito estará sujeto a evaluación crediticia y tasación de la vivienda.</p>
+  </div>
+</section>
+
+<script>
+/* Página DS19: zona por URL (?zona=) y foto opcional por zona. Sin formularios: los botones van a /simular con la zona. */
+(function () {
+  var root = document.getElementById("ds-root");
+  if (!root || root.getAttribute("data-ds-ok")) return;
+  root.setAttribute("data-ds-ok", "1");
+  /* Zonas: frase que más pesa, ciudades, tope del tramo de más de UF 1.800 (MINVU, confirmar por comuna) y pregunta que sube primero */
+  var ZONAS = {
+    norte:  { n: "Norte", msg: "Lo que pagas de arriendo puede ser tu dividendo", c: "Arica · Iquique · Antofagasta · Calama · Copiapó · La Serena",
+              tope: "Hasta UF 2.800 en las comunas seleccionadas del norte; UF 2.600 en las demás. Confírmalo por comuna.", foto: "Vista de Antofagasta, entre los cerros y el mar", faq: ["boletas", "ahorro", "cupos"] },
+    centro: { n: "Centro", msg: "Sal de la casa de tus papás con subsidio", c: "Valparaíso · Viña del Mar · Rancagua · Talca · Curicó",
+              tope: "Hasta UF 2.800 en Valparaíso y Viña del Mar; UF 2.600 en las demás comunas.", foto: "", faq: ["boletas", "ahorro", "cupos"] },
+    biobio: { n: "Biobío y Ñuble", msg: "Deja de arrendar en el Gran Concepción", c: "Concepción · Los Ángeles · Chillán",
+              tope: "Hasta UF 2.800 en Concepción y Los Ángeles; UF 2.600 en las demás comunas.", foto: "", faq: ["ahorro", "cupos", "boletas"] },
+    sur:    { n: "Sur", msg: "Tu casa nueva sin irte de tu ciudad", c: "Temuco · Valdivia · Osorno · Puerto Montt · Chiloé",
+              tope: "Hasta UF 2.600; en Chiloé los valores son mayores. Confírmalo por comuna.", foto: "Valdivia y el río Calle-Calle", faq: ["ahorro", "boletas", "cupos"] }
+  };
+  var zona = "";
+  try { zona = (new URLSearchParams(location.search).get("zona") || "").toLowerCase(); } catch (e) {}
+  if (!ZONAS[zona]) zona = "";
+  function $(s) { return root.querySelector(s); }
+  if (zona) {
+    var Z = ZONAS[zona], zl = $("[data-ds-zline]");
+    zl.textContent = Z.msg + "."; zl.hidden = false;
+    $("[data-ds-cities]").textContent = Z.c;
+    $("[data-ds-tope]").textContent = Z.tope;
+    var faq = $("[data-ds-faq]");
+    Z.faq.slice().reverse().forEach(function (q) { var it = faq.querySelector('[data-q="' + q + '"]'); if (it) faq.insertBefore(it, faq.firstChild); });
+    [].forEach.call(root.querySelectorAll("[data-ds-cta]"), function (a) { a.href = "/simular?producto=ds19&origen=ds19&zona=" + zona; });
+  }
+  /* Foto por zona (opcional): si el archivo no existe en Zoho, el espacio no aparece */
+  var fig = $("[data-ds-photo]"), img = fig.querySelector("img");
+  img.onload = function () { fig.hidden = false; };
+  img.onerror = function () { fig.remove(); };
+  /* foto: texto alternativo de la foto de cada zona. Vacío = esa zona aún no tiene foto y no se pide. */
+  var FOTO_GENERAL = "Coquimbo y su bahía, con los cerros de fondo";
+  var alt = zona ? ZONAS[zona].foto : FOTO_GENERAL;
+  if (!alt) { fig.remove(); return; }
+  img.alt = alt;
+  img.src = "/ds19-" + (zona || "chile") + ".jpg";
+})();
+</script>
+</div>

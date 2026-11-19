@@ -1,0 +1,32 @@
+<!-- v2026.11.18-2 · con logo · /gracias · sistema .f4v2 (FOGAES): tarjeta de filete coral sobre azul suave. Snippet "4L - gracias" -->
+<div class="fl-res fl-thanks">
+  <style>
+    .fl-res{--b:#295be9;--bs:#e8eefd;--co:#cf3a38;--cod:#b32f2d;--ink:#1e1e1e;--ink2:#333;--mut:#5d5d5d;--ln:#e0e0e0;--fh:"Asap",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      box-sizing:border-box;width:100%;padding:72px 24px 96px;background:var(--bs);font:400 17px/1.5 var(--fh);color:var(--ink2);text-align:left}
+    .fl-res *{box-sizing:border-box}
+    .fl-res ::selection{background:#c9d6fa;color:var(--ink)}
+    .fl-res .fl-card{max-width:600px;margin:0 auto;padding:40px 40px 36px;background:#fff;border-top:4px solid var(--co);border-radius:0 0 8px 8px;box-shadow:0 16px 48px rgba(30,30,30,.13)}
+    .fl-res .fl-head{margin:0 0 28px;padding-bottom:20px;border-bottom:1px solid var(--ln)}
+    .fl-res .fl-logo{display:block;height:56px;width:auto}
+    .fl-res .fl-icon{display:grid;place-items:center;width:48px;height:48px;margin:0 0 18px;border-radius:50%;background:var(--b);color:#fff}
+    .fl-res .fl-icon svg{width:24px;height:24px}
+    .fl-res h1{margin:0 0 14px;font:700 clamp(28px,1.8vw + 18px,40px)/1.1 var(--fh);letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+    .fl-res p{margin:0 0 10px;font-size:18px;line-height:1.55;color:var(--ink2);max-width:52ch}
+    .fl-res .fl-nota{max-width:none;margin-top:18px;padding-top:16px;border-top:1px solid var(--ln);font-size:15px;color:var(--mut)}
+    .fl-res .fl-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;margin-top:22px;padding:0 28px;border-radius:6px;background:var(--co);color:#fff!important;font:700 18px/1 var(--fh);text-decoration:none;transition:background-color .12s cubic-bezier(.16,1,.3,1),transform .12s cubic-bezier(.16,1,.3,1)}
+    .fl-res .fl-btn:hover{background:var(--cod);text-decoration:none}
+    .fl-res .fl-btn:active{transform:translateY(1px)}
+    .fl-res .fl-btn:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+    @media (max-width:520px){.fl-res .fl-logo{height:48px}.fl-res{padding:40px 16px 64px}.fl-res .fl-card{padding:28px 22px 26px}.fl-res .fl-btn{width:100%}}
+    @media (prefers-reduced-motion:reduce){.fl-res .fl-btn{transition:none}}
+  </style>
+  <div class="fl-card">
+    <div class="fl-head"><img class="fl-logo" src="/4life-logo.png" alt="4Life Crédito Hipotecario" width="97" height="56"></div>
+    <div class="fl-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    </div>
+    <h1>Muchas gracias, te vamos a contactar</h1>
+    <p>Recibimos tus datos. Un ejecutivo de 4Life Hipotecario se pondrá en contacto contigo para revisar las alternativas de tu crédito.</p>
+    <a class="fl-btn" href="/">Volver al inicio</a>
+  </div>
+</div>

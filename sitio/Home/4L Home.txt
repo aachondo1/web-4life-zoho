@@ -1,0 +1,129 @@
+<!-- v2026.11.18-3 · Home completo en un solo snippet (Portada, Soluciones, Así funciona, Quiénes somos, Hablemos, Preguntas). Después de este snippet va el global "4L - Global CTA". Estilos: "CSS Home" al final del CSS Personalizado, después del bloque FOGAES. Fotos: home-portada, home-hogar, home-subsidio, home-soluciones, home-inmobiliarias, home-santiago (.jpg) -->
+<div class="f4 f4v2 f4h">
+<section class="h-hero" aria-labelledby="h-t-hero">
+  <div class="container h-hero-grid">
+    <div class="h-hero-text">
+      <h1 id="h-t-hero">Tu nuevo hogar comienza aquí</h1>
+      <p class="lead">Créditos hipotecarios para comprar, refinanciar o financiar tus proyectos, con un ejecutivo de <strong>4Life</strong> a tu lado desde la simulación hasta la firma.</p>
+      <div class="v-actions">
+        <a class="v-btn" data-eval data-track="hero_1" href="/simular?origen=home">Simula tu crédito</a>
+        <a class="v-quiet" data-track="hero_como_funciona" href="#como-funciona">Mira cómo funciona</a>
+      </div>
+      <p class="h-hint">Simular es gratis y no te compromete: no es una solicitud de crédito.</p>
+    </div>
+    <figure class="v-photo h-hero-photo"><img src="/home-portada.jpg" alt="Un ejecutivo de 4Life conversa con una pareja en la oficina, con Santiago de fondo" width="800" height="640" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
+  </div>
+  <div class="container">
+    <ul class="h-proof" aria-label="Nuestro respaldo">
+      <li><i class="bi bi-shield-check" aria-hidden="true"></i><span>Del mismo grupo que <strong>4Life Seguros de Vida</strong></span></li>
+      <li><i class="bi bi-building" aria-hidden="true"></i><span>Parte del <strong>Holding Dercorp</strong></span></li>
+      <li><i class="bi bi-map" aria-hidden="true"></i><span>Financiamos viviendas en <strong>todo Chile</strong></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-sec h-fam-sec" aria-labelledby="h-t-fam">
+  <div class="container">
+    <div class="h-fam-head">
+      <h2 id="h-t-fam">¿Qué quieres hacer?</h2>
+      <p class="lead">Elige tu caso y conoce cómo te podemos ayudar.</p>
+    </div>
+    <ul class="h-fams">
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-hogar.jpg" alt="Una familia desempaca cajas en su nueva casa" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Financiar mi hogar</h3><p>Compra tu casa o departamento, nuevo o usado, o una segunda propiedad.</p></div>
+        <ul class="h-links">
+          <li><a href="/credito-hipotecario-tradicional" data-track="home_fam_tradicional">Crédito hipotecario tradicional<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/credito-hipotecario-fogaes" data-track="home_fam_fogaes">Primera vivienda nueva con FOGAES<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/credito-hipotecario-segunda-vivienda-o-inversion" data-track="home_fam_segunda">Segunda vivienda o inversión<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-subsidio.jpg" alt="Llaves puestas en la puerta de una vivienda nueva" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Comprar con subsidio</h3><p>Complementa tu subsidio habitacional con un crédito para tu primera vivienda.</p></div>
+        <ul class="h-links">
+          <li><a href="/simular?producto=ds1&amp;origen=home" data-track="home_fam_ds1">Simula con subsidio DS1<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/simular?producto=ds19&amp;origen=home" data-track="home_fam_ds19">Simula con subsidio DS19 (integración social)<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-soluciones.jpg" alt="Una pareja pinta una pared de su casa" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Soluciones financieras</h3><p>Mejora tu crédito actual o usa tu propiedad para financiar otros proyectos.</p></div>
+        <ul class="h-links">
+          <li><a href="/refinanciamiento-hipotecario" data-track="home_fam_refinanciamiento">Refinanciamiento hipotecario<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/fines-generales" data-track="home_fam_fines">Crédito para fines generales<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-inmobiliarias.jpg" alt="Fachada de un edificio de departamentos" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Inmobiliarias y brokers</h3><p>Financiamiento para los clientes de tu proyecto o de tu cartera.</p></div>
+        <ul class="h-links">
+          <li><a href="/inmobiliarias-y-brokers" data-track="home_fam_inmobiliarias">Trabaja con 4Life<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-road h-road" id="como-funciona" aria-labelledby="h-t-funciona">
+  <div class="container">
+    <h2 id="h-t-funciona">Así funciona</h2>
+    <p class="lead">Ves tus números primero y decides si seguir.</p>
+    <ol class="v-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de la vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Tu nombre, RUT, correo y edad, para preparar tu simulación.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Ve tu dividendo</h3><p>Una simulación orientativa con distintos plazos para comparar.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Un ejecutivo te llama</h3><p>Si quieres avanzar, te guía con los antecedentes, la tasación y la firma.</p></li>
+    </ol>
+    <div class="h-road-foot">
+      <a class="v-btn" data-eval data-track="cta_funciona" href="/simular?origen=home">Simula tu crédito</a>
+      <p class="h-privacy">Usamos tus datos para preparar tu simulación y para que un ejecutivo de 4Life te contacte. Revisa cómo los tratamos en nuestra <a href="/privacidad-y-cookies">política de privacidad</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec h-about" aria-labelledby="h-t-about">
+  <div class="container">
+    <h2 id="h-t-about" class="h-statement">Una hipotecaria nueva, con el respaldo de un grupo con trayectoria.</h2>
+    <ul class="h-facts">
+      <li><h3>Un grupo que nos respalda</h3><p><strong>4Life Crédito Hipotecario S.A.</strong> nace en 2025 bajo la propiedad de DT Rigel S.A., empresa del Holding Dercorp, controlada por una rama de la familia Del Río, con participaciones en retail, automotriz, inmobiliaria y seguros.</p></li>
+      <li><h3>Seguros al mejor precio licitado</h3><p>Somos parte del mismo grupo que <a href="https://4lifeseguros.cl/" target="_blank" rel="noopener">4Life Seguros de Vida</a>. Tus seguros hipotecarios siempre se contratan al mejor precio licitado, de acuerdo a la norma vigente.</p></li>
+      <li><h3>Miramos tu caso completo</h3><p>También evaluamos tu caso si trabajas con boletas o tienes ingresos variables. Un ejecutivo revisa contigo los antecedentes.</p></li>
+    </ul>
+    <!-- Cuando esté confirmado el registro o la fiscalización, agregar aquí, por ejemplo:
+    <p class="h-reg"><a href="/informacion-regulatoria">Información regulatoria</a></p> -->
+  </div>
+</section>
+
+<section class="v-sec h-talk" aria-labelledby="h-t-talk">
+  <div class="container h-talk-grid">
+    <figure class="v-photo h-talk-photo"><img src="/home-santiago.jpg" alt="Vista de Santiago con la cordillera nevada" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <div>
+      <h2 id="h-t-talk">Hablemos</h2>
+      <p class="lead">Un ejecutivo de 4Life te responde y te acompaña en cada etapa.</p>
+      <dl class="v-contact">
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/56943802296" target="_blank" rel="noopener" data-track="whatsapp_home">+56 9 4380 2296</a></dd></div>
+        <div><dt>Oficina</dt><dd>Alonso de Córdova 4125, oficina 118, piso -1, Vitacura, Santiago</dd></div>
+        <div><dt>Formulario</dt><dd><a href="/contacto" data-track="contacto_home">Escríbenos y te llamamos</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec v-faq h-faq" id="preguntas" aria-labelledby="h-t-faq">
+  <div class="container v-faq-grid">
+    <div>
+      <h2 id="h-t-faq">Preguntas frecuentes</h2>
+      <p class="lead">Lo que más nos preguntan antes de simular.</p>
+    </div>
+    <div class="f4-acc">
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q1">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q1" hidden><p>No. La simulación es gratis y orientativa: no es una solicitud de crédito ni una aprobación. Un ejecutivo revisa tu caso antes de cualquier paso.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q2">¿Qué datos me piden y quién me contacta?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q2" hidden><p>Te pedimos el valor aproximado de la propiedad, el pie, tu nombre, RUT, correo y edad. Si quieres avanzar, un ejecutivo de 4Life te contacta para revisar tu caso.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q3">¿Puedo evaluar opciones si ya tengo un crédito hipotecario?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q3" hidden><p>Sí. Puedes <a href="/refinanciamiento-hipotecario">refinanciar</a> tu crédito actual, esté en 4Life o en otra institución, y eventualmente pedir un monto adicional para <a href="/fines-generales">fines generales</a>. Las opciones dependen de tus antecedentes y de las condiciones de tu crédito vigente.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q4">¿Puedo pedir un crédito si soy independiente?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q4" hidden><p>Sí. En 4Life también evaluamos casos con boletas o ingresos variables. Las alternativas dependen de los antecedentes con que acredites tus ingresos.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q5">¿Cuánto demora el proceso?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q5" hidden><p>Depende de tu caso y de los antecedentes que entregues. Tu ejecutivo te indica los plazos de cada etapa: evaluación, tasación y firma.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q6">¿Qué información debo tener a mano?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q6" hidden><p>Te sirve tener a mano información de tus ingresos, tu situación laboral, la propiedad que quieres comprar y, si corresponde, tu crédito vigente.</p></div></div>
+    </div>
+  </div>
+</section>
+</div>

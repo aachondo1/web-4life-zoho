@@ -1,0 +1,126 @@
+/* v2026.11.18-2 */
+/* ===== 4Life · Página Subsidio DS19 — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) ===== */
+/* Tarjetas con filete superior de 4 px: mismo lenguaje que la tarjeta del hero de FOGAES (.fg-pie) */
+/* Escala igual a FOGAES (home publicado) */
+#ds-root { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem;
+  --ds-aho: var(--color-accent); --ds-sub: var(--color-field); --ds-cre: var(--color-field-soft); --ds-line: #7A7A7A; }
+#ds-root .sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+#ds-root .v-btn { min-height: 48px; padding: var(--space-sm) var(--space-lg); font-size: 1.0625rem; }
+#ds-root .v-quiet { min-height: 48px; font-size: 1.0625rem; }
+#ds-root .v-actions { gap: var(--space-lg); }
+#ds-root ::selection { background: var(--color-field-soft); color: var(--color-field-deep); }
+
+/* Portada */
+#ds-root .ds-hero { background: var(--color-field-soft); padding-block: var(--space-xl); }
+#ds-root .ds-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: center; }
+#ds-root .ds-hero h1 { max-width: 15ch; margin-bottom: var(--space-md); }
+#ds-root .ds-zline { font: 700 var(--text-title)/1.3 var(--font-display); color: var(--color-accent); margin-bottom: var(--space-sm); max-width: 30ch; }
+#ds-root .ds-hero .lead { margin-bottom: var(--space-lg); }
+#ds-root .ds-cities { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: var(--rule-hair) solid color-mix(in oklab, var(--color-field) 25%, transparent); font: 600 var(--text-md)/1.5 var(--font-body); color: var(--color-field-deep); max-width: 44ch; }
+#ds-root .ds-hero-photo { margin-top: var(--space-lg); aspect-ratio: 5 / 2; max-width: 560px; }
+#ds-root .ds-hero-photo img { position: absolute; inset: 0; }
+
+/* La barra: ahorro + subsidio + crédito = precio */
+#ds-root .ds-pay { margin: 0; background: var(--color-paper); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: var(--space-lg) var(--space-xl) var(--space-lg); border-top: 4px solid var(--color-accent); }
+#ds-root .ds-pay-cap { font-size: var(--text-lg); color: var(--color-ink-2); margin-bottom: var(--space-md); }
+#ds-root .ds-pay-cap strong { color: var(--color-ink); }
+#ds-root .ds-bar { padding-top: 34px; margin-bottom: var(--space-lg); position: relative; }
+#ds-root .ds-bracket { position: absolute; top: 0; left: 0; width: var(--w); height: 26px; border: 2px solid var(--color-ink); border-bottom: 0; border-radius: 4px 4px 0 0; transition: width var(--dur-short) var(--ease-out); }
+#ds-root .ds-bracket span { position: absolute; top: -2px; left: 8px; transform: translateY(-50%); background: var(--color-paper); padding: 0 6px; font: 700 var(--text-sm)/1 var(--font-body); color: var(--color-ink); white-space: nowrap; }
+#ds-root .ds-track { display: flex; height: 64px; border-radius: var(--radius-card); overflow: hidden; background: var(--color-paper); gap: 2px; }
+#ds-root .ds-seg { flex: 0 1 var(--w); min-width: 0; transition: flex-basis var(--dur-short) var(--ease-out); }
+#ds-root .ds-seg.is-aho { background: var(--ds-aho); min-width: 6px; }
+#ds-root .ds-seg.is-sub { background: var(--ds-sub); }
+#ds-root .ds-seg.is-cre { background: repeating-linear-gradient(135deg, var(--ds-cre) 0 10px, color-mix(in oklab, var(--color-field) 14%, var(--color-paper)) 10px 20px); }
+#ds-root .ds-eq > div { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+#ds-root .ds-eq dt { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-ink-2); }
+#ds-root .ds-eq dd { font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+#ds-root .ds-op { flex: none; display: inline-block; width: 0.9em; font-weight: 700; color: var(--color-muted); }
+#ds-root .ds-sw { flex: none; width: 14px; height: 14px; border-radius: 3px; }
+#ds-root .ds-sw.is-aho { background: var(--ds-aho); }
+#ds-root .ds-sw.is-sub { background: var(--ds-sub); }
+#ds-root .ds-sw.is-cre { background: var(--ds-cre); box-shadow: inset 0 0 0 1.5px var(--color-field); }
+#ds-root .ds-eq-total { border-bottom: 0 !important; border-top: var(--rule-bar) solid var(--color-ink); margin-top: -1px; }
+#ds-root .ds-eq-total dt { font-weight: 700; color: var(--color-ink); }
+#ds-root .ds-eq-total dd { color: var(--color-field-deep); font-size: var(--text-title); }
+#ds-root .ds-eq dd small { display: block; margin-top: 2px; font: 400 var(--text-sm)/1.3 var(--font-body); color: var(--color-muted); }
+#ds-root .ds-foot { margin-top: var(--space-md); font: 400 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
+
+/* ¿Puedes usar el DS19? · requisitos (patrón de FOGAES: título y botón a la izquierda, lista a la derecha) */
+#ds-root .ds-req { background: var(--color-paper-3); }
+#ds-root .ds-req .v-why-grid { grid-template-rows: auto 1fr; }
+#ds-root .ds-req .v-why-grid h2 { margin-bottom: var(--space-sm); }
+#ds-root .ds-req .v-well { grid-column: 2; grid-row: 1 / span 2; background: var(--color-paper); padding: var(--space-md) var(--space-lg); }
+#ds-root .ds-req .v-ruled > div { padding-block: var(--space-md); }
+#ds-root .ds-req .v-ruled dt { font-size: 1.0625rem; }
+#ds-root .ds-req-cta { grid-column: 1; grid-row: 2; align-self: start; }
+#ds-root .ds-req-note { margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); max-width: 40ch; }
+#ds-root .ds-req-note strong { color: var(--color-ink-2); }
+
+/* Cómo funciona (banda azul .v-road de la base) */
+#ds-root .v-road h2 { margin-bottom: var(--space-xs); max-width: 20ch; }
+#ds-root .v-road .lead { margin-bottom: var(--space-lg); max-width: 52ch; }
+#ds-root .v-stops { margin-bottom: var(--space-lg); }
+#ds-root .v-stop { padding-top: var(--space-lg); }
+#ds-root .v-stop h3 { margin-bottom: var(--space-xs); }
+
+/* Por qué conviene */
+#ds-root .ds-why h2 { margin-bottom: var(--space-lg); max-width: 24ch; }
+#ds-root .ds-table-wrap { border-top: var(--rule-bar) solid var(--color-field); }
+#ds-root .ds-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+#ds-root .ds-table th, #ds-root .ds-table td { padding: var(--space-md); text-align: left; vertical-align: top; border-bottom: var(--rule-hair) solid var(--color-rule); line-height: 1.45; }
+#ds-root .ds-table thead th { font: 700 0.9375rem/1.3 var(--font-body); color: var(--color-muted); }
+#ds-root .ds-table thead th.is-ds { color: var(--color-field-deep); font-size: 1.0625rem; }
+#ds-root .ds-table tbody th { font-weight: 700; color: var(--color-ink); width: 19%; }
+#ds-root .ds-table td { color: var(--color-ink-2); width: 27%; }
+#ds-root .ds-table .is-ds { background: var(--color-field-soft); }
+#ds-root .ds-table td.is-ds { color: var(--color-field-deep); font-weight: 700; }
+#ds-root .ds-reasons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg) var(--gap-columns); margin-top: var(--space-xl); }
+#ds-root .ds-reasons li { padding-top: var(--space-sm); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-ink-2); }
+#ds-root .ds-reasons strong { display: block; color: var(--color-ink); margin-bottom: 2px; }
+
+/* Qué es una mutuaria */
+#ds-root .ds-mut { background: var(--color-paper-3); }
+#ds-root .ds-mut .v-statement { margin-bottom: var(--space-xl); max-width: 26ch; }
+#ds-root .ds-facts3 { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-top: var(--space-md); }
+
+/* Preguntas frecuentes */
+#ds-root .ds-faq { background: var(--color-paper); }
+#ds-root .ds-faq .f4-acc-btn:hover { background: var(--color-paper-3); }
+#ds-root .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
+#ds-root .v-faq-grid h2 { margin-bottom: var(--space-sm); }
+
+/* Cierre */
+#ds-root .ds-close h2 { max-width: 18ch; margin-bottom: var(--space-sm); }
+#ds-root .ds-close-lead { color: var(--color-on-ink-2); font-size: var(--text-lead); max-width: 44ch; }
+#ds-root .ds-close .v-btn { box-shadow: var(--shadow-card); }
+#ds-root .ds-close-legal { margin-top: var(--space-xl); color: var(--color-on-ink-2); font-weight: 400; max-width: 72ch; }
+
+@media (max-width: 60rem) {
+  #ds-root { --section-gap: 48px; --section-gap-s: 48px; }
+  #ds-root .ds-hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  #ds-root .ds-req .v-well, #ds-root .ds-req-cta { grid-column: auto; grid-row: auto; }
+  #ds-root .ds-hero-photo { max-width: none; }
+  #ds-root .ds-pay { padding: var(--space-lg); }
+  #ds-root .ds-reasons, #ds-root .ds-facts3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Tabla en filas apiladas */
+  #ds-root .ds-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  #ds-root .ds-table, #ds-root .ds-table tbody, #ds-root .ds-table tr, #ds-root .ds-table th, #ds-root .ds-table td { display: block; width: auto !important; }
+  #ds-root .ds-table tr { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  #ds-root .ds-table tbody th { padding: 0 0 var(--space-xs); border: 0; font-size: 1.0625rem; }
+  #ds-root .ds-table td { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-sm); padding: var(--space-xs) var(--space-sm); border: 0; }
+  #ds-root .ds-table td::before { content: attr(data-l); font: 600 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
+  #ds-root .ds-table td.is-ds { border-radius: var(--radius-pill); }
+  #ds-root .ds-table td.is-ds::before { color: var(--color-field-deep); }
+}
+@media (max-width: 40rem) {
+  #ds-root .ds-reasons, #ds-root .ds-facts3 { grid-template-columns: minmax(0, 1fr); }
+  #ds-root .ds-track { height: 52px; }
+  #ds-root .ds-eq dd { font-size: 1.0625rem; }
+  #ds-root .ds-eq-total dd { font-size: var(--text-lg); }
+  #ds-root .ds-table td { grid-template-columns: 6.5rem minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ds-root .ds-seg, #ds-root .ds-bracket { transition: none; }
+}
+/* ===== fin Página Subsidio DS19 ===== */

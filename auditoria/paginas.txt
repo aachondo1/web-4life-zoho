@@ -1,0 +1,12 @@
+# Una ruta por línea (relativa a BASE_URL). Líneas con # se ignoran.
+/
+/simular
+/evaluacion
+/gracias
+/credito-hipotecario-tradicional
+/credito-hipotecario-fogaes
+/credito-hipotecario-segunda-vivienda-o-inversion
+/refinanciamiento-hipotecario
+/fines-generales
+/formulario-redec
+/licitaciones-y-llamados

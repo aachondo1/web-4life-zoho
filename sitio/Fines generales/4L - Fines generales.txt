@@ -1,0 +1,254 @@
+<!-- v2026.11.18 · Página Crédito hipotecario para fines generales (/fines-generales) · textos según brief SEO v1 (18-11). Un solo snippet de código. Estilos: bloque "Página Fines generales" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Formulario: pega la URL del iframe de Zoho Forms en FORM_URL (script al final). Sin cifras de monto, % de tasación, tipos de propiedad, tiempos ni detalle de costos. -->
+<div class="f4 f4v2" id="gf-root">
+
+<section class="gf-hero" aria-labelledby="gf-t-hero">
+  <div class="container gf-hero-grid">
+    <div class="gf-hero-text">
+      <h1 id="gf-t-hero">Crédito hipotecario para fines generales: dinero para tus proyectos</h1>
+      <p class="lead">Usa tu propiedad como garantía y obtén dinero de libre disposición para unir deudas, remodelar, emprender o lo que necesites. Sigues viviendo en tu casa y un ejecutivo de <strong>4Life Crédito Hipotecario</strong> revisa tu caso, sin compromiso.</p>
+      <ul class="gf-where" aria-label="¿Cómo está hoy tu propiedad?">
+        <li><a href="#gf-t-libre" data-track="fines_hero_libre"><i class="bi bi-house-check" aria-hidden="true"></i>Mi propiedad no tiene deuda</a></li>
+        <li><a href="#gf-t-pagando" data-track="fines_hero_pagando"><i class="bi bi-arrow-repeat" aria-hidden="true"></i>Estoy pagando un hipotecario</a></li>
+      </ul>
+      <figure class="v-photo gf-hero-photo"><img src="/gf-hero.jpg" alt="Una pareja pinta una pared de su casa" width="1400" height="700" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
+    </div>
+
+    <div class="gf-form" id="gf-form" tabindex="-1" aria-labelledby="gf-t-form">
+      <h2 id="gf-t-form">Revisa cuánto podrías obtener</h2>
+      <p class="gf-form-sub">Déjanos tus datos y un ejecutivo de 4Life revisa tu caso y te presenta una propuesta. Sin compromiso.</p>
+      <div class="gf-frame">
+        <iframe data-gf-frame title="Formulario de crédito para fines generales de 4Life Crédito Hipotecario" loading="eager" allow="clipboard-write" hidden></iframe>
+        <div class="gf-frame-wait" data-gf-wait>
+          <p><strong>Estamos actualizando este formulario.</strong></p>
+          <p class="small">Mientras tanto, puedes <a href="/simular?producto=tradicional&amp;origen=fines-generales" data-track="fines_form_simular">simular tu crédito</a> y un ejecutivo te contacta.</p>
+        </div>
+      </div>
+      <p class="gf-trust small"><i class="bi bi-shield-check" aria-hidden="true"></i>Respaldo del grupo 4Life Seguros</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec gf-what" aria-labelledby="gf-t-que">
+  <div class="container">
+    <div class="gf-head">
+      <h2 id="gf-t-que">Qué es un crédito hipotecario para fines generales</h2>
+      <p class="gf-body">Es un crédito en que tu propiedad queda como garantía y recibes dinero de libre disposición: tú decides en qué usarlo. Lo pagas en dividendos mensuales y sigues viviendo en tu propiedad como siempre. Puedes pedirlo si tu propiedad no tiene deuda o si todavía estás pagando un crédito hipotecario.</p>
+    </div>
+    <ul class="gf-facts">
+      <li><i class="bi bi-wallet2" aria-hidden="true"></i><div><h3>Libre disposición</h3><p>Tú decides en qué usar el dinero.</p></div></li>
+      <li><i class="bi bi-calendar3" aria-hidden="true"></i><div><h3>Hasta 40 años</h3><p>Con dividendo flexible. El plazo depende de tu edad.</p></div></li>
+      <li><i class="bi bi-house-door" aria-hidden="true"></i><div><h3>Propiedad a tu nombre</h3><p>Queda como garantía del crédito.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-sec gf-ways" aria-labelledby="gf-t-ways">
+  <div class="container">
+    <div class="gf-head">
+      <h2 id="gf-t-ways">Dos formas de obtener fondos con tu propiedad</h2>
+      <p class="lead">Tu propiedad respalda el crédito. La parte que ya es tuya es la que puede transformarse en dinero.</p>
+    </div>
+    <div class="gf-ways-grid">
+      <article class="gf-way" aria-labelledby="gf-t-libre">
+        <figure class="gf-eq" data-gf-eq>
+          <div class="gf-bar" role="img" aria-label="Propiedad sin deuda: una parte de su valor se transforma en tu crédito y en dinero para ti">
+            <span class="gf-seg is-own"></span>
+            <span class="gf-seg is-cash" style="--cash-l:0%; --cash-w:52%"></span>
+          </div>
+          <div class="gf-brace" style="--b-l:0%; --b-w:52%" aria-hidden="true"><span>Tu crédito</span></div>
+          <ul class="gf-key" aria-hidden="true">
+            <li><i class="is-cash"></i>Dinero para ti</li>
+            <li><i class="is-own"></i>Tu propiedad, sin deuda</li>
+          </ul>
+        </figure>
+        <h3 id="gf-t-libre" tabindex="-1">Tu propiedad no tiene deuda</h3>
+        <p>Dejas tu propiedad en garantía con un crédito hipotecario nuevo y recibes el dinero. Lo pagas en dividendos mensuales, a un plazo de hasta 40 años con dividendo flexible.</p>
+        <ul class="gf-ticks">
+          <li>Propiedad a tu nombre</li>
+          <li>El monto depende de la tasación</li>
+          <li>Sigues viviendo en ella</li>
+        </ul>
+        <a class="v-quiet" href="#gf-form" data-gf-go data-track="fines_camino_libre">Revisar mi propiedad</a>
+      </article>
+      <article class="gf-way" aria-labelledby="gf-t-pagando">
+        <figure class="gf-eq" data-gf-eq>
+          <div class="gf-bar" role="img" aria-label="Propiedad con crédito vigente: el nuevo crédito paga lo que debes y te entrega dinero de la parte que ya pagaste">
+            <span class="gf-seg is-own" style="--own-w:62%"></span>
+            <span class="gf-seg is-debt" style="--debt-w:38%"></span>
+            <span class="gf-seg is-cash" style="--cash-l:32%; --cash-w:30%"></span>
+          </div>
+          <div class="gf-brace" style="--b-l:32%; --b-w:68%" aria-hidden="true"><span>Tu nuevo crédito</span></div>
+          <ul class="gf-key" aria-hidden="true">
+            <li><i class="is-cash"></i>Dinero para ti</li>
+            <li><i class="is-own"></i>Lo que ya pagaste</li>
+            <li><i class="is-debt"></i>Lo que aún debes</li>
+          </ul>
+        </figure>
+        <h3 id="gf-t-pagando" tabindex="-1">Estás pagando un crédito hipotecario</h3>
+        <p>Refinanciamos tu crédito actual, pagamos la deuda anterior y te entregamos la diferencia. Quedas con un solo dividendo.</p>
+        <ul class="gf-ticks">
+          <li>Con 4Life o con otra institución</li>
+          <li>Un solo dividendo</li>
+          <li>Ves la propuesta antes de decidir</li>
+        </ul>
+        <a class="v-quiet" href="#gf-form" data-gf-go data-track="fines_camino_pagando">Revisar mi crédito</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec gf-uses" aria-labelledby="gf-t-uses">
+  <div class="container">
+    <div class="gf-head">
+      <h2 id="gf-t-uses">Tú decides en qué usarlo</h2>
+      <p class="lead">Es dinero de libre disposición. Estos son algunos de los proyectos que puedes financiar.</p>
+    </div>
+    <ul class="gf-uses-grid">
+      <li><figure class="v-photo"><img src="/gf-deudas.jpg" alt="Una mano sostiene una tarjeta de crédito frente a un computador" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></figure><h3>Unir tus deudas</h3><p>Junta créditos de consumo y tarjetas en un solo dividendo.</p></li>
+      <li><figure class="v-photo"><img src="/gf-remodelar.jpg" alt="Una pareja revisa el plano de la remodelación de su casa" width="900" height="675" loading="lazy" onerror="this.parentNode.remove()"></figure><h3>Remodelar o ampliar tu casa</h3><p>La cocina nueva, una pieza más o los arreglos que necesita.</p></li>
+      <li><figure class="v-photo"><img src="/gf-negocio.jpg" alt="Una persona revisa su celular junto a un computador portátil" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></figure><h3>Empezar tu negocio</h3><p>Capital para partir o hacer crecer un emprendimiento.</p></li>
+      <li><figure class="v-photo"><img src="/gf-familia.jpg" alt="Una joven con birrete se abraza con alguien el día de su titulación" width="900" height="675" loading="lazy" onerror="this.parentNode.remove()"></figure><h3>Pagar educación</h3><p>La universidad de tus hijos o tus propios estudios.</p></li>
+    </ul>
+    <p class="gf-more"><strong>¿Tienes otro proyecto?</strong> También puedes usarlo para eso. <a href="#gf-form" data-gf-go data-track="fines_otros">Cuéntanos tu caso</a></p>
+  </div>
+</section>
+
+<section class="v-sec gf-amount" aria-labelledby="gf-t-amount">
+  <div class="container v-why-grid">
+    <div>
+      <h2 id="gf-t-amount">¿Cuánto puedes obtener?</h2>
+      <p class="lead">Depende de cuatro cosas. Un ejecutivo revisa tu caso y te presenta una propuesta con el monto.</p>
+    </div>
+    <div class="v-well">
+      <dl class="v-ruled">
+        <div><dt>El valor de tu propiedad</dt><dd>Según la tasación que hacemos al evaluar tu crédito.</dd></div>
+        <div><dt>La deuda que tenga hoy</dt><dd>Si estás pagando un crédito hipotecario, el nuevo crédito lo paga primero.</dd></div>
+        <div><dt>Tus ingresos</dt><dd>El dividendo tiene que calzar con tu presupuesto.</dd></div>
+        <div><dt>Las políticas de crédito vigentes</dt><dd>Dependen del momento en que pides el crédito.</dd></div>
+      </dl>
+    </div>
+    <div class="gf-amount-side">
+      <a class="v-btn" href="#gf-form" data-gf-go data-track="fines_cuanto">Quiero mis fondos</a>
+      <p class="gf-note">La propuesta te muestra el monto, el dividendo, la tasa, el CAE y los costos, para que decidas con toda la información.</p>
+      <p class="gf-honest"><strong>Antes de decidir:</strong> tu propiedad queda en garantía del crédito. Revisa que el dividendo calce con tu presupuesto.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec gf-needs" aria-labelledby="gf-t-needs">
+  <div class="container">
+    <h2 id="gf-t-needs">Qué necesitas</h2>
+    <ul class="gf-needs-list">
+      <li><h3>Ser dueño de la propiedad</h3><p>Tener el dominio de la propiedad a tu nombre.</p></li>
+      <li><h3>Ingresos que respalden el dividendo</h3><p>Cada caso se evalúa según el origen de tus ingresos.</p></li>
+      <li><h3>Los antecedentes de tu caso</h3><p>Un ejecutivo te orienta sobre los documentos que necesitas de ti y de tu propiedad.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-road" aria-labelledby="gf-t-pasos">
+  <div class="container">
+    <h2 id="gf-t-pasos">Cómo obtener tus fondos con 4Life</h2>
+    <p class="lead">Ves la propuesta antes de decidir.</p>
+    <ol class="v-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Completa el formulario de esta página.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Evaluamos y tasamos</h3><p>Revisamos tu caso y tasamos tu propiedad.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Te presentamos una propuesta</h3><p>Con monto, dividendo, tasa, CAE y costos.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Firmas y recibes el dinero</h3><p>Nos encargamos del trámite de inscripción. Tú pagas los gastos y vas a firmar.</p></li>
+    </ol>
+    <a class="v-btn" href="#gf-form" data-gf-go data-track="fines_pasos">Quiero mis fondos</a>
+  </div>
+</section>
+
+<section class="v-sec v-faq" aria-labelledby="gf-t-faq">
+  <div class="container v-faq-grid">
+    <div><h2 id="gf-t-faq">Preguntas frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el crédito hipotecario para fines generales.</p></div>
+    <div>
+      <div class="f4-acc" data-gf-acc>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q1">¿Puedo usar el dinero en lo que quiera?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q1"><p>Sí. Es dinero de libre disposición: puedes unir deudas, remodelar, emprender, pagar educación u otros proyectos.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q2">¿Puedo pedirlo si todavía estoy pagando mi hipotecario?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q2"><p>Sí. Refinanciamos tu crédito actual, pagamos la deuda anterior y te entregamos la diferencia. Quedas con un solo dividendo.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q3">¿Cuánto dinero puedo obtener?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q3"><p>Depende del valor de tasación de tu propiedad, de la deuda que tenga, de tus ingresos y de las políticas de crédito vigentes. Un ejecutivo te presenta una propuesta con el monto.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q4">¿Sigo viviendo en mi propiedad?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q4"><p>Sí. La propiedad sigue siendo tuya y queda como garantía del crédito.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q5">¿La propiedad tiene que estar a mi nombre?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q5"><p>Sí. Debes ser el dueño y tener el dominio de la propiedad.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q6">¿Qué tipo de propiedad aceptan?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q6"><p>Depende de las políticas de crédito vigentes. Déjanos tus datos y un ejecutivo revisa tu caso.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q7">¿Qué pasa si no pago el dividendo?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q7"><p>Tu propiedad queda en garantía del crédito. Por eso es importante que el dividendo calce con tu presupuesto. Si tienes dificultades, conversa con tu ejecutivo.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q8">¿Dejar mis datos me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q8"><p>No. Un ejecutivo revisa tu caso y te presenta una propuesta. Tú decides si sigues.</p></div></div>
+        <div class="f4-acc-item"><h3 class="gf-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="gf-q9">¿Si hoy no califico, puedo volver a intentarlo?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="gf-q9"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
+      </div>
+      <ul class="gf-cross">
+        <li>¿Solo quieres mejorar tu dividendo o tu plazo? <a href="/refinanciamiento-hipotecario" data-track="fines_a_refinanciamiento">Mira refinanciamiento</a></li>
+        <li>¿Quieres comprar una propiedad? <a href="/credito-hipotecario-tradicional" data-track="fines_a_tradicional">Mira el crédito hipotecario tradicional</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="v-close gf-close" aria-labelledby="gf-t-cierre">
+  <div class="gf-close-photo"><img src="/gf-cierre.jpg" alt="Una persona firma los documentos de su crédito" width="800" height="800" loading="lazy" onerror="this.parentNode.remove()"></div>
+  <div class="container">
+    <div class="v-close-in">
+      <h2 id="gf-t-cierre">Tu próximo proyecto comienza aquí</h2>
+      <a class="v-btn" href="#gf-form" data-gf-go data-track="fines_cierre">Quiero mis fondos</a>
+    </div>
+    <p class="small gf-legal">Las condiciones son referenciales y están sujetas a evaluación crediticia, tasación y políticas de crédito vigentes. La solicitud de información no constituye una aprobación de crédito.</p>
+  </div>
+</section>
+
+<script>
+/* Formulario de Zoho Forms en iframe. Pega aquí la URL del iframe (Zoho Forms → Compartir → Insertar → iFrame, solo el valor de src). Vacío = se muestra el aviso con enlace al simulador. */
+(function () {
+  var FORM_URL = "";
+  var root = document.getElementById("gf-root");
+  if (!root || root.getAttribute("data-gf-ok")) return;
+  root.setAttribute("data-gf-ok", "1");
+  var frame = root.querySelector("[data-gf-frame]"), wait = root.querySelector("[data-gf-wait]"), box = root.querySelector("#gf-form");
+
+  /* Preguntas frecuentes: las respuestas vienen visibles en el HTML (para Google y para quien no tiene JavaScript) y se cierran aquí. Abrir y cerrar lo maneja el script global del acordeón. */
+  [].forEach.call(root.querySelectorAll("[data-gf-acc] .f4-acc-btn"), function (b) {
+    var p = document.getElementById(b.getAttribute("aria-controls"));
+    if (p && b.getAttribute("aria-expanded") !== "true") p.hidden = true;
+  });
+
+  /* UTM y clics de anuncios: los que guarda el script global (f4_utm) + los de esta URL. Viajan al formulario como parámetros; en Zoho Forms crea campos ocultos con estos mismos nombres. */
+  if (FORM_URL && frame) {
+    var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"], p = {}, q = new URLSearchParams(location.search);
+    try { p = JSON.parse(sessionStorage.getItem("f4_utm") || "{}"); } catch (e) {}
+    var u = new URL(FORM_URL);
+    keys.forEach(function (k) { var v = q.get(k) || p[k]; if (v) u.searchParams.set(k, v); });
+    u.searchParams.set("origen", "fines-generales");
+    frame.src = u.toString();
+    frame.hidden = false;
+    if (wait) wait.remove();
+    /* Alto automático: Zoho Forms avisa su alto con postMessage ("perma|alto" o "perma|alto|scroll") */
+    window.addEventListener("message", function (e) {
+      if (!/zoho|zohopublic/.test(e.origin) || typeof e.data !== "string") return;
+      var d = e.data.split("|"), h = parseInt(d[1], 10);
+      if (d.length >= 2 && h > 200) frame.style.height = (h + 16) + "px";
+    });
+  }
+
+  var quiet = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Botones "Quiero mis fondos": llevan al formulario y lo dejan con el foco */
+  [].forEach.call(root.querySelectorAll("[data-gf-go]"), function (a) {
+    a.addEventListener("click", function (e) {
+      if (!box) return;
+      e.preventDefault();
+      box.scrollIntoView({ behavior: quiet ? "auto" : "smooth", block: "start" });
+      box.focus({ preventScroll: true });
+      box.classList.remove("is-called"); void box.offsetWidth; box.classList.add("is-called");
+    });
+  });
+
+  /* Barras de "Dos formas": la parte coral (dinero para ti) crece una vez al aparecer. Sin JS o con menos movimiento, se ven completas. */
+  if (!quiet && "IntersectionObserver" in window) {
+    var bars = root.querySelectorAll("[data-gf-eq]");
+    [].forEach.call(bars, function (b) { b.classList.add("is-wait"); });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.remove("is-wait"); io.unobserve(en.target); } });
+    }, { threshold: 0.6 });
+    [].forEach.call(bars, function (b) { io.observe(b); });
+  }
+})();
+</script>
+</div>

@@ -1,0 +1,18 @@
+<!-- v2026.11.18 · Página "no encontrada" (/pagina-no-encontrada). Usar como página 404 si Zoho Sites lo permite; si no, sirve como destino de las redirecciones 301 de páginas antiguas sin equivalente. Estilos: bloque "Home v5" del CSS Personalizado -->
+<div class="f4 f4v2 f4h">
+<section class="v-sec h-404" aria-labelledby="h-t-404">
+  <div class="container">
+    <h1 id="h-t-404">No encontramos esta página</h1>
+    <p class="lead">Puede que se haya movido o que la dirección tenga un error. Estos caminos sí te llevan:</p>
+    <div class="v-actions">
+      <a class="v-btn" data-eval data-track="404_simular" href="/simular?origen=404">Simula tu crédito</a>
+      <a class="v-quiet" href="/" data-track="404_home">Ir al inicio</a>
+    </div>
+    <ul class="h-links h-404-links">
+      <li><a href="/credito-hipotecario-tradicional">Crédito hipotecario tradicional<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="/refinanciamiento-hipotecario">Refinanciamiento hipotecario<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="https://wa.me/56943802296" target="_blank" rel="noopener">Habla con un ejecutivo por WhatsApp<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</section>
+</div>

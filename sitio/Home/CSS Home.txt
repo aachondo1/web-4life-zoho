@@ -1,0 +1,92 @@
+/* v2026.11.18-3 */
+/* ===== 4Life · Home v5 — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Todo va acotado a .f4h: no cambia FOGAES, las otras páginas ni /simular ===== */
+/* Escala igual a FOGAES: secciones de 64 px, H1 ~44 px, títulos ~32 px */
+.f4h { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem; }
+.f4h .v-btn { min-height: 48px; padding: var(--space-sm) var(--space-lg); font-size: 1.0625rem; }
+.f4h .v-quiet { min-height: 48px; font-size: 1.0625rem; }
+.f4h .v-actions { gap: var(--space-lg); }
+
+/* Portada fija: titular + foto, y debajo la franja de respaldo */
+.f4h .h-hero { background: var(--color-field-soft); padding-block: var(--space-xl) var(--space-lg); }
+.f4h .h-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: center; }
+.f4h .h-hero h1 { max-width: 13ch; margin-bottom: var(--space-md); }
+.f4h .h-hero .lead { margin-bottom: var(--space-lg); max-width: 46ch; }
+.f4h .h-hint { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-muted); }
+.f4h .h-hero-photo { aspect-ratio: 5 / 4; }
+.f4h .h-hero-photo img { position: absolute; inset: 0; object-position: 40% 50%; }
+.f4h .h-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); margin-top: var(--space-xl); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-gold-2); }
+.f4h .h-proof li { display: flex; align-items: center; gap: var(--space-sm); font-size: 1rem; color: var(--color-ink-2); }
+.f4h .h-proof strong { color: var(--color-ink); font-weight: 600; }
+.f4h .h-proof .bi { flex: none; font-size: 1.25rem; color: var(--color-field); }
+
+/* ¿Qué quieres hacer? · las 4 familias en filas */
+.f4h .h-fam-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-xs) var(--space-xl); margin-bottom: var(--space-lg); }
+.f4h .h-fams { border-top: var(--rule-bar) solid var(--color-field); }
+.f4h .h-fam { display: grid; grid-template-columns: 200px minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-xl); align-items: center; padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.f4h .h-fam-photo { aspect-ratio: 4 / 3; }
+.f4h .h-fam-text h3 { margin-bottom: var(--space-xs); }
+.f4h .h-fam-text p { color: var(--color-ink-2); max-width: 40ch; }
+.f4h .h-links li + li { border-top: var(--rule-hair) solid var(--color-rule); }
+.f4h .h-links a { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); min-height: 48px; padding-block: var(--space-xs); font-weight: 600; color: var(--color-field); text-decoration: none; }
+.f4h .h-links a:hover { color: var(--color-field-deep); }
+.f4h .h-links a:active { color: var(--color-accent-deep); }
+.f4h .h-links .bi { flex: none; transition: transform var(--dur-short) var(--ease-out); }
+.f4h .h-links a:hover .bi, .f4h .h-links a:focus-visible .bi { transform: translateX(4px); }
+
+/* Así funciona: botón y nota de datos al pie */
+.f4h .v-road h2 { margin-bottom: var(--space-xs); }
+.f4h .v-road .lead { margin-bottom: var(--space-lg); }
+.f4h .v-stops { margin-bottom: var(--space-lg); }
+.f4h .v-stop { padding-top: var(--space-lg); }
+.f4h .v-stop h3 { margin-bottom: var(--space-xs); }
+.f4h .h-road-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-xl); }
+.f4h .h-privacy { max-width: 60ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
+.f4h .h-privacy a { color: var(--color-on-ink); }
+.f4h .h-privacy a:hover { color: var(--color-on-ink-2); }
+
+/* Quiénes somos: una frase grande y tres datos */
+.f4h .h-about { background: var(--color-paper-3); }
+.f4h .h-statement { font-size: var(--text-display-s); max-width: 26ch; margin-bottom: var(--space-xl); }
+.f4h .h-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); border-top: var(--rule-bar) solid var(--color-field); padding-top: var(--space-lg); }
+.f4h .h-facts h3 { margin-bottom: var(--space-xs); }
+.f4h .h-facts p { color: var(--color-ink-2); max-width: 46ch; }
+.f4h .h-facts strong { color: var(--color-ink); font-weight: 600; }
+.f4h .h-reg { margin-top: var(--space-lg); }
+
+/* Hablemos */
+.f4h .h-talk { background: var(--color-paper); }
+.f4h .h-talk-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
+.f4h .h-talk-photo { aspect-ratio: 4 / 3; }
+.f4h .h-talk h2 { margin-bottom: var(--space-xs); }
+.f4h .h-talk .lead { margin-bottom: var(--space-lg); }
+.f4h .v-contact { margin-bottom: 0; }
+.f4h .v-contact dd { font-size: 1.0625rem; }
+
+/* Cierre (4L - Global CTA con clase f4h) */
+.f4h .v-close h2 { max-width: 24ch; }
+
+/* Preguntas frecuentes */
+.f4h .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
+.f4h .v-faq-grid h2 { margin-bottom: var(--space-sm); }
+.f4h .h-faq-more { margin-top: var(--space-lg); font-weight: 600; }
+
+/* Página no encontrada */
+.f4h .h-404 h1 { max-width: 16ch; margin-bottom: var(--space-md); }
+.f4h .h-404 .lead { margin-bottom: var(--space-lg); }
+.f4h .h-404-links { max-width: 520px; margin-top: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+
+@media (max-width: 60rem) {
+  .f4h { --section-gap: 48px; --section-gap-s: 48px; }
+  .f4h .h-hero-grid, .f4h .h-talk-grid, .f4h .h-facts { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .f4h .h-hero-photo { aspect-ratio: 16 / 10; }
+  .f4h .h-proof { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); margin-top: var(--space-lg); }
+  .f4h .h-fam { grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-sm) var(--space-md); align-items: start; }
+  .f4h .h-fam .h-links { grid-column: 1 / -1; }
+  .f4h .h-fam-text h3 { font-size: 1.125rem; }
+  .f4h .h-fam-text p { font-size: 1rem; }
+  .f4h .h-talk-photo { aspect-ratio: 16 / 9; }
+}
+/* v2026.11.18-3 · auditoría: el ancla de "Mira cómo funciona" no queda bajo el encabezado fijo; fotos con ancho máximo en tablet para que no se vean borrosas */
+.f4h [id] { scroll-margin-top: 96px; }
+@media (max-width: 60rem) and (min-width: 40.01rem) { .f4h .h-hero-photo, .f4h .h-talk-photo { max-width: 560px; } }
+/* ===== fin Home v5 ===== */

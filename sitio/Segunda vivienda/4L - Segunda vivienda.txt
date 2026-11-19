@@ -1,0 +1,207 @@
+<!-- v2026.11.18-3 · Página Segunda vivienda o inversión (/credito-hipotecario-segunda-vivienda-o-inversion) · un solo snippet de código. Textos según brief SEO v2 (18-11; comercial confirmó otro crédito vigente y arriendo como ingreso): sin topes de monto ni % de financiamiento, sin rentabilidades ni subsidios, plazo "hasta 40 años con dividendo flexible". Estilos: bloque "Página Segunda vivienda" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Simula con el crédito tradicional; el pie mínimo viene del motor (/limites?producto=tradicional) y el texto trae el valor de respaldo (20%). -->
+<div class="f4 f4v2" id="sv-root">
+
+<section class="sv-hero" aria-labelledby="sv-t-hero">
+  <div class="container">
+    <div class="sv-hero-top">
+      <div>
+        <h1 id="sv-t-hero">Crédito hipotecario para tu segunda vivienda o inversión</h1>
+        <p class="lead">Compra una casa o un departamento, nuevo o usado, para tu familia o para arrendar. Simula en minutos y un ejecutivo de <strong>4Life Crédito Hipotecario</strong> revisa tu caso contigo. Plazo de hasta 40 años con dividendo flexible.</p>
+      </div>
+      <div class="sv-hero-acts">
+        <a class="v-btn" href="/simular?producto=tradicional&amp;origen=segunda-vivienda" data-track="segunda_hero">Simula tu crédito</a>
+        <p class="small">Respaldo del grupo 4Life Seguros</p>
+      </div>
+    </div>
+    <nav class="sv-doors" aria-label="Elige tu camino">
+      <a class="sv-door" href="#sv-t-familia" data-track="segunda_puerta_familia">
+        <img src="/sv-segunda.jpg" alt="Edificios y playa frente al mar, con cerros de fondo" width="1300" height="823" fetchpriority="high" onerror="this.remove()">
+        <span class="sv-door-txt">
+          <span class="sv-door-h">Una segunda vivienda</span>
+          <span class="sv-door-p">La casa de veraneo, el departamento de tus hijos o un lugar cerca de tus papás.</span>
+          <span class="sv-door-go">Para tu familia <i class="bi bi-arrow-down" aria-hidden="true"></i></span>
+        </span>
+      </a>
+      <a class="sv-door" href="#sv-t-arriendo" data-track="segunda_puerta_arriendo">
+        <img src="/sv-hero.jpg" alt="Edificios de departamentos al atardecer, con la cordillera de fondo" width="1300" height="823" onerror="this.remove()">
+        <span class="sv-door-txt">
+          <span class="sv-door-h">Una propiedad para arrendar</span>
+          <span class="sv-door-p">Compra un departamento o una casa con crédito hipotecario y arriéndalo.</span>
+          <span class="sv-door-go">Para invertir <i class="bi bi-arrow-down" aria-hidden="true"></i></span>
+        </span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<section class="v-sec sv-path sv-fam" id="sv-familia" aria-labelledby="sv-t-familia">
+  <div class="container sv-fam-grid">
+    <div class="sv-fam-txt">
+      <h2 id="sv-t-familia">Una segunda vivienda para tu familia</h2>
+      <p class="lead">Una casa de veraneo, un departamento para tus hijos o una vivienda cerca de tus padres. Las condiciones son las mismas del <a href="/credito-hipotecario-tradicional" data-track="segunda_familia_tradicional">crédito hipotecario tradicional</a>.</p>
+      <a class="v-quiet" href="/simular?producto=tradicional&amp;origen=segunda-vivienda" data-track="segunda_familia">Simula tu segunda vivienda</a>
+    </div>
+    <ul class="sv-usos">
+      <li><figure class="v-photo"><img src="/sv-uso-veraneo.jpg" alt="Una playa con casas en los cerros" width="480" height="360" loading="lazy" onerror="this.parentNode.remove()"></figure><p><strong>La casa de veraneo.</strong> En la playa, el campo o donde pasan las vacaciones.</p></li>
+      <li><figure class="v-photo"><img src="/sv-uso-hijos.jpg" alt="Una pareja joven se abraza con las llaves de su departamento" width="480" height="360" loading="lazy" onerror="this.parentNode.remove()"></figure><p><strong>El departamento de tus hijos.</strong> Cerca de la universidad o de su trabajo.</p></li>
+      <li><figure class="v-photo"><img src="/sv-uso-papas.jpg" alt="Dos personas revisan un folleto de 4Life Crédito Hipotecario" width="480" height="360" loading="lazy" onerror="this.parentNode.remove()"></figure><p><strong>Un lugar para tus papás.</strong> Cerca de ti, para acompañarlos.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-sec sv-path sv-inv" id="sv-arriendo" aria-labelledby="sv-t-arriendo">
+  <div class="container sv-path-grid">
+    <div>
+      <h2 id="sv-t-arriendo">Una propiedad para arrendar</h2>
+      <p class="lead">Con un crédito hipotecario de 4Life puedes comprar un departamento o una casa para arrendar. Tú eliges la propiedad, la arriendas y pagas el dividendo. El arriendo puede considerarse como ingreso en tu evaluación.</p>
+      <h3 class="sv-h3">Antes de invertir, haz tus números</h3>
+      <ul class="sv-check">
+        <li><strong>El dividendo es tuyo.</strong> Lo pagas cada mes, tengas o no arrendatario.</li>
+        <li><strong>Los gastos también.</strong> Gastos comunes, contribuciones, seguros y mantención.</li>
+        <li><strong>Los meses sin arriendo.</strong> Considera el tiempo entre un arrendatario y otro.</li>
+      </ul>
+      <p class="sv-decide">En 4Life te mostramos el dividendo; la decisión de inversión es tuya.</p>
+      <a class="v-quiet" href="/simular?producto=tradicional&amp;origen=inversion" data-track="segunda_arriendo">Simula tu inversión</a>
+    </div>
+    <figure class="v-photo sv-path-photo"><img src="/sv-arriendo.jpg" alt="La fachada de un edificio de departamentos con balcones" width="960" height="1200" loading="lazy" onerror="this.parentNode.remove()"></figure>
+  </div>
+</section>
+
+<section class="v-sec sv-pie" aria-labelledby="sv-t-pie">
+  <div class="container sv-pie-grid">
+    <div>
+      <h2 id="sv-t-pie">¿Cuánto pie necesitas?</h2>
+      <p class="lead">Para comprar con un crédito hipotecario de 4Life necesitas un pie propio de <span data-sv="pie">20</span>% del valor de la propiedad. Elige un valor y mira cómo se reparte.</p>
+      <figure class="v-photo sv-pie-photo"><img src="/sv-costa.jpg" alt="Edificios frente a la costa, entre palmeras" width="960" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    </div>
+    <div class="sv-calc" data-sv-calc>
+      <fieldset class="sv-chips">
+        <legend class="small">Valor de la propiedad</legend>
+        <label><input type="radio" name="sv-valor" value="2500"><span>UF 2.500</span></label>
+        <label><input type="radio" name="sv-valor" value="4000" checked><span>UF 4.000</span></label>
+        <label><input type="radio" name="sv-valor" value="6000"><span>UF 6.000</span></label>
+        <label><input type="radio" name="sv-valor" value="10000"><span>UF 10.000</span></label>
+      </fieldset>
+      <div class="sv-bar" aria-hidden="true">
+        <div class="sv-bar-pie" style="--p:.2"><span>Pie</span></div>
+        <div class="sv-bar-cred"><span>Crédito 4Life</span></div>
+      </div>
+      <dl class="sv-out" aria-live="polite">
+        <div class="is-pie"><dt>Tu pie</dt><dd>UF <span data-sv-out="pie">800</span></dd><dd class="sv-clp" data-sv-out="pie_clp" hidden></dd></div>
+        <div><dt>Crédito 4Life</dt><dd>UF <span data-sv-out="cred">3.200</span></dd><dd class="sv-clp" data-sv-out="cred_clp" hidden></dd></div>
+      </dl>
+      <p class="small sv-calc-note">Ejemplo referencial con un pie de <span data-sv="pie">20</span>%. Tu dividendo depende del plazo, la tasa y la evaluación de tu caso: lo ves en el simulador.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec fg-req sv-req" aria-labelledby="sv-t-req">
+  <div class="container v-why-grid">
+    <div>
+      <h2 id="sv-t-req">Qué necesitas</h2>
+      <p class="lead">Con estos datos a mano, el simulador te muestra tu dividendo.</p>
+    </div>
+    <div class="v-well">
+      <dl class="v-ruled">
+        <div><dt><span>Un pie propio de <span data-sv="pie">20</span>%</span></dt><dd>Con ahorro u otros recursos propios.</dd></div>
+        <div><dt>Ingresos que respalden el dividendo</dt><dd>Cada caso se evalúa según el origen de tus ingresos. Si ya tienes un crédito hipotecario, en 4Life o en otra institución, se considera en la evaluación. Si vas a arrendar, el arriendo también puede considerarse.</dd></div>
+        <div><dt>Casa o departamento</dt><dd>Nuevo o usado, en buenas condiciones.</dd></div>
+        <div><dt>Un plazo que te acomode</dt><dd>Hasta 40 años con dividendo flexible.</dd></div>
+        <div><dt>Evaluación y tasación</dt><dd>Un ejecutivo revisa tu caso y se tasa la propiedad.</dd></div>
+      </dl>
+    </div>
+    <div class="fg-req-cta">
+      <a class="v-btn" href="/simular?producto=tradicional&amp;origen=segunda-vivienda" data-track="segunda_requisitos">Simula tu crédito</a>
+    </div>
+  </div>
+</section>
+
+<section class="v-road" aria-labelledby="sv-t-pasos">
+  <div class="container">
+    <h2 id="sv-t-pasos">Cómo avanzar con 4Life</h2>
+    <p class="lead">Primero ves tus números y después decides si seguir.</p>
+    <ol class="v-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de la propiedad</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Ve tu dividendo</h3><p>Con tres escenarios de plazo, sin compromiso.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Revisamos tu caso</h3><p>Un ejecutivo de 4Life revisa contigo tus ingresos y tus compromisos.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Firmas</h3><p>Nos encargamos del trámite de inscripción. Tú pagas los gastos y vas a firmar.</p></li>
+    </ol>
+    <a class="v-btn" href="/simular?producto=tradicional&amp;origen=segunda-vivienda" data-track="segunda_pasos">Simula tu crédito</a>
+  </div>
+</section>
+
+<section class="v-sec v-faq" aria-labelledby="sv-t-faq">
+  <div class="container v-faq-grid">
+    <div><h2 id="sv-t-faq">Preguntas frecuentes</h2><p class="lead">Lo que más nos preguntan sobre segunda vivienda e inversión en 4Life.</p></div>
+    <div class="f4-acc">
+      <!-- [LEGAL] q4 (arriendo como ingreso): redacción por revisar con legal -->
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q1">¿Puedo tener dos créditos hipotecarios?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q1"><p>Sí. Puedes tener un crédito hipotecario vigente, en 4Life o en otra institución, y pedir este, si tus ingresos respaldan ambos dividendos. Cada caso se evalúa según tus ingresos y tus compromisos actuales.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q2">¿Puedo usar FOGAES para una segunda vivienda?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q2"><p>No. <a href="/credito-hipotecario-fogaes">FOGAES</a> es solo para la primera vivienda. Para una segunda propiedad aplica el <a href="/credito-hipotecario-tradicional">crédito hipotecario tradicional</a>.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q3">¿Sirve para una propiedad usada?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q3"><p>Sí. Puedes comprar una casa o un departamento, nuevo o usado, en buenas condiciones.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q4">¿Consideran el arriendo como ingreso?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q4"><p>Sí, el arriendo puede considerarse como ingreso en la evaluación. Cuánto se considera depende de las políticas de crédito vigentes y de tu caso. Un ejecutivo de 4Life te lo explica al revisar tus antecedentes.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q5">¿Me aseguran que el arriendo pague el dividendo?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q5"><p>No. El dividendo se paga aunque la propiedad esté sin arrendar. Antes de invertir, haz tus números con todos los gastos.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q6">¿Qué plazo puedo elegir?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q6"><p>Hasta 40 años con dividendo flexible. El plazo depende de tu edad. Un plazo más largo baja el dividendo mensual, pero en total pagas más intereses.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q7">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q7"><p>No. La simulación no constituye una solicitud de crédito ni una aprobación.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="sv-q8">¿Si hoy no califico, puedo volver a simular?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="sv-q8"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
+      <p class="sv-faq-mas">¿Ya tienes una propiedad y quieres usarla para obtener fondos? <a href="/fines-generales" data-track="segunda_faq_fines">Mira el crédito para fines generales</a></p>
+    </div>
+    <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
+  </div>
+</section>
+
+<section class="v-close fg-close sv-close" aria-labelledby="sv-t-cierre">
+  <div class="fg-close-photo"><img src="/sv-cierre.jpg" alt="Una persona firma los documentos de su crédito hipotecario" width="800" height="800" loading="lazy" onerror="this.parentNode.remove()"></div>
+  <div class="container">
+    <div class="v-close-in">
+      <h2 id="sv-t-cierre">Tu próxima propiedad comienza aquí</h2>
+      <a class="v-btn" href="/simular?producto=tradicional&amp;origen=segunda-vivienda" data-track="segunda_cierre">Simula tu crédito</a>
+    </div>
+    <!-- [LEGAL] aviso legal: redacción por revisar con legal -->
+    <p class="small fg-legal">Valores referenciales. La simulación no constituye una solicitud de crédito ni una aprobación, y está sujeta a evaluación crediticia, tasación y políticas de crédito vigentes. 4Life no garantiza ingresos por arriendo.</p>
+  </div>
+</section>
+
+<script>
+/* Pie mínimo del crédito tradicional desde el motor (el mismo que usa /simular). Si el motor no responde, queda el texto de respaldo (20%). El valor máximo solo sirve para esconder ejemplos que lo superen; no se muestra en la página. */
+(function () {
+  var root = document.getElementById("sv-root");
+  if (!root || root.getAttribute("data-sv-ok")) return;
+  root.setAttribute("data-sv-ok", "1");
+  var MOTOR = "https://motor4life-944155992.development.catalystserverless.com/server/motor_4life/";
+  var PIE = 0.20, VMAX = 30000, UF = 0;
+  function nro(x) { return typeof x === "number" && x > 0; }
+  function f0(n) { return Math.round(n).toLocaleString("es-CL"); }
+  function set(k, v) { [].forEach.call(root.querySelectorAll('[data-sv="' + k + '"]'), function (e) { e.textContent = v; }); }
+  function out(k) { return root.querySelector('[data-sv-out="' + k + '"]'); }
+  function mm(uf) { var m = uf * UF / 1e6; return "unos $" + m.toLocaleString("es-CL", { maximumFractionDigits: m < 10 ? 1 : 0 }) + " millones"; }
+
+  /* Calculadora del pie: valor elegido x pie mínimo */
+  function pintar() {
+    var r = root.querySelector('input[name="sv-valor"]:checked'); if (!r) return;
+    var v = +r.value, pie = v * PIE, cred = v - pie;
+    out("pie").textContent = f0(pie);
+    out("cred").textContent = f0(cred);
+    var bar = root.querySelector(".sv-bar-pie"); if (bar) bar.style.setProperty("--p", PIE);
+    [["pie_clp", pie], ["cred_clp", cred]].forEach(function (x) { var e = out(x[0]); if (e && UF) { e.textContent = mm(x[1]); e.hidden = false; } });
+  }
+  [].forEach.call(root.querySelectorAll('input[name="sv-valor"]'), function (i) { i.addEventListener("change", pintar); });
+  /* Valores por sobre el máximo del motor se esconden */
+  function topar() { [].forEach.call(root.querySelectorAll('input[name="sv-valor"]'), function (i) { if (+i.value > VMAX) i.parentNode.hidden = true; }); }
+
+  fetch(MOTOR + "limites?producto=tradicional").then(function (r) { return r.json(); }).then(function (j) {
+    ((j && j.limites && j.limites.campos) || []).forEach(function (c) {
+      if (c.id === "valor_uf" && nro(c.max)) VMAX = c.max;
+      if (c.id === "pie_uf" && c.min && nro(c.min.pct) && c.min.pct < 1) PIE = c.min.pct;
+    });
+    set("pie", f0(PIE * 100));
+    topar(); pintar();
+  }).catch(function () {});
+
+  /* Equivalencia en pesos con la UF del día desde el motor (GET /uf: CMF, con respaldo). Es la misma UF que usa /simular. Si el motor no responde o entrega su valor de respaldo, los pesos no se muestran. */
+  fetch(MOTOR + "uf").then(function (r) { return r.json(); }).then(function (j) {
+    if (j && nro(j.valor) && j.fuente !== "respaldo") { UF = j.valor; pintar(); }
+  }).catch(function () {});
+  pintar();
+})();
+</script>
+</div>

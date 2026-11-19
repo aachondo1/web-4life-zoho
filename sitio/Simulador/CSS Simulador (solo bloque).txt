@@ -1,0 +1,278 @@
+/* ===== Simulador 4Life (/simular) · v2026.11.18-5 · sistema .f4v2 (FOGAES): formulario + tarjeta en vivo. Reemplaza el bloque anterior del simulador completo ===== */
+#s4l-sim{--b:#295be9;--bd:#1b3fa6;--bs:#e8eefd;--bs2:#c9d6fa;--co:#cf3a38;--cod:#b32f2d;--ink:#1e1e1e;--ink2:#333;--mut:#5d5d5d;--ln:#e0e0e0;--lns:#8a8a8a;--p2:#f7f7f7;--p3:#f2f2f2;--err:#b3261e;--r:8px;--rb:6px;--sh:0 16px 48px rgba(30,30,30,.13);--ease:cubic-bezier(.16,1,.3,1);--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E");--fh:"Asap",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  max-width:1120px;margin:0 auto;padding:0 24px 72px;color:var(--ink2);font:400 17px/1.5 var(--fh);box-sizing:border-box;text-align:left;caret-color:var(--b);font-variant-numeric:tabular-nums}
+#s4l-sim *{box-sizing:border-box}
+/* El tema de Zoho pone display:flex a todos los botones sin alinear el texto: aquí se centra (las reglas propias de cada botón mandan) */
+#s4l-sim button{display:inline-flex;align-items:center;justify-content:center;text-transform:none;letter-spacing:normal}
+#s4l-sim [hidden]{display:none!important}
+#s4l-sim ::selection{background:var(--bs2);color:var(--ink)}
+#s4l-sim a{color:var(--b);text-underline-offset:3px}
+#s4l-sim h1,#s4l-sim h2,#s4l-sim h3{font-family:var(--fh);margin:0;color:var(--ink)}
+#s4l-sim :focus-visible{outline:2px solid var(--b);outline-offset:3px}
+#s4l-sim .s4-h1{font:700 clamp(28px,1.4vw + 14px,36px)/1.1 var(--fh);letter-spacing:-.01em;text-wrap:balance}
+#s4l-sim .s4-p{margin:0;color:var(--mut);font-size:17px}
+#s4l-sim .s4-head{display:flex;flex-direction:column;gap:6px}
+#s4l-sim .s4-main{display:flex;flex-direction:column;gap:20px;padding:20px 0 8px}
+#s4l-sim .s4-solo{width:100%;max-width:640px;margin-left:auto;margin-right:auto}
+#s4l-sim .s4-back{display:inline-flex;align-items:center;gap:6px;min-height:44px;align-self:flex-start;padding:0;border:0;background:none;font:600 15px/20px var(--fh);color:var(--b);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#s4l-sim .s4-back:hover{color:var(--bd)}
+/* Escritorio: "Cambiar crédito" va en la fila de los pasos, para que el paso 1 quepa sin scroll */
+@media (min-width:901px){#s4l-sim #s4-v1-prod{position:absolute;top:-56px;right:0;z-index:2}}
+
+/* dos columnas: formulario + tarjeta */
+#s4l-sim .s4-split{display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:28px 72px;align-items:start}
+#s4l-sim .s4-col{display:flex;flex-direction:column;gap:20px;min-width:0}
+#s4l-sim .s4-aside{position:sticky;top:88px;padding:24px 0}
+#s4l-sim .s4-aside .s4-nota{margin-top:16px}
+#s4l-sim .s4-split,#s4l-sim .s4-res3{position:relative;isolation:isolate;margin-top:12px;padding-top:0}
+#s4l-sim .s4-split::before,#s4l-sim .s4-res3::before{content:"";position:absolute;z-index:-1;top:0;bottom:-72px;left:calc(100% - 464px);right:-24px;background:var(--bs)}
+#s4l-sim .s4-split>.s4-col,#s4l-sim .s4-res3>.s4-rh{padding-top:16px}
+#s4l-sim .s4-split>.s4-aside,#s4l-sim .s4-res3>.s4-aside{margin:0 0 0 0}
+#s4l-sim .s4-tarj{display:flex;flex-direction:column;gap:12px;padding:22px 24px 20px;background:#fff;border-top:4px solid var(--co);border-radius:0 0 var(--r) var(--r);box-shadow:var(--sh)}
+#s4l-sim .s4-k{font:600 14px/1.3 var(--fh);color:var(--mut)}
+#s4l-sim .s4-cnum{display:flex;flex-direction:column;gap:2px}
+#s4l-sim .s4-cnum b{font:800 clamp(40px,2.6vw + 16px,54px)/.95 var(--fh);letter-spacing:-.035em;color:var(--b)}
+#s4l-sim .s4-cnum small{font-size:15px;color:var(--mut)}
+#s4l-sim .s4-vacia .s4-cnum b{color:#5b7fe8}
+#s4l-sim .s4-bar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:var(--b);margin-top:6px}
+#s4l-sim .s4-bar i{display:block;height:100%}
+#s4l-sim .s4-bar i:first-child{background:var(--co);transition:width .35s var(--ease)}
+#s4l-sim .s4-bar i:last-child{flex:1}
+#s4l-sim .s4-vacia .s4-bar{background:var(--p3)}
+#s4l-sim .s4-barl{display:flex;justify-content:space-between;gap:12px;font:700 13px/1.2 var(--fh);margin-top:-4px}
+#s4l-sim .s4-barl span:first-child{color:var(--cod)}
+#s4l-sim .s4-barl span:last-child{color:var(--bd)}
+#s4l-sim .s4-vacia .s4-barl span{color:var(--mut)}
+#s4l-sim .s4-dl{margin:4px 0 0;display:flex;flex-direction:column}
+#s4l-sim .s4-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:9px 0;border-top:1px solid var(--ln);font-size:15px}
+#s4l-sim .s4-row dt{color:var(--ink2);display:flex;flex-direction:column}
+#s4l-sim .s4-row dt small{font-size:13px;line-height:18px;color:var(--mut)}
+#s4l-sim .s4-row dd{margin:0;font-weight:700;color:var(--ink);white-space:nowrap;text-align:right}
+#s4l-sim .s4-row dd.s4-l{font-weight:400;color:var(--mut)}
+#s4l-sim #s4-acc1{margin-top:4px}
+#s4l-sim .s4-tarj>.s4-lnk{align-self:flex-start}
+
+/* progreso */
+#s4l-sim .s4-prog{padding-top:16px}
+#s4l-sim .s4-steps{display:flex;gap:28px;margin:0;padding:0;list-style:none;border-bottom:1px solid var(--ln)}
+#s4l-sim .s4-steps li{display:flex;align-items:center;gap:8px;padding:0 0 10px;margin-bottom:-1px;font-size:15px;color:var(--mut);border-bottom:3px solid transparent}
+#s4l-sim .s4-steps li b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--p3);font-size:13px;color:var(--ink2)}
+#s4l-sim .s4-steps li.cur{color:var(--ink);font-weight:700;border-bottom-color:var(--b)}
+#s4l-sim .s4-steps li.cur b{background:var(--b);color:#fff}
+#s4l-sim .s4-steps li.ok b{background:var(--bs);color:var(--bd)}
+#s4l-sim .s4-dsteps{display:flex;flex-direction:column;gap:10px}
+#s4l-sim .s4-pt{font:600 14px/1 var(--fh);color:var(--mut)}
+#s4l-sim .s4-segs{display:flex;gap:6px}
+#s4l-sim .s4-segs i{flex:1;height:6px;border-radius:3px;background:var(--p3)}
+#s4l-sim .s4-segs i.on{background:var(--b)}
+
+/* campos */
+#s4l-sim .s4-campo{display:flex;flex-direction:column;gap:8px}
+#s4l-sim .s4-campo>label,#s4l-sim .s4-lg{font-weight:700;color:var(--ink);padding:0;margin:0}
+#s4l-sim .s4-q{font:700 19px/1.3 var(--fh);color:var(--ink)}
+#s4l-sim .s4-qrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+#s4l-sim .s4-opc{font-weight:400;color:var(--mut)}
+#s4l-sim .s4-ayuda{font-size:14px;line-height:20px;color:var(--mut)}
+#s4l-sim .s4-ayuda.s4-s{font-size:13px;line-height:18px}
+#s4l-sim .s4-input{width:100%;height:52px;padding:6px 14px;border:1.5px solid var(--lns);border-radius:var(--rb);font:400 17px/24px var(--fh);color:var(--ink);background:#fff;transition:border-color .12s}
+#s4l-sim .s4-input::placeholder,#s4l-sim .s4-valbox input::placeholder,#s4l-sim .s4-tel input::placeholder{color:#767676}
+#s4l-sim .s4-input:hover{border-color:var(--ink2)}
+#s4l-sim .s4-input.s4-sm{height:48px}
+#s4l-sim .s4-input:focus,#s4l-sim .s4-valbox:focus-within,#s4l-sim .s4-tel:focus-within{outline:0;border-color:var(--b);box-shadow:0 0 0 3px var(--bs2)}
+#s4l-sim .s4-input[aria-invalid=true],#s4l-sim .s4-valbox:has(input[aria-invalid=true]){border-color:var(--err)}
+#s4l-sim .s4-input[readonly]{background:var(--p2);color:var(--mut)}
+#s4l-sim .s4-pre{background:#fff}
+#s4l-sim .s4-g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#s4l-sim .s4-g2b{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+#s4l-sim .s4-err{display:flex;gap:6px;color:var(--err);font-size:14px;line-height:20px;font-weight:600}
+#s4l-sim .s4-err:empty{display:none}
+#s4l-sim fieldset{margin:0;padding:0;border:0;min-width:0}
+#s4l-sim legend{padding:0;margin-bottom:12px;font-weight:700;color:var(--ink);font-size:18px}
+#s4l-sim .s4-trampa{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+
+/* valor y montos */
+#s4l-sim .s4-valrow{display:flex;gap:10px;align-items:stretch}
+#s4l-sim .s4-valbox{flex:1;display:flex;align-items:center;height:56px;border:1.5px solid var(--lns);border-radius:var(--rb);padding:0 16px;gap:10px;background:#fff;min-width:0;transition:border-color .12s,box-shadow .12s}
+#s4l-sim .s4-valbox:hover{border-color:var(--ink2)}
+#s4l-sim .s4-valbox span{font:600 22px/1 var(--fh);color:var(--mut)}
+#s4l-sim .s4-valbox input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;font:800 26px/1 var(--fh);letter-spacing:-.01em;color:var(--ink)}
+#s4l-sim .s4-mon{display:flex;gap:2px;padding:4px;background:var(--p3);border-radius:var(--rb);align-items:center}
+#s4l-sim .s4-mon button{min-width:48px;height:100%;min-height:44px;border:0;border-radius:4px;background:transparent;font:700 15px/1 var(--fh);color:var(--mut);cursor:pointer}
+#s4l-sim .s4-mon button:hover{color:var(--ink)}
+#s4l-sim .s4-mon button.on{background:#fff;box-shadow:0 1px 3px rgba(30,30,30,.18);color:var(--ink)}
+#s4l-sim .s4-badge{padding:4px 10px;border-radius:4px;background:var(--bs);font:700 13px/18px var(--fh);color:var(--bd);white-space:nowrap}
+#s4l-sim .s4-badge:empty{display:none}
+#s4l-sim .s4-chips4{display:flex;flex-wrap:wrap;gap:8px}
+#s4l-sim .s4-chip{height:44px;padding:0 18px;border:1.5px solid var(--ln);background:#fff;border-radius:22px;font:600 15px/1 var(--fh);color:var(--ink2);cursor:pointer;transition:border-color .12s,background .12s,color .12s}
+#s4l-sim .s4-chip:not(:disabled):hover{border-color:var(--b)}
+#s4l-sim .s4-chip.on{border-color:var(--b);background:var(--bs);color:var(--bd);font-weight:700}
+#s4l-sim .s4-chip:disabled{opacity:.45;cursor:default}
+#s4l-sim .s4-subbox{display:flex;flex-direction:column;gap:22px}
+#s4l-sim .s4-pietop{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:var(--rb);background:var(--p3)}
+#s4l-sim .s4-pieval{display:flex;align-items:baseline;gap:8px;min-width:0}
+#s4l-sim .s4-pieval span{font:800 26px/1.15 var(--fh);color:var(--ink)}
+#s4l-sim .s4-nota{margin:0;padding:14px 16px;border-radius:var(--rb);background:var(--p3);font-size:14px;line-height:21px;color:var(--ink2)}
+#s4l-sim .s4-nota strong{color:var(--ink)}
+#s4l-sim .s4-credito{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:var(--rb);background:var(--bs);color:var(--ink)}
+#s4l-sim .s4-credito small{display:block;font-size:13px;line-height:18px;color:var(--ink2)}
+#s4l-sim .s4-credito .s4-t{font-size:15px;line-height:21px}
+#s4l-sim .s4-credito .s4-t strong{color:var(--bd)}
+#s4l-sim .s4-credito b{font:800 22px/1.2 var(--fh);color:var(--bd)}
+
+/* opciones (radios con apariencia de botón) */
+#s4l-sim .s4-opts{display:grid;gap:10px}
+#s4l-sim .s4-opts.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+#s4l-sim .s4-opts.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+#s4l-sim .s4-opt{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:8px 12px;border:1.5px solid var(--ln);border-radius:var(--rb);background:#fff;font:600 16px/1.25 var(--fh);color:var(--ink);text-align:center;cursor:pointer;transition:border-color .12s,background .12s}
+#s4l-sim .s4-opts.c3 .s4-opt{font-size:15px}
+#s4l-sim .s4-opt:hover{border-color:var(--b)}
+#s4l-sim .s4-opt input{position:absolute;opacity:0;width:1px;height:1px}
+#s4l-sim .s4-opt.on{border-color:var(--b);box-shadow:inset 0 0 0 1px var(--b);background:var(--bs);color:var(--bd);font-weight:700}
+#s4l-sim .s4-opt:has(input:focus-visible){outline:2px solid var(--b);outline-offset:3px}
+#s4l-sim .s4-opt svg{width:30px;height:30px;color:var(--b);flex:none}
+#s4l-sim .s4-opts.tipo .s4-opt{flex-direction:column;gap:8px;padding:18px 8px}
+#s4l-sim .s4-opt.s4-sm{min-height:46px;font-size:15px}
+#s4l-sim .s4-opts.c3 .s4-opt.s4-sm{font-size:14px}
+#s4l-sim .s4-sub{display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:var(--r);background:var(--p3)}
+#s4l-sim .s4-sub .s4-campo>label,#s4l-sim .s4-sub legend,#s4l-sim .s4-sub .s4-lg15{font-size:16px}
+/* paso 0: productos como filas grandes */
+#s4l-sim .s4-prods{display:grid;gap:12px}
+#s4l-sim button.s4-opt{width:100%;justify-content:space-between;padding:20px 22px;text-align:left;font:inherit;color:var(--ink);background:#fff}
+#s4l-sim button.s4-opt::after,#s4l-sim .s4-legal summary::after{content:"";flex:none;width:18px;height:18px;background:var(--b);-webkit-mask:var(--chev) center/contain no-repeat;mask:var(--chev) center/contain no-repeat}
+#s4l-sim button.s4-opt span{font:700 18px/1.3 var(--fh)}
+#s4l-sim .s4-opt small{display:block;font:400 14px/1.4 var(--fh);color:var(--mut);margin-top:3px}
+#s4l-sim button.s4-opt.on small{color:var(--ink2)}
+
+/* consentimiento y texto legal */
+#s4l-sim .s4-legal{border:1px solid var(--ln);border-radius:var(--rb);font-size:14px;line-height:21px}
+#s4l-sim .s4-legal summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;list-style:none;cursor:pointer;padding:12px 16px;font-weight:700;color:var(--ink)}
+#s4l-sim .s4-legal summary::-webkit-details-marker{display:none}
+#s4l-sim .s4-legal summary::after{transform:rotate(90deg);transition:transform .2s var(--ease)}
+#s4l-sim .s4-legal[open] summary::after{transform:rotate(-90deg)}
+#s4l-sim .s4-legal .s4-txt{padding:0 16px 16px}
+#s4l-sim .s4-legal ol{padding-left:20px;margin:8px 0}
+#s4l-sim #s4-tyc-slot{font-size:14px;line-height:21px}
+#s4l-sim .s4-consent{display:flex;gap:12px;align-items:flex-start;padding:16px;border-radius:var(--rb);background:var(--p3);font-size:15px;line-height:22px;color:var(--ink2);cursor:pointer;border:1.5px solid transparent;transition:border-color .12s,background .12s}
+#s4l-sim .s4-consent:hover{border-color:var(--ln)}
+#s4l-sim .s4-consent:has(input:checked){background:var(--bs);border-color:var(--bs2)}
+#s4l-sim .s4-campo>label.s4-consent{padding:16px;font-weight:400;color:var(--ink2)}
+#s4l-sim .s4-consent input{width:22px;height:22px;margin:0;flex:none;accent-color:var(--b)}
+
+/* botones */
+#s4l-sim .s4-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:54px;padding:0 24px;border:0;border-radius:var(--rb);background:var(--co);color:#fff;font:700 18px/1 var(--fh);letter-spacing:0;text-transform:none;cursor:pointer;text-decoration:none;transition:background-color .12s var(--ease),transform .12s var(--ease)}
+#s4l-sim .s4-btn:hover{background:var(--cod);color:#fff}
+#s4l-sim .s4-btn:active{transform:translateY(1px)}
+#s4l-sim .s4-btn:disabled{background:var(--cod);opacity:.75;cursor:progress}
+#s4l-sim .s4-btn2{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:50px;padding:0 20px;border:1.5px solid var(--ink2);border-radius:var(--rb);background:#fff;color:var(--ink);font:700 16px/1 var(--fh);text-transform:none;letter-spacing:0;cursor:pointer;text-decoration:none;transition:background .12s,border-color .12s}
+#s4l-sim .s4-btn2:hover{background:var(--p3)}
+#s4l-sim .s4-lnk{display:inline-flex;align-items:center;padding:0;min-height:44px;border:0;background:none;font:700 15px/1 var(--fh);color:var(--b);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+#s4l-sim .s4-lnk:hover{color:var(--bd)}
+#s4l-sim .s4-pie2{display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;line-height:20px;color:var(--mut)}
+#s4l-sim .s4-acc{display:flex;flex-direction:column;gap:12px}
+
+/* resultado */
+#s4l-sim .s4-res3{display:grid;grid-template-columns:minmax(0,1fr) 440px;grid-template-areas:"rh aside" "rp aside";gap:28px 72px;align-items:start}
+#s4l-sim .s4-res3>.s4-rh{grid-area:rh;display:flex;flex-direction:column;gap:12px}
+#s4l-sim .s4-res3>.s4-aside{grid-area:aside}
+#s4l-sim .s4-res3>.s4-rp{grid-area:rp;display:flex;flex-direction:column;gap:24px;min-width:0}
+#s4l-sim .s4-h1:focus{outline:0}
+#s4l-sim .s4-resl{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
+#s4l-sim .s4-resl span{font-size:15px;line-height:21px;color:var(--mut)}
+#s4l-sim .s4-resl button{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0;border:0;background:none;font:700 15px/21px var(--fh);color:var(--b);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#s4l-sim .s4-req{margin:0;font-size:14px;line-height:20px;color:var(--ink2)}
+#s4l-sim .s4-dhead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--ln)}
+#s4l-sim .s4-logo{display:block;height:40px;width:auto;flex:none}
+#s4l-sim .s4-div .s4-big{display:flex;align-items:flex-start;font:800 clamp(56px,4vw + 16px,76px)/.85 var(--fh);letter-spacing:-.04em;color:var(--b);margin:6px 0 2px}
+#s4l-sim .s4-div .s4-cur{font-size:.5em;line-height:1;margin:.12em .06em 0 0;letter-spacing:0}
+#s4l-sim .s4-div .s4-u{font-size:16px;color:var(--ink2)}
+#s4l-sim .s4-plzt{display:flex;flex-direction:column;border-top:2px solid var(--b)}
+#s4l-sim .s4-pr{display:flex;align-items:center;gap:16px;padding:0 16px 0 0;border-bottom:1px solid var(--ln);transition:background .12s}
+#s4l-sim .s4-prl{flex:1;min-width:0;display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px 0 18px 16px;cursor:pointer}
+#s4l-sim .s4-prl input{position:absolute;opacity:0;width:1px;height:1px}
+#s4l-sim .s4-pr:has(input:focus-visible){outline:2px solid var(--b);outline-offset:-2px}
+#s4l-sim .s4-pr:hover{background:var(--p2)}
+#s4l-sim .s4-pr.on{background:var(--bs)}
+#s4l-sim .s4-rad{width:22px;height:22px;border-radius:50%;border:2px solid var(--lns);background:#fff}
+#s4l-sim .s4-pr.on .s4-rad{border:7px solid var(--b)}
+#s4l-sim .s4-pn{display:flex;flex-direction:column;font:700 18px/1.25 var(--fh);color:var(--ink)}
+#s4l-sim .s4-pn small{font:600 13px/1.3 var(--fh);color:var(--mut)}
+#s4l-sim .s4-pr.on .s4-pn small{color:var(--bd)}
+#s4l-sim .s4-pv{display:flex;flex-direction:column;align-items:flex-end}
+#s4l-sim .s4-pv b{font:800 22px/1.15 var(--fh);color:var(--ink)}
+#s4l-sim .s4-pr.on .s4-pv b{color:var(--bd)}
+#s4l-sim .s4-pv small{font-size:13px;color:var(--mut)}
+#s4l-sim .s4-pr .s4-lnk{padding:0 4px}
+#s4l-sim .s4-legalmini{margin:0;font-size:12px;line-height:18px;color:var(--mut)}
+
+/* ventana de detalle de un plazo */
+#s4l-sim .s4-dlg{width:calc(100% - 32px);max-width:520px;padding:0;border:0;background:transparent;color:var(--ink2)}
+#s4l-sim .s4-dlg::backdrop{background:rgba(30,30,30,.5)}
+#s4l-sim .s4-dlg .s4-card{display:flex;flex-direction:column;gap:8px;padding:22px 24px 24px;border-top:4px solid var(--co);border-radius:0 0 var(--r) var(--r);background:#fff;box-shadow:var(--sh)}
+#s4l-sim .s4-dlg .s4-resl{justify-content:space-between}
+#s4l-sim .s4-dlg .s4-resl strong{font:700 18px/1.3 var(--fh);color:var(--ink)}
+#s4l-sim .s4-dlg .s4-big{font:800 36px/1.1 var(--fh);letter-spacing:-.02em;color:var(--b)}
+#s4l-sim .s4-dlg .s4-u{font-size:15px}
+#s4l-sim .s4-dlg .s4-row{padding:9px 0}
+#s4l-sim .s4-dlg .s4-btn{margin-top:8px}
+#s4l-sim .s4-gh{display:flex;justify-content:space-between;gap:12px;font-weight:700;color:var(--ink)}
+#s4l-sim .s4-gi{display:flex;justify-content:space-between;gap:12px;padding:6px 0 0;font-size:14px;line-height:20px}
+
+/* detalle / contacto */
+#s4l-sim .s4-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding:12px 16px;border-radius:var(--rb);background:var(--bs);font-size:15px;line-height:21px;color:var(--ink)}
+#s4l-sim .s4-banner strong{color:var(--bd)}
+#s4l-sim .s4-banner button{min-height:44px;min-width:44px;padding:0;border:0;background:none;font:700 15px/20px var(--fh);color:var(--b);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#s4l-sim .s4-ac{position:relative}
+#s4l-sim .s4-ac svg{position:absolute;left:14px;top:17px;pointer-events:none;stroke:var(--mut)}
+#s4l-sim .s4-ac .s4-input{padding-left:44px}
+#s4l-sim .s4-lista{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:5;list-style:none;margin:0;padding:4px 0;background:#fff;border:1px solid var(--ln);border-radius:var(--rb);box-shadow:0 12px 32px rgba(30,30,30,.14);max-height:296px;overflow-y:auto}
+#s4l-sim .s4-lista li{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;cursor:pointer}
+#s4l-sim .s4-lista li .s4-rg{color:var(--mut);font-size:14px;white-space:nowrap}
+#s4l-sim .s4-lista li[aria-selected=true],#s4l-sim .s4-lista li:hover{background:var(--bs)}
+#s4l-sim .s4-lista .s4-vacio{color:var(--mut);cursor:default}
+#s4l-sim .s4-tel{display:flex;height:52px;border:1.5px solid var(--lns);border-radius:var(--rb);overflow:hidden;background:#fff}
+#s4l-sim .s4-tel span{display:flex;align-items:center;padding:0 14px;background:var(--p3);border-right:1px solid var(--ln);font-weight:700;color:var(--ink)}
+#s4l-sim .s4-tel input{flex:1;min-width:0;border:0;outline:0;padding:6px 14px;font:400 17px/24px var(--fh);color:var(--ink);background:#fff}
+#s4l-sim hr{width:100%;margin:2px 0;border:0;border-top:1px solid var(--ln)}
+
+/* paso 1 con subsidio: dos pantallas (la tarjeta queda siempre) */
+#s4l-sim #s4-f1.s4-sp1 #s4-subcampo,#s4l-sim #s4-f1.s4-sp1 .s4-nota,#s4l-sim #s4-f1.s4-sp2 #s4-tramo-f,#s4l-sim #s4-f1.s4-sp2 #s4-valor-campo{display:none!important}
+
+/* tablet y móvil: una columna, la tarjeta bajo los campos; en el resultado, la tarjeta va primero */
+@media (max-width:900px){
+  #s4l-sim .s4-split,#s4l-sim .s4-res3{grid-template-columns:minmax(0,1fr);grid-template-areas:"rh" "aside" "rp";max-width:640px;margin-left:auto;margin-right:auto}
+  #s4l-sim .s4-aside{position:static;padding:0;background:none}
+  #s4l-sim .s4-split::before,#s4l-sim .s4-res3::before{display:none}
+  #s4l-sim .s4-split>.s4-col,#s4l-sim .s4-res3>.s4-rh{padding-top:0}
+  #s4l-sim #s4-f1.s4-split{display:flex;flex-direction:column;align-items:stretch}
+  #s4l-sim #s4-f1.s4-split>*,#s4l-sim #s4-f1 .s4-col>*{min-width:0}
+  #s4l-sim #s4-f1 .s4-col{display:contents}
+  #s4l-sim #s4-f1 .s4-aside{order:1}
+  #s4l-sim #s4-acc1{order:2;margin-top:0}
+  #s4l-sim .s4-a2{display:none}
+  #s4l-sim .s4-prog{max-width:640px;margin:0 auto}
+}
+@media (max-width:520px){
+  #s4l-sim{padding:0 16px 56px;font-size:16px}
+  #s4l-sim .s4-main{padding-top:24px;gap:24px}
+  #s4l-sim .s4-steps{gap:14px}
+  #s4l-sim .s4-steps li{font-size:13px;gap:6px}
+  #s4l-sim .s4-steps li:not(.cur) span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  #s4l-sim .s4-tarj{padding:18px 18px 16px;gap:10px}
+  #s4l-sim #s4-tarj .s4-dl{display:none}
+  #s4l-sim #s4-tarj .s4-cnum b{font-size:40px}
+  #s4l-sim .s4-valbox{height:58px;padding:0 14px}
+  #s4l-sim .s4-valbox input{font-size:24px}
+  #s4l-sim .s4-chips4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  #s4l-sim .s4-chip{padding:0 10px}
+  #s4l-sim .s4-g2{grid-template-columns:minmax(0,1fr)}
+  #s4l-sim .s4-pr{flex-wrap:wrap;gap:0;padding:0 12px 6px 0}
+  #s4l-sim .s4-prl{flex-basis:100%;gap:12px;padding:16px 0 4px 12px}
+  #s4l-sim .s4-pr .s4-lnk{margin-left:46px}
+  #s4l-sim .s4-pv b{font-size:20px}
+  #s4l-sim .s4-opts.c3{grid-template-columns:minmax(0,1fr)}
+  #s4l-sim .s4-opts.c3.tipo,#s4l-sim .s4-opts.c2.tipo{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){#s4l-sim *{transition:none!important}}
+/* Encabezado mínimo en esta página: solo logo */
+body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4-burger,body:has(#s4l-sim) .f4-nav>.btn{display:none!important}
+/* ===== fin Simulador 4Life ===== */

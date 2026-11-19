@@ -1,0 +1,24 @@
+<!-- v2026.11.18 · 4Life · Al abrir una subpregunta (ej. DS1/DS19, codeudor, visa, FOGAES), la pantalla baja hasta ella,
+     pero solo si quedó tapada por el header o fuera de la pantalla. Pegar en /simular DESPUÉS del snippet "4L - Simulador". -->
+<script>
+(function () {
+  var root = document.getElementById("s4l-sim");
+  if (!root || !window.MutationObserver) return;
+  /* ARRIBA = espacio que deja bajo el header fijo del sitio (mide 76 px); súbelo si el header la tapa */
+  var ARRIBA = 96, ABAJO = 16;
+  var suave = !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  function mostrar(el) {
+    if (!el.offsetParent) return;   /* su paso está oculto */
+    var r = el.getBoundingClientRect(), alto = window.innerHeight;
+    if (r.top >= ARRIBA && r.bottom <= alto - ABAJO) return;   /* ya se ve completa: no mover la página */
+    /* Baja lo justo para que se vea entera; si es más alta que la pantalla, la deja arriba */
+    var dy = r.height > alto - ARRIBA - ABAJO || r.top < ARRIBA ? r.top - ARRIBA : r.bottom - (alto - ABAJO);
+    if (Math.abs(dy) > 8) window.scrollBy({ top: dy, behavior: suave ? "smooth" : "auto" });
+  }
+  new MutationObserver(function (ms) {
+    var el = null;   /* una sola vez por cambio: el simulador a veces oculta y muestra el mismo bloque seguido */
+    ms.forEach(function (m) { var t = m.target; if (t.classList && t.classList.contains("s4-sub") && !t.hidden) el = t; });
+    if (el) setTimeout(function () { mostrar(el); }, 30);
+  }).observe(root, { subtree: true, attributes: true, attributeFilter: ["hidden"] });
+})();
+</script>

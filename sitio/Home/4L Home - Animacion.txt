@@ -1,0 +1,67 @@
+<!-- v2026.11.18-3 · Animación del home. Snippet extra: va en la página de inicio, DESPUÉS de "4L Home" o de "4L Home sin subsidios" (sirve para los dos). No cambia textos ni diseño: si este snippet no está o falla, el home se ve completo y quieto.
+     1. Así funciona: al llegar a la sección, el camino se dibuja paso a paso (1 → 2 → 3 → 4) y cada punto se enciende cuando la línea lo alcanza. Una sola vez.
+     2. ¿Qué quieres hacer?: al pasar el mouse por una fila, su foto se acerca un poco dentro del marco (la fila no se mueve).
+     3. Preguntas frecuentes: la respuesta aparece con un fundido corto al abrirse.
+     Con "reducir movimiento" activado en el equipo: el camino aparece ya dibujado, sin desplazamientos. -->
+<style>
+/* Así funciona · estado final (es el diseño quieto, con o sin animación): línea azul claro, punto 1 coral y puntos 2 a 4 encendidos en blanco */
+.f4h .h-road .v-stop:not(:first-child)::before { background: var(--color-on-ink); border-color: var(--color-on-ink); }
+.f4h .h-road .v-stop::before { z-index: 1; }
+/* Animación: solo con la clase f4h-anim (la pone el script). Antes de llegar: línea atenuada, tramos en 0 y puntos 2 a 4 huecos */
+.f4h-anim .h-road .v-stops, .f4h-anim .h-road .v-stop { border-top-color: color-mix(in oklab, var(--color-on-ink) 28%, transparent); }
+.f4h-anim .h-road .v-stop::after { content: ""; position: absolute; top: -2px; left: 0; right: 0; height: 2px; background: var(--color-gold-2); transform: scaleX(0); transform-origin: left center; transition: transform 300ms cubic-bezier(0.65, 0, 0.35, 1); }
+@media (min-width: 72.01rem) { .f4h-anim .h-road .v-stop:not(:last-child)::after { right: calc(-1 * var(--gap-columns)); } }
+.f4h-anim .h-road:not(.is-drawn) .v-stop:not(:first-child)::before { background: var(--color-field); }
+.f4h-anim .h-road.is-drawn .v-stop::after { transform: scaleX(1); }
+.f4h-anim .h-road.is-drawn .v-stop::before { transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1); animation: h-dot 360ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+/* Orden: tramo 1 → punto 2 → tramo 2 → punto 3 → tramo 3 → punto 4 (el último tramo, corto, termina justo cuando se enciende), que cierra la secuencia (~1,3 s) */
+.f4h-anim .h-road .v-stop:nth-child(1)::after { transition-delay: 80ms; }
+.f4h-anim .h-road .v-stop:nth-child(2)::after { transition-delay: 380ms; }
+.f4h-anim .h-road .v-stop:nth-child(3)::after { transition-delay: 680ms; }
+.f4h-anim .h-road .v-stop:nth-child(4)::after { transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1) 830ms; }
+.f4h-anim .h-road.is-drawn .v-stop:nth-child(2)::before { transition-delay: 380ms; animation-delay: 380ms; }
+.f4h-anim .h-road.is-drawn .v-stop:nth-child(3)::before { transition-delay: 680ms; animation-delay: 680ms; }
+.f4h-anim .h-road.is-drawn .v-stop:nth-child(4)::before { transition-delay: 980ms; animation-delay: 980ms; }
+@keyframes h-dot { 0% { transform: scale(1); } 45% { transform: scale(1.35); } 100% { transform: scale(1); } }
+
+/* Filas de familias: la foto se acerca dentro de su marco; la fila queda quieta */
+.f4h .h-fam-photo img { transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1); }
+@media (hover: hover) { .f4h .h-fam:hover .h-fam-photo img, .f4h .h-fam:focus-within .h-fam-photo img { transform: scale(1.05); } }
+
+/* Preguntas: la respuesta entra con un fundido corto; al cerrar se va al instante */
+.f4h .f4-acc-panel:not([hidden]) > * { animation: h-open 260ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes h-open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* Menos movimiento: el camino no se anima (el script no lo activa); sin zoom; la respuesta solo aparece con un fundido */
+@media (prefers-reduced-motion: reduce) {
+  .f4h .h-fam-photo img { transition: none; transform: none !important; }
+  .f4h .f4-acc-panel:not([hidden]) > * { animation-name: h-fade; }
+  @keyframes h-fade { from { opacity: 0; } to { opacity: 1; } }
+}
+</style>
+<script>
+(function () {
+  var road = document.querySelector(".f4h .h-road");
+  if (!road || road.getAttribute("data-anim")) return;
+  road.setAttribute("data-anim", "1");
+  var root = road.closest(".f4h"), stops = road.querySelector(".v-stops");
+  /* Sin soporte o con "reducir movimiento": queda el diseño final, sin animar */
+  if (!stops || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  function decide() {
+    /* Se decide después de cargar (y de saltar a un #ancla): si la sección ya está a la vista, no se anima */
+    var r = stops.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) return;
+    root.classList.add("f4h-anim");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var h = e.rootBounds ? e.rootBounds.height : window.innerHeight;
+        if (e.isIntersecting && (e.intersectionRatio >= 0.5 || e.intersectionRect.height >= 0.5 * h)) { road.classList.add("is-drawn"); io.disconnect(); }
+      });
+    }, { threshold: [0, 0.25, 0.5, 1] });
+    io.observe(stops);
+  }
+  function later() { requestAnimationFrame(function () { requestAnimationFrame(decide); }); }
+  if (document.readyState === "complete") later(); else window.addEventListener("load", later);
+})();
+</script>

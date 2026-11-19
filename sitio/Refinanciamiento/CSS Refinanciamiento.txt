@@ -1,0 +1,125 @@
+/* v2026.11.18 */
+/* ===== 4Life · Página Refinanciamiento — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2). Todo va acotado a #rf-root: no toca otras páginas. ===== */
+
+/* Escala del home publicado (la misma de FOGAES) */
+#rf-root { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem; }
+#rf-root .v-btn { min-height: 48px; padding: var(--space-sm) var(--space-lg); font-size: 1.0625rem; }
+#rf-root .v-quiet { min-height: 48px; font-size: 1.0625rem; }
+#rf-root .v-well { padding: var(--space-md) var(--space-lg); }
+#rf-root .v-ruled > div { padding-block: var(--space-md); }
+#rf-root .v-ruled dt { font-size: 1.0625rem; }
+#rf-root .v-road h2 { margin-bottom: var(--space-xs); }
+#rf-root .v-road .lead { margin-bottom: var(--space-lg); }
+#rf-root .v-stops { margin-bottom: var(--space-lg); }
+#rf-root .v-stop { padding-top: var(--space-lg); }
+#rf-root .v-stop h3 { margin-bottom: var(--space-xs); }
+#rf-root .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
+#rf-root .v-faq-grid h2, #rf-root .v-why-grid h2 { margin-bottom: var(--space-sm); }
+
+/* Portada: promesa a la izquierda, formulario a la derecha */
+#rf-root .rf-hero { background: var(--color-field-soft); padding-block: var(--space-xl); }
+#rf-root .rf-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: start; }
+#rf-root .rf-hero-text { padding-top: var(--space-lg); }
+#rf-root .rf-hero h1 { max-width: 22ch; margin-bottom: var(--space-md); }
+#rf-root .rf-hero .lead { margin-bottom: var(--space-lg); max-width: 46ch; }
+#rf-root .rf-where { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+#rf-root .rf-where a { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; padding: var(--space-xs) var(--space-md); border: var(--rule-hair) solid color-mix(in oklab, var(--color-field) 35%, transparent); border-radius: 999px; background: var(--color-paper); color: var(--color-field-deep); font: 600 0.9375rem/1.2 var(--font-body); text-decoration: none; transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out); }
+#rf-root .rf-where a:hover { background: var(--color-field); border-color: var(--color-field); color: var(--color-on-ink); }
+#rf-root .rf-where .bi { font-size: 1.05em; color: var(--color-accent); transition: color var(--dur-micro) var(--ease-out); }
+#rf-root .rf-where a:hover .bi { color: var(--color-on-ink); }
+#rf-root .rf-hero-photo { aspect-ratio: 2 / 1; max-width: 620px; }
+#rf-root .rf-hero-photo img { position: absolute; inset: 0; object-position: 50% 50%; }
+
+/* Tarjeta del formulario: mismo lenguaje que la tarjeta del 10 % de FOGAES (blanca, filete coral, sombra) */
+#rf-root .rf-form { position: relative; background: var(--color-paper); border-radius: var(--radius-card); border-top: 4px solid var(--color-accent); box-shadow: var(--shadow-card); padding: var(--space-lg) var(--space-lg) var(--space-md); scroll-margin-top: 96px; outline: none; }
+#rf-root .rf-form h2 { font-size: 1.5rem; line-height: 1.15; max-width: none; margin-bottom: var(--space-xs); }
+#rf-root .rf-form-sub { color: var(--color-ink-2); margin-bottom: var(--space-md); max-width: 44ch; }
+#rf-root .rf-frame { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-sm); }
+#rf-root .rf-frame iframe { display: block; width: 100%; height: 600px; border: 0; background: var(--color-paper); }
+#rf-root .rf-frame iframe[hidden] { display: none; }
+#rf-root .rf-frame-wait { display: grid; align-content: center; gap: var(--space-xs); min-height: 420px; padding: var(--space-lg); border: 2px dashed color-mix(in oklab, var(--color-field) 40%, transparent); border-radius: var(--radius-card); background: var(--color-field-soft); color: var(--color-field-deep); text-align: center; }
+#rf-root .rf-frame-wait .small { color: var(--color-field-deep); font-weight: 400; }
+#rf-root .rf-frame-wait a { color: var(--color-field-deep); font-weight: 600; }
+/* Al llegar desde un botón: el filete coral se ilumina una vez para mostrar dónde está el formulario */
+#rf-root .rf-form.is-called { animation: rf-call 1.2s var(--ease-out); }
+@keyframes rf-call { 0% { box-shadow: var(--shadow-card), 0 0 0 0 color-mix(in oklab, var(--color-accent) 45%, transparent); } 40% { box-shadow: var(--shadow-card), 0 0 0 10px color-mix(in oklab, var(--color-accent) 0%, transparent); } 100% { box-shadow: var(--shadow-card); } }
+
+/* Qué es refinanciar: foto + definición; luego Qué puedes revisar: tres filas */
+#rf-root .rf-what-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: var(--space-2xl); align-items: start; }
+#rf-root .rf-what-photo { aspect-ratio: 4 / 5; max-width: 280px; }
+#rf-root .rf-what-text h2 { margin-bottom: var(--space-md); max-width: none; }
+#rf-root .rf-what .v-statement { font-size: var(--text-display-s); max-width: 34ch; margin-bottom: var(--space-md); color: var(--color-field-deep); }
+#rf-root .rf-body { color: var(--color-ink-2); max-width: 62ch; }
+#rf-root .rf-body strong { color: var(--color-ink); }
+#rf-root .rf-review { padding-top: 0; }
+#rf-root .rf-review h2 { margin-bottom: var(--space-lg); max-width: none; }
+#rf-root .rf-gains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--space-xl); border-top: var(--rule-bar) solid var(--color-field); }
+#rf-root .rf-gains li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-md); padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
+#rf-root .rf-gains .bi { font-size: 1.75rem; color: var(--color-accent); line-height: 1; margin-top: 2px; }
+#rf-root .rf-gains h3 { font-size: var(--text-title); margin-bottom: var(--space-2xs); }
+#rf-root .rf-gains p { color: var(--color-ink-2); max-width: 40ch; }
+#rf-root .rf-cross { margin-top: var(--space-lg); color: var(--color-ink-2); font-weight: 600; }
+
+/* Dos caminos: cliente 4Life / otra institución */
+#rf-root .rf-paths { background: var(--color-paper-3); }
+#rf-root .rf-paths-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: end; margin-bottom: var(--space-xl); }
+#rf-root .rf-paths-head .lead { max-width: 48ch; }
+#rf-root .rf-paths-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl); }
+#rf-root .rf-path { display: flex; flex-direction: column; background: var(--color-paper); border-radius: var(--radius-card); padding: var(--space-md) var(--space-md) var(--space-lg); }
+#rf-root .rf-path .v-photo { aspect-ratio: 3 / 2; margin-bottom: var(--space-lg); }
+#rf-root .rf-path .v-photo img { object-position: 50% 50%; }
+#rf-root .rf-path h3, #rf-root .rf-path > p, #rf-root .rf-ticks, #rf-root .rf-path .v-quiet { margin-inline: var(--space-sm); }
+#rf-root .rf-path h3 { font-size: 1.5rem; margin-bottom: var(--space-sm); outline: none; }
+#rf-root .rf-path > p { color: var(--color-ink-2); max-width: 52ch; margin-bottom: var(--space-md); }
+#rf-root .rf-path > p a { font-weight: 600; }
+#rf-root .rf-ticks { display: grid; gap: var(--space-xs); margin-bottom: var(--space-lg); }
+#rf-root .rf-ticks li { display: flex; gap: var(--space-sm); color: var(--color-ink); font-weight: 600; }
+#rf-root .rf-ticks li::before { content: "\F26A"; font-family: var(--font-icons); font-weight: 400; color: var(--color-accent); }
+#rf-root .rf-path .v-quiet { margin-top: auto; align-self: flex-start; }
+
+/* ¿Te conviene?: botón y la nota de costos bajo el título; la lista a la derecha */
+#rf-root .rf-when .v-why-grid { grid-template-rows: auto 1fr; }
+#rf-root .rf-when .v-well { grid-column: 2; grid-row: 1 / span 2; }
+#rf-root .rf-when-side { grid-column: 1; grid-row: 2; align-self: start; }
+#rf-root .rf-note { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-ink-2); max-width: 40ch; }
+
+/* Qué necesitas: tres columnas con filete azul, sobre gris */
+#rf-root .rf-needs { background: var(--color-paper-3); }
+#rf-root .rf-needs h2 { margin-bottom: var(--space-lg); max-width: none; }
+#rf-root .rf-needs-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xl); }
+#rf-root .rf-needs-list li { border-top: var(--rule-bar) solid var(--color-field); padding-top: var(--space-md); }
+#rf-root .rf-needs-list h3 { font-size: var(--text-title); margin-bottom: var(--space-xs); }
+#rf-root .rf-needs-list p { color: var(--color-ink-2); max-width: 42ch; }
+
+/* Preguntas frecuentes en H3 sin cambiar el aspecto de la fila */
+#rf-root .rf-faq-h { margin: 0; font: inherit; letter-spacing: normal; line-height: inherit; max-width: none; }
+
+/* Cierre: banda azul con foto difuminada a la derecha */
+#rf-root .rf-close { position: relative; overflow: hidden; }
+#rf-root .rf-close .container { position: relative; z-index: 1; }
+#rf-root .rf-close-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 46%; }
+#rf-root .rf-close-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; opacity: .9; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 55%); mask-image: linear-gradient(90deg, transparent 0%, #000 55%); }
+#rf-root .rf-close .v-close-in { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); align-items: start; }
+#rf-root .rf-close .v-btn { justify-self: start; box-shadow: var(--shadow-card); }
+#rf-root .rf-close .rf-legal { margin-top: var(--space-lg); color: var(--color-on-ink-2); font-weight: 400; max-width: 72ch; }
+
+@media (max-width: 60rem) {
+  #rf-root { --section-gap: 48px; --section-gap-s: 48px; }
+  #rf-root .rf-hero-grid, #rf-root .rf-what-grid, #rf-root .rf-paths-head, #rf-root .rf-paths-grid, #rf-root .rf-gains, #rf-root .rf-needs-list { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  #rf-root .rf-hero-text { padding-top: 0; }
+  #rf-root .rf-hero-photo { display: none; }
+  #rf-root .rf-what-photo { aspect-ratio: 16 / 9; max-width: none; }
+  #rf-root .rf-what-photo img { object-position: 50% 40%; }
+  #rf-root .rf-gains { gap: 0; }
+  #rf-root .rf-when .v-well, #rf-root .rf-when-side { grid-column: auto; grid-row: auto; }
+  #rf-root .rf-close-photo { width: 100%; }
+  #rf-root .rf-close-photo img { opacity: .28; -webkit-mask-image: none; mask-image: none; }
+  #rf-root .rf-form { scroll-margin-top: 72px; }
+}
+@media (max-width: 40rem) {
+  #rf-root .rf-where { flex-direction: column; align-items: stretch; }
+  #rf-root .rf-form { padding: var(--space-md); }
+  #rf-root .rf-frame iframe { height: 680px; }
+}
+@media (prefers-reduced-motion: reduce) { #rf-root .rf-form.is-called { animation: none; } }
+/* ===== fin Página Refinanciamiento ===== */

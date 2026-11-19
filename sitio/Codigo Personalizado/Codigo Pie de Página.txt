@@ -1,0 +1,190 @@
+<script>
+/* v2026.11.18-2 */
+/* 4Life Crédito Hipotecario · comportamiento del sitio
+   El header, el footer y el contenido son snippets de Zoho ("4L - …").
+   Este script solo agrega el comportamiento y los datos de contacto. */
+(function(){
+  /* ===== CONFIGURACIÓN: cambia aquí ===== */
+  var CFG = {
+    // Destino de los botones con data-eval: el simulador
+    EVAL_URL: "/simular",
+    EVAL_FALLBACK: "/simular",
+    WHATSAPP: "56943802296",   // sin +. Vacío = no se muestra el botón flotante
+    PHONE: "", EMAIL: "", ADDRESS: "Alonso de Córdova 4125, oficina 118, piso -1, Vitacura, Santiago",
+    SOCIAL: { instagram:"https://www.instagram.com/4lifehipotecario/", facebook:"https://www.facebook.com/profile.php?id=61567085345399", youtube:"https://www.youtube.com/@4LifeHipotecario", linkedin:"" }
+  };
+  window.F4CFG = CFG;
+
+  var $$=function(sel,ctx){ return [].slice.call((ctx||document).querySelectorAll(sel)); };
+  function ph(t){ return '<span class="f4-ph">['+t+']</span>'; }
+  function evalBase(){ return CFG.EVAL_URL || CFG.EVAL_FALLBACK; }
+
+  /* ----- UTM: se guardan al entrar y viajan con los botones de evaluación ----- */
+  var UTM_KEYS=["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","fbclid"];
+  function readUTM(){
+    var out={}, q=new URLSearchParams(location.search), stored={};
+    try{ stored=JSON.parse(sessionStorage.getItem("f4_utm")||"{}"); }catch(e){}
+    UTM_KEYS.forEach(function(k){ var v=q.get(k)||stored[k]; if(v) out[k]=v; });
+    try{ sessionStorage.setItem("f4_utm",JSON.stringify(out)); }catch(e){}
+    return out;
+  }
+  function evalHref(extra){
+    var u; try{ u=new URL(evalBase(), location.origin); }catch(e){ return evalBase(); }
+    var utm=readUTM(); Object.keys(utm).forEach(function(k){ u.searchParams.set(k,utm[k]); });
+    if(extra) Object.keys(extra).forEach(function(k){ u.searchParams.set(k,extra[k]); });
+    u.searchParams.set("origen", location.pathname==="/"?"home":location.pathname.replace(/^\//,""));
+    return u.toString();
+  }
+
+  /* ----- Slider accesible ----- */
+  function slider(root){
+    var slides=$$(".f4-slide",root); if(slides.length<2) return;
+    var dotsBox=root.querySelector(".f4-dots"), live=root.querySelector("[aria-live]");
+    var i=0, timer=null, userPaused=false, hovering=false, focused=false;
+    var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var pauseBtn=root.querySelector(".f4-pause");
+    slides.forEach(function(s,n){
+      var d=document.createElement("button"); d.type="button"; d.className="f4-dot";
+      d.setAttribute("aria-label","Ir a la diapositiva "+(n+1)+" de "+slides.length);
+      d.addEventListener("click",function(){ go(n); }); dotsBox.appendChild(d);
+    });
+    var dots=[].slice.call(dotsBox.children);
+    function go(n){
+      i=(n+slides.length)%slides.length;
+      slides.forEach(function(s,k){ var on=k===i; s.classList.toggle("is-active",on); s.setAttribute("aria-hidden",on?"false":"true");
+        $$("a,button",s).forEach(function(el){ el.tabIndex=on?0:-1; }); });
+      dots.forEach(function(d,k){ d.setAttribute("aria-current",k===i?"true":"false"); });
+      if(live) live.textContent="Diapositiva "+(i+1)+" de "+slides.length;
+    }
+    function tick(){ stop(); if(!document.body.contains(root)) return; if(!userPaused&&!hovering&&!focused&&!reduce) timer=setTimeout(function(){ go(i+1); tick(); },7000); }
+    function stop(){ if(timer) clearTimeout(timer); timer=null; }
+    root.querySelector(".f4-prev").addEventListener("click",function(){ go(i-1); tick(); });
+    root.querySelector(".f4-next").addEventListener("click",function(){ go(i+1); tick(); });
+    root.addEventListener("keydown",function(e){
+      if(e.key==="ArrowLeft"){ go(i-1); e.preventDefault(); } else if(e.key==="ArrowRight"){ go(i+1); e.preventDefault(); }
+    });
+    root.addEventListener("mouseenter",function(){ hovering=true; stop(); });
+    root.addEventListener("mouseleave",function(){ hovering=false; tick(); });
+    root.addEventListener("focusin",function(){ focused=true; stop(); });
+    root.addEventListener("focusout",function(e){ if(!root.contains(e.relatedTarget)){ focused=false; tick(); } });
+    if(pauseBtn){
+      if(reduce){ userPaused=true; }
+      var label=function(){ pauseBtn.textContent=userPaused?"Reanudar":"Pausar"; pauseBtn.setAttribute("aria-label",(userPaused?"Reanudar":"Pausar")+" el carrusel"); };
+      label(); pauseBtn.addEventListener("click",function(){ userPaused=!userPaused; label(); tick(); });
+    }
+    var x0=null;
+    root.addEventListener("touchstart",function(e){ x0=e.touches[0].clientX; },{passive:true});
+    root.addEventListener("touchend",function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>45){ go(dx<0?i+1:i-1); tick(); } x0=null; });
+    go(0); tick();
+  }
+
+  /* ----- Medición ----- */
+  function track(name,detail){
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push(Object.assign({event:name,page:location.pathname},detail||{}));
+    if(typeof window.gtag==="function") window.gtag("event",name,detail||{});
+  }
+
+  /* ----- Aplicación idempotente: Zoho cambia de página sin recargar (SPA),
+     así que esto se vuelve a correr cada vez que cambia el contenido. ----- */
+  function once(el,key){ if(el["__f4"+key]) return false; el["__f4"+key]=true; return true; }
+
+  function enhance(){
+    if(!document.querySelector(".f4")) return;
+
+    /* Oculta los bloques del tema de Zoho que quedan vacíos (en el editor no hay .f4, así que no se toca) */
+    $$(".zpelem-container").forEach(function(c){ c.style.display = c.querySelector(".f4") ? "" : "none"; });
+    var hz=document.querySelector(".zpheader-container"); if(hz && hz.querySelector(".f4-header")) hz.classList.add("f4-sticky");
+
+    /* Menú: marca la página actual (se recalcula en cada cambio de página) */
+    var path=location.pathname.replace(/\/$/,"")||"/";
+    $$(".f4-menu a").forEach(function(a){
+      if(a.getAttribute("href")===path) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+
+    /* Datos de contacto y redes desde CFG */
+    $$("[data-year]").forEach(function(e){ e.textContent=new Date().getFullYear(); });
+    $$("[data-cfg]").forEach(function(e){
+      if(!once(e,"cfg")) return;
+      var k=e.getAttribute("data-cfg"), v=CFG[k];
+      if(!v){ e.innerHTML=ph(e.getAttribute("data-label")||k); return; }
+      if(k==="PHONE") e.innerHTML='<a href="tel:'+v.replace(/\s/g,"")+'" data-track="tel">'+v+'</a>';
+      else if(k==="EMAIL") e.innerHTML='<a href="mailto:'+v+'">'+v+'</a>';
+      else if(k==="WHATSAPP") e.innerHTML='<a href="https://wa.me/'+v+'" target="_blank" rel="noopener" data-track="whatsapp">+'+v.replace(/^56(\d)(\d{4})(\d{4})$/,"56 $1 $2 $3")+'</a>';
+      else e.textContent=v;
+    });
+    $$("[data-social]").forEach(function(box){
+      if(!once(box,"social")) return;
+      var html=""; [["instagram","Instagram"],["facebook","Facebook"],["youtube","YouTube"],["linkedin","LinkedIn"]].forEach(function(r){
+        if(CFG.SOCIAL[r[0]]) html+='<a href="'+CFG.SOCIAL[r[0]]+'" aria-label="'+r[1]+'" target="_blank" rel="noopener"><i class="bi bi-'+r[0]+'"></i></a>';
+      });
+      box.innerHTML=html||ph("Redes sociales");
+    });
+    if(CFG.WHATSAPP && !document.querySelector(".f4-wa")){
+      document.body.insertAdjacentHTML("beforeend",'<div class="f4"><a class="f4-wa" href="https://wa.me/'+CFG.WHATSAPP+'" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-track="whatsapp_float"><i class="bi bi-whatsapp"></i></a></div>');
+    }
+
+    /* Botones de evaluación: URL + UTM + objetivo + página de origen (se recalcula siempre) */
+    $$("[data-eval]").forEach(function(a){ var obj=a.getAttribute("data-objetivo"); a.href=evalHref(obj?{objetivo:obj}:null); });
+
+    /* Menú móvil: se cierra al cambiar de página */
+    var burger=document.querySelector(".f4-burger"), menu=document.getElementById("f4-menu");
+    if(burger&&menu){
+      if(once(burger,"burger")){
+        burger.addEventListener("click",function(){
+          var m=document.getElementById("f4-menu"); var open=m.classList.toggle("open");
+          burger.setAttribute("aria-expanded",open?"true":"false");
+          burger.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú");
+        });
+      }
+      if(enhance.lastPath!==location.pathname && menu.classList.contains("open")){
+        menu.classList.remove("open"); burger.setAttribute("aria-expanded","false"); burger.setAttribute("aria-label","Abrir menú");
+      }
+    }
+    enhance.lastPath=location.pathname;
+
+    /* Slider y acordeón (cada elemento se inicializa una sola vez) */
+    $$(".f4-hero").forEach(function(h){ if(once(h,"slider")) slider(h); });
+    $$(".f4-acc-btn").forEach(function(b){
+      if(!once(b,"acc")) return;
+      /* v2026.11.18: las respuestas vienen visibles en el HTML; si el snippet no las plegó, se pliegan aquí */
+      var pnl=document.getElementById(b.getAttribute("aria-controls"));
+      if(pnl && !pnl.hasAttribute("data-f4-fold")){ pnl.setAttribute("data-f4-fold","1"); if(b.getAttribute("aria-expanded")!=="true") pnl.hidden=true; }
+      b.addEventListener("click",function(){
+        var open=b.getAttribute("aria-expanded")==="true";
+        b.setAttribute("aria-expanded",open?"false":"true");
+        document.getElementById(b.getAttribute("aria-controls")).hidden=open;
+      });
+    });
+  }
+
+  /* Listeners globales: una sola vez por visita */
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("[data-track]"); if(a) track("f4_click",{cta:a.getAttribute("data-track"),texto:a.textContent.trim()});
+  });
+  document.addEventListener("click",function(e){
+    $$(".f4-pay[open]").forEach(function(d){ if(!d.contains(e.target)) d.removeAttribute("open"); });
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape") $$(".f4-pay[open]").forEach(function(d){ d.removeAttribute("open"); });
+    var m=document.getElementById("f4-menu"), b=document.querySelector(".f4-burger");
+    if(e.key==="Escape"&&m&&b&&m.classList.contains("open")){ b.click(); b.focus(); }
+  });
+
+  /* Se vuelve a aplicar cuando Zoho inserta o reemplaza contenido */
+  var pending=null;
+  function schedule(){ if(pending) return; pending=setTimeout(function(){ pending=null; enhance(); },60); }
+  function boot(){
+    enhance();
+    new MutationObserver(function(muts){
+      for(var i=0;i<muts.length;i++){
+        var t=muts[i].target; if(t.closest && t.closest(".f4-dots,[aria-live]")) continue; /* cambios del propio slider */
+        schedule(); return;
+      }
+    }).observe(document.body,{childList:true,subtree:true});
+    window.addEventListener("popstate",schedule);
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
+})();
+</script>

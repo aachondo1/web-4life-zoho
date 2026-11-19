@@ -1,0 +1,200 @@
+<!-- v2026.11.18-2 · Página FOGAES (/credito-hipotecario-fogaes) · brief SEO v2.1 · un solo snippet de código. Estilos: bloque "Página FOGAES" al final del CSS Personalizado (incluye la base .f4v2). Las cifras vienen del motor (/limites); el texto trae valores de respaldo por si el motor no responde. -->
+<div class="f4 f4v2" id="fg-root">
+
+<section class="fg-hero" aria-labelledby="fg-t-hero">
+  <div class="container fg-hero-grid">
+    <div>
+      <h1 id="fg-t-hero"><span class="fg-h1-kw">Crédito hipotecario con FOGAES:</span> tu primera vivienda con menos pie</h1>
+      <p class="lead">En <strong>4Life Crédito Hipotecario</strong> financiamos hasta el <span data-fg="fin_fogaes">90</span>% de tu primera vivienda nueva con la garantía estatal FOGAES, según el programa vigente.</p>
+      <div class="v-actions">
+        <a class="v-btn" href="/simular?producto=fogaes&amp;origen=fogaes" data-track="fogaes_hero">Simula con FOGAES</a>
+        <a class="v-quiet" href="#fg-t-req" data-track="fogaes_hero_requisitos">¿Cumples los requisitos?</a>
+      </div>
+      <figure class="v-photo fg-hero-photo"><img src="/fogaes-hero.jpg" alt="Una pareja revisa los documentos de su crédito hipotecario" width="800" height="350" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
+    </div>
+    <figure class="fg-pie" aria-labelledby="fg-pie-cap">
+      <p class="small" id="fg-pie-cap">Con FOGAES en 4Life pagas solo</p>
+      <p class="fg-big"><span data-fg="pie_fogaes">10</span><span class="fg-pct">%</span><span class="fg-unit">de pie</span></p>
+      <p class="fg-vs">Financiamos hasta el <span class="fg-chip"><span data-fg="fin_fogaes">90</span>%</span> de tu vivienda.</p>
+      <div class="fg-cmpviz" role="img" aria-label="Ejemplo: para una vivienda de UF 3.000, el pie es UF 300 con FOGAES y UF 600 con crédito tradicional: UF 300 menos" data-fg-bars>
+        <p class="small">Pie para una vivienda de UF 3.000</p>
+        <div class="fg-cols" aria-hidden="true">
+          <div class="fg-col is-fogaes">
+            <b>UF <span data-fg="ej_fogaes">300</span></b>
+            <div class="fg-colbox"><div class="fg-ghost"><span>−UF <span data-fg="ej_dif">300</span></span></div><div class="fg-fill" style="--h:.5" data-fg-h></div></div>
+            <span class="fg-colname">Con FOGAES</span>
+          </div>
+          <div class="fg-col">
+            <b>UF <span data-fg="ej_trad">600</span></b>
+            <div class="fg-colbox"><div class="fg-fill" style="--h:1"></div></div>
+            <span class="fg-colname">Tradicional</span>
+          </div>
+        </div>
+        <p class="fg-save">Necesitas <strong>UF <span data-fg="ej_dif">300</span> menos</strong> de ahorro<span class="fg-clp" data-fg-clp hidden></span>.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="v-sec fg-what" aria-labelledby="fg-t-que">
+  <div class="container fg-what-grid">
+    <figure class="v-photo fg-what-photo"><img src="/fogaes-que-es.jpg" alt="Una clienta de 4Life muestra un folleto de crédito hipotecario" width="800" height="800" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <div class="fg-what-text">
+      <h2 id="fg-t-que" class="small">Qué es FOGAES</h2>
+      <p class="v-statement">Una garantía del Estado que respalda parte de tu crédito, para que necesites menos ahorro.</p>
+      <ul class="v-facts fg-facts3">
+        <li><strong>Desde <span data-fg="pie_fogaes">10</span>% de pie.</strong> Gracias a la garantía, en 4Life podemos financiar hasta el <span data-fg="fin_fogaes">90</span>% de tu primera vivienda nueva.</li>
+        <li><strong>Rebaja en la tasa.</strong> El programa incluye además una rebaja en la tasa de interés de tu crédito.</li>
+        <li><strong>Hasta 30 años.</strong> Con dividendo flexible, para que elijas el plazo que te acomoda.</li>
+      </ul>
+      <!-- [LEGAL] Bloque 3 del brief v2.1 -->
+      <p class="fg-note">No es un aporte en dinero: el crédito se paga completo. El programa tiene cupos y una vigencia definidos por ley; la disponibilidad se confirma en tu evaluación.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec fg-req" aria-labelledby="fg-t-req">
+  <div class="container v-why-grid">
+    <div>
+      <h2 id="fg-t-req">¿Puedes usar FOGAES?</h2>
+      <p class="lead">Si cumples estas condiciones, el simulador de 4Life te muestra tu dividendo con FOGAES.</p>
+    </div>
+    <div class="v-well">
+      <dl class="v-ruled">
+        <div><dt>Primera vivienda</dt><dd>Es la primera vivienda que compras.</dd></div>
+        <div><dt>Nueva, en primera venta</dt><dd>Casa o departamento nuevo, comprado en primera venta.</dd></div>
+        <div><dt><span>Hasta UF <span data-fg="valor_max">6.000</span></span></dt><dd>Valor máximo de la vivienda, según el programa vigente.</dd></div>
+        <div><dt><span>Pie desde <span data-fg="pie_fogaes">10</span>%</span></dt><dd>El pie es el monto que pagas con recursos propios.</dd></div>
+        <div><dt>Promesa desde 2025</dt><dd>La compraventa no viene de una promesa firmada antes del 31 de diciembre de 2024.</dd></div>
+        <div><dt>Ingresos</dt><dd>Que respalden el dividendo; cada caso se evalúa según el origen de tus ingresos.</dd></div>
+      </dl>
+    </div>
+    <div class="fg-req-cta">
+      <a class="v-btn" href="/simular?producto=fogaes&amp;origen=fogaes" data-track="fogaes_requisitos">Simula con FOGAES</a>
+      <p class="fg-alt">¿No calzas? <a href="/simular?producto=tradicional&amp;origen=fogaes" data-track="fogaes_req_tradicional">Simula un crédito tradicional</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec fg-cmp" aria-labelledby="fg-t-cmp">
+  <div class="container">
+    <h2 id="fg-t-cmp">FOGAES o crédito tradicional</h2>
+    <div class="fg-table-wrap">
+      <table class="fg-table">
+        <caption class="sr">Comparación entre crédito con FOGAES y crédito tradicional en 4Life</caption>
+        <thead><tr><th scope="col"><span class="sr">Condición</span></th><th scope="col" class="is-fogaes">4Life con FOGAES</th><th scope="col">4Life tradicional</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Pie mínimo</th><td class="is-fogaes"><span data-fg="pie_fogaes">10</span>%</td><td><span data-fg="pie_trad">20</span>%</td></tr>
+          <tr><th scope="row">Financiamiento</th><td class="is-fogaes">Hasta <span data-fg="fin_fogaes">90</span>%</td><td>Hasta <span data-fg="fin_trad">80</span>%</td></tr>
+          <tr><th scope="row">Plazo</th><td class="is-fogaes">Hasta 30 años, dividendo flexible</td><td>Hasta 40 años, dividendo flexible</td></tr>
+          <tr><th scope="row">Vivienda</th><td class="is-fogaes">Primera vivienda, nueva, en primera venta</td><td>Nueva o usada, primera o no</td></tr>
+          <tr><th scope="row">Valor de la vivienda</th><td class="is-fogaes">Hasta UF <span data-fg="valor_max">6.000</span> (programa)</td><td>Según evaluación</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fg-cmp-foot">
+      <p>Con menos pie, el crédito es mayor y el dividendo también. En el simulador de 4Life ves las dos alternativas lado a lado. ¿Quieres conocer el otro camino? Revisa el <a href="/credito-hipotecario-tradicional">crédito hipotecario tradicional</a>.</p>
+      <div class="fg-cmp-links">
+        <a class="v-quiet" href="/simular?producto=fogaes&amp;origen=fogaes" data-track="fogaes_comparar">Compara en el simulador</a>
+        <a class="v-quiet" href="/simular?producto=tradicional&amp;origen=fogaes" data-track="fogaes_tabla_tradicional">Simula un crédito tradicional</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v-road" aria-labelledby="fg-t-pasos">
+  <div class="container">
+    <h2 id="fg-t-pasos">Cómo avanzar con FOGAES</h2>
+    <p class="lead">En 4Life ves tus números primero y decides si seguir.</p>
+    <ol class="v-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de la vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Ve tu dividendo con FOGAES</h3><p>Y compáralo con el de un crédito tradicional.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Revisamos tu caso</h3><p>Un ejecutivo de 4Life revisa tu caso y la disponibilidad del programa.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Firmas</h3><p>Nos encargamos del trámite de inscripción. Tú pagas los gastos y vas a firmar.</p></li>
+    </ol>
+    <a class="v-btn" href="/simular?producto=fogaes&amp;origen=fogaes" data-track="fogaes_pasos">Simula con FOGAES</a>
+  </div>
+</section>
+
+<section class="v-sec v-faq" aria-labelledby="fg-t-faq">
+  <div class="container v-faq-grid">
+    <div><h2 id="fg-t-faq">Preguntas frecuentes</h2><p class="lead">Lo que más nos preguntan sobre FOGAES en 4Life.</p></div>
+    <div class="f4-acc">
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q1">¿FOGAES es un subsidio?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q1"><p>FOGAES es una garantía del Estado: no es un aporte en dinero y el crédito se paga completo. El programa sí incluye una rebaja en la tasa de interés de tu crédito.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q2">¿Por qué cambia mi dividendo?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q2"><p>Con menos pie, el monto del crédito es mayor, y por eso el dividendo también. El simulador te muestra la diferencia.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q3">¿Qué plazo puedo elegir?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q3"><p>Hasta 30 años con dividendo flexible. Un plazo más largo baja el dividendo mensual, pero en total pagas más intereses.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q4">¿Sirve para una vivienda usada?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q4"><p>No. FOGAES es solo para viviendas nuevas, compradas en primera venta. Para una vivienda usada, revisa el <a href="/credito-hipotecario-tradicional">crédito hipotecario tradicional</a>.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q5">¿Y si ya tengo una propiedad?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q5"><p>FOGAES es solo para tu primera vivienda. Si ya tienes una, revisa el <a href="/credito-hipotecario-tradicional">crédito tradicional</a> o el de <a href="/credito-hipotecario-segunda-vivienda-o-inversion">segunda vivienda</a>.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q6">¿Hay cupos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q6"><p>Sí. El programa tiene cupos y una vigencia definidos por ley. La disponibilidad se confirma en tu evaluación.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q7">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q7"><p>No. La simulación no constituye una solicitud de crédito ni una aprobación.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="fg-q8">¿Si hoy no califico, puedo volver a simular?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="fg-q8"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
+    </div>
+    <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
+  </div>
+</section>
+
+<section class="v-close fg-close" aria-labelledby="fg-t-cierre">
+  <div class="fg-close-photo" aria-hidden="true"><img src="/fogaes-cierre.jpg" alt="" width="800" height="800" loading="lazy" onerror="this.parentNode.remove()"></div>
+  <div class="container">
+    <div class="v-close-in">
+      <h2 id="fg-t-cierre">Tu nuevo hogar comienza aquí</h2>
+      <a class="v-btn" href="/simular?producto=fogaes&amp;origen=fogaes" data-track="fogaes_cierre">Simula con FOGAES</a>
+    </div>
+    <!-- [LEGAL] Bloque 8 del brief v2.1 -->
+    <p class="small fg-legal">La simulación no constituye una solicitud de crédito ni una aprobación. Es orientativa y está sujeta a evaluación crediticia, tasación, políticas de crédito vigentes y disponibilidad de cupos del programa FOGAES.</p>
+  </div>
+</section>
+
+<script>
+/* Cifras de FOGAES y del crédito tradicional desde el motor (mismos límites que usa /simular). Si el motor no responde, queda el texto de respaldo. */
+(function () {
+  var root = document.getElementById("fg-root");
+  if (!root || root.getAttribute("data-fg-ok")) return;
+  root.setAttribute("data-fg-ok", "1");
+  var MOTOR = "https://motor4life-944155992.development.catalystserverless.com/server/motor_4life/";
+  var EJEMPLO_UF = 3000;
+  function nro(x) { return typeof x === "number" && x > 0; }
+  function f0(n) { return Math.round(n).toLocaleString("es-CL"); }
+  function lim(id) {
+    return fetch(MOTOR + "limites?producto=" + id).then(function (r) { return r.json(); }).then(function (j) {
+      var L = {};
+      ((j && j.limites && j.limites.campos) || []).forEach(function (c) {
+        if (c.id === "valor_uf" && nro(c.max)) L.vmax = c.max;
+        if (c.id === "pie_uf" && c.min && nro(c.min.pct)) L.pie = c.min.pct;
+      });
+      return L;
+    });
+  }
+  function set(k, v) { [].forEach.call(root.querySelectorAll('[data-fg="' + k + '"]'), function (e) { e.textContent = v; }); }
+  Promise.all([lim("fogaes"), lim("tradicional")]).then(function (r) {
+    var F = r[0], T = r[1];
+    if (F.vmax) set("valor_max", f0(F.vmax));
+    if (F.pie && F.pie < 1) { set("pie_fogaes", f0(F.pie * 100)); set("fin_fogaes", f0(100 - F.pie * 100)); set("ej_fogaes", f0(EJEMPLO_UF * F.pie)); }
+    if (T.pie && T.pie < 1) { set("pie_trad", f0(T.pie * 100)); set("fin_trad", f0(100 - T.pie * 100)); set("ej_trad", f0(EJEMPLO_UF * T.pie)); }
+    var pf = F.pie || 0.10, pt = T.pie || 0.20;
+    pintar(pf, pt);
+  }).catch(function () {});
+  var DIF = EJEMPLO_UF * 0.10;
+  function pintar(pf, pt) {
+    DIF = EJEMPLO_UF * (pt - pf);
+    set("ej_dif", f0(DIF));
+    var h = root.querySelector("[data-fg-h]"), bars = root.querySelector("[data-fg-bars]");
+    if (h) h.style.setProperty("--h", pf / pt);
+    if (bars) bars.setAttribute("aria-label", "Ejemplo: para una vivienda de UF " + f0(EJEMPLO_UF) + ", el pie es UF " + f0(EJEMPLO_UF * pf) + " con FOGAES y UF " + f0(EJEMPLO_UF * pt) + " con crédito tradicional: UF " + f0(DIF) + " menos");
+    pesos();
+  }
+  /* Equivalencia en pesos con la UF del día desde el motor (GET /uf: CMF, con respaldo), la misma que usa /simular. Si no responde o es el valor de respaldo, no se muestra. */
+  var UF = 0;
+  function pesos() {
+    var e = root.querySelector("[data-fg-clp]");
+    if (!e || !UF || DIF <= 0) return;
+    var m = DIF * UF / 1e6;
+    e.textContent = ", unos $" + m.toLocaleString("es-CL", { maximumFractionDigits: m < 10 ? 1 : 0 }) + " millones";
+    e.hidden = false;
+  }
+  fetch(MOTOR + "uf").then(function (r) { return r.json(); }).then(function (j) {
+    if (j && nro(j.valor) && j.fuente !== "respaldo") { UF = j.valor; pesos(); }
+  }).catch(function () {});
+})();
+</script>
+</div>

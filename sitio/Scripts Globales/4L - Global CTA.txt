@@ -1,0 +1,2 @@
+<!-- v2026.11.18 · se agrega la clase f4h para que el cierre tenga la misma escala que el home v5 y FOGAES -->
+<div class="f4 f4v2 f4h"><section class="v-close" aria-labelledby="t-cierre"><div class="container v-close-in"><h2 id="t-cierre">Da el primer paso hacia tu nuevo hogar</h2><a class="v-btn" data-eval data-track="cta_final" href="/simular?origen=home">Simula tu crédito</a></div></section></div>

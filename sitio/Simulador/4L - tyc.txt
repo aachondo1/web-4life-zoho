@@ -1,0 +1,27 @@
+<!-- ============================================================
+     Snippet "4L - TyC datos" · texto legal del simulador
+     - Pegar en un snippet aparte en la página /simular (en cualquier lugar: queda oculto).
+     - El simulador lo mueve solo al paso 2 "Tus datos".
+     - Cada vez que Legal cambie el texto, SUBIR data-version (ej. 2026-12).
+       Esa versión queda registrada en el CRM junto al consentimiento.
+     - No cambiar el id "f4-tyc".
+     ============================================================ -->
+<div id="f4-tyc" data-version="2026-11" hidden>
+  <details class="s4-legal">
+    <summary>Cómo tratamos tus datos personales</summary>
+    <div class="s4-txt">
+      <p><strong>Responsable.</strong> 4 Life Crédito Hipotecario S.A., RUT 77.971.124-2, Alonso de Córdova 4125, oficina 118, Vitacura, Santiago.</p>
+      <p><strong>Qué datos.</strong> Los que ingreses en este simulador: nombre, RUT, edad, correo y teléfono; valor de la propiedad, pie, ahorro y subsidio; tipo, uso y comuna de la propiedad; nacionalidad; si tus ingresos alcanzan para el dividendo, y los datos de tu codeudor, si lo agregas. La información sobre tus ingresos, ahorro y pie es un dato sensible (situación socioeconómica), por eso te pedimos tu consentimiento expreso.</p>
+      <p><strong>Para qué.</strong></p>
+      <ol>
+        <li>Calcular tu simulación y revisar si tu caso puede seguir a una evaluación en línea. Ese resultado lo entrega un sistema automático y no aprueba ni rechaza tu crédito: si no puedes continuar en línea, puedes pedir que un ejecutivo revise tu caso.</li>
+        <li>Que un ejecutivo te contacte por correo, teléfono o WhatsApp sobre tu simulación y, si lo pides, evalúe tu solicitud de crédito.</li>
+        <li>Enviarte información y ofertas de 4Life sobre crédito hipotecario por correo, WhatsApp o teléfono. Puedes darte de baja cuando quieras desde el enlace de cada correo o escribiéndonos, sin que eso afecte tu simulación ni tu solicitud.</li>
+      </ol>
+      <p><strong>Con quién.</strong> Con Zoho (sitio y sistema de clientes) y Credibid (apoyo en la evaluación de tu solicitud), que tratan tus datos solo por encargo nuestro. Algunos de ellos guardan datos en servidores fuera de Chile, con las garantías que exige la ley. No vendemos tus datos.</p>
+      <p><strong>Por cuánto tiempo.</strong> 6 meses desde tu última simulación, salvo que contrates un crédito con nosotros.</p>
+      <p><strong>Tus derechos.</strong> Puedes retirar tus consentimientos y ejercer tus derechos de acceso, rectificación, supresión, oposición, portabilidad y bloqueo escribiendo a <a href="mailto:redec@4lifehipotecario.cl">redec@4lifehipotecario.cl</a>. Te responderemos en un máximo de 30 días corridos. También puedes reclamar ante la Agencia de Protección de Datos Personales.</p>
+      <p>Tratamos tus datos conforme a la Ley N° 19.628 sobre Protección de los Datos Personales, modificada por la Ley N° 21.719. Más información en nuestra <a href="/politica-privacidad" target="_blank" rel="noopener">Política de Privacidad</a>.</p>
+    </div>
+  </details>
+</div>

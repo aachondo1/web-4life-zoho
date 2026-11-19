@@ -1,0 +1,59 @@
+<!-- v2026.11.18-2 · Animaciones de la página Crédito hipotecario tradicional · snippet aparte: va ARRIBA del snippet "4L - Credito tradicional", en la misma página. Si algo falla, se borra este snippet y la página queda quieta y completa. Solo corre si el navegador no pide menos movimiento. -->
+<style>
+/* Se activa con la clase .ct-anim en <html>. Las entradas usan fill "backwards": al terminar sueltan la foto y el hover sigue funcionando. */
+@keyframes ct-enfoque { from { transform: scale(1.08); filter: blur(8px) saturate(.6); } to { transform: none; filter: none; } }
+@keyframes ct-aparece { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes ct-responde { from { clip-path: inset(0 100% 0 0); opacity: .4; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
+@keyframes ct-linea { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes ct-punto { 0% { transform: scale(.3); } 70% { transform: scale(1.25); } 100% { transform: scale(1); } }
+@keyframes ct-abre { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* Mosaico que responde: la foto se enfoca, aparece la pregunta y la respuesta se descubre; una foto tras otra */
+.ct-anim #ct-root .ct-q { --d: 0ms; }
+.ct-anim #ct-root .ct-q-b { --d: 120ms; }
+.ct-anim #ct-root .ct-q-c { --d: 240ms; }
+.ct-anim #ct-root .ct-q-d { --d: 360ms; }
+.ct-anim #ct-root .ct-q img { animation: ct-enfoque 900ms var(--ease-out) var(--d) backwards; }
+.ct-anim #ct-root .ct-q-ask { animation: ct-aparece 300ms var(--ease-out) calc(var(--d) + 150ms) backwards; }
+.ct-anim #ct-root .ct-q-ans { animation: ct-responde 600ms var(--ease-out) calc(var(--d) + 330ms) backwards; }
+.ct-anim #ct-root .ct-q-sub, .ct-anim #ct-root .ct-q-go { animation: ct-aparece 300ms var(--ease-out) calc(var(--d) + 600ms) backwards; }
+
+/* Camino de los pasos: una línea blanca recorre la vía y cada paso aparece cuando la línea llega */
+#ct-root .v-stops { position: relative; }
+.ct-anim #ct-root .v-stops { border-top-color: color-mix(in oklab, var(--color-on-ink) 28%, transparent); }
+.ct-anim #ct-root .v-stops::before { content: ""; position: absolute; left: 0; right: 0; top: -2px; height: 2px; background: var(--color-on-ink); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
+.ct-anim #ct-root .v-road.is-in .v-stops::before { animation: ct-linea 1200ms linear both; }
+.ct-anim #ct-root .v-road:not(.is-in) .v-stop { opacity: 0; }
+.ct-anim #ct-root .v-road.is-in .v-stop { animation: ct-aparece 400ms var(--ease-out) var(--d, 0ms) backwards; }
+.ct-anim #ct-root .v-road.is-in .v-stop::before { animation: ct-punto 400ms var(--ease-out) var(--d, 0ms) backwards; }
+.ct-anim #ct-root .v-stop:nth-child(2) { --d: 300ms; }
+.ct-anim #ct-root .v-stop:nth-child(3) { --d: 600ms; }
+.ct-anim #ct-root .v-stop:nth-child(4) { --d: 900ms; }
+
+/* Preguntas frecuentes: la respuesta se desliza al abrir (la flecha ya gira con la base) */
+#ct-root .f4-acc-panel:not([hidden]) { animation: ct-abre 220ms var(--ease-out); }
+
+@media (max-width: 60rem) {
+  .ct-anim #ct-root .v-stops::before { display: none; }
+  .ct-anim #ct-root .v-stops { border-top-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ct-root .f4-acc-panel:not([hidden]) { animation: ct-funde 160ms linear; }
+}
+@keyframes ct-funde { from { opacity: 0; } to { opacity: 1; } }
+</style>
+<script>
+(function () {
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("ct-anim");
+  /* Camino de los pasos: la línea se dibuja cuando la banda azul entra en pantalla */
+  function pasos() {
+    var road = document.querySelector("#ct-root .v-road");
+    if (!road) return;
+    if (!("IntersectionObserver" in window)) { road.classList.add("is-in"); return; }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { road.classList.add("is-in"); io.disconnect(); } }); }, { threshold: 0.35 });
+    io.observe(road);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", pasos); else pasos();
+})();
+</script>
