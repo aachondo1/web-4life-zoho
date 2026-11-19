@@ -1,4 +1,4 @@
-/* v2026.11.19-7 */
+/* v2026.11.19-8 */
 /* ===== 4Life · Página Crédito hipotecario tradicional — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Todo va acotado a #ct-root: no toca el home, /simular ni las otras páginas. */
 
@@ -154,6 +154,13 @@
 /* Dividendo flexible y costos (v2026.11.18-4): fondo blanco entre la banda azul y las preguntas; recuadro gris como en Qué necesitas */
 #ct-root .ct-costos .v-why-grid { align-items: start; }
 #ct-root .ct-costos .lead { max-width: 46ch; }
+/* Condiciones generales (v2026.11.19-8): lista corta en dos columnas al pie de Dividendo flexible y costos, viñetas Coral Punto */
+#ct-root .ct-cond { margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+#ct-root .ct-cond h3 { margin-bottom: var(--space-md); font-size: var(--text-title); color: var(--color-ink); }
+#ct-root .ct-cond ul { columns: 2; column-gap: var(--space-2xl); }
+#ct-root .ct-cond li { position: relative; break-inside: avoid; padding: 0 0 var(--space-sm) var(--space-lg); font-size: var(--text-sm); line-height: 1.5; color: var(--color-ink-2); }
+#ct-root .ct-cond li::before { content: ""; position: absolute; left: 2px; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--color-coral); }
+@media (max-width: 60rem) { #ct-root .ct-cond ul { columns: 1; } #ct-root .ct-cond { margin-top: var(--space-xl); } }
 /* Te acompañamos (v2026.11.19-5): frase destacada bajo la explicación del dividendo flexible */
 #ct-root .ct-acomp { max-width: 46ch; margin-top: var(--space-md); padding-left: var(--space-md); border-left: 4px solid var(--color-field); font: 700 var(--text-md)/1.45 var(--font-display); color: var(--color-ink); }
 #ct-root .ct-costos .v-well .small { margin-top: var(--space-md); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-weight: 400; color: var(--color-ink-2); max-width: 60ch; }

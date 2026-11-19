@@ -1,4 +1,4 @@
-<!-- v2026.11.19-7 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Portada al brandbook v3 (19-11): foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Texto alineado al brief v3 (18-11): 40 años con dividendo flexible, pie 20%, financiamiento hasta UF 30.000, sin comparaciones con bancos ni promesas de tiempo. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. El valor de financiamiento viene del motor (/limites?producto=tradicional); el texto trae valores de respaldo. -->
+<!-- v2026.11.19-8 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Portada al brandbook v3 (19-11): foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Texto alineado al brief v3 (18-11): hasta 40 años según edad, con dividendo flexible, pie 20%, financiamiento hasta UF 30.000, sin comparaciones con bancos ni promesas de tiempo. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. El valor de financiamiento viene del motor (/limites?producto=tradicional); el texto trae valores de respaldo. -->
 <div class="f4 f4v2" id="ct-root">
 
 <section class="ct-cover" aria-labelledby="ct-t-hero">
@@ -6,7 +6,7 @@
   <div class="container ct-cover-in">
     <div class="ct-cover-text">
       <h1 id="ct-t-hero">Crédito hipotecario tradicional para comprar tu casa o departamento</h1>
-      <p class="lead">Compra casa o departamento, nueva o usada, con <strong>4Life Crédito Hipotecario</strong>. Plazo de 40 años con dividendo flexible. Simula en minutos y un ejecutivo revisa tu caso contigo.</p>
+      <p class="lead">Compra casa o departamento, nueva o usada, con <strong>4Life Crédito Hipotecario</strong>. Plazo de hasta 40 años con dividendo flexible. Simula en minutos y un ejecutivo revisa tu caso contigo.</p>
       <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_hero">Simula tu crédito</a>
       <p class="small ct-cover-hint">Gratis y sin compromiso</p>
     </div>
@@ -95,8 +95,8 @@
       <dl class="v-ruled">
         <div><dt>Ingresos estables</dt><dd>Ingresos que se mantengan en el tiempo: te pedimos 24 meses de ingresos estables, por antigüedad o continuidad laboral. Para acreditar tu renta, con contrato, tus últimas 6 liquidaciones de sueldo; con boletas de honorarios, tu declaración de renta (F22).</dd></div>
         <div><dt>Acreditar tu pie</dt><dd>Demostrar que tienes acceso a los recursos para el pie. Pueden estar en una cuenta de ahorro, un fondo mutuo u otra inversión: no tienen que estar en tu cuenta corriente. El simulador te muestra el dividendo con tu pie.</dd></div>
-        <div><dt>Una propiedad en buenas condiciones</dt><dd>Casa o departamento, nuevo o usado. No importa la antigüedad de la propiedad, solo que esté en buen estado: queremos acompañarte los próximos 40 años.</dd></div>
-        <div><dt>Un plazo que te acomode</dt><dd>Hasta <span data-ct="plazo">40</span> años con dividendo flexible. Si hoy necesitas un dividendo más bajo, pagas el de 40 años; si mañana tus ingresos mejoran, puedes pagar más y terminar antes. Todo lo que adelantas va a capital, sin penalización por pagar más.<!-- [LEGAL] confirmar "sin penalización por pagar más" --></dd></div>
+        <div><dt>Una propiedad en buenas condiciones</dt><dd>Casa o departamento, nuevo o usado. No importa la antigüedad de la propiedad, solo que esté en buen estado: queremos acompañarte durante todo tu crédito.</dd></div>
+        <div><dt>Un plazo que te acomode</dt><dd>Hasta <span data-ct="plazo">40</span> años con dividendo flexible, según tu edad. Puedes pagar el dividendo base o uno mayor, y terminar antes. Todo lo que pagas de más va a capital, sin penalización por pagar más.<!-- [LEGAL] confirmar "sin penalización por pagar más" --></dd></div>
       </dl>
     </div>
     <div class="fg-req-cta">
@@ -131,18 +131,32 @@
   <div class="container v-why-grid">
     <div>
       <h2 id="ct-t-costos">Dividendo flexible y costos</h2>
-      <p class="lead">El crédito tiene un plazo de 40 años. Puedes pagar un dividendo mayor en cualquier momento, y toda la amortización va a capital. El dividendo y el plazo final se definen en tu propuesta.</p>
-      <p class="ct-acomp">Sabemos que hay meses buenos y meses difíciles. Cuando te va bien, adelantas y terminas antes; cuando te va menos bien, vuelves al dividendo a 40 años. Con el dividendo flexible te acompañamos en los dos casos.</p>
+      <p class="lead">El crédito es de hasta 40 años y su dividendo se adapta a ti: cada mes puedes pagar el dividendo base o uno mayor, equivalente a cualquier plazo entre 8 y 40 años. Todo lo que pagas de más va a capital.</p>
+      <p class="ct-acomp">Un dividendo que te acompaña durante toda la vida de tu crédito y se adapta a tu momento.</p>
     </div>
     <div class="v-well">
       <dl class="v-ruled">
         <div><dt>Financiamiento</dt><dd>Hasta UF <span data-ct="vmax">30.000</span>.</dd></div>
         <div><dt>Gastos operacionales</dt><dd>Los pagas tú. Si sobra dinero, se devuelve.</dd></div>
         <div><dt>Impuesto de timbres y estampillas</dt><dd>Se paga una sola vez.</dd></div>
-        <div><dt>Seguros</dt><dd>De desgravamen e incendio, obligatorios.</dd></div>
+        <div><dt>Seguros licitados</dt><dd>Los seguros de desgravamen e incendio son obligatorios. Los licitamos en un proceso abierto cada 2 años y se adjudican a la oferta de menor precio, lo que ayuda a que tu dividendo y tu carga anual equivalente (CAE) sean más bajos.<!-- [LEGAL] confirmar redacción de la licitación y el efecto en la CAE --></dd></div>
       </dl>
       <p class="small">Los gastos varían según la propiedad y el monto del crédito. Te los detallamos en tu propuesta.</p>
     </div>
+  </div>
+  <div class="container ct-cond">
+    <h3 id="ct-t-cond">Condiciones generales</h3>
+    <ul aria-labelledby="ct-t-cond">
+      <li>Plazo de hasta 40 años, según tu edad: el crédito debe terminar antes de que cumplas 80 años.</li>
+      <li>Dividendo flexible: puedes pagar el dividendo base o uno mayor, equivalente a un plazo de entre 8 y 40 años. Lo que pagas de más va a capital.</li>
+      <li>Ingresos estables durante los últimos 24 meses, por antigüedad o continuidad laboral, acreditados con liquidaciones de sueldo o declaración de renta (F22).</li>
+      <li>Pie acreditado con recursos propios, por ejemplo en una cuenta de ahorro o un fondo mutuo.</li>
+      <li>Casa o departamento, nuevo o usado, en buenas condiciones, sin importar su antigüedad.</li>
+      <li>Si tuviste moras, evaluamos tu caso siempre que hoy tu situación esté regularizada y tus compromisos al día.</li>
+      <li>Seguros de desgravamen e incendio obligatorios, licitados en un proceso abierto cada 2 años.</li>
+      <li>Gastos operacionales a cargo del cliente; si sobra dinero, se devuelve.</li>
+      <li>Todo crédito está sujeto a evaluación, tasación y políticas de crédito vigentes.</li>
+    </ul>
   </div>
 </section>
 
@@ -165,10 +179,10 @@
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q2">¿Me sirve si trabajo con boletas?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q2"><p>Sí. Evaluamos ingresos por contrato, boletas de honorarios e ingresos variables. Cada caso se revisa según el origen de tus ingresos, y un ejecutivo te indica qué antecedentes necesitas.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q10">¿Puedo pedir el crédito si alguna vez tuve moras?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q10"><p>Sí, podemos evaluarte. Si tu situación morosa ya está regularizada y hoy tienes tus compromisos financieros al día, revisamos tu caso completo. El resultado depende de la evaluación y de las políticas de crédito vigentes.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q3">¿Sirve para una propiedad usada?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q3"><p>Sí. Puedes comprar una casa o un departamento, nuevo o usado, en buenas condiciones.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q4">¿Qué plazo puedo elegir?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q4"><p>El crédito es a 40 años con dividendo flexible. Un plazo más largo baja tu dividendo mensual, pero en total pagas más intereses. En el simulador comparas tres escenarios de plazo.</p></div></div>
+      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q4">¿Qué plazo puedo elegir?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q4"><p>Hasta 40 años, según tu edad: el crédito debe terminar antes de que cumplas 80 años. Con el dividendo flexible puedes pagar cada mes un dividendo mayor, equivalente a un plazo más corto, y lo que pagas de más va a capital. Un plazo más largo baja tu dividendo mensual, pero en total pagas más intereses. En el simulador comparas tres escenarios de plazo.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q5">¿Cuánto financia el crédito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q5"><p>Hasta UF 30.000. El monto final depende de la evaluación de tu caso.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q6">¿Qué documentos necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q6"><p>Depende de tu caso. Como referencia, para acreditar tu renta, por contrato se piden las últimas 6 liquidaciones de sueldo, y por honorarios, la declaración de renta (F22). Además, pedimos 24 meses de ingresos estables, por antigüedad o continuidad laboral. Un ejecutivo te confirma la lista.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q7">¿Qué gastos tiene el crédito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q7"><p>Gastos operacionales (si sobra dinero, se devuelve), impuesto de timbres y estampillas (una sola vez) y seguros de desgravamen e incendio, que son obligatorios. Te los detallamos en tu propuesta.</p></div></div>
+      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q7">¿Qué gastos tiene el crédito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q7"><p>Gastos operacionales (si sobra dinero, se devuelve), impuesto de timbres y estampillas (una sola vez) y seguros de desgravamen e incendio, que son obligatorios y licitados cada 2 años. Te los detallamos en tu propuesta.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q8">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q8"><p>No. La simulación es gratuita y orientativa. No es una solicitud de crédito ni una aprobación.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q9">¿Si hoy no califico, puedo volver a simular?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q9"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
     </div>
