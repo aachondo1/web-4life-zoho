@@ -1,11 +1,9 @@
-<!-- v2026.11.19-2 · Animaciones de la página Crédito hipotecario tradicional · snippet aparte: va ARRIBA del snippet "4L - Credito tradicional", en la misma página. Si algo falla, se borra este snippet y la página queda quieta y completa. Solo corre si el navegador no pide menos movimiento. -->
+<!-- v2026.11.19-3 · Animaciones de la página Crédito hipotecario tradicional · snippet aparte: va ARRIBA del snippet "4L - Credito tradicional", en la misma página. Si algo falla, se borra este snippet y la página queda quieta y completa. Solo corre si el navegador no pide menos movimiento. -->
 <style>
 /* Se activa con la clase .ct-anim en <html>. Las entradas usan fill "backwards": al terminar sueltan la foto y el hover sigue funcionando. */
 @keyframes ct-enfoque { from { transform: scale(1.08); filter: blur(8px) saturate(.6); } to { transform: none; filter: none; } }
 @keyframes ct-aparece { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @keyframes ct-responde { from { clip-path: inset(0 100% 0 0); opacity: .4; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
-@keyframes ct-linea { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes ct-punto { 0% { transform: scale(.3); } 70% { transform: scale(1.25); } 100% { transform: scale(1); } }
 @keyframes ct-abre { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
 /* Mosaico que responde: la foto se enfoca, aparece la pregunta y la respuesta se descubre; una foto tras otra */
@@ -18,25 +16,27 @@
 .ct-anim #ct-root .ct-q-ans { animation: ct-responde 600ms var(--ease-out) calc(var(--d) + 330ms) backwards; }
 .ct-anim #ct-root .ct-q-sub, .ct-anim #ct-root .ct-q-go { animation: ct-aparece 300ms var(--ease-out) calc(var(--d) + 600ms) backwards; }
 
-/* Camino de los pasos: una línea blanca recorre la vía y cada paso aparece cuando la línea llega */
-#ct-root .v-stops { position: relative; }
-.ct-anim #ct-root .v-stops { border-top-color: color-mix(in oklab, var(--color-on-ink) 28%, transparent); }
-.ct-anim #ct-root .v-stops::before { content: ""; position: absolute; left: 0; right: 0; top: -2px; height: 2px; background: var(--color-on-ink); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
-.ct-anim #ct-root .v-road.is-in .v-stops::before { animation: ct-linea 1200ms linear both; }
-.ct-anim #ct-root .v-road:not(.is-in) .v-stop { opacity: 0; }
-.ct-anim #ct-root .v-road.is-in .v-stop { animation: ct-aparece 400ms var(--ease-out) var(--d, 0ms) backwards; }
-.ct-anim #ct-root .v-road.is-in .v-stop::before { animation: ct-punto 400ms var(--ease-out) var(--d, 0ms) backwards; }
-.ct-anim #ct-root .v-stop:nth-child(2) { --d: 300ms; }
-.ct-anim #ct-root .v-stop:nth-child(3) { --d: 600ms; }
-.ct-anim #ct-root .v-stop:nth-child(4) { --d: 900ms; }
+/* Así funciona (v2026.11.19-3): igual que en el home. Al llegar a la sección, el camino se llena hacia abajo, tramo a tramo, y cada punto se enciende cuando la línea lo alcanza. Una sola vez.
+   Solo con la clase ct-road-anim en #ct-root (la pone el script si la sección no está a la vista al cargar). */
+#ct-root.ct-road-anim .ct-road .v-stop:not(:last-child)::after { background-color: color-mix(in oklab, var(--color-on-ink) 28%, transparent); background-image: linear-gradient(var(--color-gold-2), var(--color-gold-2)); background-repeat: no-repeat; background-size: 100% 0%; transition: background-size 260ms cubic-bezier(0.65, 0, 0.35, 1); }
+#ct-root.ct-road-anim .ct-road.is-drawn .v-stop:not(:last-child)::after { background-size: 100% 100%; }
+#ct-root.ct-road-anim .ct-road:not(.is-drawn) .v-stop:not(:first-child)::before { background: var(--color-field); }
+#ct-root.ct-road-anim .ct-road.is-drawn .v-stop::before { transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1); animation: ct-dot 360ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+#ct-root.ct-road-anim .ct-road .v-stop:nth-child(1)::after { transition-delay: 80ms; }
+#ct-root.ct-road-anim .ct-road .v-stop:nth-child(2)::after { transition-delay: 340ms; }
+#ct-root.ct-road-anim .ct-road .v-stop:nth-child(3)::after { transition-delay: 600ms; }
+#ct-root.ct-road-anim .ct-road .v-stop:nth-child(4)::after { transition-delay: 860ms; }
+#ct-root.ct-road-anim .ct-road .v-stop:nth-child(5)::after { transition-delay: 1120ms; }
+#ct-root.ct-road-anim .ct-road.is-drawn .v-stop:nth-child(2)::before { transition-delay: 340ms; animation-delay: 340ms; }
+#ct-root.ct-road-anim .ct-road.is-drawn .v-stop:nth-child(3)::before { transition-delay: 600ms; animation-delay: 600ms; }
+#ct-root.ct-road-anim .ct-road.is-drawn .v-stop:nth-child(4)::before { transition-delay: 860ms; animation-delay: 860ms; }
+#ct-root.ct-road-anim .ct-road.is-drawn .v-stop:nth-child(5)::before { transition-delay: 1120ms; animation-delay: 1120ms; }
+#ct-root.ct-road-anim .ct-road.is-drawn .v-stop:nth-child(6)::before { transition-delay: 1380ms; animation-delay: 1380ms; }
+@keyframes ct-dot { 0% { transform: scale(1); } 45% { transform: scale(1.35); } 100% { transform: scale(1); } }
 
 /* Preguntas frecuentes: la respuesta se desliza al abrir (la flecha ya gira con la base) */
 #ct-root .f4-acc-panel:not([hidden]) { animation: ct-abre 220ms var(--ease-out); }
 
-@media (max-width: 60rem) {
-  .ct-anim #ct-root .v-stops::before { display: none; }
-  .ct-anim #ct-root .v-stops { border-top-color: transparent; }
-}
 @media (prefers-reduced-motion: reduce) {
   #ct-root .f4-acc-panel:not([hidden]) { animation: ct-funde 160ms linear; }
 }
@@ -46,14 +46,23 @@
 (function () {
   if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   document.documentElement.classList.add("ct-anim");
-  /* Camino de los pasos: la línea se dibuja cuando la banda azul entra en pantalla */
+  /* Así funciona: se decide después de cargar (y de saltar a un #ancla); si la sección ya está a la vista, queda quieta */
   function pasos() {
-    var road = document.querySelector("#ct-root .v-road");
-    if (!road) return;
-    if (!("IntersectionObserver" in window)) { road.classList.add("is-in"); return; }
-    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { road.classList.add("is-in"); io.disconnect(); } }); }, { threshold: 0.35 });
-    io.observe(road);
+    var root = document.getElementById("ct-root"), road = root && root.querySelector(".ct-road"), stops = road && road.querySelector(".v-stops");
+    if (!stops || !("IntersectionObserver" in window) || road.getAttribute("data-anim")) return;
+    road.setAttribute("data-anim", "1");
+    var r = stops.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) return;
+    root.classList.add("ct-road-anim");
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        var h = e.rootBounds ? e.rootBounds.height : window.innerHeight;
+        if (e.isIntersecting && (e.intersectionRatio >= 0.5 || e.intersectionRect.height >= 0.5 * h)) { road.classList.add("is-drawn"); io.disconnect(); }
+      });
+    }, { threshold: [0, 0.25, 0.5, 1] });
+    io.observe(stops);
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", pasos); else pasos();
+  function later() { requestAnimationFrame(function () { requestAnimationFrame(pasos); }); }
+  if (document.readyState === "complete") later(); else window.addEventListener("load", later);
 })();
 </script>

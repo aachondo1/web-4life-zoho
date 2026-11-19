@@ -1,4 +1,4 @@
-<!-- v2026.11.19-6 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Portada al brandbook v3 (19-11): foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Texto alineado al brief v3 (18-11): 40 años con dividendo flexible, pie 20%, financiamiento hasta UF 30.000, sin comparaciones con bancos ni promesas de tiempo. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. El valor de financiamiento viene del motor (/limites?producto=tradicional); el texto trae valores de respaldo. -->
+<!-- v2026.11.19-7 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Portada al brandbook v3 (19-11): foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Texto alineado al brief v3 (18-11): 40 años con dividendo flexible, pie 20%, financiamiento hasta UF 30.000, sin comparaciones con bancos ni promesas de tiempo. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. El valor de financiamiento viene del motor (/limites?producto=tradicional); el texto trae valores de respaldo. -->
 <div class="f4 f4v2" id="ct-root">
 
 <section class="ct-cover" aria-labelledby="ct-t-hero">
@@ -106,17 +106,24 @@
   </div>
 </section>
 
-<section class="v-road" aria-labelledby="ct-t-pasos">
-  <div class="container">
-    <h2 id="ct-t-pasos">Cómo avanzar con 4Life</h2>
-    <p class="lead">Primero ves tus números y después decides si seguir.</p>
+<section class="v-road ct-road" aria-labelledby="ct-t-pasos">
+  <div class="container ct-road-grid">
+    <div class="ct-road-intro">
+      <h2 id="ct-t-pasos">Así funciona</h2>
+      <p class="lead">Un ejecutivo de 4Life te acompaña de principio a fin.</p>
+    </div>
     <ol class="v-stops">
-      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de la propiedad</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Ve tu dividendo</h3><p>En pocos minutos, con tres escenarios de plazo.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Revisamos tu caso</h3><p>Un ejecutivo de 4Life revisa tus antecedentes y te contacta.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Avanzas acompañado</h3><p>Te guiamos con antecedentes, tasación y firma.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de tu vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Información de la propiedad y de tu situación actual, para ver tu dividendo y que tu ejecutivo te contacte.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Postulamos juntos</h3><p>Tu ejecutivo te guía con la documentación que necesitas y te ayuda a reunirla más rápido.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Respuesta rápida</h3><p>Con tu documentación completa, te damos una respuesta con tu tasa y un dividendo fijo.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Aceptas y revisamos la propiedad</h3><p>Pagas los gastos operacionales y hacemos la tasación y el estudio de títulos.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Firmas y te mudas</h3><p>Firmas la escritura y ya puedes vivir en tu nuevo hogar.</p></li>
     </ol>
-    <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_pasos">Simula tu crédito</a>
+    <div class="ct-road-foot">
+      <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_pasos">Simula tu crédito</a>
+      <p class="ct-privacy">Usamos tus datos para preparar tu simulación y para que un ejecutivo de 4Life te contacte. Revisa cómo los tratamos en nuestra <a href="/privacidad-y-cookies">política de privacidad</a>.</p>
+    </div>
   </div>
 </section>
 

@@ -1,4 +1,4 @@
-/* v2026.11.19-6 */
+/* v2026.11.19-7 */
 /* 4Life Crédito Hipotecario · estilos del sitio (brandbook v2, nov 2026: base 4Life Seguros) */
 /* Asap se carga en Código de encabezado (link + preconnect), no aquí con @import */
 
@@ -1402,7 +1402,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 }
 /* ===== fin Página Fines generales ===== */
 
-/* v2026.11.19-5 */
+/* v2026.11.19-7 */
 /* ===== 4Life · Página Crédito hipotecario tradicional — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Todo va acotado a #ct-root: no toca el home, /simular ni las otras páginas. */
 
@@ -1478,11 +1478,26 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ct-root .v-well { padding: var(--space-md) var(--space-lg); }
 #ct-root .v-ruled > div { padding-block: var(--space-md); }
 #ct-root .v-ruled dt { font-size: 1.0625rem; }
-#ct-root .v-road h2 { margin-bottom: var(--space-xs); }
-#ct-root .v-road .lead { margin-bottom: var(--space-lg); }
-#ct-root .v-stops { margin-bottom: var(--space-lg); }
-#ct-root .v-stop { padding-top: var(--space-lg); }
-#ct-root .v-stop h3 { margin-bottom: var(--space-xs); }
+/* Así funciona (v2026.11.19-7): el mismo camino vertical de 6 pasos del home (bloque "Home v5", .h-road), copiado y acotado a #ct-root .ct-road */
+#ct-root .ct-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "intro steps" "foot steps"; grid-template-rows: auto 1fr; column-gap: var(--space-3xl); row-gap: var(--space-xl); align-items: start; }
+#ct-root .ct-road-intro { grid-area: intro; }
+#ct-root .ct-road h2 { margin-bottom: var(--space-xs); }
+#ct-root .ct-road .lead { margin-bottom: 0; }
+#ct-root .ct-road .v-stops { grid-area: steps; display: block; margin: 0; border-top: 0; }
+#ct-root .ct-road-foot { grid-area: foot; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+#ct-root .ct-road .v-stop { position: relative; border-top: 0; padding: 0 0 var(--space-lg) 48px; }
+#ct-root .ct-road .v-stop:last-child { padding-bottom: 0; }
+#ct-root .ct-road .v-stop::before { top: 2px; left: 0; z-index: 1; }
+#ct-root .ct-road .v-stop:first-child::before { background: var(--color-coral); border-color: var(--color-coral); }
+#ct-root .ct-road .v-stop:not(:first-child)::before { background: var(--color-on-ink); border-color: var(--color-on-ink); }
+/* tramo vertical que une cada punto con el siguiente */
+#ct-root .ct-road .v-stop:not(:last-child)::after { content: ""; position: absolute; left: 7.5px; top: 21px; bottom: -2px; width: 2px; background: var(--color-gold-2); }
+#ct-root .ct-road .v-stop .small { margin-bottom: var(--space-2xs); }
+#ct-root .ct-road .v-stop h3 { margin-bottom: var(--space-2xs); }
+#ct-root .ct-road .v-stop p { max-width: 52ch; }
+#ct-root .ct-privacy { max-width: 46ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
+#ct-root .ct-privacy a { color: var(--color-on-ink); }
+#ct-root .ct-privacy a:hover { color: var(--color-on-ink-2); }
 #ct-root .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
 
 /* Otros créditos, bajo el título de las preguntas */
@@ -1504,6 +1519,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 @media (max-width: 60rem) {
   #ct-root { --section-gap: 48px; --section-gap-s: 48px; }
   #ct-root .ct-casos-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  #ct-root .ct-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; grid-template-rows: auto; row-gap: var(--space-lg); }
   /* Portada en móvil: foto arriba fundida hacia abajo en Celeste Tinta, texto blanco sobre fondo sólido */
   #ct-root .ct-cover::before { display: none; }
   #ct-root .ct-cover-photo { position: relative; width: 100%; aspect-ratio: 4 / 3; z-index: 0; }
