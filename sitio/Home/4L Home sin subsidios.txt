@@ -1,8 +1,9 @@
-<!-- v2026.11.18-4 · Home sin subsidios (alternativa a "4L Home"): igual, pero sin la familia de crédito con subsidio DS1 y DS19. Usar uno u otro, no los dos. Después va el global "4L - Global CTA". Estilos: "CSS Home". Fotos: home-portada, home-hogar, home-soluciones, home-inmobiliarias, home-santiago (.jpg) -->
+<!-- v2026.11.19-5 · Atención a clientes con Portal de clientes · Así funciona en 6 pasos como un solo camino vertical; Hablemos pasa a Atención a clientes · brandbook v3 (portada con foto y degradado celeste) · Home sin subsidios (alternativa a "4L Home"): sin la familia de crédito con subsidio DS1 y DS19. Usar uno u otro, no los dos. Después de este snippet van "4L Home - Animacion" y el global "4L - Global CTA". Estilos: bloque "Home v5" del CSS Personalizado (= CSS Home.txt). Fotos: home-portada, home-hogar, home-soluciones, home-inmobiliarias, home-santiago (.jpg) -->
 <div class="f4 f4v2 f4h">
-<section class="h-hero" aria-labelledby="h-t-hero">
-  <div class="container h-hero-grid">
-    <div class="h-hero-text">
+<section class="h-cover" aria-labelledby="h-t-hero">
+  <figure class="h-cover-photo"><img src="/home-portada.jpg" alt="Un ejecutivo de 4Life conversa con una pareja en la oficina, con Santiago de fondo" width="800" height="640" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
+  <div class="container h-cover-in">
+    <div class="h-cover-text">
       <h1 id="h-t-hero">Tu nuevo hogar comienza aquí</h1>
       <p class="lead">Créditos hipotecarios para comprar, refinanciar o financiar tus proyectos, con un ejecutivo de <strong>4Life</strong> a tu lado desde la simulación hasta la firma.</p>
       <div class="v-actions">
@@ -11,16 +12,17 @@
       </div>
       <p class="h-hint">Simular es gratis y no te compromete: no es una solicitud de crédito.</p>
     </div>
-    <figure class="v-photo h-hero-photo"><img src="/home-portada.jpg" alt="Un ejecutivo de 4Life conversa con una pareja en la oficina, con Santiago de fondo" width="800" height="640" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
   </div>
+</section>
+<div class="h-proof-band">
   <div class="container">
     <ul class="h-proof" aria-label="Nuestro respaldo">
       <li><i class="bi bi-shield-check" aria-hidden="true"></i><span>Del mismo grupo que <strong>4Life Seguros de Vida</strong></span></li>
       <li><i class="bi bi-building" aria-hidden="true"></i><span>Parte del <strong>Holding Dercorp</strong></span></li>
-      <li><i class="bi bi-map" aria-hidden="true"></i><span>Financiamos viviendas en <strong>todo Chile</strong></span></li>
+      <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Financiamos viviendas en <strong>todo Chile</strong></span></li>
     </ul>
   </div>
-</section>
+</div>
 
 <section class="v-sec h-fam-sec" aria-labelledby="h-t-fam">
   <div class="container">
@@ -58,14 +60,18 @@
 </section>
 
 <section class="v-road h-road" id="como-funciona" aria-labelledby="h-t-funciona">
-  <div class="container">
-    <h2 id="h-t-funciona">Así funciona</h2>
-    <p class="lead">Ves tus números primero y decides si seguir.</p>
+  <div class="container h-road-grid">
+    <div class="h-road-intro">
+      <h2 id="h-t-funciona">Así funciona</h2>
+      <p class="lead">Un ejecutivo de 4Life te acompaña de principio a fin.</p>
+    </div>
     <ol class="v-stops">
-      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de la vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Tu nombre, RUT, correo y edad, para preparar tu simulación.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Ve tu dividendo</h3><p>Una simulación orientativa con distintos plazos para comparar.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Un ejecutivo te llama</h3><p>Si quieres avanzar, te guía con los antecedentes, la tasación y la firma.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de tu vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Información de la propiedad y de tu situación actual, para ver tu dividendo y que tu ejecutivo te contacte.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Postulamos juntos</h3><p>Tu ejecutivo te guía con la documentación que necesitas y te ayuda a reunirla más rápido.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Respuesta rápida</h3><p>Con tu documentación completa, te damos una respuesta con tu tasa y un dividendo fijo.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Aceptas y revisamos la propiedad</h3><p>Pagas los gastos operacionales y hacemos la tasación y el estudio de títulos.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Firmas y te mudas</h3><p>Firmas la escritura y ya puedes vivir en tu nuevo hogar.</p></li>
     </ol>
     <div class="h-road-foot">
       <a class="v-btn" data-eval data-track="cta_funciona" href="/simular?origen=home">Simula tu crédito</a>
@@ -89,14 +95,15 @@
 
 <section class="v-sec h-talk" aria-labelledby="h-t-talk">
   <div class="container h-talk-grid">
-    <figure class="v-photo h-talk-photo"><img src="/home-santiago.jpg" alt="Vista de Santiago con la cordillera nevada" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <figure class="v-photo h-talk-photo"><img src="/home-santiago.jpg" alt="Vista de Santiago con la cordillera nevada, donde está nuestra oficina de atención" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></figure>
     <div>
-      <h2 id="h-t-talk">Hablemos</h2>
-      <p class="lead">Un ejecutivo de 4Life te responde y te acompaña en cada etapa.</p>
+      <h2 id="h-t-talk">Atención a clientes</h2>
+      <p class="lead">¿Ya eres cliente de 4Life? Ingresa a tu portal o usa nuestros canales de atención.</p>
       <dl class="v-contact">
+        <div><dt>Portal de clientes</dt><dd><a href="https://portal.4lifehipotecario.cl/" target="_blank" rel="noopener" data-track="portal_home">Ingresa a tu portal</a></dd></div>
         <div><dt>WhatsApp</dt><dd><a href="https://wa.me/56943802296" target="_blank" rel="noopener" data-track="whatsapp_home">+56 9 4380 2296</a></dd></div>
         <div><dt>Oficina</dt><dd>Alonso de Córdova 4125, oficina 118, piso -1, Vitacura, Santiago</dd></div>
-        <div><dt>Formulario</dt><dd><a href="/contacto" data-track="contacto_home">Escríbenos y te llamamos</a></dd></div>
+        <div><dt>Formulario</dt><dd><a href="/contacto" data-track="contacto_home">Envíanos tu solicitud</a></dd></div>
       </dl>
     </div>
   </div>
@@ -113,7 +120,7 @@
       <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q2">¿Qué datos me piden y quién me contacta?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q2" hidden><p>Te pedimos el valor aproximado de la propiedad, el pie, tu nombre, RUT, correo y edad. Si quieres avanzar, un ejecutivo de 4Life te contacta para revisar tu caso.</p></div></div>
       <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q3">¿Puedo evaluar opciones si ya tengo un crédito hipotecario?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q3" hidden><p>Sí. Puedes <a href="/refinanciamiento-hipotecario">refinanciar</a> tu crédito actual, esté en 4Life o en otra institución, y eventualmente pedir un monto adicional para <a href="/fines-generales">fines generales</a>. Las opciones dependen de tus antecedentes y de las condiciones de tu crédito vigente.</p></div></div>
       <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q4">¿Puedo pedir un crédito si soy independiente?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q4" hidden><p>Sí. En 4Life también evaluamos casos con boletas o ingresos variables. Las alternativas dependen de los antecedentes con que acredites tus ingresos.</p></div></div>
-      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q5">¿Cuánto demora el proceso?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q5" hidden><p>Depende de tu caso y de los antecedentes que entregues. Tu ejecutivo te indica los plazos de cada etapa: evaluación, tasación y firma.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q5">¿Cuánto demora el proceso?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q5" hidden><p>Lo que más demora es reunir la documentación, y tu ejecutivo te ayuda a juntarla rápido. Con tu documentación completa, te damos una respuesta rápida, con tu tasa y un dividendo fijo. Después vienen la tasación, el estudio de títulos y la firma.</p></div></div>
       <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q6">¿Qué información debo tener a mano?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q6" hidden><p>Te sirve tener a mano información de tus ingresos, tu situación laboral, la propiedad que quieres comprar y, si corresponde, tu crédito vigente.</p></div></div>
     </div>
   </div>

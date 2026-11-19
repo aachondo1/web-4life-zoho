@@ -1,4 +1,4 @@
-/* v2026.11.18-3 */
+/* v2026.11.19-4 */
 /* ===== 4Life · Home v5 — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Todo va acotado a .f4h: no cambia FOGAES, las otras páginas ni /simular ===== */
 /* Escala igual a FOGAES: secciones de 64 px, H1 ~44 px, títulos ~32 px */
 .f4h { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem; }
@@ -6,18 +6,28 @@
 .f4h .v-quiet { min-height: 48px; font-size: 1.0625rem; }
 .f4h .v-actions { gap: var(--space-lg); }
 
-/* Portada fija: titular + foto, y debajo la franja de respaldo */
-.f4h .h-hero { background: var(--color-field-soft); padding-block: var(--space-xl) var(--space-lg); }
-.f4h .h-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: center; }
-.f4h .h-hero h1 { max-width: 13ch; margin-bottom: var(--space-md); }
-.f4h .h-hero .lead { margin-bottom: var(--space-lg); max-width: 46ch; }
-.f4h .h-hint { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-muted); }
-.f4h .h-hero-photo { aspect-ratio: 5 / 4; }
-.f4h .h-hero-photo img { position: absolute; inset: 0; object-position: 40% 50%; }
-.f4h .h-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); margin-top: var(--space-xl); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-gold-2); }
+/* Portada v3 (brandbook v3): foto con degradado celeste, texto blanco del lado opaco (izquierda en escritorio, abajo en móvil).
+   La clase es .h-cover (no .h-hero) para que las reglas generales del bloque Brandbook v3 sobre heroes claros no le cambien los colores */
+.f4h .h-cover { position: relative; isolation: isolate; overflow: hidden; background: var(--color-field-deep); color: var(--color-on-ink); }
+.f4h .h-cover-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 60%; margin: 0; z-index: -2; }
+.f4h .h-cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 45%; display: block; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+.f4h .h-cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 45%, rgba(49,140,221,.15) 100%); }
+.f4h .h-cover-in { min-height: clamp(460px, 42vw, 580px); display: flex; align-items: center; padding-block: var(--space-2xl); }
+.f4h .h-cover-text { width: min(560px, 46%); }
+.f4h .h-cover h1 { font-size: clamp(2.75rem, 2.6vw + 1.25rem, 4.25rem); color: var(--color-on-ink); max-width: 13ch; margin-bottom: var(--space-md); }
+.f4h .h-cover .lead { color: var(--color-on-ink); max-width: 40ch; margin-bottom: var(--space-xl); }
+.f4h .h-cover .h-hint { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-on-ink); }
+.f4h .h-cover .h-cover-text .v-quiet { color: var(--color-on-ink); border-color: var(--color-on-ink); }
+.f4h .h-cover .h-cover-text .v-quiet:hover { color: var(--color-on-ink); background: color-mix(in oklab, var(--color-on-ink) 14%, transparent); }
+.f4h .h-cover .h-cover-text :focus-visible { outline-color: var(--color-on-ink); }
+/* Franja de respaldo: pausa blanca bajo la portada */
+.f4h .h-proof-band { background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.f4h .h-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); padding-block: var(--space-lg); }
 .f4h .h-proof li { display: flex; align-items: center; gap: var(--space-sm); font-size: 1rem; color: var(--color-ink-2); }
 .f4h .h-proof strong { color: var(--color-ink); font-weight: 600; }
 .f4h .h-proof .bi { flex: none; font-size: 1.25rem; color: var(--color-field); }
+/* Pasos: el punto de partida en Coral Punto (gráfico) */
+.f4h .h-road .v-stop:first-child::before { background: var(--color-coral); border-color: var(--color-coral); }
 
 /* ¿Qué quieres hacer? · las 4 familias en filas */
 .f4h .h-fam-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-xs) var(--space-xl); margin-bottom: var(--space-lg); }
@@ -33,16 +43,27 @@
 .f4h .h-links .bi { flex: none; transition: transform var(--dur-short) var(--ease-out); }
 .f4h .h-links a:hover .bi, .f4h .h-links a:focus-visible .bi { transform: translateX(4px); }
 
-/* Así funciona: botón y nota de datos al pie */
+/* Así funciona: un solo camino vertical de 6 pasos. Escritorio: título y botón a la izquierda, camino a la derecha. Móvil: título, camino y botón */
+.f4h .h-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "intro steps" "foot steps"; grid-template-rows: auto 1fr; column-gap: var(--space-3xl); row-gap: var(--space-xl); align-items: start; }
+.f4h .h-road-intro { grid-area: intro; }
+.f4h .h-road .v-stops { grid-area: steps; display: block; margin: 0; border-top: 0; }
+.f4h .h-road-foot { grid-area: foot; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
 .f4h .v-road h2 { margin-bottom: var(--space-xs); }
-.f4h .v-road .lead { margin-bottom: var(--space-lg); }
-.f4h .v-stops { margin-bottom: var(--space-lg); }
-.f4h .v-stop { padding-top: var(--space-lg); }
-.f4h .v-stop h3 { margin-bottom: var(--space-xs); }
-.f4h .h-road-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-xl); }
-.f4h .h-privacy { max-width: 60ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
+.f4h .v-road .lead { margin-bottom: 0; }
+.f4h .h-road .v-stop { position: relative; border-top: 0; padding: 0 0 var(--space-lg) 48px; }
+.f4h .h-road .v-stop:last-child { padding-bottom: 0; }
+.f4h .h-road .v-stop::before { top: 2px; left: 0; }
+/* tramo vertical que une cada punto con el siguiente */
+.f4h .h-road .v-stop:not(:last-child)::after { content: ""; position: absolute; left: 7.5px; top: 21px; bottom: -2px; width: 2px; background: var(--color-gold-2); }
+.f4h .h-road .v-stop .small { margin-bottom: var(--space-2xs); }
+.f4h .h-road .v-stop h3 { margin-bottom: var(--space-2xs); }
+.f4h .h-road .v-stop p { max-width: 52ch; }
+.f4h .h-privacy { max-width: 46ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
 .f4h .h-privacy a { color: var(--color-on-ink); }
 .f4h .h-privacy a:hover { color: var(--color-on-ink-2); }
+@media (max-width: 60rem) {
+  .f4h .h-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; grid-template-rows: auto; row-gap: var(--space-lg); }
+}
 
 /* Quiénes somos: una frase grande y tres datos */
 .f4h .h-about { background: var(--color-paper-3); }
@@ -53,7 +74,7 @@
 .f4h .h-facts strong { color: var(--color-ink); font-weight: 600; }
 .f4h .h-reg { margin-top: var(--space-lg); }
 
-/* Hablemos */
+/* Atención a clientes (antes Hablemos) */
 .f4h .h-talk { background: var(--color-paper); }
 .f4h .h-talk-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
 .f4h .h-talk-photo { aspect-ratio: 4 / 3; }
@@ -77,9 +98,8 @@
 
 @media (max-width: 60rem) {
   .f4h { --section-gap: 48px; --section-gap-s: 48px; }
-  .f4h .h-hero-grid, .f4h .h-talk-grid, .f4h .h-facts { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
-  .f4h .h-hero-photo { aspect-ratio: 16 / 10; }
-  .f4h .h-proof { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); margin-top: var(--space-lg); }
+  .f4h .h-talk-grid, .f4h .h-facts { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .f4h .h-proof { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
   .f4h .h-fam { grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-sm) var(--space-md); align-items: start; }
   .f4h .h-fam .h-links { grid-column: 1 / -1; }
   .f4h .h-fam-text h3 { font-size: 1.125rem; }
@@ -88,5 +108,14 @@
 }
 /* v2026.11.18-3 · auditoría: el ancla de "Mira cómo funciona" no queda bajo el encabezado fijo; fotos con ancho máximo en tablet para que no se vean borrosas */
 .f4h [id] { scroll-margin-top: 96px; }
-@media (max-width: 60rem) and (min-width: 40.01rem) { .f4h .h-hero-photo, .f4h .h-talk-photo { max-width: 560px; } }
+@media (max-width: 60rem) and (min-width: 40.01rem) { .f4h .h-talk-photo { max-width: 560px; } }
+/* Portada en tablet y móvil (bajo 768 px): la foto va arriba y se funde hacia abajo en el celeste; el texto se apoya abajo, sobre el lado opaco */
+@media (max-width: 48rem) {
+  .f4h .h-cover::before { display: none; }
+  .f4h .h-cover-photo { position: relative; width: 100%; aspect-ratio: 4 / 3; z-index: 0; }
+  .f4h .h-cover-photo img { object-position: 70% 55%; -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 45%); mask-image: linear-gradient(0deg, transparent 0%, #000 45%); }
+  .f4h .h-cover-in { position: relative; min-height: 0; margin-top: -32px; padding-block: 0 var(--space-xl); }
+  .f4h .h-cover-text { width: 100%; }
+  .f4h .h-cover h1 { font-size: clamp(2.25rem, 6vw + 1rem, 3rem); }
+}
 /* ===== fin Home v5 ===== */
