@@ -1,4 +1,4 @@
-<!-- v2026.11.19-9 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Pasada de la crítica Impeccable (19-11): banda propia "Tu Dividendo, a tu Ritmo" con la barra de 8 a 40 años; Qué Necesitas fundida con las condiciones generales; costos en 3 filas; sin tope UF ni promesas de tiempo; un solo botón rojo por vista (portada, Así funciona y cierre). Portada al brandbook v3: foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Plazo de hasta 40 años según edad. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. -->
+<!-- v2026.11.19-10 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Pasada de la crítica Impeccable (19-11): banda propia "Tu Dividendo, a tu Ritmo" con la barra de 8 a 40 años; Qué Necesitas fundida con las condiciones generales; costos en 3 filas; sin tope UF ni promesas de tiempo; un solo botón rojo por vista (portada, Así funciona y cierre). Portada al brandbook v3: foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Plazo de hasta 40 años según edad. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. -->
 <div class="f4 f4v2" id="ct-root">
 
 <section class="ct-cover" aria-labelledby="ct-t-hero">
@@ -66,7 +66,7 @@
   <div class="container ct-div-grid">
     <div class="ct-div-text">
       <h2 id="ct-t-div">Tu Dividendo, a tu Ritmo</h2>
-      <p class="lead">El crédito es de hasta 40 años, según tu edad. Cada mes eliges cuánto pagar: el dividendo base o uno mayor, equivalente a cualquier plazo entre 8 y 40 años. Lo que pagas de más va a capital, sin penalización.<!-- [LEGAL] confirmar "sin penalización" --></p>
+      <p class="lead">El crédito es de hasta 40 años, según tu edad. Cada mes eliges cuánto pagar: el dividendo base o uno mayor, equivalente a cualquier plazo entre 8 y 40 años. Lo que pagas de más va a capital, sin penalización, siempre que tu dividendo corresponda a un plazo dentro de ese rango.</p>
       <p class="ct-div-claim">Un dividendo que te acompaña durante toda la vida de tu crédito y se adapta a tu momento.</p>
     </div>
     <figure class="ct-track" aria-labelledby="ct-track-cap">
@@ -162,7 +162,7 @@
       <dl class="v-ruled">
         <div><dt>Gastos operacionales</dt><dd>Los pagas tú. Si sobra dinero, se devuelve.</dd></div>
         <div><dt>Impuesto de timbres y estampillas</dt><dd>Un impuesto al crédito que se paga una sola vez.</dd></div>
-        <div><dt>Seguros licitados</dt><dd>Los seguros de desgravamen e incendio son obligatorios. Los licitamos en un proceso abierto cada 2 años y se adjudican a la oferta de menor precio, lo que ayuda a que tu dividendo y tu carga anual equivalente (CAE) sean más bajos.<!-- [LEGAL] confirmar redacción de la licitación y el efecto en la CAE --></dd></div>
+        <div><dt>Seguros licitados</dt><dd>Los seguros de desgravamen e incendio son obligatorios. Los licitamos en un proceso abierto cada 2 años y escogemos siempre la oferta más conveniente, lo que ayuda a que tu dividendo y tu carga anual equivalente (CAE) sean más bajos.</dd></div>
       </dl>
       <p class="small">Los gastos varían según la propiedad y el monto del crédito.</p>
     </div>
