@@ -1,4 +1,4 @@
-<!-- v2026.11.19-10 · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Pasada de la crítica Impeccable (19-11): banda propia "Tu Dividendo, a tu Ritmo" con la barra de 8 a 40 años; Qué Necesitas fundida con las condiciones generales; costos en 3 filas; sin tope UF ni promesas de tiempo; un solo botón rojo por vista (portada, Así funciona y cierre). Portada al brandbook v3: foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Plazo de hasta 40 años según edad. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. -->
+<!-- v2026.11.19-11 · Crítica 2 (19-11): Requisitos y Costos fundidos en "Lo que Necesitas y lo que Pagas" antes de Así Funciona; preguntas frecuentes en 6; barra 8–40 estática y proporcional; bajada de portada con beneficio. · Página Crédito hipotecario tradicional (/credito-hipotecario-tradicional) · snippet principal. Pasada de la crítica Impeccable (19-11): banda propia "Tu Dividendo, a tu Ritmo" con la barra de 8 a 40 años; Qué Necesitas fundida con las condiciones generales; costos en 3 filas; sin tope UF ni promesas de tiempo; un solo botón rojo por vista (portada, Así funciona y cierre). Portada al brandbook v3: foto con degradado celeste, texto blanco, botón rojo; mosaico de 4 preguntas bajo la portada. Plazo de hasta 40 años según edad. Estilos: bloque "Página Crédito tradicional" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Un solo camino: el simulador. Las animaciones van en el snippet aparte "4L - Tradicional animaciones", ARRIBA de este. -->
 <div class="f4 f4v2" id="ct-root">
 
 <section class="ct-cover" aria-labelledby="ct-t-hero">
@@ -6,7 +6,7 @@
   <div class="container ct-cover-in">
     <div class="ct-cover-text">
       <h1 id="ct-t-hero">Crédito hipotecario tradicional para comprar tu casa o departamento</h1>
-      <p class="lead">Compra casa o departamento, nueva o usada, con <strong>4Life Crédito Hipotecario</strong>. Plazo de hasta 40 años con dividendo flexible. Simula ahora y un ejecutivo revisa tu caso contigo.</p>
+      <p class="lead">Con <strong>4Life Crédito Hipotecario</strong> tienes hasta 40 años de plazo, un dividendo que se adapta a ti y una evaluación que mira tu caso completo, también si trabajas con boletas.</p>
       <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_hero">Simula tu crédito</a>
       <p class="small ct-cover-hint">Gratis y sin compromiso</p>
     </div>
@@ -20,7 +20,7 @@
         <a href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_q_comprar">
           <img src="/ct-comprar.jpg" alt="Familia con cajas de mudanza en su nueva casa" width="1200" height="960" loading="lazy" onerror="this.remove()">
           <span class="ct-q-txt">
-            <span class="ct-q-ask">¿Qué puedo comprar?</span>
+            <span class="ct-q-ask">¿Qué puedes comprar?</span>
             <span class="ct-q-ans">Casa o depto, nuevo o usado</span>
             <span class="ct-q-sub">Financiamos propiedades en todo Chile.</span>
             <span class="ct-q-go">Simula tu crédito <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
@@ -70,14 +70,14 @@
       <p class="ct-div-claim">Un dividendo que te acompaña durante toda la vida de tu crédito y se adapta a tu momento.</p>
     </div>
     <figure class="ct-track" aria-labelledby="ct-track-cap">
-      <figcaption id="ct-track-cap" class="ct-track-cap">Cada mes eliges dónde estar entre estos dos extremos</figcaption>
+      <figcaption id="ct-track-cap" class="ct-track-cap">Cada mes eliges tu dividendo dentro de este rango</figcaption>
       <div class="ct-track-bar" aria-hidden="true">
         <span class="ct-track-fill"></span>
-        <span class="ct-track-dot ct-track-dot-8"></span>
-        <span class="ct-track-dot ct-track-dot-you"></span>
-        <span class="ct-track-dot ct-track-dot-40"></span>
+        <span class="ct-track-you"><span class="ct-track-you-tag">Tú eliges</span></span>
       </div>
-      <ol class="ct-track-ticks" aria-hidden="true"><li>8</li><li>15</li><li>20</li><li>25</li><li>30</li><li>35</li><li>40 años</li></ol>
+      <ol class="ct-track-ticks" aria-hidden="true">
+        <li style="--x:0">8</li><li style="--x:.21875">15</li><li style="--x:.375">20</li><li style="--x:.53125">25</li><li style="--x:.6875">30</li><li style="--x:.84375">35</li><li style="--x:1">40 años</li>
+      </ol>
       <dl class="ct-track-ends">
         <div class="ct-track-end ct-track-end-8"><dt>Equivalente a 8 años</dt><dd>Pagas más cada mes y terminas antes.</dd></div>
         <div class="ct-track-end ct-track-end-40"><dt>Dividendo base</dt><dd>El más bajo: equivalente a tu plazo completo.</dd></div>
@@ -95,7 +95,7 @@
       <dl class="ct-perfiles">
         <div><dt><i class="bi bi-briefcase" aria-hidden="true"></i>Con contrato</dt><dd>Revisamos tus liquidaciones de sueldo.</dd></div>
         <div><dt><i class="bi bi-receipt" aria-hidden="true"></i>Con boletas de honorarios</dt><dd>Revisamos tu declaración de renta (F22).</dd></div>
-        <div><dt><i class="bi bi-graph-up" aria-hidden="true"></i>Con ingresos variables</dt><dd>Un ejecutivo revisa contigo qué antecedentes reflejan mejor tus ingresos.</dd></div>
+        <div><dt><i class="bi bi-graph-up" aria-hidden="true"></i>Con ingresos variables</dt><dd>Revisamos contigo qué antecedentes reflejan mejor tus ingresos.</dd></div>
       </dl>
       <div class="ct-aviso">
         <p class="ct-aviso-t"><i class="bi bi-arrow-repeat" aria-hidden="true"></i>¿Alguna vez tuviste moras?</p>
@@ -109,24 +109,35 @@
   </div>
 </section>
 
-<section class="v-sec fg-req ct-req" aria-labelledby="ct-t-req">
-  <div class="container v-why-grid">
-    <div>
-      <h2 id="ct-t-req">Qué Necesitas para Postular</h2>
-      <p class="lead">Esto es lo que necesitamos para armar tu carpeta con tus antecedentes y postular juntos a tu crédito. Con estos datos, el simulador ya te muestra tu dividendo.</p>
+<section class="v-sec ct-need" aria-labelledby="ct-t-need">
+  <div class="container">
+    <div class="ct-need-head">
+      <h2 id="ct-t-need">Lo que Necesitas y lo que Pagas</h2>
+      <p class="lead">Para simular te basta el valor aproximado de la propiedad y el pie con que cuentas. Para postular juntos a tu crédito, armamos tu carpeta con estos antecedentes.</p>
     </div>
-    <div class="v-well">
-      <dl class="v-ruled">
-        <div><dt>Ingresos estables</dt><dd>Que se mantengan en el tiempo, por antigüedad o continuidad laboral. Los acreditas con tus liquidaciones de sueldo o tu declaración de renta (F22).</dd></div>
-        <div><dt>Acreditar tu pie</dt><dd>El pie es la parte del precio que pagas con recursos propios. Puede estar en una cuenta de ahorro, un fondo mutuo u otra inversión.</dd></div>
-        <div><dt>Una propiedad en buenas condiciones</dt><dd>Casa o departamento, nuevo o usado, sin importar su antigüedad.</dd></div>
-        <div><dt>Plazo según tu edad</dt><dd>Hasta 40 años. El crédito debe terminar antes de que cumplas 80 años.</dd></div>
-      </dl>
-      <p class="small ct-req-note">Todo crédito está sujeto a evaluación, tasación y políticas de crédito vigentes.</p>
-    </div>
-    <div class="fg-req-cta">
-      <a class="v-quiet" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_requisitos">Simula tu crédito</a>
-      <p class="fg-alt">¿Primera vivienda y nueva? <a href="/credito-hipotecario-fogaes" data-track="tradicional_req_fogaes">Con FOGAES necesitas menos pie</a></p>
+    <div class="ct-need-grid">
+      <div class="ct-need-req">
+        <h3>Para Postular</h3>
+        <dl class="ct-facts">
+          <div><dt class="ct-fact">24 meses</dt><dd><strong>Ingresos estables</strong> por antigüedad o continuidad laboral. Los acreditas con tus liquidaciones de sueldo o tu declaración de renta (F22).</dd></div>
+          <div><dt class="ct-fact">Tu pie</dt><dd><strong>Acreditar tu pie:</strong> la parte del precio que pagas con recursos propios. Puede estar en una cuenta de ahorro, un fondo mutuo u otra inversión.</dd></div>
+          <div><dt class="ct-fact">Nueva o usada</dt><dd><strong>Una propiedad en buenas condiciones:</strong> casa o departamento, sin importar su antigüedad.</dd></div>
+          <div><dt class="ct-fact">Hasta los 80</dt><dd><strong>Plazo según tu edad:</strong> hasta 40 años, y el crédito debe terminar antes de que cumplas 80 años.</dd></div>
+        </dl>
+        <div class="ct-need-cta">
+          <a class="v-quiet" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_requisitos">Simula tu crédito</a>
+          <p class="fg-alt">¿Primera vivienda y nueva? <a href="/credito-hipotecario-fogaes" data-track="tradicional_req_fogaes">Con FOGAES necesitas menos pie</a></p>
+        </div>
+      </div>
+      <div class="ct-need-pay">
+        <h3>Lo que Pagas además del Dividendo</h3>
+        <dl class="ct-pay">
+          <div><dt>Gastos operacionales</dt><dd>Los pagas tú. Si sobra dinero, se devuelve.</dd></div>
+          <div><dt>Impuesto de timbres y estampillas</dt><dd>Un impuesto al crédito que se paga una sola vez.</dd></div>
+          <div><dt>Seguros licitados</dt><dd>Los seguros de desgravamen e incendio son obligatorios. Los licitamos en un proceso abierto cada 2 años y escogemos siempre la oferta más conveniente, lo que ayuda a que tu dividendo y tu carga anual equivalente (CAE) sean más bajos.</dd></div>
+        </dl>
+        <p class="small">Los gastos varían según la propiedad y el monto del crédito. Te los detallamos en tu propuesta, antes de firmar. Todo crédito está sujeto a evaluación, tasación y políticas de crédito vigentes.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -152,23 +163,6 @@
   </div>
 </section>
 
-<section class="v-sec ct-costos" aria-labelledby="ct-t-costos">
-  <div class="container v-why-grid">
-    <div>
-      <h2 id="ct-t-costos">Costos del Crédito</h2>
-      <p class="lead">Además del dividendo, considera estos costos. Te los detallamos en tu propuesta, antes de firmar.</p>
-    </div>
-    <div class="v-well">
-      <dl class="v-ruled">
-        <div><dt>Gastos operacionales</dt><dd>Los pagas tú. Si sobra dinero, se devuelve.</dd></div>
-        <div><dt>Impuesto de timbres y estampillas</dt><dd>Un impuesto al crédito que se paga una sola vez.</dd></div>
-        <div><dt>Seguros licitados</dt><dd>Los seguros de desgravamen e incendio son obligatorios. Los licitamos en un proceso abierto cada 2 años y escogemos siempre la oferta más conveniente, lo que ayuda a que tu dividendo y tu carga anual equivalente (CAE) sean más bajos.</dd></div>
-      </dl>
-      <p class="small">Los gastos varían según la propiedad y el monto del crédito.</p>
-    </div>
-  </div>
-</section>
-
 <section class="v-sec v-faq" aria-labelledby="ct-t-faq">
   <div class="container v-faq-grid">
     <div>
@@ -184,16 +178,12 @@
       </nav>
     </div>
     <div class="f4-acc">
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q2">¿Me sirve si trabajo con boletas?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q2"><p>Sí. Evaluamos ingresos por contrato, boletas de honorarios e ingresos variables. Cada caso se revisa según el origen de tus ingresos, y un ejecutivo te indica qué antecedentes necesitas.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q10">¿Puedo pedir el crédito si alguna vez tuve moras?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q10"><p>Sí, podemos evaluarte. Si tu situación morosa ya está regularizada y hoy tienes tus compromisos financieros al día, revisamos tu caso completo. El resultado depende de la evaluación y de las políticas de crédito vigentes.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q6">¿Qué documentos necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q6"><p>Depende de tu caso. Como referencia, para acreditar tu renta, por contrato se piden las últimas 6 liquidaciones de sueldo, y por honorarios, la declaración de renta (F22). Además, pedimos 24 meses de ingresos estables, por antigüedad o continuidad laboral. Un ejecutivo te confirma la lista.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q4">¿Qué plazo puedo elegir?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q4"><p>Hasta 40 años, según tu edad: el crédito debe terminar antes de que cumplas 80 años. Con el dividendo flexible, cada mes puedes pagar un dividendo mayor, equivalente a un plazo más corto. Un plazo más largo baja tu dividendo mensual, pero en total pagas más intereses. En el simulador comparas tres escenarios de plazo.</p></div></div>
+      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q6">¿Qué documentos necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q6"><p>Depende de tu caso. Como referencia, para acreditar tu renta, por contrato se piden las últimas 6 liquidaciones de sueldo, y por honorarios, la declaración de renta (F22). Además, pedimos 24 meses de ingresos estables, por antigüedad o continuidad laboral. Te confirmamos la lista al postular.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q5">¿Cuánto financia el crédito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q5"><p>Depende del valor de la propiedad, del pie con que cuentas y de la evaluación de tu caso. El simulador te muestra una referencia con tus datos.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q3">¿Sirve para una propiedad usada?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q3"><p>Sí. Puedes comprar una casa o un departamento, nuevo o usado, sin importar su antigüedad, siempre que esté en buenas condiciones.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q7">¿Qué gastos tiene el crédito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q7"><p>Gastos operacionales (si sobra dinero, se devuelve), impuesto de timbres y estampillas (una sola vez) y seguros de desgravamen e incendio, que son obligatorios y licitados cada 2 años. Te los detallamos en tu propuesta.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q8">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q8"><p>No. La simulación es gratuita y orientativa. No es una solicitud de crédito ni una aprobación.</p></div></div>
       <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q9">¿Si hoy no califico, puedo volver a simular?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q9"><p>Sí. Las políticas de crédito dependen del momento. Una evaluación hoy no define lo que pueda pasar en el futuro.</p></div></div>
-      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q1">¿Cuánto pie necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q1"><p>Como referencia, el pie mínimo es de 20% del valor de la propiedad, y lo acreditas con recursos propios. En el simulador ingresas el pie con que cuentas y ves tu dividendo. Si es tu primera vivienda y es nueva, <a href="/credito-hipotecario-fogaes">con FOGAES puedes necesitar menos pie</a>.</p></div></div>
+      <div class="f4-acc-item"><h3 class="ct-faq-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ct-q1">¿Cuánto pie necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ct-q1"><p>Como referencia, el pie mínimo es de 20 % del valor de la propiedad, y lo acreditas con recursos propios. En el simulador ingresas el pie con que cuentas y ves tu dividendo. Si es tu primera vivienda y es nueva, <a href="/credito-hipotecario-fogaes">con FOGAES puedes necesitar menos pie</a>.</p></div></div>
     </div>
     <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
   </div>
@@ -205,7 +195,7 @@
     <div class="v-close-in">
       <div>
         <h2 id="ct-t-cierre">Tu nuevo hogar comienza aquí</h2>
-        <p class="ct-close-lead">Simula tu crédito y un ejecutivo de 4Life te acompaña hasta la firma.</p>
+        <p class="ct-close-lead">Simula tu crédito y te acompañamos hasta la firma.</p>
       </div>
       <a class="v-btn" href="/simular?producto=tradicional&amp;origen=tradicional" data-track="tradicional_cierre">Simula tu crédito</a>
     </div>

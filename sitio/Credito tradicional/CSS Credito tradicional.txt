@@ -1,4 +1,4 @@
-/* v2026.11.19-9 */
+/* v2026.11.19-11 */
 /* ===== 4Life · Página Crédito hipotecario tradicional — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Todo va acotado a #ct-root: no toca el home, /simular ni las otras páginas. */
 
@@ -26,8 +26,8 @@
 #ct-root .ct-cover :focus-visible { outline-color: var(--color-on-ink); }
 
 /* Lo que más nos preguntan: cuatro fotos-pregunta sobre blanco, bajo la portada (la foto de la familia se repite con la portada, por ahora: decisión de Juan 19-11) */
-#ct-root .ct-qs-sec { background: var(--color-paper); padding-block: var(--space-xl) 0; }
-#ct-root .ct-qs { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); grid-template-rows: 264px 264px; gap: var(--space-md); }
+#ct-root .ct-qs-sec { background: var(--color-paper); padding-block: var(--space-xl); }
+#ct-root .ct-qs { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); grid-template-rows: 280px 280px; gap: var(--space-md); }
 #ct-root .ct-q-a { grid-column: 1; grid-row: 1 / span 2; }
 #ct-root .ct-q-b { grid-column: 2; grid-row: 1; }
 #ct-root .ct-q-c { grid-column: 3; grid-row: 1; }
@@ -84,15 +84,16 @@
 #ct-root .ct-div-claim { position: relative; margin-top: var(--space-lg); padding-left: 28px; max-width: 34ch; font: 700 var(--text-title)/1.35 var(--font-display); color: var(--color-on-ink); text-wrap: balance; }
 #ct-root .ct-div-claim::before { content: ""; position: absolute; left: 0; top: .45em; width: 12px; height: 12px; border-radius: 50%; background: var(--color-coral); }  /* el punto del logo, solo gráfico */
 #ct-root .ct-track { margin: 0; padding: var(--space-xl); background: var(--color-paper); color: var(--color-ink); border-radius: var(--radius-card); box-shadow: 0 16px 48px rgba(30,30,30,.13); }
-#ct-root .ct-track-cap { margin-bottom: var(--space-xl); font: 700 var(--text-title)/1.3 var(--font-display); color: var(--color-ink); }
-#ct-root .ct-track-bar { position: relative; height: 10px; margin-inline: 9px; border-radius: 5px; background: var(--color-field-soft); }
+#ct-root .ct-track-cap { margin-bottom: calc(var(--space-xl) + 28px); font: 700 var(--text-title)/1.3 var(--font-display); color: var(--color-ink); }
+#ct-root .ct-track-bar { position: relative; height: 8px; margin-inline: 9px; border-radius: 4px; background: var(--color-field-soft); }
 #ct-root .ct-track-fill { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, var(--color-field-deep), var(--color-field-light)); }
-#ct-root .ct-track-dot { position: absolute; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--color-paper); border: 3px solid var(--color-field-deep); }
-#ct-root .ct-track-dot-8 { left: 0; }
-#ct-root .ct-track-dot-40 { left: 100%; border-color: var(--color-field-light); }
-#ct-root .ct-track-dot-you { left: 56%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border: 0; background: var(--color-coral); box-shadow: 0 0 0 5px var(--color-paper); }
-#ct-root .ct-track-ticks { display: flex; justify-content: space-between; margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-ink-muted, #5D5D5D); font-variant-numeric: tabular-nums; }
-#ct-root .ct-track-ticks li:last-child { font-weight: 700; color: var(--color-ink); }
+#ct-root .ct-track-ticks { position: relative; height: 1.5em; margin: var(--space-md) 9px 0; font-size: var(--text-sm); color: var(--color-ink-muted, #5D5D5D); font-variant-numeric: tabular-nums; }
+#ct-root .ct-track-ticks li { position: absolute; left: calc(var(--x) * 100%); transform: translateX(-50%); white-space: nowrap; }  /* marcas proporcionales a los años: (año − 8) / 32 */
+#ct-root .ct-track-ticks li:first-child { transform: none; }
+#ct-root .ct-track-ticks li:last-child { transform: translateX(-100%); font-weight: 700; color: var(--color-ink); }
+#ct-root .ct-track-you { position: absolute; top: 50%; left: 53.125%; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: var(--color-coral); box-shadow: 0 0 0 4px var(--color-paper); }  /* el punto (25 años): solo gráfico, sin aspecto de manija */
+#ct-root .ct-track-you-tag { position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); padding: 2px var(--space-xs); border-radius: var(--radius-sm, 4px); background: var(--color-ink); color: var(--color-paper); font: 700 var(--text-sm)/1.3 var(--font-display); white-space: nowrap; }
+#ct-root .ct-track-you-tag::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border: 5px solid transparent; border-top-color: var(--color-ink); }
 #ct-root .ct-track-ticks li:first-child { font-weight: 700; color: var(--color-ink); }
 #ct-root .ct-track-ends { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
 #ct-root .ct-track-end dt { font: 700 var(--text-md)/1.3 var(--font-display); color: var(--color-ink); margin-bottom: var(--space-2xs); }
@@ -107,9 +108,31 @@
   #ct-root .ct-track-ticks li:not(:first-child):not(:last-child) { visibility: hidden; }
 }
 
+/* Lo que Necesitas y lo que Pagas (v2026.11.19-11): requisitos con el dato duro a la vista + panel de costos; reemplaza a Qué Necesitas y a Costos del Crédito */
+#ct-root .ct-need { background: var(--color-paper-3); }
+#ct-root .ct-need-head { max-width: 760px; margin-bottom: var(--space-xl); }
+#ct-root .ct-need-head .lead { max-width: 62ch; }
+#ct-root .ct-need-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: start; }
+#ct-root .ct-need h3 { margin-bottom: var(--space-md); font: 700 var(--text-title)/1.2 var(--font-display); color: var(--color-ink); }
+#ct-root .ct-facts { border-top: var(--rule-bar) solid var(--color-field); }
+#ct-root .ct-facts > div { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--space-lg); align-items: baseline; padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+#ct-root .ct-fact { font: 700 clamp(1.375rem, .8vw + 1rem, 1.625rem)/1.1 var(--font-display); letter-spacing: -0.01em; color: var(--color-field-deep); }
+#ct-root .ct-facts dd { color: var(--color-ink-2); max-width: 52ch; }
+#ct-root .ct-facts dd strong { color: var(--color-ink); }
+#ct-root .ct-need-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-xl); margin-top: var(--space-xl); }
+#ct-root .ct-need-cta .fg-alt { margin: 0; }
+#ct-root .ct-need :is(.v-quiet, a:not([class])) { color: var(--color-field-deep); }  /* sobre gris (#F2F2F2) va Celeste Tinta: el Profundo da 4,3:1 */
+#ct-root .ct-need .v-quiet { border-color: var(--color-field-deep); }
+#ct-root .ct-need .v-quiet:hover { background: var(--color-paper); }
+#ct-root .ct-need-pay { padding: var(--space-lg); background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
+#ct-root .ct-pay > div { padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+#ct-root .ct-pay > div:first-child { padding-top: 0; }
+#ct-root .ct-pay dt { font: 700 var(--text-md)/1.3 var(--font-display); color: var(--color-ink); margin-bottom: var(--space-2xs); }
+#ct-root .ct-pay dd { color: var(--color-ink-2); }
+#ct-root .ct-need-pay .small { margin-top: var(--space-md); color: var(--color-ink-2); font-weight: 400; }
+
 /* Requisitos, pasos y preguntas: compactos como en FOGAES */
 #ct-root .v-well { padding: var(--space-md) var(--space-lg); border: var(--rule-hair) solid var(--color-rule); }  /* v2026.11.19-9: filete de 1 px (Regla de lo Plano) en vez del borde superior de 4 px sobre la esquina redondeada */
-#ct-root .ct-req-note { margin-top: var(--space-sm); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-ink-2); }
 #ct-root .v-ruled > div { padding-block: var(--space-md); }
 #ct-root .v-ruled dt { font-size: 1.0625rem; }
 /* Así funciona (v2026.11.19-7): el mismo camino vertical de 6 pasos del home (bloque "Home v5", .h-road), copiado y acotado a #ct-root .ct-road */
@@ -161,28 +184,39 @@
   #ct-root .ct-cover-photo img { object-position: 60% 50%; -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 45%); mask-image: linear-gradient(0deg, transparent 0%, #000 45%); }
   #ct-root .ct-cover-in { position: relative; min-height: 0; margin-top: -32px; padding-block: 0 var(--space-xl); }
   #ct-root .ct-cover-text { width: 100%; }
-  #ct-root .ct-qs { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 360px 248px 248px; gap: var(--space-sm); }
-  #ct-root .ct-q-a { grid-column: 1 / span 2; grid-row: 1; }
-  #ct-root .ct-q-b { grid-column: 1; grid-row: 2; }
-  #ct-root .ct-q-c { grid-column: 2; grid-row: 2; }
-  #ct-root .ct-q-d { grid-column: 1 / span 2; grid-row: 3; }
+  /* Mosaico 2 × 2 en pantallas chicas (v2026.11.19-11): sin tarjeta grande */
+  #ct-root .ct-qs { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 272px 272px; gap: var(--space-sm); }
+  #ct-root .ct-q-a { grid-column: 1; grid-row: 1; }
+  #ct-root .ct-q-b { grid-column: 2; grid-row: 1; }
+  #ct-root .ct-q-c { grid-column: 1; grid-row: 2; }
+  #ct-root .ct-q-d { grid-column: 2; grid-row: 2; }
+  #ct-root .ct-q-a .ct-q-ans { font-size: clamp(1.5rem, 1.3vw + 1rem, 2rem); }
+  #ct-root .ct-q-d a::before { background: linear-gradient(180deg, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 8%, color-mix(in oklab, var(--color-field-deep) 62%, transparent) 30%, color-mix(in oklab, var(--color-field-deep) 88%, transparent) 46%, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 100%); }
+  #ct-root .ct-q-d .ct-q-txt { max-width: none; }
+  #ct-root .ct-need-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   #ct-root .ct-q-a .ct-q-txt { padding: var(--space-lg); }
   #ct-root .ct-q-a a::before { background: linear-gradient(180deg, color-mix(in oklab, var(--color-field-deep) 0%, transparent) 0%, color-mix(in oklab, var(--color-field-deep) 62%, transparent) 14%, color-mix(in oklab, var(--color-field-deep) 88%, transparent) 26%, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 100%); }
   #ct-root .ct-casos-photo { aspect-ratio: 16 / 10; max-width: none; }
   #ct-root .ct-casos-photo img { object-position: 50% 35%; }
-  #ct-root .fg-close-photo { width: 100%; }
-  #ct-root .fg-close-photo img { opacity: .28; -webkit-mask-image: none; mask-image: none; }
+  /* Cierre en móvil (v2026.11.19-11): la foto va como franja arriba y el texto queda sobre Celeste Profundo sólido */
+  #ct-root .fg-close { padding-top: 0; }
+  #ct-root .fg-close-photo { position: relative; width: 100%; height: 200px; margin-bottom: var(--space-lg); }
+  #ct-root .fg-close-photo img { opacity: 1; -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 55%); mask-image: linear-gradient(0deg, transparent 0%, #000 55%); }
 }
 @media (max-width: 40rem) {
   #ct-root .ct-cover .v-btn { width: 100%; }
   #ct-root .ct-cover-hint { text-align: center; }
   #ct-root .ct-qs-sec { padding-top: var(--space-lg); }
-  #ct-root .ct-qs { grid-template-rows: 320px 248px 232px; }
+  #ct-root .ct-qs { grid-template-rows: 248px 248px; }
+  #ct-root .ct-q-sub { display: none; }
+  #ct-root .ct-q-a .ct-q-ans, #ct-root .ct-q-d .ct-q-ans { font-size: 1.375rem; }
+  #ct-root .ct-q .ct-q-go { font-size: var(--text-sm); }
+  #ct-root .ct-facts > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
+  #ct-root .ct-need-pay { padding: var(--space-md); }
   #ct-root .ct-q-txt { padding: var(--space-md); }
   #ct-root .ct-q-b .ct-q-ans, #ct-root .ct-q-c .ct-q-ans { font-size: 1.375rem; }
   #ct-root .ct-q-b .ct-q-go, #ct-root .ct-q-c .ct-q-go { font-size: var(--text-sm); }
   #ct-root .ct-q-ask { font-size: var(--text-sm); }
-  #ct-root .ct-q-d a::before { background: linear-gradient(90deg, color-mix(in oklab, var(--color-field-deep) 92%, transparent) 45%, color-mix(in oklab, var(--color-field-deep) 20%, transparent) 100%); }
   #ct-root .ct-perfiles > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xs); }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -191,9 +225,5 @@
 }
 /* Preguntas frecuentes: cada pregunta va dentro de un H3 (SEO); el H3 no cambia cómo se ve el botón (v2026.11.18-4) */
 #ct-root .ct-faq-h { margin: 0; font: inherit; letter-spacing: normal; line-height: inherit; color: inherit; max-width: none; }
-/* Costos del Crédito (v2026.11.19-9; antes Dividendo flexible y costos): fondo blanco entre la banda celeste y las preguntas */
-#ct-root .ct-costos .v-why-grid { align-items: start; }
-#ct-root .ct-costos .lead { max-width: 46ch; }
-#ct-root .ct-costos .v-well .small { margin-top: var(--space-md); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-weight: 400; color: var(--color-ink-2); max-width: 60ch; }
 /* Las animaciones van aparte, en el snippet "4L - Tradicional animaciones" */
 /* ===== fin Página Crédito tradicional ===== */
