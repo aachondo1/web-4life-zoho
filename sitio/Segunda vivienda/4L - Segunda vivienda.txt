@@ -1,4 +1,4 @@
-<!-- v2026.11.19 · Página Segunda vivienda o inversión (/credito-hipotecario-segunda-vivienda-o-inversion) · un solo snippet de código. Textos según brief SEO v2 (18-11; comercial confirmó otro crédito vigente y arriendo como ingreso): sin topes de monto ni % de financiamiento, sin rentabilidades ni subsidios, plazo "hasta 40 años con dividendo flexible". Estilos: bloque "Página Segunda vivienda" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Simula con el crédito tradicional; el pie mínimo viene del motor (/limites?producto=tradicional) y el texto trae el valor de respaldo (20%). -->
+<!-- v2026.11.19-2 · Página Segunda vivienda o inversión (/credito-hipotecario-segunda-vivienda-o-inversion) · un solo snippet de código. Textos según brief SEO v2 (18-11; comercial confirmó otro crédito vigente y arriendo como ingreso): sin topes de monto ni % de financiamiento, sin rentabilidades ni subsidios, plazo "hasta 40 años con dividendo flexible". Estilos: bloque "Página Segunda vivienda" al final del CSS Personalizado (usa la base .f4v2 que trae el bloque FOGAES). Simula con el crédito tradicional; el pie mínimo viene del motor (/limites?producto=tradicional) y el texto trae el valor de respaldo (20%). -->
 <div class="f4 f4v2" id="sv-root">
 
 <section class="sv-hero" aria-labelledby="sv-t-hero">
@@ -64,34 +64,6 @@
       <a class="v-quiet" href="/simular?producto=tradicional&amp;origen=inversion" data-track="segunda_arriendo">Simula tu inversión</a>
     </div>
     <figure class="v-photo sv-path-photo"><img src="/sv-arriendo.jpg" alt="La fachada de un edificio de departamentos con balcones" width="960" height="1200" loading="lazy" onerror="this.parentNode.remove()"></figure>
-  </div>
-</section>
-
-<section class="v-sec sv-pie" aria-labelledby="sv-t-pie">
-  <div class="container sv-pie-grid">
-    <div>
-      <h2 id="sv-t-pie">Calcula tu Crédito</h2>
-      <p class="lead">Elige el valor de la propiedad y mira cómo se reparte entre tu pie y el crédito de 4Life.</p>
-      <figure class="v-photo sv-pie-photo"><img src="/sv-costa.jpg" alt="Edificios frente a la costa, entre palmeras" width="960" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
-    </div>
-    <div class="sv-calc" data-sv-calc>
-      <fieldset class="sv-chips">
-        <legend class="small">Valor de la propiedad</legend>
-        <label><input type="radio" name="sv-valor" value="2500"><span>UF 2.500</span></label>
-        <label><input type="radio" name="sv-valor" value="4000" checked><span>UF 4.000</span></label>
-        <label><input type="radio" name="sv-valor" value="6000"><span>UF 6.000</span></label>
-        <label><input type="radio" name="sv-valor" value="10000"><span>UF 10.000</span></label>
-      </fieldset>
-      <div class="sv-bar" aria-hidden="true">
-        <div class="sv-bar-pie" style="--p:.2"><span>Pie</span></div>
-        <div class="sv-bar-cred"><span>Crédito 4Life</span></div>
-      </div>
-      <dl class="sv-out" aria-live="polite">
-        <div><dt>Crédito 4Life</dt><dd>UF <span data-sv-out="cred">3.200</span></dd><dd class="sv-clp" data-sv-out="cred_clp" hidden></dd></div>
-        <div class="is-pie"><dt>Tu pie</dt><dd>UF <span data-sv-out="pie">800</span></dd><dd class="sv-clp" data-sv-out="pie_clp" hidden></dd></div>
-      </dl>
-      <p class="small sv-calc-note">Ejemplo referencial. El pie mínimo es de <span data-sv="pie">20</span>% y lo define la política de crédito vigente. Tu dividendo depende del plazo, la tasa y la evaluación de tu caso: lo ves en el simulador.</p>
-    </div>
   </div>
 </section>
 

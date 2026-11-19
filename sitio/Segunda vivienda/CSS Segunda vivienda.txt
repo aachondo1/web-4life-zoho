@@ -1,4 +1,4 @@
-/* v2026.11.19 */
+/* v2026.11.19-2 */
 /* ===== 4Life · Página Segunda vivienda o inversión — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" ===== */
 /* Usa la base .f4v2 (Parte 1 del bloque FOGAES) y algunas clases de esa página (.fg-req, .fg-req-cta, .fg-alt, .fg-close, .fg-legal). Si el bloque FOGAES no está pegado, esta página se ve sin estilos. Todo va acotado a #sv-root: no toca el home, /simular ni FOGAES. */
 
