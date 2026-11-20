@@ -1,0 +1,19 @@
+<!-- v2026.11.18 · Home · bloque 3 de 6: Así funciona, en el mismo orden que el simulador (números → datos → simulación → ejecutivo). "Por qué elegirnos", "Nuestro compromiso" y "Hablemos" salen de este bloque: ahora son 4L Home - Respaldo y 4L Home - Hablemos -->
+<div class="f4 f4v2 f4h">
+<section class="v-road h-road" id="como-funciona" aria-labelledby="h-t-funciona">
+  <div class="container">
+    <h2 id="h-t-funciona">Así funciona</h2>
+    <p class="lead">Ves tus números primero y decides si seguir.</p>
+    <ol class="v-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de la vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Tu nombre, RUT, correo y edad, para preparar tu simulación.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Ve tu dividendo</h3><p>Una simulación orientativa con distintos plazos para comparar.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Un ejecutivo te llama</h3><p>Si quieres avanzar, te guía con los antecedentes, la tasación y la firma.</p></li>
+    </ol>
+    <div class="h-road-foot">
+      <a class="v-btn" data-eval data-track="cta_funciona" href="/simular?origen=home">Simula tu crédito</a>
+      <p class="h-privacy">Usamos tus datos para preparar tu simulación y para que un ejecutivo de 4Life te contacte. Revisa cómo los tratamos en nuestra <a href="/privacidad-y-cookies">política de privacidad</a>.</p>
+    </div>
+  </div>
+</section>
+</div>

@@ -1,9 +1,10 @@
-<!-- v2026.11.19 · Página Subsidio DS19 (/subsidio-ds19) · un solo snippet. Estilos: "CSS Subsidio DS19" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); /ds19-centro.jpg y /ds19-biobio.jpg aún no existen: mientras no se suban, esas zonas se ven sin foto. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
+<!-- v2026.11.19-3 · Fotos en Cómo se Paga (ds19-familia.jpg), Mutuaria (ds19-ejecutivo.jpg) y cierre con degradado (ds19-cierre.jpg). · Página Subsidio DS19 (/subsidio-ds19) · brandbook v3: portada con foto de la zona y degradado celeste, un solo rojo por vista, títulos de sección con mayúscula en cada palabra principal. Un solo snippet. Estilos: "CSS Subsidio DS19" en el CSS Personalizado, DESPUÉS del bloque FOGAES y ANTES del bloque "Brandbook v3". Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); centro y biobío aún sin foto: la portada queda en celeste liso. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
 <div class="f4 f4v2" id="ds-root">
 
-<section class="ds-hero" aria-labelledby="ds-t-hero">
-  <div class="container ds-hero-grid">
-    <div class="ds-hero-text">
+<section class="ds-cover" aria-labelledby="ds-t-hero">
+  <figure class="ds-cover-photo" data-ds-photo hidden><img alt="" width="1500" height="1000" fetchpriority="high" decoding="async"></figure>
+  <div class="container ds-cover-in">
+    <div class="ds-cover-text">
       <h1 id="ds-t-hero">Casa nueva con subsidio DS19, sin llamados ni esperas</h1>
       <p class="ds-zline" data-ds-zline hidden></p>
       <p class="lead">Eliges el proyecto, te inscribes ahí mismo y el subsidio va con la vivienda.</p>
@@ -11,33 +12,15 @@
         <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_hero">Simula con DS19</a>
         <a class="v-quiet" href="#ds-t-req" data-track="ds19_hero_requisitos">¿Cumples los requisitos?</a>
       </div>
-      <p class="ds-cities" data-ds-cities>Concepción · Temuco · Antofagasta · Talca · Puerto Montt</p>
-      <figure class="v-photo ds-hero-photo" data-ds-photo hidden><img alt="" width="1200" height="480" decoding="async"></figure>
+      <p class="ds-cities" data-ds-cities><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Concepción · Temuco · Antofagasta · Talca · Puerto Montt</span></p>
     </div>
-
-    <figure class="ds-pay" aria-labelledby="ds-pay-cap">
-      <p class="ds-pay-cap" id="ds-pay-cap">Así se paga una casa DS19 de <strong>UF 2.200</strong></p>
-      <div class="ds-bar" role="img" aria-label="Ejemplo: vivienda de UF 2.200. Tu ahorro UF 80 más subsidio DS19 UF 350 forman un pie de UF 430; el saldo de UF 1.770, cerca del 80 % del precio, se paga con crédito hipotecario.">
-        <div class="ds-bracket" style="--w:19.5%" aria-hidden="true"><span>Tu pie: UF 430</span></div>
-        <div class="ds-track" aria-hidden="true">
-          <span class="ds-seg is-aho" style="--w:3.6%"></span><span class="ds-seg is-sub" style="--w:15.9%"></span><span class="ds-seg is-cre" style="--w:80.5%"></span>
-        </div>
-      </div>
-      <dl class="ds-eq">
-        <div><dt><span class="ds-op" aria-hidden="true"></span><i class="ds-sw is-aho" aria-hidden="true"></i>Tu ahorro</dt><dd>UF 80</dd></div>
-        <div><dt><span class="ds-op">+</span><i class="ds-sw is-sub" aria-hidden="true"></i>Subsidio DS19</dt><dd>desde UF 350</dd></div>
-        <div><dt><span class="ds-op">+</span><i class="ds-sw is-cre" aria-hidden="true"></i>Crédito por el saldo</dt><dd>UF 1.770</dd></div>
-        <div class="ds-eq-total"><dt><span class="ds-op">=</span><i class="ds-sw" aria-hidden="true"></i>Precio de la vivienda</dt><dd>UF 2.200</dd></div>
-      </dl>
-      <figcaption class="ds-foot">Ejemplo con números redondos y sin tasas. Montos según comuna y año del proyecto; pueden sumarse bonos del programa.</figcaption>
-    </figure>
   </div>
 </section>
 
 <section class="v-sec ds-req" aria-labelledby="ds-t-req">
   <div class="container v-why-grid">
     <div>
-      <h2 id="ds-t-req">¿Puedes usar el DS19?</h2>
+      <h2 id="ds-t-req">¿Puedes Usar el DS19?</h2>
       <p class="lead">Si cumples estas condiciones, ya puedes buscar tu proyecto. No necesitas haber ganado un subsidio antes.</p>
     </div>
     <div class="v-well">
@@ -57,9 +40,35 @@
   </div>
 </section>
 
+<section class="v-sec ds-pago" aria-labelledby="ds-t-pago">
+  <div class="container ds-pago-grid">
+    <div>
+      <h2 id="ds-t-pago">Cómo se Paga tu Casa</h2>
+      <p class="lead">Tu ahorro y el subsidio forman el pie. Lo que falta se paga con un crédito hipotecario, por eso el crédito es menor que en una compra sin subsidio.</p>
+      <figure class="v-photo ds-pago-photo"><img src="/ds19-familia.jpg" alt="Una familia con sus hijas desempaca cajas en su departamento nuevo" width="1200" height="900" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    </div>
+    <figure class="ds-pay" aria-labelledby="ds-pay-cap">
+      <p class="ds-pay-cap" id="ds-pay-cap">Ejemplo: una casa DS19 de <strong>UF 2.200</strong></p>
+      <div class="ds-bar" role="img" aria-label="Ejemplo: vivienda de UF 2.200. Tu ahorro UF 80 más subsidio DS19 UF 350 forman un pie de UF 430; el saldo de UF 1.770, cerca del 80 % del precio, se paga con crédito hipotecario.">
+        <div class="ds-bracket" style="--w:19.5%" aria-hidden="true"><span>Tu pie: UF 430</span></div>
+        <div class="ds-track" aria-hidden="true">
+          <span class="ds-seg is-aho" style="--w:3.6%"></span><span class="ds-seg is-sub" style="--w:15.9%"></span><span class="ds-seg is-cre" style="--w:80.5%"></span>
+        </div>
+      </div>
+      <dl class="ds-eq">
+        <div><dt><span class="ds-op" aria-hidden="true"></span><i class="ds-sw is-aho" aria-hidden="true"></i>Tu ahorro</dt><dd>UF 80</dd></div>
+        <div><dt><span class="ds-op">+</span><i class="ds-sw is-sub" aria-hidden="true"></i>Subsidio DS19</dt><dd>desde UF 350</dd></div>
+        <div><dt><span class="ds-op">+</span><i class="ds-sw is-cre" aria-hidden="true"></i>Crédito por el saldo</dt><dd>UF 1.770</dd></div>
+        <div class="ds-eq-total"><dt><span class="ds-op">=</span><i class="ds-sw" aria-hidden="true"></i>Precio de la vivienda</dt><dd>UF 2.200</dd></div>
+      </dl>
+      <figcaption class="ds-foot">Ejemplo con números redondos y sin tasas. Montos según comuna y año del proyecto; pueden sumarse bonos del programa.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="v-road ds-road" aria-labelledby="ds-t-pasos">
   <div class="container">
-    <h2 id="ds-t-pasos">Cómo funciona el DS19</h2>
+    <h2 id="ds-t-pasos">Cómo Funciona el DS19</h2>
     <p class="lead">No esperas un llamado ni un puntaje: te inscribes todo el año, mientras queden cupos en el proyecto.</p>
     <ol class="v-stops">
       <li class="v-stop"><span class="small">Paso</span><h3>Elige un proyecto DS19</h3><p>En tu ciudad. El MINVU publica el listado y las inmobiliarias también.</p></li>
@@ -73,7 +82,8 @@
 
 <section class="v-sec ds-why" aria-labelledby="ds-t-why">
   <div class="container">
-    <h2 id="ds-t-why">Con el DS19 sabes qué casa compras desde el primer día</h2>
+    <h2 id="ds-t-why">DS19, DS1 o Compra sin Subsidio</h2>
+    <p class="lead">Con el DS19 sabes qué casa compras desde el primer día.</p>
     <div class="ds-table-wrap">
       <table class="ds-table">
         <caption class="sr">Comparación entre DS19, subsidio DS1 y compra sin subsidio</caption>
@@ -96,20 +106,24 @@
   </div>
 </section>
 
-<section class="v-sec ds-mut" aria-labelledby="ds-t-mut">
-  <div class="container">
-    <h2 id="ds-t-mut" class="v-statement">Una mutuaria presta para tu casa como un banco, y la fiscaliza la misma autoridad</h2>
+<section class="v-sec v-commit ds-mut" aria-labelledby="ds-t-mut">
+  <div class="container ds-mut-grid">
+    <div>
+    <h2 id="ds-t-mut">Qué es una Mutuaria</h2>
+    <p class="v-statement">Una mutuaria presta para tu casa como un banco, y la fiscaliza la misma autoridad.</p>
     <ul class="v-facts ds-facts3">
       <li><strong>Fiscalizada por la CMF.</strong> Una administradora de mutuos hipotecarios otorga créditos hipotecarios y está registrada y fiscalizada por la Comisión para el Mercado Financiero (CMF), como el resto del mercado hipotecario.</li>
       <li><strong>Del grupo 4Life.</strong> 4Life Crédito Hipotecario es del mismo grupo que 4Life Seguros de Vida.</li>
       <li><strong>Miramos tu caso completo.</strong> Evaluamos boletas de honorarios, turnos e ingresos variables, casos que un banco a veces deja fuera.</li>
     </ul>
+    </div>
+    <figure class="v-photo ds-mut-photo"><img src="/ds19-ejecutivo.jpg" alt="Un ejecutivo de 4Life revisa con una pareja los documentos de su crédito" width="800" height="1000" loading="lazy" onerror="this.parentNode.remove()"></figure>
   </div>
 </section>
 
 <section class="v-sec v-faq ds-faq" aria-labelledby="ds-t-faq">
   <div class="container v-faq-grid">
-    <div><h2 id="ds-t-faq">Preguntas frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el subsidio DS19.</p></div>
+    <div><h2 id="ds-t-faq">Preguntas Frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el subsidio DS19.</p></div>
     <div class="f4-acc" data-ds-faq>
       <div class="f4-acc-item" data-q="ahorro"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q1">¿Cuánto ahorro necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q1"><p>Depende del precio: UF 40 para viviendas de UF 1.600 a 1.800 y UF 80 para las de más de UF 1.800, en tu cuenta de ahorro para la vivienda. Mientras más ahorro tengas, menor es el crédito.</p></div></div>
       <div class="f4-acc-item" data-q="boletas"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q2">¿Puedo con boletas de honorarios o trabajo por turnos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q2"><p>Sí, se puede revisar. Las boletas, los turnos y los ingresos variables no son motivo para descartarte: en 4Life miramos tu caso completo. El ejecutivo te dice qué documentos necesitas.</p></div></div>
@@ -124,10 +138,11 @@
 </section>
 
 <section class="v-close ds-close" aria-labelledby="ds-t-cierre">
+  <figure class="ds-close-photo" aria-hidden="true"><img src="/ds19-cierre.jpg" alt="" width="1500" height="1000" loading="lazy" onerror="this.parentNode.remove()"></figure>
   <div class="container">
     <div class="v-close-in">
       <div>
-        <h2 id="ds-t-cierre">¿Ya tienes un proyecto DS19 en vista?</h2>
+        <h2 id="ds-t-cierre">¿Ya Tienes un Proyecto DS19 en Vista?</h2>
         <p class="ds-close-lead">Simula con los datos de la cotización y revisamos contigo si calificas.</p>
       </div>
       <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_cierre">Simula con DS19</a>
@@ -160,15 +175,15 @@
   if (zona) {
     var Z = ZONAS[zona], zl = $("[data-ds-zline]");
     zl.textContent = Z.msg + "."; zl.hidden = false;
-    $("[data-ds-cities]").textContent = Z.c;
+    $("[data-ds-cities] span").textContent = Z.c;
     $("[data-ds-tope]").textContent = Z.tope;
     var faq = $("[data-ds-faq]");
     Z.faq.slice().reverse().forEach(function (q) { var it = faq.querySelector('[data-q="' + q + '"]'); if (it) faq.insertBefore(it, faq.firstChild); });
     [].forEach.call(root.querySelectorAll("[data-ds-cta]"), function (a) { a.href = "/simular?producto=ds19&origen=ds19&zona=" + zona; });
   }
-  /* Foto por zona (opcional): si el archivo no existe en Zoho, el espacio no aparece */
+  /* Foto por zona en la portada, con degradado celeste. Si el archivo no existe en Zoho, la portada queda en celeste liso */
   var fig = $("[data-ds-photo]"), img = fig.querySelector("img");
-  img.onload = function () { fig.hidden = false; };
+  img.onload = function () { fig.hidden = false; root.classList.add("ds-has-photo"); };
   img.onerror = function () { fig.remove(); };
   /* foto: texto alternativo de la foto de cada zona. Vacío = esa zona aún no tiene foto y no se pide. */
   var FOTO_GENERAL = "Coquimbo y su bahía, con los cerros de fondo";

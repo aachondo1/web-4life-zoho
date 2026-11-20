@@ -1,0 +1,19 @@
+<!-- v2026.11.18-2 · Home · bloque 6 de 6: preguntas frecuentes (el script global abre y cierra .f4-acc-btn). Después de este bloque va el snippet global "4L - Global CTA" sin cambios -->
+<div class="f4 f4v2 f4h">
+<section class="v-sec v-faq h-faq" id="preguntas" aria-labelledby="h-t-faq">
+  <div class="container v-faq-grid">
+    <div>
+      <h2 id="h-t-faq">Preguntas frecuentes</h2>
+      <p class="lead">Lo que más nos preguntan antes de simular.</p>
+    </div>
+    <div class="f4-acc">
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q1">¿Simular me compromete?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q1" hidden><p>No. La simulación es gratis y orientativa: no es una solicitud de crédito ni una aprobación. Un ejecutivo revisa tu caso antes de cualquier paso.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q2">¿Qué datos me piden y quién me contacta?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q2" hidden><p>Te pedimos el valor aproximado de la propiedad, el pie, tu nombre, RUT, correo y edad. Si quieres avanzar, un ejecutivo de 4Life te contacta para revisar tu caso.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q3">¿Puedo evaluar opciones si ya tengo un crédito hipotecario?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q3" hidden><p>Sí. Puedes <a href="/refinanciamiento-hipotecario">refinanciar</a> tu crédito actual, esté en 4Life o en otra institución, y eventualmente pedir un monto adicional para <a href="/fines-generales">fines generales</a>. Las opciones dependen de tus antecedentes y de las condiciones de tu crédito vigente.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q4">¿Puedo pedir un crédito si soy independiente?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q4" hidden><p>Sí. En 4Life también evaluamos casos con boletas o ingresos variables. Las alternativas dependen de los antecedentes con que acredites tus ingresos.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q5">¿Cuánto demora el proceso?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q5" hidden><p>Depende de tu caso y de los antecedentes que entregues. Tu ejecutivo te indica los plazos de cada etapa: evaluación, tasación y firma.</p></div></div>
+      <div class="f4-acc-item"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="h-q6">¿Qué información debo tener a mano?<i class="bi bi-chevron-down" aria-hidden="true"></i></button><div class="f4-acc-panel" id="h-q6" hidden><p>Te sirve tener a mano información de tus ingresos, tu situación laboral, la propiedad que quieres comprar y, si corresponde, tu crédito vigente.</p></div></div>
+    </div>
+  </div>
+</section>
+</div>

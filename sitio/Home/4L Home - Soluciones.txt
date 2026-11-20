@@ -1,0 +1,45 @@
+<!-- v2026.11.18 · Home · bloque 2 de 6: las 4 familias de productos en filas. Fotos: subir home-hogar.jpg, home-subsidio.jpg, home-soluciones.jpg, home-inmobiliarias.jpg. Subsidio va al simulador hasta que existan sus páginas; /inmobiliarias-y-brokers aún no existe -->
+<div class="f4 f4v2 f4h">
+<section class="v-sec h-fam-sec" aria-labelledby="h-t-fam">
+  <div class="container">
+    <div class="h-fam-head">
+      <h2 id="h-t-fam">¿Qué quieres hacer?</h2>
+      <p class="lead">Elige tu caso y conoce cómo te podemos ayudar.</p>
+    </div>
+    <ul class="h-fams">
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-hogar.jpg" alt="Una familia desempaca cajas en su nueva casa" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Financiar mi hogar</h3><p>Compra tu casa o departamento, nuevo o usado, o una segunda propiedad.</p></div>
+        <ul class="h-links">
+          <li><a href="/credito-hipotecario-tradicional" data-track="home_fam_tradicional">Crédito hipotecario tradicional<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/credito-hipotecario-fogaes" data-track="home_fam_fogaes">Primera vivienda nueva con FOGAES<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/credito-hipotecario-segunda-vivienda-o-inversion" data-track="home_fam_segunda">Segunda vivienda o inversión<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-subsidio.jpg" alt="Llaves puestas en la puerta de una vivienda nueva" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Comprar con subsidio</h3><p>Complementa tu subsidio habitacional con un crédito para tu primera vivienda.</p></div>
+        <ul class="h-links">
+          <li><a href="/simular?producto=ds1&amp;origen=home" data-track="home_fam_ds1">Subsidio DS1<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/simular?producto=ds19&amp;origen=home" data-track="home_fam_ds19">Subsidio DS19, integración social<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-soluciones.jpg" alt="Una pareja pinta una pared de su casa" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Soluciones financieras</h3><p>Mejora tu crédito actual o usa tu propiedad para financiar otros proyectos.</p></div>
+        <ul class="h-links">
+          <li><a href="/refinanciamiento-hipotecario" data-track="home_fam_refinanciamiento">Refinanciamiento hipotecario<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/fines-generales" data-track="home_fam_fines">Crédito para fines generales<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+      <li class="h-fam">
+        <figure class="v-photo h-fam-photo"><img src="/home-inmobiliarias.jpg" alt="Fachada de un edificio de departamentos" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
+        <div class="h-fam-text"><h3>Inmobiliarias y brokers</h3><p>Financiamiento para los clientes de tu proyecto o de tu cartera.</p></div>
+        <ul class="h-links">
+          <li><a href="/inmobiliarias-y-brokers" data-track="home_fam_inmobiliarias">Trabaja con 4Life<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+</div>

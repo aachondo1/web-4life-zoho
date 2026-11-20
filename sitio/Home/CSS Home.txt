@@ -1,4 +1,4 @@
-/* v2026.11.19-4 */
+/* v2026.11.19-9 */
 /* ===== 4Life · Home v5 — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Todo va acotado a .f4h: no cambia FOGAES, las otras páginas ni /simular ===== */
 /* Escala igual a FOGAES: secciones de 64 px, H1 ~44 px, títulos ~32 px */
 .f4h { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem; }
@@ -44,7 +44,8 @@
 .f4h .h-links a:hover .bi, .f4h .h-links a:focus-visible .bi { transform: translateX(4px); }
 
 /* Así funciona: un solo camino vertical de 6 pasos. Escritorio: título y botón a la izquierda, camino a la derecha. Móvil: título, camino y botón */
-.f4h .h-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "intro steps" "foot steps"; grid-template-rows: auto 1fr; column-gap: var(--space-3xl); row-gap: var(--space-xl); align-items: start; }
+.f4h .h-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "side steps"; column-gap: var(--space-3xl); align-items: start; }
+.f4h .h-road-side { grid-area: side; position: sticky; top: 96px; display: flex; flex-direction: column; gap: var(--space-xl); }
 .f4h .h-road-intro { grid-area: intro; }
 .f4h .h-road .v-stops { grid-area: steps; display: block; margin: 0; border-top: 0; }
 .f4h .h-road-foot { grid-area: foot; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
@@ -61,30 +62,54 @@
 .f4h .h-privacy { max-width: 46ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
 .f4h .h-privacy a { color: var(--color-on-ink); }
 .f4h .h-privacy a:hover { color: var(--color-on-ink-2); }
+/* Fases del camino (Simula · Evaluación · Cierre): rótulo sobre el primer paso de cada fase, sin cortar la línea */
+.f4h .h-fase { display: block; height: 16px; margin-bottom: var(--space-sm); font: 700 13px/16px var(--font-outlier); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-on-ink); }
+.f4h .h-road .h-fase-start::before { top: 30px; }
+.f4h .h-road .v-stop.h-fase-start:not(:last-child)::after { top: 49px; }
+.f4h .h-road .h-pre-fase { padding-bottom: var(--space-2xl); }
+.f4h .h-road .v-stop.h-pre-fase:not(:last-child)::after { bottom: -30px; }
 @media (max-width: 60rem) {
-  .f4h .h-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; grid-template-rows: auto; row-gap: var(--space-lg); }
+  .f4h .h-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; row-gap: var(--space-lg); }
+  .f4h .h-road-side { display: contents; }
 }
 
 /* Quiénes somos: una frase grande y tres datos */
-.f4h .h-about { background: var(--color-paper-3); }
+.f4h .h-about { background: var(--color-paper); }
 .f4h .h-statement { font-size: var(--text-display-s); max-width: 26ch; margin-bottom: var(--space-xl); }
 .f4h .h-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); border-top: var(--rule-bar) solid var(--color-field); padding-top: var(--space-lg); }
 .f4h .h-facts h3 { margin-bottom: var(--space-xs); }
 .f4h .h-facts p { color: var(--color-ink-2); max-width: 46ch; }
 .f4h .h-facts strong { color: var(--color-ink); font-weight: 600; }
 .f4h .h-reg { margin-top: var(--space-lg); }
+.f4h .h-legal { margin-top: var(--space-xl); max-width: 90ch; font-weight: 400; color: var(--color-muted); }
+.f4h .h-legal strong { color: var(--color-ink-2); }
 
-/* Atención a clientes (antes Hablemos) */
-.f4h .h-talk { background: var(--color-paper); }
-.f4h .h-talk-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
-.f4h .h-talk-photo { aspect-ratio: 4 / 3; }
-.f4h .h-talk h2 { margin-bottom: var(--space-xs); }
-.f4h .h-talk .lead { margin-bottom: var(--space-lg); }
-.f4h .v-contact { margin-bottom: 0; }
+/* Atención a clientes (para quien ya es cliente): franja compacta al final, sin foto */
+.f4h .h-talk { background: var(--color-paper); padding-block: var(--space-2xl); }
+.f4h .h-talk-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-2xl); align-items: start; }
+.f4h .h-talk h2 { font-size: var(--text-title); margin-bottom: var(--space-xs); }
+.f4h .h-talk .lead { font-size: 1rem; margin-bottom: 0; }
+.f4h .h-talk .v-contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-xl); border-top: var(--rule-bar) solid var(--color-field); margin: 0; }
+.f4h .h-talk .v-contact > div { grid-template-columns: minmax(0, 1fr); gap: 0; padding-block: var(--space-sm); }
 .f4h .v-contact dd { font-size: 1.0625rem; }
+/* enlaces de la lista con zona de toque de 44 px */
+.f4h .v-contact dd a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 60rem) { .f4h .h-talk-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); } }
+@media (max-width: 40rem) { .f4h .h-talk .v-contact { grid-template-columns: minmax(0, 1fr); } }
 
 /* Cierre (4L - Global CTA con clase f4h) */
-.f4h .v-close h2 { max-width: 24ch; }
+.f4h .v-close h2 { max-width: 30ch; }
+/* Foto del cierre: Santiago a la derecha, fundida en el celeste (el texto queda sobre el lado sin foto) */
+.f4h .h-close { position: relative; overflow: hidden; isolation: isolate; padding-block: var(--space-3xl); }
+.f4h .h-close > .container { position: relative; z-index: 1; }
+.f4h .h-close-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 52%; z-index: 0; }
+.f4h .h-close-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 55%); mask-image: linear-gradient(90deg, transparent 0%, #000 55%); }
+.f4h .h-close .v-btn { box-shadow: 0 8px 24px color-mix(in oklab, var(--color-ink) 25%, transparent); }
+@media (max-width: 60rem) {
+  .f4h .h-close-photo { position: relative; width: 100%; height: 180px; margin-bottom: calc(-1 * var(--space-sm)); }
+  .f4h .h-close-photo img { -webkit-mask-image: linear-gradient(180deg, #000 35%, transparent 100%); mask-image: linear-gradient(180deg, #000 35%, transparent 100%); }
+  .f4h .h-close { padding-block: 0 var(--space-2xl); }
+}
 
 /* Preguntas frecuentes */
 .f4h .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
@@ -98,17 +123,16 @@
 
 @media (max-width: 60rem) {
   .f4h { --section-gap: 48px; --section-gap-s: 48px; }
-  .f4h .h-talk-grid, .f4h .h-facts { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .f4h .h-facts { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
   .f4h .h-proof { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
   .f4h .h-fam { grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-sm) var(--space-md); align-items: start; }
   .f4h .h-fam .h-links { grid-column: 1 / -1; }
   .f4h .h-fam-text h3 { font-size: 1.125rem; }
   .f4h .h-fam-text p { font-size: 1rem; }
-  .f4h .h-talk-photo { aspect-ratio: 16 / 9; }
 }
 /* v2026.11.18-3 · auditoría: el ancla de "Mira cómo funciona" no queda bajo el encabezado fijo; fotos con ancho máximo en tablet para que no se vean borrosas */
 .f4h [id] { scroll-margin-top: 96px; }
-@media (max-width: 60rem) and (min-width: 40.01rem) { .f4h .h-talk-photo { max-width: 560px; } }
+
 /* Portada en tablet y móvil (bajo 768 px): la foto va arriba y se funde hacia abajo en el celeste; el texto se apoya abajo, sobre el lado opaco */
 @media (max-width: 48rem) {
   .f4h .h-cover::before { display: none; }

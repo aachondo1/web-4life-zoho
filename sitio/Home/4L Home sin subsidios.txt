@@ -1,4 +1,4 @@
-<!-- v2026.11.19-5 · Atención a clientes con Portal de clientes · Así funciona en 6 pasos como un solo camino vertical; Hablemos pasa a Atención a clientes · brandbook v3 (portada con foto y degradado celeste) · Home sin subsidios (alternativa a "4L Home"): sin la familia de crédito con subsidio DS1 y DS19. Usar uno u otro, no los dos. Después de este snippet van "4L Home - Animacion" y el global "4L - Global CTA". Estilos: bloque "Home v5" del CSS Personalizado (= CSS Home.txt). Fotos: home-portada, home-hogar, home-soluciones, home-inmobiliarias, home-santiago (.jpg) -->
+<!-- v2026.11.19-9 · incluye la franja final (cierre con foto); ya no se usa el snippet global "4L - Global CTA" · Así funciona en 3 fases; Atención a clientes al final, sin foto · respaldo de 4Life Seguros y siglas explicadas · Atención a clientes con Portal de clientes · Así funciona en 6 pasos como un solo camino vertical; Hablemos pasa a Atención a clientes · brandbook v3 (portada con foto y degradado celeste) · Home sin subsidios (alternativa a "4L Home"): sin la familia de crédito con subsidio DS1 y DS19. Usar uno u otro, no los dos. Después de este snippet va "4L Home - Animacion". Estilos: bloque "Home v5" del CSS Personalizado (= CSS Home.txt). Fotos: home-portada, home-hogar, home-soluciones, home-inmobiliarias, home-santiago (.jpg) -->
 <div class="f4 f4v2 f4h">
 <section class="h-cover" aria-labelledby="h-t-hero">
   <figure class="h-cover-photo"><img src="/home-portada.jpg" alt="Un ejecutivo de 4Life conversa con una pareja en la oficina, con Santiago de fondo" width="800" height="640" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
@@ -36,13 +36,13 @@
         <div class="h-fam-text"><h3>Financiar mi hogar</h3><p>Compra tu casa o departamento, nuevo o usado, o una segunda propiedad.</p></div>
         <ul class="h-links">
           <li><a href="/credito-hipotecario-tradicional" data-track="home_fam_tradicional">Crédito hipotecario tradicional<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
-          <li><a href="/credito-hipotecario-fogaes" data-track="home_fam_fogaes">Primera vivienda nueva con FOGAES<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+          <li><a href="/credito-hipotecario-fogaes" data-track="home_fam_fogaes">Primera vivienda nueva con garantía del Estado (FOGAES)<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
           <li><a href="/credito-hipotecario-segunda-vivienda-o-inversion" data-track="home_fam_segunda">Segunda vivienda o inversión<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
         </ul>
       </li>
       <li class="h-fam">
         <figure class="v-photo h-fam-photo"><img src="/home-soluciones.jpg" alt="Una pareja pinta una pared de su casa" width="800" height="600" loading="lazy" onerror="this.parentNode.remove()"></figure>
-        <div class="h-fam-text"><h3>Soluciones financieras</h3><p>Mejora tu crédito actual o usa tu propiedad para financiar otros proyectos.</p></div>
+        <div class="h-fam-text"><h3>Soluciones financieras</h3><p>Refinancia tu crédito actual o usa tu propiedad para financiar otros proyectos.</p></div>
         <ul class="h-links">
           <li><a href="/refinanciamiento-hipotecario" data-track="home_fam_refinanciamiento">Refinanciamiento hipotecario<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
           <li><a href="/fines-generales" data-track="home_fam_fines">Crédito para fines generales<i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
@@ -61,22 +61,24 @@
 
 <section class="v-road h-road" id="como-funciona" aria-labelledby="h-t-funciona">
   <div class="container h-road-grid">
-    <div class="h-road-intro">
-      <h2 id="h-t-funciona">Así funciona</h2>
-      <p class="lead">Un ejecutivo de 4Life te acompaña de principio a fin.</p>
-    </div>
-    <ol class="v-stops">
-      <li class="v-stop"><span class="small">Paso</span><h3>Cuéntanos de tu vivienda</h3><p>Su valor aproximado y el pie con que cuentas.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Información de la propiedad y de tu situación actual, para ver tu dividendo y que tu ejecutivo te contacte.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Postulamos juntos</h3><p>Tu ejecutivo te guía con la documentación que necesitas y te ayuda a reunirla más rápido.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Respuesta rápida</h3><p>Con tu documentación completa, te damos una respuesta con tu tasa y un dividendo fijo.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Aceptas y revisamos la propiedad</h3><p>Pagas los gastos operacionales y hacemos la tasación y el estudio de títulos.</p></li>
-      <li class="v-stop"><span class="small">Paso</span><h3>Firmas y te mudas</h3><p>Firmas la escritura y ya puedes vivir en tu nuevo hogar.</p></li>
-    </ol>
-    <div class="h-road-foot">
+    <div class="h-road-side">
+      <div class="h-road-intro">
+        <h2 id="h-t-funciona">Así funciona</h2>
+        <p class="lead">Un ejecutivo de 4Life te acompaña de principio a fin.</p>
+      </div>
+      <div class="h-road-foot">
       <a class="v-btn" data-eval data-track="cta_funciona" href="/simular?origen=home">Simula tu crédito</a>
       <p class="h-privacy">Usamos tus datos para preparar tu simulación y para que un ejecutivo de 4Life te contacte. Revisa cómo los tratamos en nuestra <a href="/privacidad-y-cookies">política de privacidad</a>.</p>
     </div>
+    </div>
+    <ol class="v-stops">
+      <li class="v-stop h-fase-start"><span class="h-fase">Simula</span><span class="small">Paso</span><h3>Cuéntanos de tu vivienda</h3><p>Su valor aproximado y el pie con que cuentas, o tu crédito actual si quieres refinanciar.</p></li>
+      <li class="v-stop h-pre-fase"><span class="small">Paso</span><h3>Déjanos tus datos</h3><p>Información de la propiedad y de tu situación actual, para ver tu dividendo y que tu ejecutivo te contacte.</p></li>
+      <li class="v-stop h-fase-start"><span class="h-fase">Evaluación</span><span class="small">Paso</span><h3>Postulamos juntos</h3><p>Tu ejecutivo te guía con la documentación que necesitas y te ayuda a reunirla más rápido.</p></li>
+      <li class="v-stop h-pre-fase"><span class="small">Paso</span><h3>Respuesta rápida</h3><p>Con tu documentación completa, te damos una respuesta con tu tasa y un dividendo fijo.</p></li>
+      <li class="v-stop h-fase-start"><span class="h-fase">Cierre</span><span class="small">Paso</span><h3>Aceptas y revisamos la propiedad</h3><p>Pagas los gastos operacionales, cuyo monto te informa tu ejecutivo antes, y hacemos la tasación y el estudio de títulos.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Firmas y te mudas</h3><p>Firmas la escritura y ya puedes vivir en tu nuevo hogar.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -84,30 +86,16 @@
   <div class="container">
     <h2 id="h-t-about" class="h-statement">Una hipotecaria nueva, con el respaldo de un grupo con trayectoria.</h2>
     <ul class="h-facts">
-      <li><h3>Un grupo que nos respalda</h3><p><strong>4Life Crédito Hipotecario S.A.</strong> nace en 2025 bajo la propiedad de DT Rigel S.A., empresa del Holding Dercorp, controlada por una rama de la familia Del Río, con participaciones en retail, automotriz, inmobiliaria y seguros.</p></li>
-      <li><h3>Seguros al mejor precio licitado</h3><p>Somos parte del mismo grupo que <a href="https://4lifeseguros.cl/" target="_blank" rel="noopener">4Life Seguros de Vida</a>. Tus seguros hipotecarios siempre se contratan al mejor precio licitado, de acuerdo a la norma vigente.</p></li>
+      <li><h3>Del mismo grupo que 4Life Seguros de Vida</h3><p><a href="https://4lifeseguros.cl/nosotros/" target="_blank" rel="noopener">4Life Seguros de Vida</a> está en el mercado desde 2014, con foco en rentas vitalicias, y tiene clasificación de riesgo AA.</p></li>
+      <li><h3>Seguros al mejor precio licitado</h3><p>Tus seguros hipotecarios siempre se contratan al mejor precio licitado, de acuerdo a la norma vigente.</p></li>
       <li><h3>Miramos tu caso completo</h3><p>También evaluamos tu caso si trabajas con boletas o tienes ingresos variables. Un ejecutivo revisa contigo los antecedentes.</p></li>
     </ul>
+    <p class="h-legal small"><strong>4Life Crédito Hipotecario S.A.</strong> nace en 2025 bajo la propiedad de DT Rigel S.A., empresa del Holding Dercorp, controlada por una rama de la familia Del Río, con participaciones en retail, automotriz, inmobiliaria y seguros.</p>
     <!-- Cuando esté confirmado el registro o la fiscalización, agregar aquí, por ejemplo:
     <p class="h-reg"><a href="/informacion-regulatoria">Información regulatoria</a></p> -->
   </div>
 </section>
 
-<section class="v-sec h-talk" aria-labelledby="h-t-talk">
-  <div class="container h-talk-grid">
-    <figure class="v-photo h-talk-photo"><img src="/home-santiago.jpg" alt="Vista de Santiago con la cordillera nevada, donde está nuestra oficina de atención" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></figure>
-    <div>
-      <h2 id="h-t-talk">Atención a clientes</h2>
-      <p class="lead">¿Ya eres cliente de 4Life? Ingresa a tu portal o usa nuestros canales de atención.</p>
-      <dl class="v-contact">
-        <div><dt>Portal de clientes</dt><dd><a href="https://portal.4lifehipotecario.cl/" target="_blank" rel="noopener" data-track="portal_home">Ingresa a tu portal</a></dd></div>
-        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/56943802296" target="_blank" rel="noopener" data-track="whatsapp_home">+56 9 4380 2296</a></dd></div>
-        <div><dt>Oficina</dt><dd>Alonso de Córdova 4125, oficina 118, piso -1, Vitacura, Santiago</dd></div>
-        <div><dt>Formulario</dt><dd><a href="/contacto" data-track="contacto_home">Envíanos tu solicitud</a></dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
 
 <section class="v-sec v-faq h-faq" id="preguntas" aria-labelledby="h-t-faq">
   <div class="container v-faq-grid">
@@ -125,4 +113,21 @@
     </div>
   </div>
 </section>
+
+<section class="v-sec h-talk" aria-labelledby="h-t-talk">
+  <div class="container h-talk-grid">
+    <div>
+      <h2 id="h-t-talk">Atención a clientes</h2>
+      <p class="lead">¿Ya eres cliente de 4Life? Ingresa a tu portal o usa nuestros canales de atención.</p>
+    </div>
+    <dl class="v-contact">
+        <div><dt>Portal de clientes</dt><dd><a href="https://portal.4lifehipotecario.cl/" target="_blank" rel="noopener" data-track="portal_home">Ingresa a tu portal</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/56943802296" target="_blank" rel="noopener" data-track="whatsapp_home">+56 9 4380 2296</a></dd></div>
+        <div><dt>Oficina</dt><dd>Alonso de Córdova 4125, oficina 118, piso -1, Vitacura,&nbsp;Santiago</dd></div>
+        <div><dt>Formulario</dt><dd><a href="/contacto" data-track="contacto_home">Envíanos tu solicitud</a></dd></div>
+      </dl>
+  </div>
+</section>
+
+<section class="v-close h-close" aria-labelledby="t-cierre"><div class="h-close-photo" aria-hidden="true"><img src="/home-santiago.jpg" alt="" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></div><div class="container v-close-in"><h2 id="t-cierre">Compra, refinancia o financia tu proyecto con un ejecutivo a tu lado</h2><a class="v-btn" data-eval data-track="cta_final" href="/simular?origen=home">Simula tu crédito</a></div></section>
 </div>

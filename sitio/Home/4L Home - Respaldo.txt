@@ -1,0 +1,15 @@
+<!-- v2026.11.18 · Home · bloque 4 de 6: quiénes somos (reemplaza "Por qué elegirnos" y "Nuestro compromiso"). Sin el distintivo "Información regulatoria": vuelve cuando exista su página. -->
+<div class="f4 f4v2 f4h">
+<section class="v-sec h-about" aria-labelledby="h-t-about">
+  <div class="container">
+    <h2 id="h-t-about" class="h-statement">Una hipotecaria nueva, con el respaldo de un grupo con trayectoria.</h2>
+    <ul class="h-facts">
+      <li><h3>Un grupo que nos respalda</h3><p><strong>4Life Crédito Hipotecario S.A.</strong> nace en 2025 bajo la propiedad de DT Rigel S.A., empresa del Holding Dercorp, controlada por una rama de la familia Del Río, con participaciones en retail, automotriz, inmobiliaria y seguros.</p></li>
+      <li><h3>Seguros al mejor precio licitado</h3><p>Somos parte del mismo grupo que <a href="https://4lifeseguros.cl/" target="_blank" rel="noopener">4Life Seguros de Vida</a>. Tus seguros hipotecarios siempre se contratan al mejor precio licitado, de acuerdo a la norma vigente.</p></li>
+      <li><h3>Miramos tu caso completo</h3><p>También evaluamos tu caso si trabajas con boletas o tienes ingresos variables. Un ejecutivo revisa contigo los antecedentes.</p></li>
+    </ul>
+    <!-- Cuando esté confirmado el registro o la fiscalización, agregar aquí, por ejemplo:
+    <p class="h-reg"><a href="/informacion-regulatoria">Información regulatoria</a></p> -->
+  </div>
+</section>
+</div>

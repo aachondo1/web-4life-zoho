@@ -1,0 +1,24 @@
+<!-- v2026.11.18-2 · Home · bloque 1 de 6: portada fija (sin carrusel) + franja de respaldo. Estilos: bloque "Home v5" del CSS Personalizado (va después del bloque FOGAES). Foto: subir home-portada.jpg -->
+<div class="f4 f4v2 f4h">
+<section class="h-hero" aria-labelledby="h-t-hero">
+  <div class="container h-hero-grid">
+    <div class="h-hero-text">
+      <h1 id="h-t-hero">Tu nuevo hogar comienza aquí</h1>
+      <p class="lead">Créditos hipotecarios para comprar, refinanciar o financiar tus proyectos, con un ejecutivo de <strong>4Life</strong> a tu lado desde la simulación hasta la firma.</p>
+      <div class="v-actions">
+        <a class="v-btn" data-eval data-track="hero_1" href="/simular?origen=home">Simula tu crédito</a>
+        <a class="v-quiet" data-track="hero_como_funciona" href="#como-funciona">Mira cómo funciona</a>
+      </div>
+      <p class="h-hint">Simular es gratis y no te compromete: no es una solicitud de crédito.</p>
+    </div>
+    <figure class="v-photo h-hero-photo"><img src="/home-portada.jpg" alt="Un ejecutivo de 4Life conversa con una pareja en la oficina, con Santiago de fondo" width="800" height="640" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
+  </div>
+  <div class="container">
+    <ul class="h-proof" aria-label="Nuestro respaldo">
+      <li><i class="bi bi-shield-check" aria-hidden="true"></i><span>Del mismo grupo que <strong>4Life Seguros de Vida</strong></span></li>
+      <li><i class="bi bi-building" aria-hidden="true"></i><span>Parte del <strong>Holding Dercorp</strong></span></li>
+      <li><i class="bi bi-map" aria-hidden="true"></i><span>Financiamos viviendas en <strong>todo Chile</strong></span></li>
+    </ul>
+  </div>
+</section>
+</div>

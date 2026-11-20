@@ -1,0 +1,17 @@
+<!-- v2026.11.18 · Home · bloque 5 de 6: contacto sin correo (WhatsApp, oficina y formulario de /contacto). Foto: subir home-santiago.jpg -->
+<div class="f4 f4v2 f4h">
+<section class="v-sec h-talk" aria-labelledby="h-t-talk">
+  <div class="container h-talk-grid">
+    <figure class="v-photo h-talk-photo"><img src="/home-santiago.jpg" alt="Vista de Santiago con la cordillera nevada" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <div>
+      <h2 id="h-t-talk">Hablemos</h2>
+      <p class="lead">Un ejecutivo de 4Life te responde y te acompaña en cada etapa.</p>
+      <dl class="v-contact">
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/56943802296" target="_blank" rel="noopener" data-track="whatsapp_home">+56 9 4380 2296</a></dd></div>
+        <div><dt>Oficina</dt><dd>Alonso de Córdova 4125, oficina 118, piso -1, Vitacura, Santiago</dd></div>
+        <div><dt>Formulario</dt><dd><a href="/contacto" data-track="contacto_home">Escríbenos y te llamamos</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</div>

@@ -1,126 +1,174 @@
-/* v2026.11.18-2 */
-/* ===== 4Life · Página Subsidio DS19 — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) ===== */
-/* Tarjetas con filete superior de 4 px: mismo lenguaje que la tarjeta del hero de FOGAES (.fg-pie) */
-/* Escala igual a FOGAES (home publicado) */
+/* v2026.11.19-3 */
+/* ===== 4Life · Página Subsidio DS19 — va en el CSS Personalizado DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) y ANTES del bloque "Brandbook v3" ===== */
+/* Brandbook v3. Ritmo: portada con foto y degradado celeste · requisitos en blanco · cómo se paga en gris · pasos en banda celeste · comparación en blanco · mutuaria en banda celeste · preguntas en gris · cierre celeste. Dos bandas celestes nunca seguidas */
+/* La portada usa .ds-cover (no .ds-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores */
+
+/* Escala de páginas de producto */
 #ds-root { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem;
-  --ds-aho: var(--color-accent); --ds-sub: var(--color-field); --ds-cre: var(--color-field-soft); --ds-line: #7A7A7A; }
+  --ds-celeste: #318CDD; --ds-profundo: #1A73C8; --ds-tinta: #135FA8; --ds-bruma: #E8F3FC; --ds-coral: #F3504E; }
 #ds-root .sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-#ds-root .v-btn { min-height: 48px; padding: var(--space-sm) var(--space-lg); font-size: 1.0625rem; }
-#ds-root .v-quiet { min-height: 48px; font-size: 1.0625rem; }
-#ds-root .v-actions { gap: var(--space-lg); }
-#ds-root ::selection { background: var(--color-field-soft); color: var(--color-field-deep); }
+#ds-root ::selection { background: var(--ds-bruma); color: var(--ds-tinta); }
+#ds-root .v-actions { gap: var(--space-md); }
 
-/* Portada */
-#ds-root .ds-hero { background: var(--color-field-soft); padding-block: var(--space-xl); }
-#ds-root .ds-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: center; }
-#ds-root .ds-hero h1 { max-width: 15ch; margin-bottom: var(--space-md); }
-#ds-root .ds-zline { font: 700 var(--text-title)/1.3 var(--font-display); color: var(--color-accent); margin-bottom: var(--space-sm); max-width: 30ch; }
-#ds-root .ds-hero .lead { margin-bottom: var(--space-lg); }
-#ds-root .ds-cities { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: var(--rule-hair) solid color-mix(in oklab, var(--color-field) 25%, transparent); font: 600 var(--text-md)/1.5 var(--font-body); color: var(--color-field-deep); max-width: 44ch; }
-#ds-root .ds-hero-photo { margin-top: var(--space-lg); aspect-ratio: 5 / 2; max-width: 560px; }
-#ds-root .ds-hero-photo img { position: absolute; inset: 0; }
+/* Portada: foto de la zona a la derecha con degradado celeste; texto blanco del lado opaco. Sin foto, celeste liso */
+#ds-root .ds-cover { position: relative; isolation: isolate; overflow: hidden; background: var(--ds-tinta); color: #FFFFFF; }
+#ds-root .ds-cover-photo { position: absolute; inset: 0; margin: 0; z-index: -2; }
+#ds-root .ds-cover-photo[hidden] { display: none; }
+#ds-root .ds-cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 45%; display: block; }
+#ds-root.ds-has-photo .ds-cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 45%, rgba(49,140,221,.15) 100%); }
+#ds-root .ds-cover-in { min-height: clamp(460px, 40vw, 560px); display: flex; align-items: center; padding-block: var(--space-2xl); }
+#ds-root .ds-cover-text { width: min(620px, 50%); }
+#ds-root:not(.ds-has-photo) .ds-cover-text { width: min(720px, 100%); }
+#ds-root .ds-cover h1 { color: #FFFFFF; max-width: 16ch; margin-bottom: var(--space-md); }
+#ds-root .ds-zline { font: 700 var(--text-title)/1.3 var(--font-display); color: #FFFFFF; margin-bottom: var(--space-sm); max-width: 32ch; }
+#ds-root .ds-zline[hidden] { display: none; }
+#ds-root .ds-cover .lead { color: #FFFFFF; max-width: 44ch; margin-bottom: var(--space-xl); }
+#ds-root .ds-cover .v-quiet { color: #FFFFFF; }
+#ds-root .ds-cover .v-quiet:hover { color: var(--ds-tinta); background: #FFFFFF; border-color: #FFFFFF; }
+#ds-root .ds-cities { display: flex; align-items: baseline; gap: var(--space-xs); margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(255,255,255,.45); font: 600 var(--text-md)/1.5 var(--font-body); color: #FFFFFF; max-width: 46ch; }
+#ds-root .ds-cities .bi { flex: none; }
+#ds-root .ds-cover :focus-visible { outline-color: #FFFFFF; }
+#ds-root .ds-cover ::selection { background: #FFFFFF; color: var(--ds-tinta); }
 
-/* La barra: ahorro + subsidio + crédito = precio */
-#ds-root .ds-pay { margin: 0; background: var(--color-paper); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: var(--space-lg) var(--space-xl) var(--space-lg); border-top: 4px solid var(--color-accent); }
-#ds-root .ds-pay-cap { font-size: var(--text-lg); color: var(--color-ink-2); margin-bottom: var(--space-md); }
-#ds-root .ds-pay-cap strong { color: var(--color-ink); }
-#ds-root .ds-bar { padding-top: 34px; margin-bottom: var(--space-lg); position: relative; }
-#ds-root .ds-bracket { position: absolute; top: 0; left: 0; width: var(--w); height: 26px; border: 2px solid var(--color-ink); border-bottom: 0; border-radius: 4px 4px 0 0; transition: width var(--dur-short) var(--ease-out); }
-#ds-root .ds-bracket span { position: absolute; top: -2px; left: 8px; transform: translateY(-50%); background: var(--color-paper); padding: 0 6px; font: 700 var(--text-sm)/1 var(--font-body); color: var(--color-ink); white-space: nowrap; }
-#ds-root .ds-track { display: flex; height: 64px; border-radius: var(--radius-card); overflow: hidden; background: var(--color-paper); gap: 2px; }
-#ds-root .ds-seg { flex: 0 1 var(--w); min-width: 0; transition: flex-basis var(--dur-short) var(--ease-out); }
-#ds-root .ds-seg.is-aho { background: var(--ds-aho); min-width: 6px; }
-#ds-root .ds-seg.is-sub { background: var(--ds-sub); }
-#ds-root .ds-seg.is-cre { background: repeating-linear-gradient(135deg, var(--ds-cre) 0 10px, color-mix(in oklab, var(--color-field) 14%, var(--color-paper)) 10px 20px); }
-#ds-root .ds-eq > div { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
-#ds-root .ds-eq dt { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-ink-2); }
-#ds-root .ds-eq dd { font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
-#ds-root .ds-op { flex: none; display: inline-block; width: 0.9em; font-weight: 700; color: var(--color-muted); }
-#ds-root .ds-sw { flex: none; width: 14px; height: 14px; border-radius: 3px; }
-#ds-root .ds-sw.is-aho { background: var(--ds-aho); }
-#ds-root .ds-sw.is-sub { background: var(--ds-sub); }
-#ds-root .ds-sw.is-cre { background: var(--ds-cre); box-shadow: inset 0 0 0 1.5px var(--color-field); }
-#ds-root .ds-eq-total { border-bottom: 0 !important; border-top: var(--rule-bar) solid var(--color-ink); margin-top: -1px; }
-#ds-root .ds-eq-total dt { font-weight: 700; color: var(--color-ink); }
-#ds-root .ds-eq-total dd { color: var(--color-field-deep); font-size: var(--text-title); }
-#ds-root .ds-eq dd small { display: block; margin-top: 2px; font: 400 var(--text-sm)/1.3 var(--font-body); color: var(--color-muted); }
-#ds-root .ds-foot { margin-top: var(--space-md); font: 400 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
-
-/* ¿Puedes usar el DS19? · requisitos (patrón de FOGAES: título y botón a la izquierda, lista a la derecha) */
-#ds-root .ds-req { background: var(--color-paper-3); }
+/* ¿Puedes usar el DS19? · pausa blanca; la lista en un panel gris con filete, sin sombra */
+#ds-root .ds-req { background: var(--color-paper); }
 #ds-root .ds-req .v-why-grid { grid-template-rows: auto 1fr; }
 #ds-root .ds-req .v-why-grid h2 { margin-bottom: var(--space-sm); }
-#ds-root .ds-req .v-well { grid-column: 2; grid-row: 1 / span 2; background: var(--color-paper); padding: var(--space-md) var(--space-lg); }
+#ds-root .ds-req .v-well { grid-column: 2; grid-row: 1 / span 2; background: var(--color-paper-2); border: 1px solid var(--color-rule); border-radius: var(--radius-card); padding: var(--space-md) var(--space-lg); }
 #ds-root .ds-req .v-ruled > div { padding-block: var(--space-md); }
 #ds-root .ds-req .v-ruled dt { font-size: 1.0625rem; }
+#ds-root .ds-req .v-well a:not([class]) { color: var(--ds-tinta); }
 #ds-root .ds-req-cta { grid-column: 1; grid-row: 2; align-self: start; }
 #ds-root .ds-req-note { margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); max-width: 40ch; }
 #ds-root .ds-req-note strong { color: var(--color-ink-2); }
 
-/* Cómo funciona (banda azul .v-road de la base) */
+/* Cómo se paga tu casa · pausa gris; tarjeta blanca con filete (sobre gris no hay sombra) */
+#ds-root .ds-pago { background: var(--color-paper-3); }
+#ds-root .ds-pago-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-2xl); align-items: start; }
+#ds-root .ds-pago h2 { margin-bottom: var(--space-sm); }
+#ds-root .ds-pago-photo { margin-top: var(--space-xl); aspect-ratio: 4 / 3; }
+#ds-root .ds-pago-photo img { object-position: 45% 50%; }
+#ds-root .ds-pay { margin: 0; background: var(--color-paper); border: 1px solid var(--color-rule); border-radius: var(--radius-card); padding: var(--space-lg) var(--space-xl); }
+#ds-root .ds-pay-cap { font-size: var(--text-lg); color: var(--color-ink-2); margin-bottom: var(--space-md); }
+#ds-root .ds-pay-cap strong { color: var(--color-ink); }
+#ds-root .ds-bar { padding-top: 34px; margin-bottom: var(--space-lg); position: relative; }
+#ds-root .ds-bracket { position: absolute; top: 0; left: 0; width: var(--w); height: 26px; border: 2px solid var(--color-ink); border-bottom: 0; border-radius: 4px 4px 0 0; }
+#ds-root .ds-bracket span { position: absolute; top: -2px; left: 8px; transform: translateY(-50%); background: var(--color-paper); padding: 0 6px; font: 700 var(--text-sm)/1 var(--font-body); color: var(--color-ink); white-space: nowrap; }
+#ds-root .ds-track { display: flex; gap: 2px; height: 64px; border-radius: var(--radius-card); overflow: hidden; background: var(--color-paper); }
+#ds-root .ds-seg { flex: 0 1 var(--w); min-width: 0; }
+#ds-root .ds-seg.is-aho { background: var(--ds-coral); min-width: 6px; }
+#ds-root .ds-seg.is-sub { background: var(--ds-profundo); }
+#ds-root .ds-seg.is-cre { background: repeating-linear-gradient(135deg, var(--ds-bruma) 0 10px, #CFE5F8 10px 20px); }
+#ds-root .ds-eq > div { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-sm); border-bottom: 1px solid var(--color-rule); }
+#ds-root .ds-eq dt { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-ink-2); }
+#ds-root .ds-eq dd { font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+#ds-root .ds-op { flex: none; display: inline-block; width: 0.9em; font-weight: 700; color: var(--color-muted); }
+#ds-root .ds-sw { flex: none; width: 14px; height: 14px; border-radius: 3px; }
+#ds-root .ds-sw.is-aho { background: var(--ds-coral); }
+#ds-root .ds-sw.is-sub { background: var(--ds-profundo); }
+#ds-root .ds-sw.is-cre { background: var(--ds-bruma); box-shadow: inset 0 0 0 1.5px var(--ds-profundo); }
+#ds-root .ds-eq-total { border-bottom: 0 !important; border-top: 2px solid var(--color-ink); margin-top: -1px; }
+#ds-root .ds-eq-total dt { font-weight: 700; color: var(--color-ink); }
+#ds-root .ds-eq-total dd { color: var(--ds-tinta); font-size: var(--text-title); }
+#ds-root .ds-foot { margin-top: var(--space-md); font: 400 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
+
+/* Cómo funciona · banda Celeste Profundo (lleva párrafos); colores desde el bloque Brandbook v3 */
 #ds-root .v-road h2 { margin-bottom: var(--space-xs); max-width: 20ch; }
 #ds-root .v-road .lead { margin-bottom: var(--space-lg); max-width: 52ch; }
 #ds-root .v-stops { margin-bottom: var(--space-lg); }
 #ds-root .v-stop { padding-top: var(--space-lg); }
 #ds-root .v-stop h3 { margin-bottom: var(--space-xs); }
 
-/* Por qué conviene */
-#ds-root .ds-why h2 { margin-bottom: var(--space-lg); max-width: 24ch; }
-#ds-root .ds-table-wrap { border-top: var(--rule-bar) solid var(--color-field); }
+/* DS19, DS1 o compra sin subsidio · pausa blanca */
+#ds-root .ds-why { background: var(--color-paper); }
+#ds-root .ds-why h2 { margin-bottom: var(--space-xs); max-width: 24ch; }
+#ds-root .ds-why .lead { margin-bottom: var(--space-lg); }
+#ds-root .ds-table-wrap { border-top: 2px solid var(--ds-profundo); }
 #ds-root .ds-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
-#ds-root .ds-table th, #ds-root .ds-table td { padding: var(--space-md); text-align: left; vertical-align: top; border-bottom: var(--rule-hair) solid var(--color-rule); line-height: 1.45; }
+#ds-root .ds-table th, #ds-root .ds-table td { padding: var(--space-md); text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-rule); line-height: 1.45; }
 #ds-root .ds-table thead th { font: 700 0.9375rem/1.3 var(--font-body); color: var(--color-muted); }
-#ds-root .ds-table thead th.is-ds { color: var(--color-field-deep); font-size: 1.0625rem; }
+#ds-root .ds-table thead th.is-ds { color: var(--ds-tinta); font-size: 1.0625rem; }
 #ds-root .ds-table tbody th { font-weight: 700; color: var(--color-ink); width: 19%; }
 #ds-root .ds-table td { color: var(--color-ink-2); width: 27%; }
-#ds-root .ds-table .is-ds { background: var(--color-field-soft); }
-#ds-root .ds-table td.is-ds { color: var(--color-field-deep); font-weight: 700; }
+#ds-root .ds-table .is-ds { background: var(--ds-bruma); }
+#ds-root .ds-table td.is-ds { color: var(--ds-tinta); font-weight: 700; }
 #ds-root .ds-reasons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg) var(--gap-columns); margin-top: var(--space-xl); }
-#ds-root .ds-reasons li { padding-top: var(--space-sm); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-ink-2); }
+#ds-root .ds-reasons li { position: relative; padding-left: 32px; color: var(--color-ink-2); }
+#ds-root .ds-reasons li::before { content: "\F26A"; position: absolute; left: 0; top: 0; font-family: var(--font-icons); color: var(--ds-coral); line-height: 1.55; }
 #ds-root .ds-reasons strong { display: block; color: var(--color-ink); margin-bottom: 2px; }
 
-/* Qué es una mutuaria */
-#ds-root .ds-mut { background: var(--color-paper-3); }
-#ds-root .ds-mut .v-statement { margin-bottom: var(--space-xl); max-width: 26ch; }
-#ds-root .ds-facts3 { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-top: var(--space-md); }
+/* Qué es una mutuaria · banda Celeste Profundo (.v-commit); título y frase grande en blanco */
+#ds-root .ds-mut h2 { margin-bottom: var(--space-sm); color: #FFFFFF; }
+#ds-root .ds-mut .v-statement { font: 400 var(--text-lead)/1.5 var(--font-body); letter-spacing: 0; color: #FFFFFF; margin-bottom: var(--space-xl); max-width: 52ch; }
+#ds-root .ds-mut-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--space-2xl); align-items: center; }
+#ds-root .ds-facts3 { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); padding-top: var(--space-md); border-top-color: rgba(255,255,255,.5); }
+#ds-root .ds-mut-photo { aspect-ratio: 4 / 5; box-shadow: var(--shadow-card); }
+#ds-root .ds-mut-photo img { object-position: 50% 40%; }
+#ds-root .ds-mut .v-facts li, #ds-root .ds-mut .v-facts strong { color: #FFFFFF; }
+#ds-root .ds-mut :focus-visible { outline-color: #FFFFFF; }
 
-/* Preguntas frecuentes */
-#ds-root .ds-faq { background: var(--color-paper); }
-#ds-root .ds-faq .f4-acc-btn:hover { background: var(--color-paper-3); }
+/* Preguntas frecuentes · pausa gris */
+#ds-root .ds-faq { background: var(--color-paper-3); }
+#ds-root .ds-faq .f4-acc-btn:hover { background: var(--color-paper); }
+#ds-root .ds-faq .f4-acc-panel a { color: var(--ds-tinta); }
+#ds-root .f4-acc-h { margin: 0; font: inherit; }
 #ds-root .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
 #ds-root .v-faq-grid h2 { margin-bottom: var(--space-sm); }
 
-/* Cierre */
+/* Cierre · banda celeste (Profundo porque lleva legal); un botón rojo */
+#ds-root .ds-close { position: relative; isolation: isolate; overflow: hidden; }
+#ds-root .ds-close .container { position: relative; z-index: 1; }
+#ds-root .ds-close-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 56%; margin: 0; z-index: -2; }
+#ds-root .ds-close-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; display: block; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 35%); mask-image: linear-gradient(90deg, transparent 0%, #000 35%); }
+#ds-root .ds-close:has(.ds-close-photo)::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 45%, rgba(49,140,221,.15) 100%); }
+#ds-root .ds-close:has(.ds-close-photo) { background: var(--ds-tinta); }
+#ds-root .ds-close .v-close-in { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: var(--space-lg); max-width: 560px; }
+#ds-root .ds-close .v-btn { justify-self: start; }
+#ds-root .ds-close-legal { max-width: 56ch !important; }
 #ds-root .ds-close h2 { max-width: 18ch; margin-bottom: var(--space-sm); }
-#ds-root .ds-close-lead { color: var(--color-on-ink-2); font-size: var(--text-lead); max-width: 44ch; }
-#ds-root .ds-close .v-btn { box-shadow: var(--shadow-card); }
-#ds-root .ds-close-legal { margin-top: var(--space-xl); color: var(--color-on-ink-2); font-weight: 400; max-width: 72ch; }
+#ds-root .ds-close-lead { color: #FFFFFF; font-size: var(--text-lead); max-width: 44ch; }
+#ds-root .ds-close-legal { margin-top: var(--space-xl); color: #FFFFFF; font-weight: 400; max-width: 72ch; }
 
 @media (max-width: 60rem) {
   #ds-root { --section-gap: 48px; --section-gap-s: 48px; }
-  #ds-root .ds-hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  /* Portada en móvil: foto arriba y degradado de abajo hacia arriba; texto abajo */
+  #ds-root.ds-has-photo .ds-cover::before { display: none; }
+  #ds-root .ds-cover-photo { position: relative; inset: auto; width: 100%; aspect-ratio: 4 / 3; z-index: 0; }
+  #ds-root .ds-cover-photo img { object-position: 50% 45%; }
+  #ds-root .ds-cover-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(19,95,168,1) 0%, rgba(19,95,168,.88) 18%, rgba(49,140,221,.15) 60%); }
+  #ds-root .ds-cover-in { position: relative; min-height: 0; padding-block: var(--space-xl); }
+  #ds-root.ds-has-photo .ds-cover-in { margin-top: -48px; padding-top: 0; }
+  #ds-root .ds-cover-text, #ds-root:not(.ds-has-photo) .ds-cover-text { width: 100%; }
   #ds-root .ds-req .v-well, #ds-root .ds-req-cta { grid-column: auto; grid-row: auto; }
-  #ds-root .ds-hero-photo { max-width: none; }
+  #ds-root .ds-pago-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   #ds-root .ds-pay { padding: var(--space-lg); }
-  #ds-root .ds-reasons, #ds-root .ds-facts3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #ds-root .ds-reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #ds-root .ds-mut-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  #ds-root .ds-mut-photo { aspect-ratio: 4 / 3; box-shadow: none; }
+  #ds-root .ds-pago-photo { display: none; }
+  /* Cierre en móvil: foto arriba y degradado hacia arriba */
+  #ds-root .ds-close:has(.ds-close-photo)::before { display: none; }
+  #ds-root .ds-close-photo { position: relative; width: 100%; aspect-ratio: 3 / 2; z-index: 0; margin: calc(-1 * var(--section-gap-s)) 0 0; }
+  #ds-root .ds-close-photo img { -webkit-mask-image: none; mask-image: none; }
+  #ds-root .ds-close-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(19,95,168,1) 0%, rgba(19,95,168,.88) 18%, rgba(49,140,221,.15) 60%); }
+  #ds-root .ds-close .container { margin-top: -40px; }
   /* Tabla en filas apiladas */
   #ds-root .ds-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   #ds-root .ds-table, #ds-root .ds-table tbody, #ds-root .ds-table tr, #ds-root .ds-table th, #ds-root .ds-table td { display: block; width: auto !important; }
-  #ds-root .ds-table tr { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  #ds-root .ds-table tr { padding-block: var(--space-md); border-bottom: 1px solid var(--color-rule); }
   #ds-root .ds-table tbody th { padding: 0 0 var(--space-xs); border: 0; font-size: 1.0625rem; }
   #ds-root .ds-table td { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-sm); padding: var(--space-xs) var(--space-sm); border: 0; }
   #ds-root .ds-table td::before { content: attr(data-l); font: 600 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
-  #ds-root .ds-table td.is-ds { border-radius: var(--radius-pill); }
-  #ds-root .ds-table td.is-ds::before { color: var(--color-field-deep); }
+  #ds-root .ds-table td.is-ds { border-radius: 6px; }
+  #ds-root .ds-table td.is-ds::before { color: var(--ds-tinta); }
 }
 @media (max-width: 40rem) {
-  #ds-root .ds-reasons, #ds-root .ds-facts3 { grid-template-columns: minmax(0, 1fr); }
+  #ds-root .ds-cover .v-actions { flex-direction: column; align-items: stretch; }
+  #ds-root .ds-cover .v-btn, #ds-root .ds-cover .v-quiet, #ds-root .ds-req-cta .v-btn, #ds-root .ds-close .v-btn { width: 100%; }
+  #ds-root .ds-reasons { grid-template-columns: minmax(0, 1fr); }
   #ds-root .ds-track { height: 52px; }
   #ds-root .ds-eq dd { font-size: 1.0625rem; }
   #ds-root .ds-eq-total dd { font-size: var(--text-lg); }
   #ds-root .ds-table td { grid-template-columns: 6.5rem minmax(0, 1fr); }
-}
-@media (prefers-reduced-motion: reduce) {
-  #ds-root .ds-seg, #ds-root .ds-bracket { transition: none; }
 }
 /* ===== fin Página Subsidio DS19 ===== */
