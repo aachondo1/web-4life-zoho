@@ -1,4 +1,4 @@
-/* v2026.11.19-4 */
+/* v2026.11.19-5 */
 /* ===== 4Life · Página Subsidio DS19 — va en el CSS Personalizado DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) y ANTES del bloque "Brandbook v3" ===== */
 /* Brandbook v3. Ritmo: portada con foto y degradado celeste · requisitos en blanco · cómo se paga en gris · pasos en banda celeste · comparación en blanco · mutuaria en banda celeste · preguntas en gris · cierre celeste. Dos bandas celestes nunca seguidas */
 /* La portada usa .ds-cover (no .ds-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores */
@@ -102,6 +102,7 @@
 #ds-root .ds-reasons strong { display: block; color: var(--color-ink); margin-bottom: 2px; }
 
 /* Qué es una mutuaria · banda Celeste Profundo (.v-commit); título y frase grande en blanco */
+#ds-root .ds-mut { background: var(--ds-profundo); }
 #ds-root .ds-mut h2 { margin-bottom: var(--space-sm); color: #FFFFFF; }
 #ds-root .ds-mut .v-statement { font: 400 var(--text-lead)/1.5 var(--font-body); letter-spacing: 0; color: #FFFFFF; margin-bottom: var(--space-xl); max-width: 52ch; }
 #ds-root .ds-mut-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--space-2xl); align-items: center; }
