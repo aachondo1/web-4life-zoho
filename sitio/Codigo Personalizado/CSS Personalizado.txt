@@ -1,4 +1,4 @@
-/* v2026.11.21-1 · brandbook v3 (celeste) en tokens base y capa final */
+/* v2026.11.21-2 · Home v5 (v2026.11.19-9), DS19 (v2026.11.19-10) y DS1 (v2026.11.20) al día dentro del archivo; brandbook v3 en tokens base y capa final */
 /* 4Life Crédito Hipotecario · estilos del sitio (brandbook v2, nov 2026: base 4Life Seguros) */
 /* Asap se carga en Código de encabezado (link + preconnect), no aquí con @import */
 
@@ -538,7 +538,7 @@ html,body{overflow-x:clip}
 body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4-burger,body:has(#s4l-sim) .f4-nav>.btn{display:none!important}
 /* ===== fin Simulador 4Life ===== */
 
-/* v2026.11.18-2 */
+/* v2026.11.20-4 */
 /* ===== 4Life · Página FOGAES — pegar TODO este bloque al FINAL del CSS Personalizado ===== */
 /* Parte 1: base .f4v2 (colores, tamaños y espacios). Todo va acotado a .f4v2, así que NO cambia el home publicado ni /simular. Si algún día publicas el Home v4, esta parte ya estará y no se repite. */
 /* Hallmark · scope: Zoho Sites has one Custom CSS; tokens in :root, every rule under .f4v2, appended after the existing CSS so /simular keeps its own rules */
@@ -1674,7 +1674,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 /* Las animaciones van aparte, en el snippet "4L - Tradicional animaciones" */
 /* ===== fin Página Crédito tradicional ===== */
 
-/* v2026.11.19-4 */
+/* v2026.11.19-9 */
 /* ===== 4Life · Home v5 — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Todo va acotado a .f4h: no cambia FOGAES, las otras páginas ni /simular ===== */
 /* Escala igual a FOGAES: secciones de 64 px, H1 ~44 px, títulos ~32 px */
 .f4h { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem; }
@@ -1720,7 +1720,8 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 .f4h .h-links a:hover .bi, .f4h .h-links a:focus-visible .bi { transform: translateX(4px); }
 
 /* Así funciona: un solo camino vertical de 6 pasos. Escritorio: título y botón a la izquierda, camino a la derecha. Móvil: título, camino y botón */
-.f4h .h-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "intro steps" "foot steps"; grid-template-rows: auto 1fr; column-gap: var(--space-3xl); row-gap: var(--space-xl); align-items: start; }
+.f4h .h-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "side steps"; column-gap: var(--space-3xl); align-items: start; }
+.f4h .h-road-side { grid-area: side; position: sticky; top: 96px; display: flex; flex-direction: column; gap: var(--space-xl); }
 .f4h .h-road-intro { grid-area: intro; }
 .f4h .h-road .v-stops { grid-area: steps; display: block; margin: 0; border-top: 0; }
 .f4h .h-road-foot { grid-area: foot; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
@@ -1737,30 +1738,54 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 .f4h .h-privacy { max-width: 46ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
 .f4h .h-privacy a { color: var(--color-on-ink); }
 .f4h .h-privacy a:hover { color: var(--color-on-ink-2); }
+/* Fases del camino (Simula · Evaluación · Cierre): rótulo sobre el primer paso de cada fase, sin cortar la línea */
+.f4h .h-fase { display: block; height: 16px; margin-bottom: var(--space-sm); font: 700 13px/16px var(--font-outlier); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-on-ink); }
+.f4h .h-road .h-fase-start::before { top: 30px; }
+.f4h .h-road .v-stop.h-fase-start:not(:last-child)::after { top: 49px; }
+.f4h .h-road .h-pre-fase { padding-bottom: var(--space-2xl); }
+.f4h .h-road .v-stop.h-pre-fase:not(:last-child)::after { bottom: -30px; }
 @media (max-width: 60rem) {
-  .f4h .h-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; grid-template-rows: auto; row-gap: var(--space-lg); }
+  .f4h .h-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; row-gap: var(--space-lg); }
+  .f4h .h-road-side { display: contents; }
 }
 
 /* Quiénes somos: una frase grande y tres datos */
-.f4h .h-about { background: var(--color-paper-3); }
+.f4h .h-about { background: var(--color-paper); }
 .f4h .h-statement { font-size: var(--text-display-s); max-width: 26ch; margin-bottom: var(--space-xl); }
 .f4h .h-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); border-top: var(--rule-bar) solid var(--color-field); padding-top: var(--space-lg); }
 .f4h .h-facts h3 { margin-bottom: var(--space-xs); }
 .f4h .h-facts p { color: var(--color-ink-2); max-width: 46ch; }
 .f4h .h-facts strong { color: var(--color-ink); font-weight: 600; }
 .f4h .h-reg { margin-top: var(--space-lg); }
+.f4h .h-legal { margin-top: var(--space-xl); max-width: 90ch; font-weight: 400; color: var(--color-muted); }
+.f4h .h-legal strong { color: var(--color-ink-2); }
 
-/* Atención a clientes (antes Hablemos) */
-.f4h .h-talk { background: var(--color-paper); }
-.f4h .h-talk-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
-.f4h .h-talk-photo { aspect-ratio: 4 / 3; }
-.f4h .h-talk h2 { margin-bottom: var(--space-xs); }
-.f4h .h-talk .lead { margin-bottom: var(--space-lg); }
-.f4h .v-contact { margin-bottom: 0; }
+/* Atención a clientes (para quien ya es cliente): franja compacta al final, sin foto */
+.f4h .h-talk { background: var(--color-paper); padding-block: var(--space-2xl); }
+.f4h .h-talk-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-2xl); align-items: start; }
+.f4h .h-talk h2 { font-size: var(--text-title); margin-bottom: var(--space-xs); }
+.f4h .h-talk .lead { font-size: 1rem; margin-bottom: 0; }
+.f4h .h-talk .v-contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-xl); border-top: var(--rule-bar) solid var(--color-field); margin: 0; }
+.f4h .h-talk .v-contact > div { grid-template-columns: minmax(0, 1fr); gap: 0; padding-block: var(--space-sm); }
 .f4h .v-contact dd { font-size: 1.0625rem; }
+/* enlaces de la lista con zona de toque de 44 px */
+.f4h .v-contact dd a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 60rem) { .f4h .h-talk-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); } }
+@media (max-width: 40rem) { .f4h .h-talk .v-contact { grid-template-columns: minmax(0, 1fr); } }
 
 /* Cierre (4L - Global CTA con clase f4h) */
-.f4h .v-close h2 { max-width: 24ch; }
+.f4h .v-close h2 { max-width: 30ch; }
+/* Foto del cierre: Santiago a la derecha, fundida en el celeste (el texto queda sobre el lado sin foto) */
+.f4h .h-close { position: relative; overflow: hidden; isolation: isolate; padding-block: var(--space-3xl); }
+.f4h .h-close > .container { position: relative; z-index: 1; }
+.f4h .h-close-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 52%; z-index: 0; }
+.f4h .h-close-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 55%); mask-image: linear-gradient(90deg, transparent 0%, #000 55%); }
+.f4h .h-close .v-btn { box-shadow: 0 8px 24px color-mix(in oklab, var(--color-ink) 25%, transparent); }
+@media (max-width: 60rem) {
+  .f4h .h-close-photo { position: relative; width: 100%; height: 180px; margin-bottom: calc(-1 * var(--space-sm)); }
+  .f4h .h-close-photo img { -webkit-mask-image: linear-gradient(180deg, #000 35%, transparent 100%); mask-image: linear-gradient(180deg, #000 35%, transparent 100%); }
+  .f4h .h-close { padding-block: 0 var(--space-2xl); }
+}
 
 /* Preguntas frecuentes */
 .f4h .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
@@ -1774,17 +1799,16 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 
 @media (max-width: 60rem) {
   .f4h { --section-gap: 48px; --section-gap-s: 48px; }
-  .f4h .h-talk-grid, .f4h .h-facts { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  .f4h .h-facts { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
   .f4h .h-proof { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
   .f4h .h-fam { grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-sm) var(--space-md); align-items: start; }
   .f4h .h-fam .h-links { grid-column: 1 / -1; }
   .f4h .h-fam-text h3 { font-size: 1.125rem; }
   .f4h .h-fam-text p { font-size: 1rem; }
-  .f4h .h-talk-photo { aspect-ratio: 16 / 9; }
 }
 /* v2026.11.18-3 · auditoría: el ancla de "Mira cómo funciona" no queda bajo el encabezado fijo; fotos con ancho máximo en tablet para que no se vean borrosas */
 .f4h [id] { scroll-margin-top: 96px; }
-@media (max-width: 60rem) and (min-width: 40.01rem) { .f4h .h-talk-photo { max-width: 560px; } }
+
 /* Portada en tablet y móvil (bajo 768 px): la foto va arriba y se funde hacia abajo en el celeste; el texto se apoya abajo, sobre el lado opaco */
 @media (max-width: 48rem) {
   .f4h .h-cover::before { display: none; }
@@ -1797,7 +1821,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 /* ===== fin Home v5 ===== */
 
 
-/* v2026.11.19-8 */
+/* v2026.11.19-10 */
 /* ===== 4Life · Página Subsidio DS19 — va en el CSS Personalizado DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) y ANTES del bloque "Brandbook v3" ===== */
 /* Brandbook v3. Ritmo: portada con foto y degradado celeste · requisitos en blanco · cómo se paga en gris · pasos en banda celeste · comparación en blanco · mutuaria en banda celeste · preguntas en gris · cierre celeste. Dos bandas celestes nunca seguidas */
 /* La portada usa .ds-cover (no .ds-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores */
@@ -1868,9 +1892,14 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ds-root .ds-mini td:last-child { font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); }
 #ds-root .ds-mini-note, #ds-root .ds-mini-tope { margin-top: var(--space-md); color: var(--color-ink-2); }
 #ds-root .ds-mini-tope strong { color: var(--color-ink); }
+#ds-root .ds-mini-uf { margin-top: var(--space-xs); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); }
+#ds-root .ds-req-more { display: none; }
+#ds-root .v-facts li, #ds-root .ds-reasons li, #ds-root .ds-mini-tope, #ds-root .v-ruled dd { text-wrap: pretty; }
 #ds-root .ds-req-cta { grid-column: 1; grid-row: 2; align-self: start; position: sticky; top: var(--space-xl); }
 #ds-root .ds-req-note { margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); max-width: 40ch; }
 #ds-root .ds-req-note strong { color: var(--color-ink-2); }
+#ds-root .ds-req-photo { margin-top: var(--space-xl); aspect-ratio: 4 / 3; max-width: 420px; }
+#ds-root .ds-req-photo img { object-position: 40% 50%; }
 
 /* Cómo se paga tu casa · pausa gris; tarjeta blanca con filete (sobre gris no hay sombra) */
 #ds-root .ds-pago { background: var(--color-paper-3); }
@@ -1979,6 +2008,15 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #ds-root.ds-no-photo .ds-cover-eq { flex: none; width: 100%; max-width: 30rem; padding: var(--space-md) var(--space-lg); }
   #ds-root .ds-req .v-well, #ds-root .ds-req-cta { grid-column: auto; grid-row: auto; }
   #ds-root .ds-req-cta { position: static; }
+  /* Requisitos plegados en celular: títulos visibles, detalle con el botón */
+  #ds-root .ds-req-more { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; margin-top: var(--space-xs); padding: 0; border: 0; background: none; color: var(--ds-tinta); font: 700 1rem/1.3 var(--font-body); text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; }
+  #ds-root .ds-req-more .bi { transition: transform var(--dur-short) var(--ease-out); }
+  #ds-root .v-well.is-open .ds-req-more .bi { transform: rotate(180deg); }
+  #ds-root .ds-req .v-well:not(.is-open) .v-ruled dd { display: none; }
+  #ds-root .ds-req .v-well:not(.is-open) .v-ruled > div { padding-block: var(--space-sm); }
+  /* Las razones repiten lo que ya dicen requisitos y cómo se paga: en celular se omiten */
+  #ds-root .ds-reasons { display: none; }
+  #ds-root .ds-req-photo { max-width: none; aspect-ratio: 16 / 9; margin-top: var(--space-lg); }
   #ds-root .ds-pago-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   #ds-root .ds-pay { padding: var(--space-lg); }
   #ds-root .ds-reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2012,6 +2050,266 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #ds-root .ds-table td { grid-template-columns: 6.5rem minmax(0, 1fr); }
 }
 /* ===== fin Página Subsidio DS19 ===== */
+
+/* v2026.11.20 · sin calculadora: ejemplo fijo, mutuaria en blanco tras los pasos, requisitos plegados, comparación de 2 filas */
+/* ===== 4Life · Página Subsidio DS1 — va en el CSS Personalizado DESPUÉS del bloque "Página Subsidio DS19" y ANTES del bloque "Brandbook v3" (usa la base .f4v2). Todo va acotado a #d1-root ===== */
+/* Ritmo: portada con foto y degradado celeste · qué es y tramos en blanco · cómo se paga en gris · pasos en banda celeste · mutuaria en blanco · aún no postulas en gris · por qué conviene en blanco · preguntas en gris · cierre celeste con foto */
+
+#d1-root { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem;
+  --d1-celeste: #318CDD; --d1-profundo: #1A73C8; --d1-tinta: #135FA8; --d1-bruma: #E8F3FC; }
+#d1-root .sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+#d1-root ::selection { background: var(--d1-bruma); color: var(--d1-tinta); }
+#d1-root .v-actions { gap: var(--space-md); }
+#d1-root :is(p, dd, li, td) { text-wrap: pretty; }
+#d1-root h2 { text-wrap: balance; }
+#d1-root a:not([class]) { color: var(--d1-profundo); text-underline-offset: 0.18em; }
+#d1-root a:not([class]):hover { color: var(--d1-tinta); }
+#d1-root :focus-visible { outline: 2px solid var(--d1-profundo); outline-offset: 2px; }
+
+/* Portada: foto a sangre con degradado celeste; texto blanco del lado opaco; franja de tramos abajo */
+#d1-root .d1-cover { position: relative; isolation: isolate; overflow: hidden; background: var(--d1-tinta); color: #FFFFFF; }
+#d1-root .d1-cover-photo { position: absolute; inset: 0; margin: 0; z-index: -2; }
+#d1-root .d1-cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 60%; display: block; }
+#d1-root .d1-cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 45%, rgba(49,140,221,.15) 100%); }
+#d1-root .d1-cover-in { min-height: clamp(500px, 42vw, 600px); display: flex; flex-direction: column; justify-content: center; padding-block: var(--space-2xl) var(--space-xl); }
+#d1-root .d1-cover-text { width: min(640px, 50%); }
+#d1-root .d1-cover h1 { color: #FFFFFF; max-width: 18ch; margin-bottom: var(--space-md); }
+#d1-root .d1-cover .lead { color: #FFFFFF; max-width: 46ch; margin-bottom: var(--space-xl); }
+#d1-root .d1-cover .v-quiet { color: #FFFFFF; border-color: #FFFFFF; }
+#d1-root .d1-cover .v-quiet:hover { color: #FFFFFF; background: rgba(255,255,255,.14); }
+#d1-root .d1-cover :focus-visible { outline-color: #FFFFFF; }
+#d1-root .d1-cover ::selection { background: #FFFFFF; color: var(--d1-tinta); }
+#d1-root .d1-cover-tramos { display: flex; gap: 0; margin: var(--space-2xl) 0 0; padding: 0; list-style: none; width: min(640px, 50%); border-top: 1px solid rgba(255,255,255,.5); }
+#d1-root .d1-cover-tramos li { flex: 1 1 0; padding: var(--space-md) var(--space-md) 0 0; margin: 0; }
+#d1-root .d1-cover-tramos li + li { padding-left: var(--space-md); border-left: 1px solid rgba(255,255,255,.35); }
+#d1-root .d1-cover-tramos li::before { content: none; }
+#d1-root .d1-cover-tramos span { display: block; font: 600 0.875rem/1.3 var(--font-body); color: #FFFFFF; }
+#d1-root .d1-cover-tramos em { font-style: normal; font-weight: 700; margin-left: 4px; padding: 1px 6px; border-radius: 4px; background: #FFFFFF; color: var(--d1-tinta); font-size: 0.8125rem; letter-spacing: .04em; text-transform: uppercase; vertical-align: 1px; }
+#d1-root .d1-cover-tramos b { display: block; margin-top: 2px; font: 700 var(--text-title)/1.2 var(--font-display); color: #FFFFFF; white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (min-width: 60.01rem) and (max-width: 75rem) {
+  #d1-root .d1-cover::before { background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 58%, rgba(49,140,221,.15) 100%); }
+  #d1-root .d1-cover-text, #d1-root .d1-cover-tramos { width: min(640px, 56%); }
+}
+
+/* Qué es el DS1 · pausa blanca; tabla de tramos con el 4 destacado */
+#d1-root .d1-que { background: var(--color-paper); }
+#d1-root .d1-que-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: start; }
+#d1-root .d1-que h2 { margin-bottom: var(--space-sm); }
+#d1-root .d1-que .lead { margin-bottom: var(--space-md); }
+#d1-root .d1-que p { color: var(--color-ink-2); max-width: 60ch; }
+#d1-root .d1-que p + p { margin-top: var(--space-md); }
+#d1-root .d1-que-rsh { font-size: 1rem; }
+#d1-root .d1-tramos { border-top: 2px solid var(--d1-profundo); }
+#d1-root .d1-tramos { width: 100%; border-collapse: collapse; font-size: 1rem; font-variant-numeric: tabular-nums; }
+#d1-root .d1-tramos th, #d1-root .d1-tramos td { padding: var(--space-md) var(--space-sm); text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-rule); line-height: 1.4; }
+#d1-root .d1-tramos thead th { font: 700 0.875rem/1.3 var(--font-body); color: var(--color-muted); }
+#d1-root .d1-tramos tbody th { font: 700 1.0625rem/1.3 var(--font-display); color: var(--color-ink); white-space: nowrap; }
+#d1-root .d1-tramos td { color: var(--color-ink-2); }
+#d1-root .d1-tramos td:nth-child(3), #d1-root .d1-tramos td:nth-child(4) { font-weight: 700; color: var(--color-ink); }
+#d1-root .d1-tramos tr.is-new > * { background: var(--d1-bruma); }
+#d1-root .d1-tramos tr.is-new td { color: var(--d1-tinta); }
+#d1-root .d1-new { display: inline-block; margin-left: 6px; padding: 2px 6px; border-radius: 4px; background: var(--d1-profundo); color: #FFFFFF; font: 700 0.8125rem/1.2 var(--font-body); letter-spacing: .05em; text-transform: uppercase; vertical-align: 2px; }
+#d1-root .d1-note { margin-top: var(--space-md); font: 400 var(--text-sm)/1.5 var(--font-body); color: var(--color-muted); }
+
+#d1-root .d1-uf-note { margin-bottom: var(--space-sm); font: 400 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
+
+/* Cómo se paga tu casa · pausa gris; ejemplo fijo del Tramo 4 en tarjeta blanca con filete (sobre gris no hay sombra). Sin calculadora (pedido de Juan) */
+#d1-root .d1-pago { background: var(--color-paper-3); }
+#d1-root .d1-pago-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-2xl); align-items: center; }
+#d1-root .d1-pago h2 { margin-bottom: var(--space-sm); }
+#d1-root .d1-pago .lead { margin-bottom: var(--space-md); max-width: 46ch; }
+#d1-root .d1-pago-t23 { color: var(--color-ink-2); max-width: 46ch; margin-bottom: var(--space-lg); }
+#d1-root .d1-pago .v-quiet { color: var(--d1-tinta); border-color: var(--d1-tinta); }
+#d1-root .d1-pago .v-quiet:hover { color: var(--d1-tinta); background: var(--d1-bruma); }
+#d1-root .d1-trust { display: flex; gap: var(--space-sm); align-items: flex-start; margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid #D6D6D6; max-width: 46ch; font: 400 var(--text-sm)/1.45 var(--font-body); color: var(--color-ink-2); }
+#d1-root .d1-trust .bi { flex: none; font-size: 1.25rem; line-height: 1.1; color: var(--d1-profundo); }
+#d1-root .d1-pay { margin: 0; background: var(--color-paper); border: 1px solid var(--color-rule); border-radius: var(--radius-card); padding: var(--space-lg) var(--space-xl); }
+#d1-root .d1-pay-cap { font-size: var(--text-lg); color: var(--color-ink-2); margin-bottom: var(--space-md); }
+#d1-root .d1-pay-cap strong { color: var(--color-ink); font-variant-numeric: tabular-nums; }
+#d1-root .d1-bar { position: relative; padding-top: 46px; margin-bottom: var(--space-lg); }
+#d1-root .d1-bracket { position: absolute; top: 22px; left: 0; width: var(--w); height: 26px; border: 2px solid var(--color-ink); border-bottom: 0; border-radius: 4px 4px 0 0; }
+#d1-root .d1-bracket span { position: absolute; top: -6px; left: -2px; transform: translateY(-100%); font: 700 var(--text-sm)/1 var(--font-body); color: var(--color-ink); white-space: nowrap; }
+#d1-root .d1-track { display: flex; gap: 2px; height: 64px; border-radius: var(--radius-card); overflow: hidden; background: var(--color-paper); }
+#d1-root .d1-seg { flex: 0 1 var(--w); min-width: 0; }
+#d1-root .d1-seg.is-aho { background: var(--color-ink-2); }
+#d1-root .d1-seg.is-sub { background: var(--d1-profundo); }
+#d1-root .d1-seg.is-cre { background: repeating-linear-gradient(135deg, var(--d1-bruma) 0 10px, #CFE5F8 10px 20px); }
+#d1-root .d1-eq > div { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-sm); border-bottom: 1px solid var(--color-rule); }
+#d1-root .d1-eq dt { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-ink-2); }
+#d1-root .d1-eq dd { margin: 0; font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+#d1-root .d1-op { flex: none; display: inline-block; width: 0.9em; font-weight: 700; color: var(--color-muted); }
+#d1-root .d1-sw { flex: none; width: 14px; height: 14px; border-radius: 4px; }
+#d1-root .d1-sw.is-aho { background: var(--color-ink-2); }
+#d1-root .d1-sw.is-sub { background: var(--d1-profundo); }
+#d1-root .d1-sw.is-cre { background: repeating-linear-gradient(135deg, var(--d1-bruma) 0 3px, #CFE5F8 3px 6px); box-shadow: inset 0 0 0 1.5px var(--d1-profundo); }
+#d1-root .d1-eq-total { border-bottom: 0 !important; border-top: 2px solid var(--color-ink); margin-top: -1px; }
+#d1-root .d1-eq-total dt { font-weight: 700; color: var(--color-ink); }
+#d1-root .d1-eq-total dd { color: var(--d1-tinta); font-size: var(--text-title); }
+#d1-root .d1-foot { margin-top: var(--space-md); font: 400 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
+
+/* Pasos · banda Celeste Profundo (lleva párrafos); cinco pasos */
+#d1-root .d1-road { background: var(--d1-profundo); }
+#d1-root .d1-road h2 { margin-bottom: var(--space-xs); max-width: 22ch; }
+#d1-root .d1-road .lead { margin-bottom: var(--space-xl); max-width: 54ch; }
+#d1-root .d1-stops { grid-template-columns: repeat(5, minmax(0, 1fr)); margin-bottom: 0; border-top-color: rgba(255,255,255,.6); }
+#d1-root .d1-stops .v-stop { padding-top: var(--space-lg); }
+#d1-root .d1-stops .v-stop::before { background: var(--d1-profundo); border-color: #FFFFFF; }
+#d1-root .d1-stops .v-stop:last-child::before { background: #FFFFFF; }
+#d1-root .d1-stops h3 { margin-bottom: var(--space-xs); color: #FFFFFF; }
+#d1-root .d1-stops .small { font-size: 0.875rem; font-weight: 700; }
+
+/* Botón de la banda celeste: contorno blanco (el rojo queda en portada y cierre) */
+#d1-root .d1-road .d1-btn-line { margin-top: var(--space-xl); background: transparent; color: #FFFFFF; box-shadow: inset 0 0 0 2px #FFFFFF; }
+#d1-root .d1-road .d1-btn-line:hover { background: #FFFFFF; color: var(--d1-tinta); }
+#d1-root .d1-road :focus-visible { outline-color: #FFFFFF; }
+
+/* ¿Qué es una mutuaria? · pausa blanca justo después de los pasos: la confianza llega antes de lo que es para quien aún no postula */
+#d1-root .d1-mut { background: var(--color-paper); }
+#d1-root .d1-mut-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
+#d1-root .d1-mut-grid:not(:has(.d1-mut-photo)) { grid-template-columns: minmax(0, 1fr); }
+#d1-root .d1-mut-photo { aspect-ratio: 4 / 5; }
+#d1-root .d1-mut-photo img { object-position: 50% 35%; }
+#d1-root .d1-mut h2 { margin-bottom: var(--space-sm); }
+#d1-root .d1-statement { font: 400 var(--text-lead)/1.5 var(--font-body); color: var(--color-ink-2); margin-bottom: var(--space-lg); max-width: 52ch; }
+#d1-root .d1-facts { display: grid; gap: var(--space-md); margin: 0; padding: var(--space-md) 0 0; list-style: none; border-top: 2px solid var(--d1-profundo); max-width: 60ch; }
+#d1-root .d1-facts li { position: relative; margin: 0; padding-left: 32px; color: var(--color-ink-2); }
+#d1-root .d1-facts li::before { content: "\F26A"; position: absolute; left: 0; top: 0; font-family: var(--font-icons, "bootstrap-icons"); color: var(--d1-profundo); line-height: 1.55; }
+#d1-root .d1-facts strong { color: var(--color-ink); }
+
+/* ¿Aún no postulas? · pausa gris; requisitos plegados (details nativo, sin script) */
+#d1-root .d1-post { background: var(--color-paper-3); }
+#d1-root .d1-post-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: start; }
+#d1-root .d1-post h2 { margin-bottom: var(--space-sm); scroll-margin-top: var(--space-2xl); }
+#d1-root .d1-post .lead { max-width: 52ch; }
+#d1-root .d1-how { margin: var(--space-lg) 0; padding: 0; list-style: none; counter-reset: d1h; display: grid; gap: var(--space-md); }
+#d1-root .d1-how li { position: relative; margin: 0; padding-left: 44px; color: var(--color-ink-2); counter-increment: d1h; max-width: 58ch; }
+#d1-root .d1-how li::before { content: counter(d1h); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--d1-profundo); color: #FFFFFF; font: 700 0.875rem/30px var(--font-body); text-align: center; }
+#d1-root .d1-how b { color: var(--color-ink); }
+#d1-root .d1-post .v-quiet { color: var(--d1-tinta); border-color: var(--d1-tinta); }
+#d1-root .d1-post .v-quiet:hover { color: var(--d1-tinta); background: var(--d1-bruma); }
+#d1-root .d1-post-side { display: grid; gap: var(--space-lg); }
+#d1-root .d1-req { background: var(--color-paper); border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
+#d1-root .d1-req summary { display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); min-height: 56px; padding: var(--space-sm) var(--space-lg); cursor: pointer; list-style: none; font: 700 var(--text-title)/1.3 var(--font-display); color: var(--color-ink); border-radius: var(--radius-card); }
+#d1-root .d1-req summary::-webkit-details-marker { display: none; }
+#d1-root .d1-req summary .bi { color: var(--d1-profundo); transition: transform .2s cubic-bezier(.16,1,.3,1); }
+#d1-root .d1-req[open] summary .bi { transform: rotate(180deg); }
+#d1-root .d1-req summary:hover { color: var(--d1-tinta); }
+#d1-root .d1-req .v-ruled { padding: 0 var(--space-lg) var(--space-sm); }
+#d1-root .d1-req .v-ruled > div { padding-block: var(--space-md); }
+#d1-root .d1-req .v-ruled dt { font-size: 1.0625rem; }
+#d1-root .d1-post-photo { aspect-ratio: 4 / 5; max-width: 300px; }
+#d1-root .d1-post-photo img { object-position: 50% 30%; }
+
+/* Por qué conviene · pausa blanca; ventajas y comparación corta en la misma sección */
+#d1-root .d1-why { background: var(--color-paper); }
+#d1-root .d1-why-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-2xl); align-items: start; }
+#d1-root .d1-why-grid:not(:has(.d1-why-photo)) { grid-template-columns: minmax(0, 1fr); }
+#d1-root .d1-why-photo { aspect-ratio: 4 / 5; position: sticky; top: var(--space-xl); }
+#d1-root .d1-why-photo img { object-position: 40% 50%; }
+#d1-root .d1-why h2 { margin-bottom: var(--space-xs); }
+#d1-root .d1-why .lead { margin-bottom: var(--space-xl); max-width: 58ch; }
+#d1-root .d1-reasons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--gap-columns); margin: 0 0 var(--space-2xl); padding: 0; list-style: none; }
+#d1-root .d1-reasons li { position: relative; margin: 0; padding-left: 32px; color: var(--color-ink-2); }
+#d1-root .d1-reasons li::before { content: "\F26A"; position: absolute; left: 0; top: 0; font-family: var(--font-icons, "bootstrap-icons"); color: var(--color-coral, #F3504E); line-height: 1.55; }
+#d1-root .d1-reasons strong { display: block; color: var(--color-ink); font: 700 var(--text-title)/1.3 var(--font-display); margin-bottom: 4px; }
+#d1-root .d1-table-wrap { border-top: 2px solid var(--d1-profundo); }
+#d1-root .d1-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+#d1-root .d1-table th, #d1-root .d1-table td { padding: var(--space-md); text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-rule); line-height: 1.45; }
+#d1-root .d1-table thead th { font: 700 0.875rem/1.3 var(--font-body); color: var(--color-muted); }
+#d1-root .d1-table thead th.is-d1 { color: var(--d1-tinta); font-size: 1.0625rem; }
+#d1-root .d1-table tbody th { font-weight: 700; color: var(--color-ink); width: 22%; }
+#d1-root .d1-table td { color: var(--color-ink-2); width: 26%; }
+#d1-root .d1-table .is-d1 { background: var(--d1-bruma); }
+#d1-root .d1-table td.is-d1 { color: var(--d1-tinta); font-weight: 700; }
+
+/* Preguntas frecuentes · pausa gris; otras opciones debajo */
+#d1-root .d1-faq { background: var(--color-paper-3); }
+#d1-root .d1-faq .f4-acc-panel a { color: var(--d1-tinta); }
+#d1-root .d1-faq .f4-acc-btn:hover { background: var(--color-paper); }
+#d1-root .d1-other-list a { background: var(--color-paper); }
+#d1-root .f4-acc-h { margin: 0; font: inherit; }
+#d1-root .f4-acc-btn { padding: var(--space-md); font-size: 1.0625rem; }
+#d1-root .f4-acc-btn[aria-expanded="true"] { background: var(--d1-bruma); color: var(--d1-tinta); }
+#d1-root .v-faq-grid h2 { margin-bottom: var(--space-sm); }
+#d1-root .d1-other { margin-top: var(--space-2xl); }
+#d1-root .d1-other-h { padding-top: var(--space-xl); border-top: 1px solid var(--color-rule); }
+#d1-root .d1-other-h { font: 700 var(--text-title)/1.3 var(--font-display); color: var(--color-ink); margin-bottom: var(--space-md); max-width: none; }
+#d1-root .d1-other-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns, 24px); margin: 0; padding: 0; list-style: none; }
+#d1-root .d1-other-list li { margin: 0; padding: 0; }
+#d1-root .d1-other-list li::before { content: none; }
+#d1-root .d1-other-list a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--space-md); height: 100%; padding: var(--space-md) var(--space-lg); border: 1px solid var(--color-rule); border-radius: var(--radius-card); color: var(--color-ink-2); text-decoration: none; transition: border-color .12s ease-out, background-color .12s ease-out; }
+#d1-root .d1-other-list b { grid-column: 1; font: 700 1.0625rem/1.3 var(--font-display); color: var(--d1-tinta); }
+#d1-root .d1-other-list span { grid-column: 1; font-size: 0.875rem; line-height: 1.45; }
+#d1-root .d1-other-list .bi { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--d1-profundo); font-size: 1.25rem; transition: transform .2s cubic-bezier(.16,1,.3,1); }
+#d1-root .d1-other-list a:hover { border-color: var(--d1-profundo); background: var(--d1-bruma); }
+#d1-root .d1-other-list a:hover .bi { transform: translateX(3px); }
+
+/* Cierre · foto con degradado celeste; un botón rojo */
+#d1-root .d1-close { position: relative; isolation: isolate; overflow: hidden; background: var(--d1-tinta); }
+#d1-root .d1-close .container { position: relative; z-index: 1; }
+#d1-root .d1-close-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 58%; margin: 0; z-index: -2; }
+#d1-root .d1-close-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 40%; display: block; }
+#d1-root .d1-close::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,1) 0%, rgba(19,95,168,.92) 45%, rgba(49,140,221,.15) 100%); }
+#d1-root .d1-close .v-close-in { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: var(--space-lg); max-width: 560px; }
+#d1-root .d1-close .v-btn { justify-self: start; }
+#d1-root .d1-close h2 { max-width: 18ch; margin-bottom: var(--space-sm); }
+#d1-root .d1-close-lead { color: #FFFFFF; font-size: var(--text-lead); max-width: 44ch; }
+#d1-root .d1-close-legal { margin-top: var(--space-xl); color: #FFFFFF; font-weight: 400; max-width: 56ch; }
+#d1-root .d1-close :focus-visible { outline-color: #FFFFFF; }
+
+@media (max-width: 60rem) {
+  #d1-root { --section-gap: 48px; --section-gap-s: 48px; }
+  /* Portada en móvil: foto arriba, degradado hacia arriba, texto abajo */
+  #d1-root .d1-cover::before { display: none; }
+  #d1-root .d1-cover-photo { position: relative; inset: auto; width: 100%; aspect-ratio: 4 / 3; z-index: 0; }
+  #d1-root .d1-cover-photo img { object-position: 55% 60%; }
+  #d1-root .d1-cover-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(19,95,168,1) 0%, rgba(19,95,168,.88) 18%, rgba(49,140,221,.15) 60%); }
+  #d1-root .d1-cover-in { position: relative; min-height: 0; margin-top: -48px; padding-block: 0 var(--space-xl); }
+  #d1-root .d1-cover-text, #d1-root .d1-cover-tramos { width: 100%; }
+  #d1-root .d1-cover-tramos { margin-top: var(--space-xl); }
+  #d1-root .d1-cover-tramos b { font-size: 1.0625rem; }
+  #d1-root :is(.d1-que-grid, .d1-pago-grid, .d1-post-grid, .d1-mut-grid, .d1-why-grid) { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  #d1-root .d1-pay { padding: var(--space-lg); }
+  #d1-root .d1-stops { grid-template-columns: minmax(0, 1fr); border-top: 0; border-left: 2px solid rgba(255,255,255,.6); padding-left: var(--space-lg); gap: var(--space-lg); }
+  #d1-root .d1-stops .v-stop { padding-top: 0; border-top: 0; }
+  #d1-root .d1-stops .v-stop::before { top: 4px; left: calc(-1 * var(--space-lg) - 10px); }
+  #d1-root .d1-mut-photo { aspect-ratio: 4 / 3; order: 2; }
+  #d1-root .d1-mut-photo img { object-position: 50% 30%; }
+  #d1-root .d1-post-photo { display: none; }
+  #d1-root .d1-why-photo { position: static; aspect-ratio: 16 / 9; }
+  #d1-root .d1-other { margin-top: var(--space-2xl); }
+  #d1-root .d1-other-list { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
+  /* Cierre en móvil: foto arriba y degradado hacia arriba */
+  #d1-root .d1-close::before { display: none; }
+  #d1-root .d1-close-photo { position: relative; width: 100%; aspect-ratio: 3 / 2; z-index: 0; margin: calc(-1 * var(--section-gap-s)) 0 0; }
+  #d1-root .d1-close-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(19,95,168,1) 0%, rgba(19,95,168,.88) 18%, rgba(49,140,221,.15) 60%); }
+  #d1-root .d1-close .container { margin-top: -40px; }
+  /* Tablas en filas apiladas */
+  #d1-root :is(.d1-tramos, .d1-table) thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  #d1-root :is(.d1-tramos, .d1-table), #d1-root :is(.d1-tramos, .d1-table) :is(tbody, tr, th, td) { display: block; width: auto !important; }
+  #d1-root :is(.d1-tramos, .d1-table) tr { padding: var(--space-md) var(--space-sm); border-bottom: 1px solid var(--color-rule); }
+  #d1-root :is(.d1-tramos, .d1-table) tbody th { padding: 0 0 var(--space-xs); border: 0; font-size: 1.0625rem; background: none !important; }
+  #d1-root :is(.d1-tramos, .d1-table) td { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-sm); padding: var(--space-xs) 0; border: 0; background: none !important; }
+  #d1-root :is(.d1-tramos, .d1-table) td::before { content: attr(data-l); font: 600 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
+  #d1-root .d1-tramos tr.is-new { background: var(--d1-bruma); border-radius: 6px; }
+  #d1-root .d1-table td.is-d1 { background: var(--d1-bruma) !important; padding: var(--space-xs) var(--space-sm); border-radius: 6px; }
+  #d1-root .d1-table td.is-d1::before { color: var(--d1-tinta); }
+}
+@media (max-width: 40rem) {
+  #d1-root .d1-cover .v-actions { flex-direction: column; align-items: stretch; }
+  #d1-root .d1-cover .v-btn, #d1-root .d1-cover .v-quiet, #d1-root .d1-close .v-btn, #d1-root .d1-road .v-btn, #d1-root .d1-post .v-quiet, #d1-root .d1-pago .v-quiet { width: 100%; justify-content: center; }
+  /* La franja de tramos repite la tabla que viene justo después: en celular se omite */
+  #d1-root .d1-cover-tramos { display: none; }
+  #d1-root .d1-reasons { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+  #d1-root .d1-track { height: 52px; }
+  #d1-root .d1-eq dd { font-size: 1.0625rem; }
+  #d1-root .d1-eq-total dd { font-size: var(--text-lg); }
+  #d1-root :is(.d1-tramos, .d1-table) td { grid-template-columns: 6.5rem minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #d1-root .d1-req summary .bi, #d1-root .d1-other-list .bi { transition: none; }
+}
+/* ===== fin Página Subsidio DS1 ===== */
 
 /* ===== FAQ en todas las páginas: cada pregunta va en un H3 (.f4-acc-h) sin cambiar el aspecto del acordeón · v2026.11.18 ===== */
 .f4v2 .f4-acc-h { margin: 0; font: inherit; letter-spacing: normal; line-height: inherit; color: inherit; max-width: none; text-wrap: wrap; }

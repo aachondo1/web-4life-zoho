@@ -1,4 +1,4 @@
-/* v2026.11.20-4 */
+/* v2026.11.21-2 · colores base al día con el brandbook v3 (igual que el bloque FOGAES del CSS Personalizado) */
 /* ===== 4Life · Página FOGAES — pegar TODO este bloque al FINAL del CSS Personalizado ===== */
 /* Parte 1: base .f4v2 (colores, tamaños y espacios). Todo va acotado a .f4v2, así que NO cambia el home publicado ni /simular. Si algún día publicas el Home v4, esta parte ya estará y no se repite. */
 /* Hallmark · scope: Zoho Sites has one Custom CSS; tokens in :root, every rule under .f4v2, appended after the existing CSS so /simular keeps its own rules */
@@ -13,10 +13,10 @@
 :root {
   --color-paper: #FFFFFF; --color-paper-2: #F7F7F7; --color-paper-3: #F2F2F2;
   --color-ink: #1E1E1E; --color-ink-2: #333333; --color-muted: #5D5D5D;
-  --color-rule: #E0E0E0; --color-field: #295BE9; --color-field-deep: #1B3FA6; --color-field-soft: #E8EEFD;
-  --color-accent: #CF3A38; --color-accent-deep: #B32F2D; --color-accent-ink: #FFFFFF; --color-focus: #295BE9;
+  --color-rule: #E0E0E0; --color-field: #1A73C8; --color-field-deep: #135FA8; --color-field-soft: #E8F3FC;
+  --color-accent: #CF3A38; --color-accent-deep: #B32F2D; --color-accent-ink: #FFFFFF; --color-focus: #1A73C8;
   --color-gold: #7D9BF2; --color-gold-2: #C9D6FA; --color-slot: var(--color-paper-3);
-  --color-on-ink: #FFFFFF; --color-on-ink-2: #E8EEFD;
+  --color-on-ink: #FFFFFF; --color-on-ink-2: #FFFFFF;
   --font-display: "Asap", ui-sans-serif, system-ui, sans-serif; --font-body: "Asap", ui-sans-serif, system-ui, sans-serif;
   --font-outlier: "Asap", ui-sans-serif, sans-serif; --font-icons: "bootstrap-icons";
   --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;

@@ -1,4 +1,4 @@
-<!-- v2026.11.19-8 · Así funciona en 3 fases; Atención a clientes al final, sin foto · respaldo de 4Life Seguros y siglas explicadas · Atención a clientes con Portal de clientes · Así funciona en 6 pasos como un solo camino vertical; Hablemos pasa a Atención a clientes · brandbook v3 (portada con foto y degradado celeste) · Home completo en un solo snippet. Después de este snippet van "4L Home - Animacion" y el global "4L - Global CTA". Estilos: bloque "Home v5" del CSS Personalizado (= CSS Home.txt). Fotos: home-portada, home-hogar, home-subsidio, home-soluciones, home-inmobiliarias, home-santiago (.jpg) -->
+<!-- v2026.11.19-9 · incluye la franja final (cierre con foto); ya no se usa el snippet global "4L - Global CTA" · Así funciona en 3 fases; Atención a clientes al final, sin foto · respaldo de 4Life Seguros y siglas explicadas · Atención a clientes con Portal de clientes · Así funciona en 6 pasos como un solo camino vertical; Hablemos pasa a Atención a clientes · brandbook v3 (portada con foto y degradado celeste) · Home completo en un solo snippet. Después de este snippet va "4L Home - Animacion". Estilos: bloque "Home v5" del CSS Personalizado (= CSS Home.txt). Fotos: home-portada, home-hogar, home-subsidio, home-soluciones, home-inmobiliarias, home-santiago (.jpg) -->
 <div class="f4 f4v2 f4h">
 <section class="h-cover" aria-labelledby="h-t-hero">
   <figure class="h-cover-photo"><img src="/home-portada.jpg" alt="Un ejecutivo de 4Life conversa con una pareja en la oficina, con Santiago de fondo" width="800" height="640" fetchpriority="high" onerror="this.parentNode.remove()"></figure>
@@ -136,4 +136,6 @@
       </dl>
   </div>
 </section>
+
+<section class="v-close h-close" aria-labelledby="t-cierre"><div class="h-close-photo" aria-hidden="true"><img src="/home-santiago.jpg" alt="" width="720" height="540" loading="lazy" onerror="this.parentNode.remove()"></div><div class="container v-close-in"><h2 id="t-cierre">Compra, refinancia o financia tu proyecto con un ejecutivo a tu lado</h2><a class="v-btn" data-eval data-track="cta_final" href="/simular?origen=home">Simula tu crédito</a></div></section>
 </div>
