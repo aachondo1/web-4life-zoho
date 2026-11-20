@@ -1,4 +1,4 @@
-<!-- v2026.11.20 · Página Refinanciamiento (/refinanciamiento-hipotecario) · Crítica Impeccable 1 (16/32), aplicada completa. H1 y bajadas del brief SEO v1 sin cambios (decisión de Juan). Orden: portada con formulario · ¿Te Conviene Refinanciar? · Qué es · Qué Puedes Revisar · Tu Dividendo, a tu Ritmo · Refinancia desde donde Estés (otra institución primero) · Lo que Necesitas y lo que Pagas · Cómo Refinanciar (6 pasos) · Preguntas · cierre. Sin "ejecutivo" fuera de la bajada SEO; el respaldo del formulario sigue llevando al simulador (decisión de Juan) y explica qué poner como pie. Sin foto en la portada (la foto rf-hero.jpg ya no se usa). Un solo snippet de código. Estilos: bloque "Página Refinanciamiento" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2), y bloque "Brandbook v3" después. Formulario: Zoho Forms "Refinanciamiento" ya conectado en FORM_URL (script al final); si se vacía, vuelve el aviso con el simulador. -->
+<!-- v2026.11.20-3 · Listo para el formulario propio: la tarjeta del formulario es el contenedor de "4L - Formulario contacto" (pegar ese snippet ARRIBA de este); mientras ese snippet esté apagado sigue Zoho Forms. · v2026.11.20 · Página Refinanciamiento (/refinanciamiento-hipotecario) · Crítica Impeccable 1 (16/32), aplicada completa. H1 y bajadas del brief SEO v1 sin cambios (decisión de Juan). Orden: portada con formulario · ¿Te Conviene Refinanciar? · Qué es · Qué Puedes Revisar · Tu Dividendo, a tu Ritmo · Refinancia desde donde Estés (otra institución primero) · Lo que Necesitas y lo que Pagas · Cómo Refinanciar (6 pasos) · Preguntas · cierre. Sin "ejecutivo" fuera de la bajada SEO; el respaldo del formulario sigue llevando al simulador (decisión de Juan) y explica qué poner como pie. Sin foto en la portada (la foto rf-hero.jpg ya no se usa). Un solo snippet de código. Estilos: bloque "Página Refinanciamiento" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2), y bloque "Brandbook v3" después. Formulario: Zoho Forms "Refinanciamiento" ya conectado en FORM_URL (script al final); si se vacía, vuelve el aviso con el simulador. -->
 <div class="f4 f4v2" id="rf-root">
 
 <section class="rf-hero" aria-labelledby="rf-t-hero">
@@ -16,7 +16,7 @@
     <div class="rf-form" id="rf-form" tabindex="-1" aria-labelledby="rf-t-form">
       <h2 id="rf-t-form">Revisa si te Conviene Refinanciar</h2>
       <p class="rf-form-sub">Déjanos tus datos: revisamos tu crédito actual y te presentamos una propuesta. Gratis y sin compromiso.</p>
-      <div class="rf-frame">
+      <div class="rf-frame" data-c4-form data-producto="refinanciamiento" data-pregunta="institucion">
         <iframe data-rf-frame title="Formulario de refinanciamiento de 4Life Crédito Hipotecario" loading="eager" allow="clipboard-write" hidden></iframe>
         <div class="rf-frame-wait" data-rf-wait>
           <i class="bi bi-calculator" aria-hidden="true"></i>
@@ -219,7 +219,9 @@
   var frame = root.querySelector("[data-rf-frame]"), wait = root.querySelector("[data-rf-wait]"), box = root.querySelector("#rf-form");
 
   /* UTM y clics de anuncios: los que guarda el script global (f4_utm) + los de esta URL. Viajan al formulario como parámetros; en Zoho Forms crea campos ocultos con estos mismos nombres. */
-  if (FORM_URL && frame) {
+  /* Con el formulario propio encendido (snippet "4L - Formulario contacto", ARRIBA de este) no se carga Zoho Forms; la casilla de consentimiento ya enlaza la política */
+  if (window.f4cActivo) { var priv = root.querySelector(".rf-privacy"); if (priv) priv.remove(); }
+  if (FORM_URL && frame && !window.f4cActivo) {
     var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"], p = {}, q = new URLSearchParams(location.search);
     try { p = JSON.parse(sessionStorage.getItem("f4_utm") || "{}"); } catch (e) {}
     var u = new URL(FORM_URL);

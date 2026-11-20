@@ -1,4 +1,4 @@
-<!-- v2026.11.19-5 · Página Crédito hipotecario para fines generales (/fines-generales) · textos según brief SEO v1 (18-11). Un solo snippet de código. Estilos: bloque "Página Fines generales" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Formulario: pega la URL del iframe de Zoho Forms en FORM_URL (script al final). Sin cifras de monto, % de tasación, tipos de propiedad, tiempos ni detalle de costos. -->
+<!-- v2026.11.20 · Listo para el formulario propio: la tarjeta del formulario es el contenedor de "4L - Formulario contacto" (pegar ese snippet ARRIBA de este) y el caso elegido marca su pregunta; mientras ese snippet esté apagado no cambia nada. · v2026.11.19-5 · Página Crédito hipotecario para fines generales (/fines-generales) · textos según brief SEO v1 (18-11). Un solo snippet de código. Estilos: bloque "Página Fines generales" al final del CSS Personalizado, DESPUÉS del bloque FOGAES (usa su base .f4v2). Formulario: pega la URL del iframe de Zoho Forms en FORM_URL (script al final). Sin cifras de monto, % de tasación, tipos de propiedad, tiempos ni detalle de costos. -->
 <div class="f4 f4v2" id="gf-root">
 
 <section class="gf-hero" aria-labelledby="gf-t-hero">
@@ -18,7 +18,7 @@
       <h2 id="gf-t-form">Revisa cuánto podrías obtener</h2>
       <p class="gf-form-sub">Déjanos tus datos y un ejecutivo de 4Life revisa tu caso y te presenta una propuesta. Sin compromiso.</p>
       <p class="gf-case-note" data-gf-note aria-live="polite" hidden></p>
-      <div class="gf-frame">
+      <div class="gf-frame" data-c4-form data-producto="fines_generales" data-pregunta="situacion">
         <iframe data-gf-frame title="Formulario de crédito para fines generales de 4Life Crédito Hipotecario" loading="eager" allow="clipboard-write" hidden></iframe>
         <div class="gf-frame-wait" data-gf-wait>
           <p><strong>Estamos actualizando este formulario.</strong></p>
@@ -186,7 +186,8 @@
   });
 
   /* UTM y clics de anuncios: los que guarda el script global (f4_utm) + los de esta URL. Viajan al formulario como parámetros; en Zoho Forms crea campos ocultos con estos mismos nombres. */
-  if (FORM_URL && frame) {
+  /* Con el formulario propio encendido (snippet "4L - Formulario contacto", ARRIBA de este) no se carga Zoho Forms */
+  if (FORM_URL && frame && !window.f4cActivo) {
     var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"], p = {}, q = new URLSearchParams(location.search);
     try { p = JSON.parse(sessionStorage.getItem("f4_utm") || "{}"); } catch (e) {}
     var u = new URL(FORM_URL);
@@ -217,6 +218,7 @@
     if (!NOTES[c] || c === current) return;
     current = c;
     if (note) { note.innerHTML = NOTES[c]; note.hidden = false; }
+    if (window.f4Contacto) window.f4Contacto.marcar(c === "pagando" ? "con_credito" : "libre");   /* formulario propio: marca la respuesta de su pregunta */
     [].forEach.call(root.querySelectorAll(".gf-where [data-gf-case]"), function (x) { x.setAttribute("aria-pressed", x.getAttribute("data-gf-case") === c ? "true" : "false"); });
     if (CASE_FIELD && frame && frame.src) { var u2 = new URL(frame.src); u2.searchParams.set(CASE_FIELD, CASE_VALUES[c]); frame.src = u2.toString(); }
   }

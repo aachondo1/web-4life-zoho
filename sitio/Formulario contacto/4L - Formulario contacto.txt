@@ -1,0 +1,205 @@
+<!-- v2026.11.20 · 4L - Formulario contacto · Formulario propio de contacto (sin Zoho Forms) para las páginas Refinanciamiento y Fines generales. Envía al motor (/registro, accion "contacto") y solo si el motor responde {"ok": true} lleva a /gracias2.
+     Dónde va: un bloque "Código" ARRIBA del snippet principal de cada página (4L - Refinanciamiento y 4L - Fines generales). El mismo código en las dos.
+     Estilos: bloque "Formulario contacto" del CSS Personalizado.
+     Encendido: ACTIVO = false mientras el motor no tenga la acción "contacto"; las páginas siguen con su formulario actual. Para probarlo en Zoho antes de encenderlo, abre la página con ?c4prueba=1: se ve el formulario y al enviar muestra en la consola lo que mandaría, sin enviar nada. -->
+<script>
+(function () {
+  /* ============ CONFIGURACIÓN ============ */
+  var ACTIVO = false;   /* true cuando el motor responda {"ok": true} a accion "contacto" */
+  var ENDPOINT = "https://motor4life-944155992.development.catalystserverless.com/server/motor_4life/registro";
+  var GRACIAS = "/gracias2";
+  var VERSION_TYC = "contacto-v1";
+  var WHATSAPP = "56943802296";
+  var ESPERA_MS = 10000;   /* tiempo máximo esperando al motor */
+
+  var PRUEBA = /[?&]c4prueba=1(&|$)/.test(location.search);
+  if (window.f4Contacto || (!ACTIVO && !PRUEBA)) return;
+  window.f4cActivo = true;   /* los snippets de página ven esto y no cargan Zoho Forms */
+
+  /* Pregunta propia de cada página (data-pregunta en el contenedor) */
+  var PREGUNTAS = {
+    institucion: { campo: "institucion_actual", titulo: "¿Dónde tienes hoy tu crédito?", ops: [["otra", "Otro banco o mutuaria"], ["4life", "En 4Life"]], saldo: "siempre" },
+    situacion: { campo: "situacion_propiedad", titulo: "¿Tu propiedad tiene un crédito hipotecario?", ops: [["con_credito", "Sí, lo estoy pagando"], ["libre", "No, está libre de deuda"]], saldo: "con_credito" }
+  };
+  var WA_TXT = { refinanciamiento: "Hola, quiero revisar si me conviene refinanciar mi crédito hipotecario.", fines_generales: "Hola, quiero revisar un crédito para fines generales con mi propiedad." };
+
+  function limpiarRut(s) { return String(s || "").replace(/[^0-9kK]/g, "").toUpperCase(); }
+  function rutValido(s) {
+    var c = limpiarRut(s);
+    if (c.length < 8 || c.length > 9) return false;
+    var cuerpo = c.slice(0, -1), dv = c.slice(-1), suma = 0, mult = 2;
+    if (!/^\d+$/.test(cuerpo)) return false;
+    for (var k = cuerpo.length - 1; k >= 0; k--) { suma += +cuerpo[k] * mult; mult = mult === 7 ? 2 : mult + 1; }
+    var res = 11 - (suma % 11);
+    return dv === (res === 11 ? "0" : res === 10 ? "K" : String(res));
+  }
+  function normalizarRut(s) { var c = limpiarRut(s).replace(/^0+/, ""); return c.slice(0, -1) + "-" + c.slice(-1); }
+  function mostrarRut(s) { var c = normalizarRut(s).split("-"); return Number(c[0]).toLocaleString("es-CL") + "-" + c[1]; }
+  function emailOk(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s); }
+  /* "2.500" = dos mil quinientos; "2500,5" = decimal */
+  function numUF(s) { s = String(s || "").trim().replace(/\s/g, ""); if (!s) return null; s = s.replace(/\.(?=\d{3}(\D|$))/g, "").replace(",", "."); var n = Number(s); return isFinite(n) && n > 0 ? n : NaN; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  var n = 0;
+  function montar(box) {
+    if (box.getAttribute("data-c4-ok")) return;
+    box.setAttribute("data-c4-ok", "1");
+    var producto = box.getAttribute("data-producto") || "refinanciamiento";
+    var P = PREGUNTAS[box.getAttribute("data-pregunta")] || PREGUNTAS.institucion;
+    var id = "c4-" + (++n) + "-", t0 = Date.now();
+    var radios = P.ops.map(function (o) {
+      return '<label class="c4-op"><input type="radio" name="' + id + 'q" value="' + o[0] + '"><span>' + esc(o[1]) + '</span></label>';
+    }).join("");
+    box.innerHTML =
+      '<form class="c4" novalidate>' +
+        '<div class="c4-row c4-row-n">' +
+          campo("nombre", "Nombre", '<input class="c4-in" id="' + id + 'nombre" name="nombre" type="text" autocomplete="given-name" maxlength="60">') +
+          campo("apellido", "Apellido", '<input class="c4-in" id="' + id + 'apellido" name="apellido" type="text" autocomplete="family-name" maxlength="60">') +
+        '</div>' +
+        '<div class="c4-row">' +
+          campo("rut", "RUT", '<input class="c4-in" id="' + id + 'rut" name="rut" type="text" autocomplete="off" maxlength="12" placeholder="12.345.678-9">') +
+          campo("tel", "Celular", '<div class="c4-tel"><span aria-hidden="true">+56 9</span><input class="c4-in" id="' + id + 'tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="9" placeholder="1234 5678" aria-label="Celular, 8 dígitos después del +56 9"></div>') +
+        '</div>' +
+        campo("email", "Correo", '<input class="c4-in" id="' + id + 'email" name="email" type="email" autocomplete="email" maxlength="100" placeholder="nombre@correo.cl">') +
+        '<fieldset class="c4-f c4-q" id="' + id + 'q"><legend>' + esc(P.titulo) + '</legend><div class="c4-ops">' + radios + '</div><p class="c4-err" id="' + id + 'e-q" aria-live="polite"></p></fieldset>' +
+        '<div class="c4-saldo"' + (P.saldo === "siempre" ? "" : " hidden") + '>' +
+          campo("saldo", "¿Cuánto te queda por pagar? <span class=\"c4-opt\">(opcional)</span>", '<div class="c4-tel c4-uf"><span aria-hidden="true">UF</span><input class="c4-in" id="' + id + 'saldo" name="saldo" type="text" inputmode="decimal" autocomplete="off" maxlength="9" placeholder="Ej: 2.500" aria-describedby="' + id + 'h-saldo"></div><p class="c4-help" id="' + id + 'h-saldo">Aproximado. Sale en tu cartola o en el certificado de deuda.</p>') +
+        '</div>' +
+        '<div class="c4-trampa" aria-hidden="true"><label for="' + id + 'web">No llenar</label><input id="' + id + 'web" name="web" type="text" tabindex="-1" autocomplete="off"></div>' +
+        '<div class="c4-f c4-checks">' +
+          '<label class="c4-check"><input type="checkbox" id="' + id + 'acepta" name="acepta"><span>Acepto que 4Life trate mis datos para revisar mi caso y contactarme, como se explica en la <a href="/privacidad-y-cookies" target="_blank" rel="noopener">política de privacidad</a>.</span></label>' +
+          '<p class="c4-err" id="' + id + 'e-acepta" aria-live="polite"></p>' +
+          '<label class="c4-check"><input type="checkbox" id="' + id + 'mkt" name="mkt"><span>Acepto recibir información y ofertas de 4Life sobre crédito hipotecario por correo, WhatsApp o teléfono. Puedo darme de baja cuando quiera. <span class="c4-opt">(opcional)</span></span></label>' +
+        '</div>' +
+        '<button class="v-btn c4-send" type="submit">Enviar mis datos</button>' +
+        '<div class="c4-msg" role="status" aria-live="polite"></div>' +
+      '</form>';
+
+    var f = box.querySelector("form"), $ = function (k) { return document.getElementById(id + k); };
+    var saldoBox = f.querySelector(".c4-saldo"), msg = f.querySelector(".c4-msg"), btn = f.querySelector(".c4-send"), enviando = false;
+
+    function campo(k, et, control) {
+      return '<div class="c4-f"><label for="' + id + k + '">' + et + '</label>' + control + '<p class="c4-err" id="' + id + 'e-' + k + '" aria-live="polite"></p></div>';
+    }
+    function error(k, txt) {
+      var e = $("e-" + k), el = k === "q" ? $("q") : $(k);
+      if (e) e.textContent = txt || "";
+      if (el) { if (txt) { el.setAttribute("aria-invalid", "true"); el.setAttribute("aria-describedby", [id + "e-" + k, k === "saldo" ? id + "h-saldo" : ""].join(" ").trim()); } else { el.removeAttribute("aria-invalid"); if (k === "saldo") el.setAttribute("aria-describedby", id + "h-saldo"); else el.removeAttribute("aria-describedby"); } }
+    }
+    function respuesta() { var r = f.querySelector('input[name="' + id + 'q"]:checked'); return r ? r.value : ""; }
+    function verSaldo() {
+      if (P.saldo === "siempre") return;
+      var on = respuesta() === P.saldo; saldoBox.hidden = !on;
+      if (!on) { $("saldo").value = ""; error("saldo", ""); }
+    }
+    function marcar(v) { var r = f.querySelector('input[name="' + id + 'q"][value="' + v + '"]'); if (r) { r.checked = true; verSaldo(); error("q", ""); } }
+    box.f4cMarcar = marcar;
+    if (box.getAttribute("data-respuesta")) marcar(box.getAttribute("data-respuesta"));
+
+    [].forEach.call(f.querySelectorAll('input[name="' + id + 'q"]'), function (r) { r.addEventListener("change", function () { verSaldo(); error("q", ""); }); });
+    ["nombre", "apellido", "rut", "tel", "email", "saldo"].forEach(function (k) { $(k).addEventListener("input", function () { error(k, ""); }); });
+    $("acepta").addEventListener("change", function () { error("acepta", ""); });
+    $("rut").addEventListener("blur", function () { if (this.value && rutValido(this.value)) this.value = mostrarRut(this.value); });
+    $("tel").addEventListener("input", function () { var d = this.value.replace(/\D/g, "").slice(0, 8); this.value = d.length > 4 ? d.slice(0, 4) + " " + d.slice(4) : d; });
+
+    function validar() {
+      var ok = true, primero = null;
+      function chk(k, txt) { error(k, txt); if (txt && ok) { ok = false; primero = k === "q" ? f.querySelector('input[name="' + id + 'q"]') : $(k); } else if (txt) ok = false; }
+      chk("nombre", $("nombre").value.trim() ? "" : "Escribe tu nombre.");
+      chk("apellido", $("apellido").value.trim() ? "" : "Escribe tu apellido.");
+      chk("rut", rutValido($("rut").value) ? "" : "Revisa tu RUT: debe llevar dígito verificador (ej.: 12.345.678-9).");
+      chk("tel", $("tel").value.replace(/\D/g, "").length === 8 ? "" : "Escribe los 8 dígitos de tu celular (después del +56 9).");
+      chk("email", emailOk($("email").value.trim()) ? "" : "Revisa tu correo (ej.: nombre@correo.cl).");
+      chk("q", respuesta() ? "" : "Elige una opción.");
+      var s = saldoBox.hidden ? null : numUF($("saldo").value);
+      chk("saldo", s !== s ? "Escribe solo el número de UF (ej.: 2.500), o déjalo en blanco." : "");
+      chk("acepta", $("acepta").checked ? "" : "Necesitamos tu autorización para revisar tu caso y contactarte.");
+      if (primero) primero.focus();
+      return ok;
+    }
+
+    function cuerpo() {
+      var p = {
+        accion: "contacto", producto: producto, hp: $("web").value,
+        nombre: $("nombre").value.trim(), apellido_paterno: $("apellido").value.trim(),
+        rut: normalizarRut($("rut").value), email: $("email").value.trim().toLowerCase(),
+        telefono: "+569" + $("tel").value.replace(/\D/g, ""),
+        acepta: true, acepta_marketing: $("mkt").checked, version_tyc: VERSION_TYC,
+        t_llenado: Math.round((Date.now() - t0) / 1000)
+      };
+      p[P.campo] = respuesta();
+      var s = saldoBox.hidden ? null : numUF($("saldo").value);
+      if (s) p.saldo_aprox_uf = s;
+      /* UTM y página de origen: primero los guardados en la sesión (f4_utm); los de la URL actual mandan */
+      try {
+        var utm = JSON.parse(sessionStorage.getItem("f4_utm") || "{}");
+        Object.keys(utm).forEach(function (k) { p[k] = utm[k]; });
+        var q = new URLSearchParams(location.search);
+        ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"].forEach(function (k) { if (q.get(k)) p[k] = q.get(k); });
+        p.origen = q.get("origen") || location.pathname.replace(/^\//, "");
+      } catch (e) {}
+      try { var fbp = document.cookie.match(/(?:^|; )_fbp=([^;]+)/); if (fbp) p.fbp = fbp[1]; } catch (e) {}
+      return p;
+    }
+
+    function estado(cargando) {
+      enviando = cargando; btn.disabled = cargando; btn.setAttribute("aria-busy", cargando ? "true" : "false");
+      btn.textContent = cargando ? "Enviando…" : "Enviar mis datos";
+    }
+    function falla(txt) {
+      estado(false);
+      var wa = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WA_TXT[producto] || WA_TXT.refinanciamiento);
+      msg.className = "c4-msg is-err";
+      msg.innerHTML = "<strong>" + esc(txt || "No pudimos enviar tus datos.") + "</strong> Tus datos siguen aquí: inténtalo de nuevo en un momento o <a href=\"" + wa + "\" target=\"_blank\" rel=\"noopener\" data-track=\"contacto_error_whatsapp\">escríbenos por WhatsApp</a>.";
+    }
+
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (enviando) return;
+      msg.className = "c4-msg"; msg.textContent = "";
+      if (!validar()) return;
+      var p = cuerpo(), destino = GRACIAS + "?producto=" + encodeURIComponent(producto);
+      if (PRUEBA) {
+        try { console.info("[4L-Contacto · modo prueba] enviaría a " + ENDPOINT + ":", p); } catch (e2) {}
+        msg.className = "c4-msg is-ok";
+        msg.innerHTML = "<strong>Modo prueba:</strong> no se envió nada. Con el motor listo, irías a " + esc(destino) + ". Revisa la consola para ver los datos.";
+        return;
+      }
+      estado(true);
+      var ctl = window.AbortController ? new AbortController() : null, timer = setTimeout(function () { if (ctl) ctl.abort(); }, ESPERA_MS);
+      fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "text/plain;charset=UTF-8" }, body: JSON.stringify(p), signal: ctl ? ctl.signal : undefined })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { st: r.status, j: j || {} }; }); })
+        .then(function (r) {
+          clearTimeout(timer);
+          if (r.j.ok === true) {
+            try { (window.dataLayer = window.dataLayer || []).push({ event: "f4_contacto_enviado", producto: producto }); } catch (e3) {}
+            location.href = destino;
+            return;
+          }
+          /* 400 con campos: se marcan en el formulario */
+          var mapa = { nombre: "nombre", apellido_paterno: "apellido", rut: "rut", telefono: "tel", email: "email", saldo_aprox_uf: "saldo" };
+          var campos = (r.j.campos || []).filter(function (c) { return mapa[c]; });
+          if (r.st === 400 && campos.length) {
+            estado(false);
+            campos.forEach(function (c) { error(mapa[c], "Revisa este dato."); });
+            $(mapa[campos[0]]).focus();
+            msg.className = "c4-msg is-err"; msg.textContent = "Revisa los datos marcados.";
+            return;
+          }
+          falla();
+        })
+        .catch(function () { clearTimeout(timer); falla(); });
+    });
+  }
+
+  /* Para que la página marque la respuesta de su pregunta (ej.: Fines generales según el caso elegido) */
+  window.f4Contacto = {
+    marcar: function (valor) {
+      [].forEach.call(document.querySelectorAll("[data-c4-form]"), function (b) { if (b.f4cMarcar) b.f4cMarcar(valor); else b.setAttribute("data-respuesta", valor); });
+    }
+  };
+  function iniciar() { [].forEach.call(document.querySelectorAll("[data-c4-form]"), montar); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar); else setTimeout(iniciar, 0);
+  window.addEventListener("load", iniciar);
+})();
+</script>
