@@ -1,4 +1,4 @@
-<!-- v2026.11.19-7 · Fotos en Cómo se Paga (ds19-familia.jpg), Mutuaria (ds19-ejecutivo.jpg) y cierre con degradado (ds19-cierre.jpg). · Página Subsidio DS19 (/subsidio-ds19) · brandbook v3: portada con foto de la zona y degradado celeste, un solo rojo por vista (portada y cierre; el resto son enlaces), títulos de sección con mayúscula en cada palabra principal (PRODUCT.md, decidido 19-11-2026). Portada sin foto (centro, biobío): la ecuación del pie ocupa la columna derecha. Un solo snippet. Estilos: "CSS Subsidio DS19" en el CSS Personalizado, DESPUÉS del bloque FOGAES y ANTES del bloque "Brandbook v3". Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); centro y biobío aún sin foto: la portada queda en celeste liso. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
+<!-- v2026.11.19-8 · Fotos en Cómo se Paga (ds19-familia.jpg), Mutuaria (ds19-ejecutivo.jpg) y cierre con degradado (ds19-cierre.jpg). · Página Subsidio DS19 (/subsidio-ds19) · brandbook v3: portada con foto de la zona y degradado celeste, un solo rojo por vista (portada y cierre; el resto son enlaces), títulos de sección con mayúscula en cada palabra principal (PRODUCT.md, decidido 19-11-2026). Portada sin foto (centro, biobío): la ecuación del pie ocupa la columna derecha. Un solo snippet. Estilos: "CSS Subsidio DS19" en el CSS Personalizado, DESPUÉS del bloque FOGAES y ANTES del bloque "Brandbook v3". Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); centro y biobío aún sin foto: la portada queda en celeste liso. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
 <div class="f4 f4v2" id="ds-root">
 
 <section class="ds-cover" aria-labelledby="ds-t-hero">
@@ -15,13 +15,63 @@
       <p class="ds-cities" data-ds-cities><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Antofagasta · La Serena · Talca · Concepción · Temuco · Puerto Montt</span></p>
     </div>
     <div class="ds-cover-eq" aria-hidden="true">
-      <p><span>Tu ahorro</span><b>UF 80</b></p>
-      <p><i>+</i><span>Subsidio DS19</span><b>UF 350</b></p>
-      <p><i>+</i><span>Crédito por el saldo</span><b>UF 1.770</b></p>
-      <p class="is-total"><i>=</i><span>Precio de la vivienda</span><b>UF 2.200</b></p>
+      <p class="ds-cover-eq-cap">Ejemplo: una casa DS19 de UF&nbsp;2.200</p>
+      <p><span>Tu ahorro</span><b>UF&nbsp;80</b></p>
+      <p><i>+</i><span>Subsidio DS19</span><b>UF&nbsp;350</b></p>
+      <p><i>+</i><span>Crédito por el saldo</span><b>UF&nbsp;1.770</b></p>
+      <p class="is-total"><i>=</i><span>Precio de la vivienda</span><b>UF&nbsp;2.200</b></p>
     </div>
   </div>
 </section>
+<script>
+/* Página DS19: zona por URL (?zona=) y foto opcional por zona. Sin formularios: los botones van a /simular con la zona.
+   Va justo después de la portada: lo que cambia la portada se aplica antes de que se dibuje (sin saltos); el resto, al terminar de cargar la página. */
+(function () {
+  var root = document.getElementById("ds-root");
+  if (!root || root.getAttribute("data-ds-ok")) return;
+  root.setAttribute("data-ds-ok", "1");
+  /* Zonas: frase que más pesa, ciudades, tope del tramo de más de UF\u00a01.800 (MINVU, confirmar por comuna) y pregunta que sube primero */
+  var ZONAS = {
+    norte:  { n: "Norte", msg: "Lo que pagas de arriendo puede ser tu dividendo", c: "Arica · Iquique · Antofagasta · Calama · Copiapó · La Serena",
+              tope: "hasta UF\u00a02.800 en las comunas seleccionadas del norte; UF\u00a02.600 en las demás. Confírmalo por comuna.", foto: "Vista de Antofagasta, entre los cerros y el mar", faq: ["boletas", "ahorro", "cupos"] },
+    centro: { n: "Centro", msg: "Tu primera casa propia, con el Estado poniendo una parte", c: "Valparaíso · Viña del Mar · Rancagua · Talca · Curicó",
+              tope: "hasta UF\u00a02.800 en Valparaíso y Viña del Mar; UF\u00a02.600 en las demás comunas.", foto: "", faq: ["boletas", "ahorro", "cupos"] },
+    biobio: { n: "Biobío y Ñuble", msg: "Deja de arrendar en el Gran Concepción", c: "Concepción · Los Ángeles · Chillán",
+              tope: "hasta UF\u00a02.800 en Concepción y Los Ángeles; UF\u00a02.600 en las demás comunas.", foto: "", faq: ["ahorro", "cupos", "boletas"] },
+    sur:    { n: "Sur", msg: "Tu casa nueva sin irte de tu ciudad", c: "Temuco · Valdivia · Osorno · Puerto Montt · Chiloé",
+              tope: "hasta UF\u00a02.600; en Chiloé los valores son mayores. Confírmalo por comuna.", foto: "Valdivia y el río Calle-Calle", faq: ["ahorro", "boletas", "cupos"] }
+  };
+  var zona = "";
+  try { zona = (new URLSearchParams(location.search).get("zona") || "").toLowerCase(); } catch (e) {}
+  if (!Object.prototype.hasOwnProperty.call(ZONAS, zona)) zona = "";
+  function $(s) { return root.querySelector(s); }
+  if (zona) {
+    var Z = ZONAS[zona], zl = $("[data-ds-zline]");
+    zl.textContent = Z.msg + "."; zl.hidden = false;
+    $("[data-ds-cities] span").textContent = Z.c;
+    /* Resto de la página (aún no existe en el DOM): tope, orden de preguntas y botones con la zona */
+    var resto = function () {
+      var tope = $("[data-ds-tope]"); if (tope) tope.textContent = Z.tope;
+      var faq = $("[data-ds-faq]");
+      if (faq) Z.faq.slice().reverse().forEach(function (q) { var it = faq.querySelector('[data-q="' + q + '"]'); if (it) faq.insertBefore(it, faq.firstChild); });
+      [].forEach.call(root.querySelectorAll("[data-ds-cta]"), function (a) { a.href = "/simular?producto=ds19&origen=ds19&zona=" + zona; });
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", resto); else resto();
+  }
+  /* Foto por zona en la portada, con degradado celeste. Si el archivo no existe en Zoho, la portada queda en celeste liso */
+  var fig = $("[data-ds-photo]"), img = fig.querySelector("img");
+  function sinFoto() { fig.remove(); root.classList.remove("ds-has-photo"); root.classList.add("ds-no-photo"); }
+  img.onerror = sinFoto;
+  /* foto: texto alternativo de la foto de cada zona. Vacío = esa zona aún no tiene foto y no se pide. */
+  var FOTO_GENERAL = "Coquimbo y su bahía, con los cerros de fondo";
+  var alt = zona ? ZONAS[zona].foto : FOTO_GENERAL;
+  if (!alt) { sinFoto(); return; }
+  img.alt = alt;
+  /* Se muestra el marco desde ya (fondo celeste con el degradado) para que el texto no salte cuando llegue la foto */
+  fig.hidden = false; root.classList.add("ds-has-photo");
+  img.src = "/ds19-" + (zona || "chile") + ".jpg";
+})();
+</script>
 
 <section class="v-sec ds-req" aria-labelledby="ds-t-req">
   <div class="container v-why-grid">
@@ -32,7 +82,7 @@
     <div class="v-well">
       <h3 class="ds-req-h">Lo que necesitas tú</h3>
       <dl class="v-ruled">
-        <div><dt>Registro Social de Hogares</dt><dd>Estás en el Registro Social de Hogares (RSH), hasta el tramo del 90 %. El tramo ubica a tu hogar según sus ingresos y otros datos. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</dd></div>
+        <div><dt>Registro Social de Hogares</dt><dd>Estás en el Registro Social de Hogares (RSH), hasta el tramo del 90&nbsp;%. El tramo ubica a tu hogar según sus ingresos y otros datos. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</dd></div>
         <div><dt>Sin vivienda propia</dt><dd>Ni tú ni tu grupo familiar declarado son dueños de una vivienda.</dd></div>
         <div><dt>Primer subsidio</dt><dd>No has usado antes un subsidio habitacional. Si tienes un DS1 sin usar, también puede servirte: confírmalo en la sala de ventas.</dd></div>
         <div><dt>Mayor de 18 años</dt><dd>Con cédula vigente. Si eres extranjero, con residencia definitiva.</dd></div>
@@ -42,12 +92,12 @@
         <caption class="sr">Ahorro mínimo según el precio de la vivienda</caption>
         <thead><tr><th scope="col">Precio de la vivienda</th><th scope="col">Ahorro mínimo</th></tr></thead>
         <tbody>
-          <tr><td>UF 1.600 a 1.800</td><td>UF 40</td></tr>
-          <tr><td>Más de UF 1.800</td><td>UF 80</td></tr>
+          <tr><td>UF&nbsp;1.600 a 1.800</td><td>UF&nbsp;40</td></tr>
+          <tr><td>Más de UF&nbsp;1.800</td><td>UF&nbsp;80</td></tr>
         </tbody>
       </table>
-      <p class="ds-mini-note">El ahorro va en tu libreta o cuenta de ahorro para la vivienda. Si el proyecto cuesta menos de UF 1.600, confirma el ahorro en la sala de ventas.</p>
-      <p class="ds-mini-tope"><strong>Precio máximo:</strong> <span data-ds-tope>hasta UF 2.600, o UF 2.800 en comunas seleccionadas, según comuna y año del proyecto.</span></p>
+      <p class="ds-mini-note">El ahorro va en tu libreta o cuenta de ahorro para la vivienda. Si el proyecto cuesta menos de UF&nbsp;1.600, confirma el ahorro en la sala de ventas.</p>
+      <p class="ds-mini-tope"><strong>Precio máximo:</strong> <span data-ds-tope>hasta UF&nbsp;2.600, o UF&nbsp;2.800 en comunas seleccionadas, según comuna y año del proyecto.</span></p>
       <p class="ds-req-src">Fuente: MINVU, programa DS19. Montos y topes referenciales, según comuna y año del proyecto. Lo que no cubren tu ahorro y el subsidio se paga con un crédito hipotecario.</p>
     </div>
     <div class="ds-req-cta">
@@ -65,18 +115,18 @@
       <figure class="v-photo ds-pago-photo"><img src="/ds19-familia.jpg" alt="Una familia con sus hijas desempaca cajas en su vivienda nueva" width="1200" height="900" loading="lazy" onerror="this.parentNode.remove()"></figure>
     </div>
     <figure class="ds-pay" aria-labelledby="ds-pay-cap">
-      <p class="ds-pay-cap" id="ds-pay-cap">Ejemplo: una casa DS19 de <strong>UF 2.200</strong></p>
-      <div class="ds-bar" role="img" aria-label="Ejemplo: vivienda de UF 2.200. Tu ahorro UF 80 más subsidio DS19 UF 350 forman un pie de UF 430; el saldo de UF 1.770, cerca del 80 % del precio, se paga con crédito hipotecario.">
-        <div class="ds-bracket" style="--w:19.5%" aria-hidden="true"><span>Tu pie: UF 430</span></div>
+      <p class="ds-pay-cap" id="ds-pay-cap">Ejemplo: una casa DS19 de <strong>UF&nbsp;2.200</strong></p>
+      <div class="ds-bar" role="img" aria-label="Ejemplo: vivienda de UF&nbsp;2.200. Tu ahorro UF&nbsp;80 más subsidio DS19 UF&nbsp;350 forman un pie de UF&nbsp;430; el saldo de UF&nbsp;1.770, cerca del 80&nbsp;% del precio, se paga con crédito hipotecario.">
+        <div class="ds-bracket" style="--w:19.5%" aria-hidden="true"><span>Tu pie: UF&nbsp;430</span></div>
         <div class="ds-track" aria-hidden="true">
           <span class="ds-seg is-aho" style="--w:3.6%"></span><span class="ds-seg is-sub" style="--w:15.9%"></span><span class="ds-seg is-cre" style="--w:80.5%"></span>
         </div>
       </div>
       <dl class="ds-eq">
-        <div><dt><span class="ds-op" aria-hidden="true"></span><i class="ds-sw is-aho" aria-hidden="true"></i>Tu ahorro</dt><dd>UF 80</dd></div>
-        <div><dt><span class="ds-op">+</span><i class="ds-sw is-sub" aria-hidden="true"></i>Subsidio DS19</dt><dd>UF 350</dd></div>
-        <div><dt><span class="ds-op">+</span><i class="ds-sw is-cre" aria-hidden="true"></i>Crédito por el saldo</dt><dd>UF 1.770</dd></div>
-        <div class="ds-eq-total"><dt><span class="ds-op">=</span><i class="ds-sw" aria-hidden="true"></i>Precio de la vivienda</dt><dd>UF 2.200</dd></div>
+        <div><dt><span class="ds-op" aria-hidden="true">&nbsp;</span><i class="ds-sw is-aho" aria-hidden="true"></i>Tu ahorro</dt><dd>UF&nbsp;80</dd></div>
+        <div><dt><span class="ds-op">+</span><i class="ds-sw is-sub" aria-hidden="true"></i>Subsidio DS19</dt><dd>UF&nbsp;350</dd></div>
+        <div><dt><span class="ds-op">+</span><i class="ds-sw is-cre" aria-hidden="true"></i>Crédito por el saldo</dt><dd>UF&nbsp;1.770</dd></div>
+        <div class="ds-eq-total"><dt><span class="ds-op">=</span><i class="ds-sw" aria-hidden="true"></i>Precio de la vivienda</dt><dd>UF&nbsp;2.200</dd></div>
       </dl>
       <figcaption class="ds-foot">Ejemplo con números redondos y sin tasas. Montos según comuna y año del proyecto. El subsidio puede ser mayor con los bonos del programa, que son montos adicionales del MINVU según el proyecto.</figcaption>
     </figure>
@@ -141,12 +191,12 @@
   <div class="container v-faq-grid">
     <div><h2 id="ds-t-faq">Preguntas Frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el subsidio DS19.</p></div>
     <div class="f4-acc" data-ds-faq>
-      <div class="f4-acc-item" data-q="ahorro"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q1">¿Cuánto ahorro necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q1"><p>Depende del precio: UF 40 para viviendas de UF 1.600 a 1.800 y UF 80 para las de más de UF 1.800, en tu cuenta de ahorro para la vivienda. Mientras más ahorro tengas, menor es el crédito.</p></div></div>
+      <div class="f4-acc-item" data-q="ahorro"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q1">¿Cuánto ahorro necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q1"><p>Depende del precio: UF&nbsp;40 para viviendas de UF&nbsp;1.600 a 1.800 y UF&nbsp;80 para las de más de UF&nbsp;1.800, en tu cuenta de ahorro para la vivienda. Mientras más ahorro tengas, menor es el crédito.</p></div></div>
       <div class="f4-acc-item" data-q="boletas"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q2">¿Puedo con boletas de honorarios o trabajo por turnos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q2"><p>Sí, se puede revisar. Las boletas, los turnos y los ingresos variables no son motivo para descartarte: en 4Life miramos tu caso completo. El ejecutivo te dice qué documentos necesitas.</p></div></div>
       <div class="f4-acc-item" data-q="moras"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q3">¿Puedo si alguna vez tuve moras?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q3"><p>Una mora antigua no siempre te deja fuera; lo que más pesa es cómo está tu situación hoy. Cuéntaselo al ejecutivo antes de reservar, para revisarlo con tiempo.</p></div></div>
       <div class="f4-acc-item" data-q="cupos"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q4">¿Se acaban los cupos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q4"><p>Sí. Cada proyecto tiene cupos por tramo y la inscripción cierra cuando se agotan. No hay fecha de cierre: te puedes inscribir todo el año mientras queden. En la sala de ventas te dicen cuántos quedan en tu tramo.</p></div></div>
       <div class="f4-acc-item" data-q="ds1"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q5">¿Qué diferencia hay con el DS1?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q5"><p>Con el DS1 postulas a un llamado, esperas resultados y, si sales seleccionado, buscas casa con tu certificado. Con el DS19 eliges primero la vivienda y el subsidio va con ella. Si tienes un DS1 sin usar, también puede servirte en un proyecto DS19: confírmalo en la sala de ventas.</p></div></div>
-      <div class="f4-acc-item" data-q="rsh"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q6">¿Qué es el Registro Social de Hogares?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q6"><p>Es el registro del Estado que ubica a tu hogar en un tramo según sus ingresos y otros datos. Para el DS19 sin subsidio previo necesitas estar hasta el tramo del 90 %. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</p></div></div>
+      <div class="f4-acc-item" data-q="rsh"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q6">¿Qué es el Registro Social de Hogares?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q6"><p>Es el registro del Estado que ubica a tu hogar en un tramo según sus ingresos y otros datos. Para el DS19 sin subsidio previo necesitas estar hasta el tramo del 90&nbsp;%. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</p></div></div>
       <div class="f4-acc-item" data-q="4life"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q7">¿4Life ya financia viviendas con DS19?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q7"><p>Todavía no. Estamos preparando el crédito con subsidio DS19. Si dejas tu simulación, un ejecutivo de 4Life te contacta apenas esté disponible para revisar tu caso.</p></div></div>
     </div>
     <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
@@ -167,47 +217,4 @@
   </div>
 </section>
 
-<script>
-/* Página DS19: zona por URL (?zona=) y foto opcional por zona. Sin formularios: los botones van a /simular con la zona. */
-(function () {
-  var root = document.getElementById("ds-root");
-  if (!root || root.getAttribute("data-ds-ok")) return;
-  root.setAttribute("data-ds-ok", "1");
-  /* Zonas: frase que más pesa, ciudades, tope del tramo de más de UF 1.800 (MINVU, confirmar por comuna) y pregunta que sube primero */
-  var ZONAS = {
-    norte:  { n: "Norte", msg: "Lo que pagas de arriendo puede ser tu dividendo", c: "Arica · Iquique · Antofagasta · Calama · Copiapó · La Serena",
-              tope: "hasta UF 2.800 en las comunas seleccionadas del norte; UF 2.600 en las demás. Confírmalo por comuna.", foto: "Vista de Antofagasta, entre los cerros y el mar", faq: ["boletas", "ahorro", "cupos"] },
-    centro: { n: "Centro", msg: "Tu primera casa propia, con el Estado poniendo una parte", c: "Valparaíso · Viña del Mar · Rancagua · Talca · Curicó",
-              tope: "hasta UF 2.800 en Valparaíso y Viña del Mar; UF 2.600 en las demás comunas.", foto: "", faq: ["boletas", "ahorro", "cupos"] },
-    biobio: { n: "Biobío y Ñuble", msg: "Deja de arrendar en el Gran Concepción", c: "Concepción · Los Ángeles · Chillán",
-              tope: "hasta UF 2.800 en Concepción y Los Ángeles; UF 2.600 en las demás comunas.", foto: "", faq: ["ahorro", "cupos", "boletas"] },
-    sur:    { n: "Sur", msg: "Tu casa nueva sin irte de tu ciudad", c: "Temuco · Valdivia · Osorno · Puerto Montt · Chiloé",
-              tope: "hasta UF 2.600; en Chiloé los valores son mayores. Confírmalo por comuna.", foto: "Valdivia y el río Calle-Calle", faq: ["ahorro", "boletas", "cupos"] }
-  };
-  var zona = "";
-  try { zona = (new URLSearchParams(location.search).get("zona") || "").toLowerCase(); } catch (e) {}
-  if (!Object.prototype.hasOwnProperty.call(ZONAS, zona)) zona = "";
-  function $(s) { return root.querySelector(s); }
-  if (zona) {
-    var Z = ZONAS[zona], zl = $("[data-ds-zline]");
-    zl.textContent = Z.msg + "."; zl.hidden = false;
-    $("[data-ds-cities] span").textContent = Z.c;
-    $("[data-ds-tope]").textContent = Z.tope;
-    var faq = $("[data-ds-faq]");
-    Z.faq.slice().reverse().forEach(function (q) { var it = faq.querySelector('[data-q="' + q + '"]'); if (it) faq.insertBefore(it, faq.firstChild); });
-    [].forEach.call(root.querySelectorAll("[data-ds-cta]"), function (a) { a.href = "/simular?producto=ds19&origen=ds19&zona=" + zona; });
-  }
-  /* Foto por zona en la portada, con degradado celeste. Si el archivo no existe en Zoho, la portada queda en celeste liso */
-  var fig = $("[data-ds-photo]"), img = fig.querySelector("img");
-  img.onload = function () { fig.hidden = false; root.classList.add("ds-has-photo"); };
-  function sinFoto() { fig.remove(); root.classList.add("ds-no-photo"); }
-  img.onerror = sinFoto;
-  /* foto: texto alternativo de la foto de cada zona. Vacío = esa zona aún no tiene foto y no se pide. */
-  var FOTO_GENERAL = "Coquimbo y su bahía, con los cerros de fondo";
-  var alt = zona ? ZONAS[zona].foto : FOTO_GENERAL;
-  if (!alt) { sinFoto(); return; }
-  img.alt = alt;
-  img.src = "/ds19-" + (zona || "chile") + ".jpg";
-})();
-</script>
 </div>

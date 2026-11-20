@@ -1,4 +1,4 @@
-/* v2026.11.19-7 */
+/* v2026.11.19-8 */
 /* ===== 4Life · Página Subsidio DS19 — va en el CSS Personalizado DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) y ANTES del bloque "Brandbook v3" ===== */
 /* Brandbook v3. Ritmo: portada con foto y degradado celeste · requisitos en blanco · cómo se paga en gris · pasos en banda celeste · comparación en blanco · mutuaria en banda celeste · preguntas en gris · cierre celeste. Dos bandas celestes nunca seguidas */
 /* La portada usa .ds-cover (no .ds-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores */
@@ -15,7 +15,7 @@
 
 /* Portada: foto de la zona a la derecha con degradado celeste; texto blanco del lado opaco. Sin foto, celeste liso */
 #ds-root .ds-cover { position: relative; isolation: isolate; overflow: hidden; background: var(--ds-tinta); color: #FFFFFF; }
-#ds-root .ds-cover-photo { position: absolute; inset: 0; margin: 0; z-index: -2; }
+#ds-root .ds-cover-photo { position: absolute; inset: 0; margin: 0; z-index: -2; background: var(--ds-tinta); }
 #ds-root .ds-cover-photo[hidden] { display: none; }
 #ds-root .ds-cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 45%; display: block; }
 #ds-root.ds-has-photo .ds-cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 45%, rgba(49,140,221,.15) 100%); }
@@ -42,6 +42,8 @@
 #ds-root .ds-cover-eq p { display: grid; grid-template-columns: 1.25em minmax(0, 1fr) auto; align-items: baseline; gap: var(--space-sm); padding-block: var(--space-sm); border-bottom: 1px solid rgba(255,255,255,.35); color: #FFFFFF; font: 400 var(--text-md)/1.4 var(--font-body); }
 #ds-root .ds-cover-eq p:first-child { grid-template-columns: minmax(0, 1fr) auto; padding-left: calc(1.25em + var(--space-sm)); }
 #ds-root .ds-cover-eq i { font-style: normal; font-weight: 700; }
+#ds-root .ds-cover-eq .ds-cover-eq-cap, #ds-root .ds-cover-eq p:first-child.ds-cover-eq-cap { display: block; padding: 0 0 var(--space-sm); font: 600 var(--text-sm)/1.4 var(--font-body); color: #FFFFFF; }
+#ds-root .ds-cover-eq .ds-cover-eq-cap + p { grid-template-columns: minmax(0, 1fr) auto; padding-left: calc(1.25em + var(--space-sm)); }
 #ds-root .ds-cover-eq b { font: 700 var(--text-title)/1.2 var(--font-display); font-variant-numeric: tabular-nums; white-space: nowrap; }
 #ds-root .ds-cover-eq .is-total { border-bottom: 0; border-top: 2px solid #FFFFFF; margin-top: -1px; padding-top: var(--space-md); }
 #ds-root .ds-cover-eq .is-total span { font-weight: 700; }
@@ -67,7 +69,7 @@
 #ds-root .ds-mini td:last-child { font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); }
 #ds-root .ds-mini-note, #ds-root .ds-mini-tope { margin-top: var(--space-md); color: var(--color-ink-2); }
 #ds-root .ds-mini-tope strong { color: var(--color-ink); }
-#ds-root .ds-req-cta { grid-column: 1; grid-row: 2; align-self: start; }
+#ds-root .ds-req-cta { grid-column: 1; grid-row: 2; align-self: start; position: sticky; top: var(--space-xl); }
 #ds-root .ds-req-note { margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); max-width: 40ch; }
 #ds-root .ds-req-note strong { color: var(--color-ink-2); }
 
@@ -80,9 +82,9 @@
 #ds-root .ds-pay { margin: 0; box-shadow: none; background: var(--color-paper); border: 1px solid var(--color-rule); border-radius: var(--radius-card); padding: var(--space-lg) var(--space-xl); }
 #ds-root .ds-pay-cap { font-size: var(--text-lg); color: var(--color-ink-2); margin-bottom: var(--space-md); }
 #ds-root .ds-pay-cap strong { color: var(--color-ink); }
-#ds-root .ds-bar { padding-top: 34px; margin-bottom: var(--space-lg); position: relative; }
-#ds-root .ds-bracket { position: absolute; top: 0; left: 0; width: var(--w); height: 26px; border: 2px solid var(--color-ink); border-bottom: 0; border-radius: 4px 4px 0 0; }
-#ds-root .ds-bracket span { position: absolute; top: -2px; left: 8px; transform: translateY(-50%); background: var(--color-paper); padding: 0 6px; font: 700 var(--text-sm)/1 var(--font-body); color: var(--color-ink); white-space: nowrap; }
+#ds-root .ds-bar { padding-top: 46px; margin-bottom: var(--space-lg); position: relative; }
+#ds-root .ds-bracket { position: absolute; top: 22px; left: 0; width: var(--w); height: 26px; border: 2px solid var(--color-ink); border-bottom: 0; border-radius: 4px 4px 0 0; }
+#ds-root .ds-bracket span { position: absolute; top: -6px; left: -2px; transform: translateY(-100%); padding: 0; font: 700 var(--text-sm)/1 var(--font-body); color: var(--color-ink); white-space: nowrap; }
 #ds-root .ds-track { display: flex; gap: 2px; height: 64px; border-radius: var(--radius-card); overflow: hidden; background: var(--color-paper); }
 #ds-root .ds-seg { flex: 0 1 var(--w); min-width: 0; }
 #ds-root .ds-seg.is-aho { background: var(--color-ink-2); min-width: 6px; }
@@ -177,6 +179,7 @@
   #ds-root.ds-no-photo .ds-cover-in { flex-direction: column; align-items: stretch; gap: var(--space-xl); }
   #ds-root.ds-no-photo .ds-cover-eq { flex: none; width: 100%; max-width: 30rem; padding: var(--space-md) var(--space-lg); }
   #ds-root .ds-req .v-well, #ds-root .ds-req-cta { grid-column: auto; grid-row: auto; }
+  #ds-root .ds-req-cta { position: static; }
   #ds-root .ds-pago-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   #ds-root .ds-pay { padding: var(--space-lg); }
   #ds-root .ds-reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -201,10 +204,7 @@
 }
 @media (max-width: 40rem) {
   #ds-root .ds-cover .v-actions { flex-direction: column; align-items: stretch; }
-  #ds-root .ds-cover .v-btn, #ds-root .ds-cover .v-quiet, #ds-root .ds-req-cta .v-quiet, #ds-root .ds-close .v-btn { width: 100%; justify-content: center; }
-  #ds-root .ds-bar { padding-top: 46px; }
-  #ds-root .ds-bracket { top: 22px; }
-  #ds-root .ds-bracket span { top: -6px; left: -2px; transform: translateY(-100%); padding: 0; }
+  #ds-root .ds-cover .v-btn, #ds-root .ds-cover .v-quiet, #ds-root .ds-req-cta .v-quiet, #ds-root .ds-close .v-btn, #ds-root .v-road .v-btn { width: 100%; justify-content: center; }
   #ds-root .ds-mini td:last-child { font-size: 1.0625rem; }
   #ds-root .ds-reasons { grid-template-columns: minmax(0, 1fr); }
   #ds-root .ds-track { height: 52px; }
