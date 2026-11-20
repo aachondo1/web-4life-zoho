@@ -1024,7 +1024,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #fg-root .fg-cmp h2 { max-width: none; }  /* "FOGAES o Crédito Tradicional" en una línea en escritorio */
 /* ===== fin Página FOGAES ===== */
 
-/* v2026.11.20 · Crítica Impeccable 1 (16/32): sin rojo de adorno (filete, latido e íconos), íconos de producto en Celeste Profundo, banda "Tu Dividendo, a tu Ritmo", "Lo que Necesitas y lo que Pagas" y "Cómo Refinanciar" en camino vertical como FOGAES, cierre en móvil con franja de foto sobre Celeste Profundo sólido */
+/* v2026.11.20-2 · iframe del formulario más alto (1000 px; 1180 px en celular) para que no aparezca una barra interna · v2026.11.20 · Crítica Impeccable 1 (16/32): sin rojo de adorno (filete, latido e íconos), íconos de producto en Celeste Profundo, banda "Tu Dividendo, a tu Ritmo", "Lo que Necesitas y lo que Pagas" y "Cómo Refinanciar" en camino vertical como FOGAES, cierre en móvil con franja de foto sobre Celeste Profundo sólido */
 /* ===== 4Life · Página Refinanciamiento — pegar al FINAL del CSS Personalizado, DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2). Todo va acotado a #rf-root: no toca otras páginas. ===== */
 
 /* Escala del home publicado (la misma de FOGAES) */
@@ -1060,7 +1060,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #rf-root .rf-form h2 { font-size: 1.5rem; line-height: 1.15; max-width: none; margin-bottom: var(--space-xs); }
 #rf-root .rf-form-sub { color: var(--color-ink-2); margin-bottom: var(--space-md); max-width: 44ch; }
 #rf-root .rf-frame { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-sm); }
-#rf-root .rf-frame iframe { display: block; width: 100%; height: 600px; border: 0; background: var(--color-paper); }
+#rf-root .rf-frame iframe { display: block; width: 100%; height: 1000px;  /* alto del formulario de Zoho (~970 px); si Zoho avisa su alto, el script lo ajusta */ border: 0; background: var(--color-paper); }
 #rf-root .rf-frame iframe[hidden] { display: none; }
 /* Respaldo mientras no hay formulario: sin caja dentro de la tarjeta, solo el mensaje y el botón al simulador */
 #rf-root .rf-frame-wait { display: grid; justify-items: start; gap: var(--space-sm); padding-block: var(--space-md) var(--space-sm); color: var(--color-ink-2); }
@@ -1209,7 +1209,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #rf-root .rf-form { padding: var(--space-md); }
   #rf-root .rf-what-photo, #rf-root .rf-path .v-photo { display: none; }  /* en celular el texto va solo: estas fotos no agregan información y alargan la página */
   #rf-root .rf-path { padding-top: var(--space-lg); }
-  #rf-root .rf-frame iframe { height: 680px; }
+  #rf-root .rf-frame iframe { height: 1180px; }
   #rf-root .rf-signs > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
   #rf-root .rf-signs dd { padding-left: calc(40px + var(--space-md)); }
   #rf-root .rf-track-ends { grid-template-columns: minmax(0, 1fr); }
