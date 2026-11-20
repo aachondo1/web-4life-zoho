@@ -1,4 +1,4 @@
-/* v2026.11.19-8 */
+/* v2026.11.19-10 */
 /* ===== 4Life · Página Subsidio DS19 — va en el CSS Personalizado DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) y ANTES del bloque "Brandbook v3" ===== */
 /* Brandbook v3. Ritmo: portada con foto y degradado celeste · requisitos en blanco · cómo se paga en gris · pasos en banda celeste · comparación en blanco · mutuaria en banda celeste · preguntas en gris · cierre celeste. Dos bandas celestes nunca seguidas */
 /* La portada usa .ds-cover (no .ds-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores */
@@ -69,9 +69,14 @@
 #ds-root .ds-mini td:last-child { font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); }
 #ds-root .ds-mini-note, #ds-root .ds-mini-tope { margin-top: var(--space-md); color: var(--color-ink-2); }
 #ds-root .ds-mini-tope strong { color: var(--color-ink); }
+#ds-root .ds-mini-uf { margin-top: var(--space-xs); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); }
+#ds-root .ds-req-more { display: none; }
+#ds-root .v-facts li, #ds-root .ds-reasons li, #ds-root .ds-mini-tope, #ds-root .v-ruled dd { text-wrap: pretty; }
 #ds-root .ds-req-cta { grid-column: 1; grid-row: 2; align-self: start; position: sticky; top: var(--space-xl); }
 #ds-root .ds-req-note { margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); max-width: 40ch; }
 #ds-root .ds-req-note strong { color: var(--color-ink-2); }
+#ds-root .ds-req-photo { margin-top: var(--space-xl); aspect-ratio: 4 / 3; max-width: 420px; }
+#ds-root .ds-req-photo img { object-position: 40% 50%; }
 
 /* Cómo se paga tu casa · pausa gris; tarjeta blanca con filete (sobre gris no hay sombra) */
 #ds-root .ds-pago { background: var(--color-paper-3); }
@@ -180,6 +185,15 @@
   #ds-root.ds-no-photo .ds-cover-eq { flex: none; width: 100%; max-width: 30rem; padding: var(--space-md) var(--space-lg); }
   #ds-root .ds-req .v-well, #ds-root .ds-req-cta { grid-column: auto; grid-row: auto; }
   #ds-root .ds-req-cta { position: static; }
+  /* Requisitos plegados en celular: títulos visibles, detalle con el botón */
+  #ds-root .ds-req-more { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; margin-top: var(--space-xs); padding: 0; border: 0; background: none; color: var(--ds-tinta); font: 700 1rem/1.3 var(--font-body); text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; }
+  #ds-root .ds-req-more .bi { transition: transform var(--dur-short) var(--ease-out); }
+  #ds-root .v-well.is-open .ds-req-more .bi { transform: rotate(180deg); }
+  #ds-root .ds-req .v-well:not(.is-open) .v-ruled dd { display: none; }
+  #ds-root .ds-req .v-well:not(.is-open) .v-ruled > div { padding-block: var(--space-sm); }
+  /* Las razones repiten lo que ya dicen requisitos y cómo se paga: en celular se omiten */
+  #ds-root .ds-reasons { display: none; }
+  #ds-root .ds-req-photo { max-width: none; aspect-ratio: 16 / 9; margin-top: var(--space-lg); }
   #ds-root .ds-pago-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   #ds-root .ds-pay { padding: var(--space-lg); }
   #ds-root .ds-reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -1,7 +1,7 @@
-<!-- v2026.11.18-2 · con logo · /gracias · sistema .f4v2 (FOGAES): tarjeta de filete coral sobre azul suave. Snippet "4L - gracias" -->
+<!-- v2026.11.21-1 · brandbook v3 (celeste) · con logo · /gracias · sistema .f4v2 (FOGAES): tarjeta de filete coral sobre azul suave. Snippet "4L - gracias" -->
 <div class="fl-res fl-thanks">
   <style>
-    .fl-res{--b:#295be9;--bs:#e8eefd;--co:#cf3a38;--cod:#b32f2d;--ink:#1e1e1e;--ink2:#333;--mut:#5d5d5d;--ln:#e0e0e0;--fh:"Asap",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    .fl-res{--b:#1A73C8;--bs:#E8F3FC;--co:#cf3a38;--cod:#b32f2d;--ink:#1e1e1e;--ink2:#333;--mut:#5d5d5d;--ln:#e0e0e0;--fh:"Asap",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
       box-sizing:border-box;width:100%;padding:72px 24px 96px;background:var(--bs);font:400 17px/1.5 var(--fh);color:var(--ink2);text-align:left}
     .fl-res *{box-sizing:border-box}
     .fl-res ::selection{background:#c9d6fa;color:var(--ink)}

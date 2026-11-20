@@ -1,0 +1,197 @@
+<!-- v2026.11.20 · Sin calculadora (pedido de Juan: no quiere calculadoras en las páginas): "Cómo se Paga tu Casa" pasa a un ejemplo fijo del Tramo 4 y todos los botones van a /simular?producto=ds1. Segunda crítica Impeccable (30/40) aplicada: línea de confianza junto al ejemplo, "¿Qué es una Mutuaria?" sube justo después de los pasos, requisitos plegados, comparación reducida a 2 filas dentro de "Por Qué Conviene el DS1", UF explicada, franja de tramos oculta en celular, pregunta nueva para quien espera resultados. · v2026.11.19-2 · v2026.11.19 · Página Subsidio DS1 (/subsidio-ds1) · brandbook v3, hermana de la página DS19. Se publica cuando 4Life ofrezca DS1. Un solo snippet, sin formularios ni scripts propios (el acordeón de preguntas lo maneja el script global). Estilos: "CSS Subsidio DS1" en el CSS Personalizado, DESPUÉS del bloque DS19 y ANTES del bloque "Brandbook v3" (que ya incluye #d1-root). Versión única (sin ?zona=). Fotos (subir a Zoho con estos nombres): /ds1-portada.jpg, /ds1-postula.jpg, /ds1-barrio.jpg, /ds1-ejecutivo.jpg, /ds1-cierre.jpg. Montos: MINVU, zona Coquimbo a Los Lagos y RM; el subsidio de los tramos 2 y 3 no se publica (depende del precio y está en el certificado); Tramo 4 = UF 400. -->
+<div class="f4 f4v2" id="d1-root">
+
+<section class="d1-cover" aria-labelledby="d1-t-hero">
+  <figure class="d1-cover-photo"><img src="/ds1-portada.jpg" alt="Barrio de casas en los cerros de una ciudad de la costa central, frente al mar" width="1500" height="1000" fetchpriority="high" decoding="async" onerror="this.parentNode.remove()"></figure>
+  <div class="container d1-cover-in">
+    <div class="d1-cover-text">
+      <h1 id="d1-t-hero">Subsidio DS1: usa tu certificado y compra tu casa con crédito hipotecario</h1>
+      <p class="lead">¿Ganaste tu certificado? Felicitaciones, te costó años de ahorro. En <strong>4Life Crédito Hipotecario</strong> financiamos el saldo de tu compra, para tu casa nueva o usada, en tu ciudad.</p>
+      <div class="v-actions">
+        <a class="v-btn" href="/simular?producto=ds1&amp;origen=ds1" data-track="ds1_hero">Simula tu compra con DS1</a>
+        <a class="v-quiet" href="#d1-t-post" data-track="ds1_hero_postular">Aún no postulo</a>
+      </div>
+    </div>
+    <ul class="d1-cover-tramos" aria-label="Precio máximo de la vivienda por tramo">
+      <li><span>Tramo 2</span><b>hasta UF&nbsp;1.600</b></li>
+      <li><span>Tramo 3</span><b>hasta UF&nbsp;2.200</b></li>
+      <li class="is-new"><span>Tramo 4 <em>nuevo</em></span><b>hasta UF&nbsp;4.000</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-sec d1-que" aria-labelledby="d1-t-que">
+  <div class="container d1-que-grid">
+    <div>
+      <h2 id="d1-t-que">¿Qué es el Subsidio DS1?</h2>
+      <p class="lead">Es un programa del Ministerio de Vivienda y Urbanismo (MINVU) para familias de sectores medios que no tienen casa propia y pueden ahorrar.</p>
+      <p>Postulas a un llamado nacional y, si sales seleccionado, recibes un certificado con un plazo para usarlo. Con él compras la vivienda que elijas, nueva o usada, casa o departamento, dentro del precio máximo de tu tramo.</p>
+      <p class="d1-que-rsh">El tramo depende de tu Registro Social de Hogares (RSH), el registro del Estado que ubica a tu hogar según sus ingresos y otros datos. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</p>
+    </div>
+    <div class="d1-tramos-wrap">
+      <p class="d1-uf-note">Los montos van en UF (Unidad de Fomento), la unidad reajustable en que se venden las viviendas.</p>
+      <table class="d1-tramos">
+        <caption class="sr">Tramos del subsidio DS1 para comprar vivienda</caption>
+        <thead><tr><th scope="col">Tramo</th><th scope="col">Tu hogar en el RSH</th><th scope="col">Precio máximo</th><th scope="col">Ahorro mínimo</th><th scope="col">Subsidio</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Tramo 2</th><td data-l="RSH">Hasta el 80&nbsp;%</td><td data-l="Precio máximo">UF&nbsp;1.600</td><td data-l="Ahorro mínimo">UF&nbsp;40</td><td data-l="Subsidio">Según el precio de la vivienda</td></tr>
+          <tr><th scope="row">Tramo 3</th><td data-l="RSH">Hasta el 90&nbsp;%, o más con tope de ingreso</td><td data-l="Precio máximo">UF&nbsp;2.200</td><td data-l="Ahorro mínimo">UF&nbsp;80</td><td data-l="Subsidio">Según el precio de la vivienda</td></tr>
+          <tr class="is-new"><th scope="row">Tramo 4 <span class="d1-new">Nuevo</span></th><td data-l="RSH">Hasta el 90&nbsp;%, o más con tope de ingreso</td><td data-l="Precio máximo">Más de UF&nbsp;2.200 y hasta UF&nbsp;4.000</td><td data-l="Ahorro mínimo">UF&nbsp;200</td><td data-l="Subsidio">UF&nbsp;400</td></tr>
+        </tbody>
+      </table>
+      <p class="d1-note">Valores de las regiones de Coquimbo a Los Lagos y la Región Metropolitana. En el norte, Chiloé, Palena, Aysén y Magallanes cambian los precios y montos. El tramo 1 es para hogares hasta el 60&nbsp;% del RSH: revisa también el <a href="/subsidio-ds19">subsidio DS19</a>. Fuente: MINVU; los topes de ingreso se actualizan en cada llamado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec d1-pago" aria-labelledby="d1-t-pago">
+  <div class="container d1-pago-grid">
+    <div>
+      <h2 id="d1-t-pago">Cómo se Paga tu Casa</h2>
+      <p class="lead">Tu ahorro y el subsidio forman el pie, lo que pagas sin crédito. El resto lo financiamos con un crédito hipotecario, por eso el crédito es menor que en una compra sin subsidio.</p>
+      <p class="d1-pago-t23">En los tramos 2 y 3 el subsidio depende del precio de la vivienda: el monto está en tu certificado.</p>
+      <a class="v-quiet" href="/simular?producto=ds1&amp;origen=ds1" data-track="ds1_pago">Simula tu compra con DS1</a>
+      <p class="d1-trust"><i class="bi bi-shield-check" aria-hidden="true"></i><span>Mutuaria fiscalizada por la CMF, del grupo 4Life Seguros de Vida. Aceptamos tu certificado DS1.</span></p>
+    </div>
+    <figure class="d1-pay" aria-labelledby="d1-pay-cap">
+      <p class="d1-pay-cap" id="d1-pay-cap">Ejemplo: una casa de <strong>UF&nbsp;3.000</strong> con el Tramo 4</p>
+      <div class="d1-bar" role="img" aria-label="Ejemplo: vivienda de UF 3.000 con el Tramo 4. Tu ahorro UF 200 más subsidio DS1 UF 400 forman un pie de UF 600; el saldo de UF 2.400, el 80 % del precio, se paga con crédito hipotecario.">
+        <div class="d1-bracket" style="--w:20%" aria-hidden="true"><span>Tu pie: UF&nbsp;600</span></div>
+        <div class="d1-track" aria-hidden="true"><span class="d1-seg is-aho" style="--w:6.7%"></span><span class="d1-seg is-sub" style="--w:13.3%"></span><span class="d1-seg is-cre" style="--w:80%"></span></div>
+      </div>
+      <dl class="d1-eq">
+        <div><dt><span class="d1-op" aria-hidden="true">&nbsp;</span><i class="d1-sw is-aho" aria-hidden="true"></i>Tu ahorro</dt><dd>UF&nbsp;200</dd></div>
+        <div><dt><span class="d1-op">+</span><i class="d1-sw is-sub" aria-hidden="true"></i>Subsidio DS1</dt><dd>UF&nbsp;400</dd></div>
+        <div><dt><span class="d1-op">+</span><i class="d1-sw is-cre" aria-hidden="true"></i>Crédito por el saldo</dt><dd>UF&nbsp;2.400</dd></div>
+        <div class="d1-eq-total"><dt><span class="d1-op">=</span><i class="d1-sw" aria-hidden="true"></i>Precio de la vivienda</dt><dd>UF&nbsp;3.000</dd></div>
+      </dl>
+      <figcaption class="d1-foot">Ejemplo con números redondos y sin tasas, con el ahorro mínimo del Tramo 4. En el simulador ves tu dividendo con tus propios montos.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="v-road d1-road" aria-labelledby="d1-t-pasos">
+  <div class="container">
+    <h2 id="d1-t-pasos">Ya Tengo mi Certificado: Qué Sigue</h2>
+    <p class="lead">Tu certificado tiene un plazo para usarse. Estos son los pasos para llegar a la escritura antes de que venza.</p>
+    <ol class="v-stops d1-stops">
+      <li class="v-stop"><span class="small">Paso</span><h3>Busca tu vivienda</h3><p>Nueva o usada, dentro del precio máximo de tu tramo. También sirve en un proyecto DS19.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Crédito con 4Life</h3><p>Aprueba con nosotros el crédito hipotecario por lo que no cubren tu ahorro y el subsidio.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Promesa de compraventa</h3><p>Firmas con el vendedor el compromiso de comprar, con el precio y la fecha.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Tasación y títulos</h3><p>Se tasa la vivienda y se revisa que sus papeles estén en regla. En una usada, esto importa más.</p></li>
+      <li class="v-stop"><span class="small">Paso</span><h3>Escritura a tiempo</h3><p>Firmas la compraventa ante notario antes del vencimiento y el subsidio se aplica a tu compra.</p></li>
+    </ol>
+    <a class="v-btn d1-btn-line" href="/simular?producto=ds1&amp;origen=ds1" data-track="ds1_pasos">Simula tu compra con DS1</a>
+  </div>
+</section>
+
+<section class="v-sec d1-mut" aria-labelledby="d1-t-mut">
+  <div class="container d1-mut-grid">
+    <figure class="v-photo d1-mut-photo"><img src="/ds1-ejecutivo.jpg" alt="Un ejecutivo de 4Life da la mano a un cliente sobre los papeles de su crédito" width="800" height="1000" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <div>
+      <h2 id="d1-t-mut">¿Qué es una Mutuaria?</h2>
+      <p class="d1-statement">Una mutuaria presta para tu casa como un banco, y la fiscaliza la misma autoridad.</p>
+      <ul class="d1-facts">
+        <li><strong>Aceptamos tu certificado DS1.</strong> Financiamos el saldo de tu compra y el subsidio se aplica en la escritura, igual que con un banco.</li>
+        <li><strong>Fiscalizada por la CMF.</strong> Una administradora de mutuos hipotecarios otorga créditos hipotecarios y está registrada y fiscalizada por la Comisión para el Mercado Financiero (CMF), como el resto del mercado hipotecario.</li>
+        <li><strong>Respaldo de 4Life Seguros de Vida.</strong> Somos parte del mismo grupo.</li>
+        <li><strong>Miramos tu caso completo.</strong> Boletas de honorarios, turnos e ingresos variables se revisan caso a caso.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec d1-post" aria-labelledby="d1-t-post">
+  <div class="container d1-post-grid">
+    <div>
+      <h2 id="d1-t-post">¿Aún No Postulas?</h2>
+      <p class="lead">Postulas a un llamado nacional y, si sales seleccionado, tienes un plazo para comprar. La selección depende de tu puntaje y de los cupos de cada llamado.</p>
+      <ol class="d1-how">
+        <li><b>Ahorra el mínimo de tu tramo</b> en una cuenta de ahorro para la vivienda, antes de la fecha de corte del llamado.</li>
+        <li><b>Postula</b> en línea con tu ClaveÚnica o en el SERVIU, el servicio de vivienda de tu región, con hora agendada.</li>
+        <li><b>Espera los resultados.</b> Suelen salir unos meses después del cierre. No necesitas un crédito aprobado para postular: el crédito se ordena al comprar.</li>
+      </ol>
+      <a class="v-quiet" href="https://www.minvu.gob.cl" target="_blank" rel="noopener" data-track="ds1_minvu">Revisa el calendario de llamados en el MINVU</a>
+    </div>
+    <div class="d1-post-side">
+      <details class="d1-req">
+        <summary><span>Requisitos para postular</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+        <dl class="v-ruled">
+          <div><dt>Mayor de 18 años</dt><dd>Con cédula vigente. Si eres extranjero, con residencia definitiva.</dd></div>
+          <div><dt>Registro Social de Hogares</dt><dd>Dentro del tramo del 80&nbsp;% o del 90&nbsp;%, o sobre el 90&nbsp;% con ingresos bajo el tope de tu tramo.</dd></div>
+          <div><dt>Sin vivienda propia</dt><dd>Ni tú ni tu cónyuge o conviviente son dueños de una vivienda.</dd></div>
+          <div><dt>Primer subsidio</dt><dd>No has recibido antes un subsidio habitacional.</dd></div>
+          <div><dt>Ahorro en tu cuenta</dt><dd>El mínimo de tu tramo, disponible a la fecha de corte. En los tramos 2 y 3 la cuenta debe tener al menos 12 meses de antigüedad; en el Tramo 4, confírmalo en cada llamado.</dd></div>
+        </dl>
+      </details>
+      <figure class="v-photo d1-post-photo"><img src="/ds1-postula.jpg" alt="Una joven sentada en un sillón sostiene un folleto de 4Life Crédito Hipotecario" width="800" height="1000" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec d1-why" aria-labelledby="d1-t-why">
+  <div class="container d1-why-grid">
+    <figure class="v-photo d1-why-photo"><img src="/ds1-barrio.jpg" alt="Calle de casas antiguas de un piso, con una bandera chilena en la fachada" width="800" height="1000" loading="lazy" onerror="this.parentNode.remove()"></figure>
+    <div>
+      <h2 id="d1-t-why">Por Qué Conviene el DS1</h2>
+      <p class="lead">La ventaja del DS1 es la libertad: con el certificado eliges la casa que quieres, en la ciudad que quieres, y el Estado pone una parte del precio.</p>
+      <ul class="d1-reasons">
+        <li><strong>Puedes comprar usado.</strong> En regiones hay poca oferta nueva bajo UF&nbsp;2.200; el DS1 te abre las casas usadas del barrio que ya conoces.</li>
+        <li><strong>Menos pie propio.</strong> Tu ahorro y el subsidio cubren una parte del precio, así que el crédito es menor que en una compra normal.</li>
+        <li><strong>Llega hasta UF&nbsp;4.000.</strong> Con el Tramo 4, familias de ingresos medios que antes no calificaban pueden usar subsidio en viviendas de más de UF&nbsp;2.200.</li>
+        <li><strong>Se puede combinar.</strong> El certificado DS1 también se puede usar en un proyecto DS19, si buscas casa nueva.</li>
+      </ul>
+      <div class="d1-table-wrap">
+        <table class="d1-table">
+          <caption class="sr">Comparación entre subsidio DS1, DS19 y compra sin subsidio</caption>
+          <thead><tr><th scope="col"><span class="sr">Tema</span></th><th scope="col" class="is-d1">DS1</th><th scope="col">DS19</th><th scope="col">Sin subsidio</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Qué vivienda</th><td class="is-d1" data-l="DS1">Cualquiera dentro del precio máximo: nueva o usada</td><td data-l="DS19">Solo de proyectos DS19 con cupo</td><td data-l="Sin subsidio">Cualquiera, con pie más alto</td></tr>
+            <tr><th scope="row">Riesgo principal</th><td class="is-d1" data-l="DS1">Que venza el certificado sin comprar</td><td data-l="DS19">Que se agoten los cupos</td><td data-l="Sin subsidio">Un crédito más grande</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v-sec v-faq d1-faq" aria-labelledby="d1-t-faq">
+  <div class="container v-faq-grid">
+    <div><h2 id="d1-t-faq">Preguntas Frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el subsidio DS1.</p></div>
+    <div class="f4-acc">
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q0">¿4Life acepta el subsidio DS1?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q0"><p>Sí. Financiamos el saldo de tu compra con un crédito hipotecario y tu certificado se aplica en la escritura, para vivienda nueva o usada dentro del precio máximo de tu tramo. Como todo crédito, está sujeto a evaluación y tasación.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q1">¿Puedo usar el DS1 en una casa usada?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q1"><p>Sí. El certificado sirve para vivienda nueva o usada, casa o departamento, dentro del precio máximo de tu tramo. En una usada se revisan su tasación y sus papeles, como la recepción municipal y que no tenga deudas; conviene revisarlo antes de firmar la promesa.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q2">¿Qué pasa si el banco me aprobó menos de lo que necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q2"><p>Cada institución evalúa distinto, así que vale la pena una segunda revisión. En 4Life miramos tu caso completo: simula el saldo que te falta y revisamos si podemos financiarlo, sin compromiso.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q3">¿Puedo con boletas de honorarios?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q3"><p>Se puede revisar. Las boletas, los turnos y los ingresos variables no son motivo para descartarte: en 4Life miramos tu caso completo. Te decimos qué documentos necesitas.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q4">¿Cuánto dura mi certificado?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q4"><p>El plazo está escrito en tu certificado y depende del llamado. Revísalo apenas lo recibas: la compra completa, desde buscar casa hasta la escritura, toma varios meses.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q5">¿Puedo simular si estoy esperando los resultados?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q5"><p>Sí. Simula con el precio de la casa que te interesa y tu ahorro; en el Tramo 4 el subsidio es de UF&nbsp;400. Así llegas con los números listos si sales seleccionado.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q6">¿Puedo usarlo en un proyecto DS19?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q6"><p>Sí, el certificado DS1 también se puede aplicar en un proyecto DS19, si quieres casa nueva. Confírmalo en la sala de ventas del proyecto. Más detalles en la página del <a href="/subsidio-ds19">subsidio DS19</a>.</p></div></div>
+      <div class="f4-acc-item"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="d1-q7">¿Qué es el Tramo 4?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="d1-q7"><p>Es un tramo nuevo del DS1 para viviendas de más de UF&nbsp;2.200 y hasta UF&nbsp;4.000. Pide un ahorro mínimo de UF&nbsp;200 y entrega un subsidio de UF&nbsp;400 en las regiones de Coquimbo a Los Lagos y la Región Metropolitana. Está pensado para familias de ingresos medios que antes no calificaban al DS1. Tiene cupos limitados por llamado.</p></div></div>
+    </div>
+    <script>/* FAQ: las respuestas van visibles en el HTML (las leen Google y los rastreadores de IA) y se pliegan aquí al cargar. Abrir y cerrar lo hace el script global. */(function(){[].forEach.call(document.querySelectorAll(".f4-acc-panel:not([data-f4-fold])"),function(p){p.setAttribute("data-f4-fold","1");var b=document.querySelector('[aria-controls="'+p.id+'"]');if(!b||b.getAttribute("aria-expanded")!=="true")p.hidden=true;});})();</script>
+  </div>
+  <div class="container d1-other">
+    <h2 class="d1-other-h" id="d1-t-otras">¿No Saliste Seleccionado? Otras Opciones</h2>
+    <ul class="d1-other-list" aria-labelledby="d1-t-otras">
+      <li><a href="/subsidio-ds19"><b>Subsidio DS19</b><span>Casa nueva en un proyecto, sin esperar un llamado.</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="/credito-hipotecario-fogaes"><b>Crédito con FOGAES</b><span>Garantía del Estado para tu primera vivienda nueva.</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="/credito-hipotecario-tradicional"><b>Crédito tradicional</b><span>Para cualquier vivienda, nueva o usada, en todo Chile.</span><i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="v-close d1-close" aria-labelledby="d1-t-cierre">
+  <figure class="d1-close-photo" aria-hidden="true"><img src="/ds1-cierre.jpg" alt="" width="1500" height="1000" loading="lazy" onerror="this.parentNode.remove()"></figure>
+  <div class="container">
+    <div class="v-close-in">
+      <div>
+        <h2 id="d1-t-cierre">¿Ya Tienes tu Certificado DS1?</h2>
+        <p class="d1-close-lead">Simula con los datos de la casa que estás mirando y te acompañamos hasta la escritura.</p>
+      </div>
+      <a class="v-btn" href="/simular?producto=ds1&amp;origen=ds1" data-track="ds1_cierre">Simula tu compra con DS1</a>
+    </div>
+    <p class="small d1-close-legal">Información según el MINVU. Montos en UF referenciales, sujetos a tramo, zona y condiciones de cada llamado. Cualquier crédito de 4Life Crédito Hipotecario está sujeto a evaluación crediticia y tasación de la vivienda.</p>
+  </div>
+</section>
+
+</div>

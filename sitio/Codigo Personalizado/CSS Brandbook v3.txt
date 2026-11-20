@@ -1,4 +1,4 @@
-/* v2026.11.19 */
+/* v2026.11.19-2 · agrega #d1-root (página Subsidio DS1) junto a #ds-root */
 /* ===== 4Life · Brandbook v3 (celeste) — pegar al FINAL del CSS Personalizado, DESPUÉS de todos los bloques de página. No borra nada: solo pisa colores y botones del sistema .f4v2 ===== */
 /* Alcance: páginas .f4v2 (home v5, FOGAES, crédito tradicional, segunda vivienda, refinanciamiento, fines generales, DS19, 404, cierre global) y el WhatsApp flotante. */
 /* No toca: el simulador (#s4l-sim tiene sus propios colores; se cambia en su módulo), reglas propias del hero del home (.h-hero; solo hereda las variables) ni los colores escritos a mano del CSS antiguo .f4. */
@@ -34,41 +34,41 @@
 
 /* 3 · Enlaces: Profundo sobre blanco (base); Tinta sobre gris y sobre Bruma (Profundo sobre #F2F2F2 da 4,3:1).
    Solo enlaces de texto: las tarjetas-enlace (.ct-q, .rf-where, .gf-where, .sv-door) conservan sus colores */
-:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
           .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero, .fg-table .is-fogaes, .ds-table .is-ds, .f4-acc-panel) a:not([class]):not(:is(.ct-q, .rf-where, .gf-where, .sv-doors) a) { color: var(--color-field-deep); }
-:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
           .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero, .fg-table .is-fogaes, .ds-table .is-ds, .f4-acc-panel) a:not([class]):not(:is(.ct-q, .rf-where, .gf-where, .sv-doors) a):hover { color: var(--color-ink); }
 
 /* 4 · Botón principal: rojo, MAYÚSCULAS por CSS (el texto sigue escrito en oración), Asap 700 16 px, 52 px, radio 6 px.
    Pisa también los tamaños compactos (48 px / 17 px) que fijaban las páginas */
 .f4v2 .v-btn,
-#fg-root .v-btn, #rf-root .v-btn, #sv-root .v-btn, #gf-root .v-btn, #ct-root .v-btn, #ds-root .v-btn, .f4h .v-btn {
+#fg-root .v-btn, #rf-root .v-btn, #sv-root .v-btn, #gf-root .v-btn, #ct-root .v-btn, #ds-root .v-btn, #d1-root .v-btn, .f4h .v-btn {
   min-height: 52px; padding: var(--space-sm) var(--space-xl); border: 0; border-radius: 6px;
   background: var(--color-accent); color: var(--color-accent-ink);
   font: 700 16px/1.2 var(--font-outlier); letter-spacing: 0.04em; text-transform: uppercase; text-align: center; text-decoration: none;
 }
 .f4v2 .v-btn:hover,
-#fg-root .v-btn:hover, #rf-root .v-btn:hover, #sv-root .v-btn:hover, #gf-root .v-btn:hover, #ct-root .v-btn:hover, #ds-root .v-btn:hover, .f4h .v-btn:hover { background: var(--color-accent-deep); color: var(--color-accent-ink); }
+#fg-root .v-btn:hover, #rf-root .v-btn:hover, #sv-root .v-btn:hover, #gf-root .v-btn:hover, #ct-root .v-btn:hover, #ds-root .v-btn:hover, #d1-root .v-btn:hover, .f4h .v-btn:hover { background: var(--color-accent-deep); color: var(--color-accent-ink); }
 .f4v2 .v-btn[aria-disabled="true"] { background: var(--color-paper-3); color: var(--color-muted); }
 .f4v2 .f4-nav .v-btn { min-height: 44px; padding: var(--space-xs) var(--space-lg); font-size: 16px; } /* barra compacta: 44 px */
 
 /* Acción secundaria: botón con contorno. Sobre blanco, Profundo; sobre gris o Bruma, Tinta (Profundo sobre Bruma da 4,3:1); sobre celeste o foto, blanco.
    Las reglas por fondo empiezan con :is(#…-root, .f4v2) para ganarle a #fg-root .v-quiet y similares */
 .f4v2 .v-quiet,
-#fg-root .v-quiet, #rf-root .v-quiet, #sv-root .v-quiet, #gf-root .v-quiet, #ct-root .v-quiet, #ds-root .v-quiet, .f4h .v-quiet {
+#fg-root .v-quiet, #rf-root .v-quiet, #sv-root .v-quiet, #gf-root .v-quiet, #ct-root .v-quiet, #ds-root .v-quiet, #d1-root .v-quiet, .f4h .v-quiet {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
   min-height: 52px; padding: var(--space-sm) var(--space-lg); border: 2px solid currentColor; border-radius: 6px;
   background: transparent; color: var(--color-field);
   font: 700 16px/1.2 var(--font-outlier); letter-spacing: 0.04em; text-transform: uppercase; text-align: center; text-decoration: none;
 }
 .f4v2 .v-quiet:hover,
-#fg-root .v-quiet:hover, #rf-root .v-quiet:hover, #sv-root .v-quiet:hover, #gf-root .v-quiet:hover, #ct-root .v-quiet:hover, #ds-root .v-quiet:hover, .f4h .v-quiet:hover { color: var(--color-field-deep); border-color: currentColor; background: var(--color-field-soft); }
-:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+#fg-root .v-quiet:hover, #rf-root .v-quiet:hover, #sv-root .v-quiet:hover, #gf-root .v-quiet:hover, #ct-root .v-quiet:hover, #ds-root .v-quiet:hover, #d1-root .v-quiet:hover, .f4h .v-quiet:hover { color: var(--color-field-deep); border-color: currentColor; background: var(--color-field-soft); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
           .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero) .v-quiet { color: var(--color-field-deep); }
-:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
           .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero) .v-quiet:hover { color: var(--color-field-deep); background: var(--color-paper); }
-:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, .f4v2) :is(.v-road, .v-commit, .v-close, .v-badge, .sv-door, .ct-q) .v-quiet { color: var(--color-on-ink); }
-:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, .f4v2) :is(.v-road, .v-commit, .v-close, .v-badge, .sv-door, .ct-q) .v-quiet:hover { color: var(--color-on-ink); background: color-mix(in oklab, var(--color-on-ink) 14%, transparent); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-road, .v-commit, .v-close, .v-badge, .sv-door, .ct-q) .v-quiet { color: var(--color-on-ink); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-road, .v-commit, .v-close, .v-badge, .sv-door, .ct-q) .v-quiet:hover { color: var(--color-on-ink); background: color-mix(in oklab, var(--color-on-ink) 14%, transparent); }
 
 /* Foco: anillo de 2 px Profundo; sobre celeste o foto, blanco */
 .f4v2 :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
@@ -77,8 +77,8 @@
 /* En móvil el texto en mayúsculas puede ser más ancho que la pantalla: el botón pasa a dos líneas en vez de desbordarse */
 @media (max-width: 40rem) {
   .f4v2 .v-btn, .f4v2 .v-quiet,
-  #fg-root .v-btn, #rf-root .v-btn, #sv-root .v-btn, #gf-root .v-btn, #ct-root .v-btn, #ds-root .v-btn, .f4h .v-btn,
-  #fg-root .v-quiet, #rf-root .v-quiet, #sv-root .v-quiet, #gf-root .v-quiet, #ct-root .v-quiet, #ds-root .v-quiet, .f4h .v-quiet { white-space: normal; padding-inline: var(--space-lg); max-width: 100%; }
+  #fg-root .v-btn, #rf-root .v-btn, #sv-root .v-btn, #gf-root .v-btn, #ct-root .v-btn, #ds-root .v-btn, #d1-root .v-btn, .f4h .v-btn,
+  #fg-root .v-quiet, #rf-root .v-quiet, #sv-root .v-quiet, #gf-root .v-quiet, #ct-root .v-quiet, #ds-root .v-quiet, #d1-root .v-quiet, .f4h .v-quiet { white-space: normal; padding-inline: var(--space-lg); max-width: 100%; }
 }
 
 /* 5 · Viñetas e íconos de lista en Coral Punto (solo gráfico) */
@@ -88,7 +88,7 @@
 /* 6 · Acordeón abierto: Bruma con texto Tinta */
 .f4v2 .f4-acc-btn[aria-expanded="true"],
 #fg-root .f4-acc-btn[aria-expanded="true"], #rf-root .f4-acc-btn[aria-expanded="true"], #sv-root .f4-acc-btn[aria-expanded="true"],
-#gf-root .f4-acc-btn[aria-expanded="true"], #ct-root .f4-acc-btn[aria-expanded="true"], #ds-root .f4-acc-btn[aria-expanded="true"], .f4h .f4-acc-btn[aria-expanded="true"] { background: var(--color-field-soft); color: var(--color-field-deep); }
+#gf-root .f4-acc-btn[aria-expanded="true"], #ct-root .f4-acc-btn[aria-expanded="true"], #ds-root .f4-acc-btn[aria-expanded="true"], #d1-root .f4-acc-btn[aria-expanded="true"], .f4h .f4-acc-btn[aria-expanded="true"] { background: var(--color-field-soft); color: var(--color-field-deep); }
 .f4v2 .f4-acc-btn[aria-expanded="true"] .bi-chevron-down { color: var(--color-field-deep); }
 
 /* Controles tipo chip: borde Firme #7A7A7A (el celeste claro no llega a 3:1 sobre blanco) */

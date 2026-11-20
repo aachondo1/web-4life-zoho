@@ -1,12 +1,12 @@
-/* v2026.11.19-15 */
+/* v2026.11.21-1 · brandbook v3 (celeste) en tokens base y capa final */
 /* 4Life Crédito Hipotecario · estilos del sitio (brandbook v2, nov 2026: base 4Life Seguros) */
 /* Asap se carga en Código de encabezado (link + preconnect), no aquí con @import */
 
 .f4{
-  --blue:#295BE9; --blue-hover:#4054B2; --red:#CF3A38; --red-hover:#B32F2D; --red-deep:#F3504E;
+  --blue:#1A73C8; --blue-hover:#135FA8; --red:#CF3A38; --red-hover:#B32F2D; --red-deep:#F3504E;
   --ink:#000000; --ink-soft:#333333; --muted:#5D5D5D; --surface:#FFFFFF; --gray:#F2F2F2; --light:#F7F7F7;
   --box-gray:#CCCCCC; --line:#EEEEEE; --line-strong:#7A7A7A; --footer:#1E1E1E; --footer-ink:#BFBEBE;
-  --acc-bg:#E8EEFD; --acc-ink:#1B3FA6; --wa:#178A43;
+  --acc-bg:#E8F3FC; --acc-ink:#135FA8; --wa:#178A43;
   --r-sm:4px; --r-btn:6px; --r-card:6px; --r-panel:8px; --r-pill:16px;
   --sys:"Asap",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --head:var(--sys);
@@ -75,9 +75,9 @@
   background-size:cover; background-position:center}
 .f4-slide.is-active{opacity:1; visibility:visible}
 .f4-slide::before{content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(30,30,30,.82) 0%,rgba(30,30,30,.55) 55%,rgba(30,30,30,.25) 100%)}
-.f4-slide[data-tone="1"]{background-image:linear-gradient(135deg,#1B3FA6 0%,#295BE9 60%,#5C80F0 100%)}
-.f4-slide[data-tone="2"]{background-image:linear-gradient(135deg,#17307A 0%,#2F55D6 70%,#295BE9 100%)}
-.f4-slide[data-tone="3"]{background-image:linear-gradient(135deg,#141F45 0%,#2A44A8 65%,#4054B2 100%)}
+.f4-slide[data-tone="1"]{background-image:linear-gradient(135deg,#135FA8 0%,#1A73C8 60%,#318CDD 100%)}
+.f4-slide[data-tone="2"]{background-image:linear-gradient(135deg,#135FA8 0%,#1A73C8 70%,#318CDD 100%)}
+.f4-slide[data-tone="3"]{background-image:linear-gradient(135deg,#135FA8 0%,#1A73C8 65%,#318CDD 100%)}
 .f4-slide .wrap{position:relative; width:100%; padding-bottom:72px}
 .f4-slide-inner{max-width:620px}
 .f4-eyebrow{display:inline-block; font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px; opacity:.9}
@@ -260,7 +260,7 @@ html,body{overflow-x:clip}
 /* ===== fin mejoras ===== */
 
 /* ===== Simulador 4Life (/simular) · v2026.11.18-5 · sistema .f4v2 (FOGAES): formulario + tarjeta en vivo. Reemplaza el bloque anterior del simulador completo ===== */
-#s4l-sim{--b:#295be9;--bd:#1b3fa6;--bs:#e8eefd;--bs2:#c9d6fa;--co:#cf3a38;--cod:#b32f2d;--ink:#1e1e1e;--ink2:#333;--mut:#5d5d5d;--ln:#e0e0e0;--lns:#8a8a8a;--p2:#f7f7f7;--p3:#f2f2f2;--err:#b3261e;--r:8px;--rb:6px;--sh:0 16px 48px rgba(30,30,30,.13);--ease:cubic-bezier(.16,1,.3,1);--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E");--fh:"Asap",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+#s4l-sim{--b:#1A73C8;--bd:#135FA8;--bs:#E8F3FC;--bs2:#c9d6fa;--co:#cf3a38;--cod:#b32f2d;--ink:#1e1e1e;--ink2:#333;--mut:#5d5d5d;--ln:#e0e0e0;--lns:#8a8a8a;--p2:#f7f7f7;--p3:#f2f2f2;--err:#b3261e;--r:8px;--rb:6px;--sh:0 16px 48px rgba(30,30,30,.13);--ease:cubic-bezier(.16,1,.3,1);--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E");--fh:"Asap",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   max-width:1120px;margin:0 auto;padding:0 24px 72px;color:var(--ink2);font:400 17px/1.5 var(--fh);box-sizing:border-box;text-align:left;caret-color:var(--b);font-variant-numeric:tabular-nums}
 #s4l-sim *{box-sizing:border-box}
 /* El tema de Zoho pone display:flex a todos los botones sin alinear el texto: aquí se centra (las reglas propias de cada botón mandan) */
@@ -553,10 +553,10 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 :root {
   --color-paper: #FFFFFF; --color-paper-2: #F7F7F7; --color-paper-3: #F2F2F2;
   --color-ink: #1E1E1E; --color-ink-2: #333333; --color-muted: #5D5D5D;
-  --color-rule: #E0E0E0; --color-field: #295BE9; --color-field-deep: #1B3FA6; --color-field-soft: #E8EEFD;
-  --color-accent: #CF3A38; --color-accent-deep: #B32F2D; --color-accent-ink: #FFFFFF; --color-focus: #295BE9;
+  --color-rule: #E0E0E0; --color-field: #1A73C8; --color-field-deep: #135FA8; --color-field-soft: #E8F3FC;
+  --color-accent: #CF3A38; --color-accent-deep: #B32F2D; --color-accent-ink: #FFFFFF; --color-focus: #1A73C8;
   --color-gold: #7D9BF2; --color-gold-2: #C9D6FA; --color-slot: var(--color-paper-3);
-  --color-on-ink: #FFFFFF; --color-on-ink-2: #E8EEFD;
+  --color-on-ink: #FFFFFF; --color-on-ink-2: #FFFFFF;
   --font-display: "Asap", ui-sans-serif, system-ui, sans-serif; --font-body: "Asap", ui-sans-serif, system-ui, sans-serif;
   --font-outlier: "Asap", ui-sans-serif, sans-serif; --font-icons: "bootstrap-icons";
   --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
@@ -835,28 +835,18 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 .f4v2 .fg-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: center; }
 .f4v2 .fg-hero h1 { max-width: 13ch; margin-bottom: var(--space-lg); }
 .f4v2 .fg-hero .lead { margin-bottom: var(--space-xl); }
-.f4v2 .fg-pie { margin: 0; background: var(--color-paper); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: var(--space-lg) var(--space-xl); border-top: 4px solid var(--color-accent); }
-.f4v2 .fg-big { display: flex; align-items: flex-start; font: 800 clamp(6.5rem, 10.5vw, 9.75rem)/0.82 var(--font-display); letter-spacing: -0.05em; color: var(--color-field); margin: var(--space-xs) 0 var(--space-md); }
-.f4v2 .fg-pct { font-size: 0.5em; line-height: 1; margin: 0.12em 0 0 0.04em; letter-spacing: 0; color: var(--color-accent); }
-.f4v2 .fg-unit { align-self: flex-end; font-size: 0.36em; line-height: 1; margin: 0 0 0.04em 0.18em; letter-spacing: -0.02em; color: var(--color-ink); white-space: nowrap; }
-.f4v2 .fg-vs { font-size: var(--text-lg); line-height: 1.45; color: var(--color-ink-2); margin-bottom: var(--space-lg); }
-.f4v2 .fg-vs strong { color: var(--color-ink); }
-.f4v2 .fg-chip { display: inline-block; padding: 0 8px; margin: 0 2px; border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-accent-ink); font-weight: 700; }
-/* Ejemplo: dos columnas; en la de FOGAES, la parte que no necesitas queda marcada */
-.f4v2 .fg-cmpviz { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-md); }
-.f4v2 .fg-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-sm); }
-.f4v2 .fg-col { display: grid; gap: var(--space-xs); text-align: center; }
-.f4v2 .fg-col b { font: 800 var(--text-title)/1.1 var(--font-display); color: var(--color-ink); }
-.f4v2 .fg-col.is-fogaes b { color: var(--color-field); }
-.f4v2 .fg-colbox { position: relative; height: 116px; display: flex; flex-direction: column; justify-content: flex-end; border-radius: var(--radius-card); overflow: hidden; }
-.f4v2 .fg-fill { height: calc(var(--h, 1) * 100%); background: var(--color-muted); border-radius: var(--radius-card); }
-.f4v2 .fg-col.is-fogaes .fg-fill { background: var(--color-field); border-radius: 0 0 var(--radius-card) var(--radius-card); }
-.f4v2 .fg-ghost { flex: 1; display: grid; place-items: center; border: 2px dashed var(--color-accent); border-bottom: 0; border-radius: var(--radius-card) var(--radius-card) 0 0; background: color-mix(in oklab, var(--color-accent) 8%, var(--color-paper)); }
-.f4v2 .fg-ghost span { font: 800 var(--text-lg)/1 var(--font-display); color: var(--color-accent-deep); }
-.f4v2 .fg-colname { font: 600 var(--text-sm)/1.3 var(--font-body); color: var(--color-ink-2); }
-.f4v2 .fg-save { margin-top: var(--space-md); font-size: var(--text-md); color: var(--color-ink-2); }
-.f4v2 .fg-save strong { color: var(--color-accent-deep); }
-.f4v2 .fg-what .small { margin-bottom: var(--space-lg); }
+/* Tarjeta de la portada (v2026.11.20): los dos beneficios de FOGAES, financiamiento y tasa. Sin filete de color ni cifras de pie */
+.f4v2 .fg-card { margin: 0; background: var(--color-paper); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: var(--space-xl); }
+.f4v2 .fg-card-t { font: 700 var(--text-lg)/1.3 var(--font-display); color: var(--color-ink); }
+.f4v2 .fg-gains { margin-top: var(--space-md); }
+.f4v2 .fg-gain { display: grid; gap: var(--space-xs); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.f4v2 .fg-gain dt { display: flex; align-items: center; gap: var(--space-xs); font: 600 var(--text-sm)/1.3 var(--font-body); color: var(--color-muted); }
+.f4v2 .fg-gain dt .bi { font-size: 1.125rem; color: var(--color-field); }
+.f4v2 .fg-gain dd { display: grid; gap: var(--space-xs); }
+.f4v2 .fg-num { font: 700 var(--text-lg)/1 var(--font-display); color: var(--color-ink); }
+.f4v2 .fg-num b { font-weight: 800; font-size: clamp(2.75rem, 3vw + 1.5rem, 3.75rem); line-height: 1; letter-spacing: -0.03em; color: var(--color-field-deep); white-space: nowrap; }
+.f4v2 .fg-gain-txt { color: var(--color-ink-2); max-width: 34ch; }
+.f4v2 .fg-card-note { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-md); font-size: var(--text-xs); line-height: 1.5; color: var(--color-muted); }
 .f4v2 .fg-what .v-statement { max-width: 26ch; }
 .f4v2 .fg-facts3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .f4v2 .fg-req { background: var(--color-paper-3); }
@@ -883,13 +873,12 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 @media (max-width: 60rem) {
   .f4v2 .fg-hero-grid, .f4v2 .fg-facts3 { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   .f4v2 .fg-hero { padding-block: var(--space-xl) var(--space-2xl); }
-  .f4v2 .fg-pie { padding: var(--space-lg); }
+  .f4v2 .fg-card { padding: var(--space-lg); }
 }
 @media (max-width: 40rem) {
   .f4v2 .fg-table { font-size: var(--text-md); }
   .f4v2 .fg-table th, .f4v2 .fg-table td { padding: var(--space-md) var(--space-xs); }
   .f4v2 .fg-table tbody th { width: auto; }
-  .f4v2 .fg-colbox { height: 104px; }
 }
 /* Ritmo más compacto solo en esta página (el sistema .f4v2 trae 144 px por sección) */
 #fg-root { --section-gap: 80px; --section-gap-s: 72px; --text-section: clamp(1.875rem, 1.6vw + 1rem, 2.625rem); --text-display-s: clamp(1.75rem, 1.6vw + 1rem, 2.5rem); }
@@ -924,9 +913,6 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #fg-root .v-btn { min-height: 48px; padding: var(--space-sm) var(--space-lg); font-size: 1.0625rem; }
 #fg-root .v-quiet { min-height: 48px; font-size: 1.0625rem; }
 #fg-root .v-actions { gap: var(--space-lg); }
-#fg-root .fg-big { font-size: clamp(5.5rem, 8vw, 7.75rem); }
-#fg-root .fg-colbox { height: 100px; }
-#fg-root .fg-what .small { margin-bottom: var(--space-sm); }
 #fg-root .fg-what-grid { gap: var(--space-xl); margin-bottom: var(--space-lg); }
 #fg-root .fg-what-photo { max-width: 320px; justify-self: end; width: 100%; }
 #fg-root .v-facts { padding-top: var(--space-md); }
@@ -967,6 +953,75 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #fg-root .fg-table th, #fg-root .fg-table td { padding: var(--space-sm) var(--space-xs); overflow-wrap: break-word; hyphens: auto; }
   #fg-root .fg-table thead th:first-child, #fg-root .fg-table tbody th { width: 30%; }
 }
+/* Brandbook v3 en FOGAES (v2026.11.20): mismos valores que el bloque "Brandbook v3", acotados a esta página por si ese bloque aún no está pegado.
+   El título de "Qué es FOGAES" deja de ser una etiqueta roja: el H2 es la frase grande. Un solo rojo por vista: portada y cierre */
+#fg-root { --color-field: #1A73C8; --color-field-light: #318CDD; --color-field-deep: #135FA8; --color-field-soft: #E8F3FC; --color-gold: #B3D8F6; --color-gold-2: #C2E0F8; --color-focus: #1A73C8; --color-on-ink-2: #FFFFFF; --color-coral: #F3504E; }
+#fg-root .v-ruled dt::before { color: var(--color-coral); }
+#fg-root h2.v-statement { font: 700 var(--text-display-s)/1.1 var(--font-display); color: var(--color-ink); max-width: 30ch; margin-bottom: var(--space-lg); }
+#fg-root .fg-req .v-quiet { color: var(--color-field-deep); }
+#fg-root .v-road .v-quiet { color: var(--color-on-ink); border-color: var(--color-on-ink); }
+#fg-root .v-road .v-quiet:hover { background: color-mix(in oklab, var(--color-on-ink) 14%, transparent); color: var(--color-on-ink); }
+#fg-root .fg-what-grid > .fg-what-text:first-child { grid-column: 1 / -1; } /* si la foto no carga, el texto toma todo el ancho */
+#fg-root .fg-req .v-well { border: var(--rule-hair) solid var(--color-rule); } /* sin filete grueso arriba: borde completo de 1 px, como las tarjetas del brandbook */
+/* Crítica 2 (v2026.11.20-2): la tasa se explica, no se escribe como cifra; tabla apilada en móvil sin cortar palabras */
+#fg-root .fg-claim { font: 700 var(--text-title)/1.2 var(--font-display); color: var(--color-field-deep); }
+@media (max-width: 40rem) {
+  #fg-root .fg-table { table-layout: auto; }
+  #fg-root .fg-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  #fg-root .fg-table tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  #fg-root .fg-table tbody th { grid-column: 1 / -1; width: auto; padding: var(--space-md) var(--space-xs) var(--space-2xs); border: 0; }
+  #fg-root .fg-table td { border: 0; padding: var(--space-xs) var(--space-xs) var(--space-md); hyphens: manual; overflow-wrap: normal; }
+  #fg-root .fg-table td::before { content: attr(data-label); display: block; margin-bottom: var(--space-2xs); font: 600 var(--text-xs)/1.3 var(--font-body); color: var(--color-muted); }
+  #fg-root .fg-table td.is-fogaes::before { color: var(--color-field-deep); }
+}
+/* Crítica 3 (v2026.11.20-4): "¿Puedes Usar FOGAES?" y "Así Funciona" con la misma forma que Crédito tradicional (#ct-root .ct-need / .ct-road), acotadas a #fg-root */
+#fg-root .fg-need { background: var(--color-paper-3); }
+#fg-root .fg-need-head { max-width: 760px; margin-bottom: var(--space-xl); }
+#fg-root .fg-need-head h2 { margin-bottom: var(--space-sm); }
+#fg-root .fg-need-head .lead { max-width: 62ch; }
+#fg-root .fg-need-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: start; }
+#fg-root .fg-need h3 { margin-bottom: var(--space-md); font: 700 var(--text-title)/1.2 var(--font-display); color: var(--color-ink); }
+#fg-root .fg-need .v-well { background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); padding: var(--space-md) var(--space-lg); }
+#fg-root .fg-need-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-xl); margin-top: var(--space-xl); }
+#fg-root .fg-need-cta .fg-alt { margin: 0; }
+#fg-root .fg-need :is(.v-quiet, a:not([class])) { color: var(--color-field-deep); }  /* sobre gris va Celeste Tinta */
+#fg-root .fg-need .v-quiet { border-color: var(--color-field-deep); }
+#fg-root .fg-need .v-quiet:hover { background: var(--color-paper); }
+#fg-root .fg-need-pay { padding: var(--space-lg); background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
+#fg-root .fg-pay > div { padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+#fg-root .fg-pay > div:first-child { padding-top: 0; }
+#fg-root .fg-pay dt { font: 700 var(--text-md)/1.3 var(--font-display); color: var(--color-ink); margin-bottom: var(--space-2xs); }
+#fg-root .fg-pay dd { color: var(--color-ink-2); }
+#fg-root .fg-need-pay .small { margin-top: var(--space-md); color: var(--color-ink-2); font-weight: 400; }
+#fg-root .fg-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "intro steps" "foot steps"; grid-template-rows: auto 1fr; column-gap: var(--space-3xl); row-gap: var(--space-xl); align-items: start; }
+#fg-root .fg-road-intro { grid-area: intro; }
+#fg-root .fg-road h2 { margin-bottom: var(--space-xs); }
+#fg-root .fg-road .lead { margin-bottom: 0; }
+#fg-root .fg-road .v-stops { grid-area: steps; display: block; margin: 0; border-top: 0; }
+#fg-root .fg-road-foot { grid-area: foot; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+#fg-root .fg-road .v-stop { position: relative; border-top: 0; padding: 0 0 var(--space-lg) 48px; }
+#fg-root .fg-road .v-stop:last-child { padding-bottom: 0; }
+#fg-root .fg-road .v-stop::before { top: 2px; left: 0; z-index: 1; }
+#fg-root .fg-road .v-stop:first-child::before { background: var(--color-coral); border-color: var(--color-coral); }
+#fg-root .fg-road .v-stop:not(:first-child)::before { background: var(--color-on-ink); border-color: var(--color-on-ink); }
+#fg-root .fg-road .v-stop:not(:last-child)::after { content: ""; position: absolute; left: 7.5px; top: 21px; bottom: -2px; width: 2px; background: var(--color-gold-2); }
+#fg-root .fg-road .v-stop .small { margin-bottom: var(--space-2xs); }
+#fg-root .fg-road .v-stop h3 { margin-bottom: var(--space-2xs); }
+#fg-root .fg-road .v-stop p { max-width: 52ch; }
+#fg-root .fg-privacy { max-width: 46ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
+#fg-root .fg-privacy a { color: var(--color-on-ink); display: inline-block; padding-block: 12px; margin-block: -12px; }
+#fg-root .fg-table td.is-fogaes { color: var(--color-ink); }  /* texto en tinta: el azul en negrita queda para los enlaces */
+@media (max-width: 60rem) {
+  #fg-root .fg-need-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  #fg-root .fg-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; grid-template-rows: auto; row-gap: var(--space-lg); }
+}
+@media (max-width: 40rem) {
+  #fg-root .fg-need-pay { padding: var(--space-md); }
+  #fg-root :is(.fg-road-foot, .fg-close) .v-btn { width: 100%; }
+  #fg-root .fg-road-foot { align-items: stretch; }
+  #fg-root .fg-table tbody th { hyphens: manual; }
+}
+#fg-root .fg-cmp h2 { max-width: none; }  /* "FOGAES o Crédito Tradicional" en una línea en escritorio */
 /* ===== fin Página FOGAES ===== */
 
 /* v2026.11.18 */
@@ -1960,3 +2015,235 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 
 /* ===== FAQ en todas las páginas: cada pregunta va en un H3 (.f4-acc-h) sin cambiar el aspecto del acordeón · v2026.11.18 ===== */
 .f4v2 .f4-acc-h { margin: 0; font: inherit; letter-spacing: normal; line-height: inherit; color: inherit; max-width: none; text-wrap: wrap; }
+
+/* ===== v2026.11.20 · una pregunta por pantalla (maqueta aprobada) + brandbook v3 (celeste). Va DESPUÉS del bloque del simulador. Solo aplica al simulador nuevo (div#s4l-sim.s4v2): el /simular actual no cambia ===== */
+#s4l-sim.s4v2{--b:#1A73C8;--bd:#135FA8;--bs:#E8F3FC;--bs2:#C2E0F8;--lns:#7A7A7A;max-width:760px;padding:0 24px 72px}
+#s4l-sim.s4v2 .s4-off{display:none!important}
+#s4l-sim.s4v2 .s4-sr,#s4l-sim.s4v2 #s4-f1 .s4-head{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#s4l-sim.s4v2 .s4-back{display:none!important}
+#s4l-sim.s4v2 #s4-f1 .s4-aside,#s4l-sim.s4v2 .s4-banner{display:none!important}
+#s4l-sim.s4v2 .s4-main{max-width:640px;margin:0 auto;padding:28px 0 8px;gap:24px}
+#s4l-sim.s4v2 .s4-col{gap:24px}
+#s4l-sim.s4v2 :focus-visible{outline:2px solid var(--b);outline-offset:2px}
+
+/* Cabecera: Anterior, avance y resumen de los números */
+#s4l-sim.s4v2 .s4-prog{position:sticky;top:76px;z-index:4;max-width:640px;margin:0 auto;padding:10px 0 0;background:#fff}
+#s4l-sim.s4v2 .s4-barra{height:4px;border-radius:2px;background:var(--p3);overflow:hidden}
+#s4l-sim.s4v2 .s4-barra i{display:block;height:100%;background:var(--b);transition:width .5s var(--ease)}
+#s4l-sim.s4v2 .s4-cab{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px}
+#s4l-sim.s4v2 .s4-ant{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;border:0;background:none;font:600 15px/20px var(--fh);color:var(--b);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+#s4l-sim.s4v2 .s4-ant:hover{color:var(--bd)}
+#s4l-sim.s4v2 .s4-ant svg{width:14px;height:14px}
+#s4l-sim.s4v2 .s4-donde{margin-left:auto;font:600 13px/18px var(--fh);color:var(--mut)}
+#s4l-sim.s4v2 .s4-donde b{color:var(--bd)}
+#s4l-sim.s4v2 .s4-rec{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:2px 0 4px;padding:10px 14px;border-radius:8px;background:var(--bs);font-size:15px;line-height:20px;color:var(--ink2)}
+#s4l-sim.s4v2 .s4-rec b{color:var(--ink)}
+#s4l-sim.s4v2 .s4-rec .s4-rc b{color:var(--bd)}
+#s4l-sim.s4v2 .s4-rbar{flex:1 1 100%;display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--b)}
+#s4l-sim.s4v2 .s4-rbar i{display:block;background:#F3504E}
+
+/* La pregunta manda: título grande en cada pantalla */
+#s4l-sim.s4v2 .s4-q,#s4l-sim.s4v2 .s4-pdatos .s4-h1,#s4l-sim.s4v2 .s4-pconf .s4-h1{display:block;margin:0;font:700 clamp(26px,1.6vw + 16px,36px)/1.15 var(--fh);letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+#s4l-sim.s4v2 legend.s4-q{margin-bottom:16px}
+#s4l-sim.s4v2 .s4-campo>label.s4-q{padding:0}
+#s4l-sim.s4v2 [data-p]>.s4-ayuda{font-size:17px;line-height:1.5;margin-top:-2px}
+#s4l-sim.s4v2 [data-p] .s4-campo,#s4l-sim.s4v2 .s4-pcod,#s4l-sim.s4v2 .s4-pconf,#s4l-sim.s4v2 .s4-pdatos,#s4l-sim.s4v2 .s4-pproy{display:flex;flex-direction:column;gap:16px}
+#s4l-sim.s4v2 .s4-lg{display:block;margin:0 0 12px;font:700 17px/1.3 var(--fh);color:var(--ink)}
+#s4l-sim.s4v2 .s4-campo>label:not(.s4-q){font-size:16px}
+#s4l-sim.s4v2 input,#s4l-sim.s4v2 .s4-opt,#s4l-sim.s4v2 .s4-consent{scroll-margin-top:200px}
+
+/* Monto grande: caja con borde de 2 px Celeste Profundo (campo principal del simulador) */
+#s4l-sim.s4v2 .s4-valbox{height:76px;border:2px solid var(--b);border-radius:6px;padding:0 18px}
+#s4l-sim.s4v2 .s4-valbox:hover{border-color:var(--bd)}
+#s4l-sim.s4v2 .s4-valbox:focus-within{box-shadow:none;outline:2px solid var(--b);outline-offset:2px}
+#s4l-sim.s4v2 .s4-valbox input{font-size:clamp(30px,2.6vw + 16px,44px)}
+#s4l-sim.s4v2 .s4-valbox input::placeholder{font-weight:400;color:#767676}
+#s4l-sim.s4v2 .s4-valbox span{font-size:clamp(20px,1vw + 14px,26px)}
+#s4l-sim.s4v2 .s4-valrow{gap:12px}
+#s4l-sim.s4v2 .s4-mon{align-self:center;height:56px}
+#s4l-sim.s4v2 [data-p="edad"] .s4-valbox{max-width:280px}
+
+/* Opciones: lista de una columna, un toque y avanza */
+#s4l-sim.s4v2 [data-p] .s4-opts,#s4l-sim.s4v2 [data-p] .s4-opts.c2,#s4l-sim.s4v2 [data-p] .s4-opts.c3{grid-template-columns:minmax(0,1fr);max-width:520px;gap:10px}
+#s4l-sim.s4v2 .s4-pcod .s4-opts.c2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
+#s4l-sim.s4v2 .s4-opt,#s4l-sim.s4v2 .s4-opts.tipo .s4-opt{flex-direction:row;justify-content:flex-start;gap:14px;min-height:56px;padding:12px 16px;border:1px solid var(--lns);border-radius:6px;font:600 17px/1.25 var(--fh);text-align:left}
+#s4l-sim.s4v2 .s4-opt.s4-sm{min-height:48px;font-size:16px}
+#s4l-sim.s4v2 .s4-opt:hover{border-color:var(--b)}
+#s4l-sim.s4v2 .s4-opt.on{border:2px solid var(--b);padding:11px 15px;box-shadow:none;background:var(--bs);color:var(--bd)}
+#s4l-sim.s4v2 .s4-opt svg{width:26px;height:26px}
+#s4l-sim.s4v2 .s4-chip{border:1px solid var(--lns);border-radius:6px}
+#s4l-sim.s4v2 .s4-chip.on{border:2px solid var(--b);padding:0 17px}
+#s4l-sim.s4v2 .s4-sub{background:var(--p3)}
+
+/* Inputs, celular, consentimientos */
+#s4l-sim.s4v2 .s4-input{height:48px;border:1px solid var(--lns)}
+#s4l-sim.s4v2 .s4-input:focus,#s4l-sim.s4v2 .s4-tel:focus-within{box-shadow:none;outline:2px solid var(--b);outline-offset:2px;border-color:var(--lns)}
+#s4l-sim.s4v2 .s4-input[aria-invalid=true]{border:2px solid var(--err)}
+#s4l-sim.s4v2 .s4-tel{height:48px;border:1px solid var(--lns)}
+#s4l-sim.s4v2 .s4-tel span{flex:none;white-space:nowrap}
+#s4l-sim.s4v2 .s4-consent{border:2px solid transparent}
+#s4l-sim.s4v2 .s4-consent:has(input:checked){border-color:var(--b)}
+#s4l-sim.s4v2 .s4-tapa{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border-radius:8px;background:var(--bs)}
+#s4l-sim.s4v2 .s4-tapa-n{display:flex;align-items:center;gap:10px;font:700 15px/1.3 var(--fh);color:var(--bd)}
+#s4l-sim.s4v2 .s4-tapa-n svg{width:18px;height:18px;color:var(--b)}
+#s4l-sim.s4v2 .s4-tapa-v{font:800 22px/1 var(--fh);letter-spacing:.04em;color:var(--bd)}
+
+/* Botones del brandbook v3: MAYÚSCULAS, 16 px, 52 px de alto */
+#s4l-sim.s4v2 .s4-btn{width:auto;align-self:flex-start;min-height:52px;padding:0 32px;font:700 16px/1.2 var(--fh);letter-spacing:.04em;text-transform:uppercase}
+#s4l-sim.s4v2 .s4-btn2{width:auto;min-height:52px;padding:0 24px;border:2px solid var(--b);color:var(--b);background:#fff;font:700 16px/1.2 var(--fh);letter-spacing:.04em;text-transform:uppercase}
+#s4l-sim.s4v2 .s4-btn2:hover{background:var(--bs);color:var(--bd)}
+#s4l-sim.s4v2 .s4-acc{flex-direction:row;flex-wrap:wrap;align-items:center}
+#s4l-sim.s4v2 #s4-acc1{flex-direction:column;align-items:flex-start;gap:12px}
+#s4l-sim.s4v2 .s4-pie2{justify-content:flex-start}
+#s4l-sim.s4v2 .s4-pie2 svg{width:14px;height:14px;color:var(--b)}
+#s4l-sim.s4v2 .s4-lnk{color:var(--b)}
+
+/* Resultado: el dividendo como premio, tabla de plazos y Ajustar simulación */
+#s4l-sim.s4v2 .s4-resv{gap:20px}
+#s4l-sim.s4v2 .s4-rh{display:flex;flex-direction:column;gap:8px}
+#s4l-sim.s4v2 .s4-rcard{display:flex;flex-direction:column;gap:6px;padding:22px 24px 18px;border:1px solid var(--ln);border-radius:8px;background:#fff}
+#s4l-sim.s4v2 .s4-rcard .s4-dhead{border:0;padding:0}
+#s4l-sim.s4v2 .s4-rcard .s4-big{display:flex;align-items:flex-start;font:800 clamp(56px,4vw + 24px,84px)/.9 var(--fh);letter-spacing:-.04em;color:var(--b);margin:4px 0}
+#s4l-sim.s4v2 .s4-rcard .s4-cur{font-size:.5em;line-height:1;margin:.1em .06em 0 0;letter-spacing:0}
+#s4l-sim.s4v2 .s4-rcard .s4-u{font-size:16px;color:var(--ink2)}
+#s4l-sim.s4v2 #s4-dyn{display:flex;flex-direction:column;gap:6px;transition:opacity .15s}
+#s4l-sim.s4v2 #s4-dyn.s4-viejo{opacity:.4}
+#s4l-sim.s4v2 .s4-rcard .s4-plzt{margin-top:12px}
+#s4l-sim.s4v2 .s4-rcard .s4-dl{margin-top:8px}
+#s4l-sim.s4v2 .s4-ajb{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:44px;margin-top:4px;padding:0;border:0;background:none;font:700 15px/1 var(--fh);color:var(--b);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+#s4l-sim.s4v2 .s4-ajb:hover,#s4l-sim.s4v2 .s4-ajb[aria-expanded=true]{color:var(--bd)}
+#s4l-sim.s4v2 .s4-ajb svg{width:16px;height:16px}
+#s4l-sim.s4v2 .s4-aj{display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid var(--ln)}
+#s4l-sim.s4v2 .s4-g3{display:grid;grid-template-columns:1.2fr 1fr .8fr;gap:14px}
+#s4l-sim.s4v2 .s4-g3>*{min-width:0}
+#s4l-sim.s4v2 .s4-uf{display:flex;height:48px;border:1px solid var(--lns);border-radius:6px;overflow:hidden;background:#fff}
+#s4l-sim.s4v2 .s4-uf:focus-within{outline:2px solid var(--b);outline-offset:2px}
+#s4l-sim.s4v2 .s4-uf:has(input[aria-invalid=true]){border:2px solid var(--err)}
+#s4l-sim.s4v2 .s4-uf span{display:flex;align-items:center;padding:0 12px;background:var(--p3);font-weight:700;color:var(--ink2)}
+#s4l-sim.s4v2 .s4-uf .s4-suf{border-left:1px solid var(--ln)}
+#s4l-sim.s4v2 .s4-uf input{flex:1;min-width:0;width:100%;border:0;outline:0;padding:0 12px;font:700 19px/1 var(--fh);color:var(--ink);background:#fff}
+#s4l-sim.s4v2 .s4-row dt small{display:block}
+#s4l-sim.s4v2 .s4-accres{gap:12px}
+#s4l-sim.s4v2 .s4-dlg .s4-card{border-top:0;border-radius:8px}
+#s4l-sim.s4v2 .s4-dlg .s4-btn{width:100%;margin-top:8px}
+#s4l-sim.s4v2 .s4-dlg .s4-btn2{width:100%;margin-top:4px}
+
+@media (max-width:640px){
+  #s4l-sim.s4v2{padding:0 16px 56px}
+  #s4l-sim.s4v2 .s4-prog{top:64px}
+  #s4l-sim.s4v2 .s4-main{padding-top:20px}
+  #s4l-sim.s4v2 .s4-donde{font-size:12px}
+  #s4l-sim.s4v2 .s4-rec{font-size:14px;gap:2px 12px;padding:8px 12px}
+  #s4l-sim.s4v2 .s4-valbox{height:64px;padding:0 14px}
+  #s4l-sim.s4v2 .s4-valbox input{font-size:32px}
+  #s4l-sim.s4v2 .s4-btn{width:100%;align-self:stretch}
+  #s4l-sim.s4v2 .s4-accres .s4-btn2{width:100%}
+  #s4l-sim.s4v2 .s4-g2,#s4l-sim.s4v2 .s4-g2b{grid-template-columns:minmax(0,1fr)}
+  #s4l-sim.s4v2 .s4-g3{grid-template-columns:1fr 1fr}
+  #s4l-sim.s4v2 .s4-g3 .s4-campo:first-child{grid-column:1/-1}
+  #s4l-sim.s4v2 .s4-pcod .s4-opts.c2{grid-template-columns:minmax(0,1fr)}
+  #s4l-sim.s4v2 .s4-rcard{padding:18px 16px 14px}
+}
+/* ===== fin v2026.11.20 ===== */
+
+/* ===== Capa final · brandbook v3 (celeste), copiada de CSS Brandbook v3.txt v2026.11.19-2 · va al final, después de todos los bloques de página ===== */
+/* v2026.11.19-2 · agrega #d1-root (página Subsidio DS1) junto a #ds-root */
+/* ===== 4Life · Brandbook v3 (celeste) — pegar al FINAL del CSS Personalizado, DESPUÉS de todos los bloques de página. No borra nada: solo pisa colores y botones del sistema .f4v2 ===== */
+/* Alcance: páginas .f4v2 (home v5, FOGAES, crédito tradicional, segunda vivienda, refinanciamiento, fines generales, DS19, 404, cierre global) y el WhatsApp flotante. */
+/* No toca: el simulador (#s4l-sim tiene sus propios colores; se cambia en su módulo), reglas propias del hero del home (.h-hero; solo hereda las variables) ni los colores escritos a mano del CSS antiguo .f4. */
+
+/* 1 · Paleta v3 */
+:root {
+  --color-field: #1A73C8;        /* Celeste Profundo: bandas con párrafos, enlaces y foco sobre blanco (blanco encima 4,85:1) */
+  --color-field-light: #318CDD;  /* Celeste Sonrisa: solo bandas con títulos de 24 px o más (blanco encima 3,54:1) */
+  --color-field-deep: #135FA8;   /* Celeste Tinta: hover, enlaces sobre gris, texto sobre Bruma */
+  --color-field-soft: #E8F3FC;   /* Celeste Bruma: avisos, acordeón abierto, heroes de producto */
+  --color-gold: #B3D8F6;         /* celeste claro: filetes sobre Profundo (3,25:1) */
+  --color-gold-2: #C2E0F8;       /* celeste claro: filetes sobre Profundo (3,54:1) y selección */
+  --color-focus: #1A73C8;
+  --color-accent: #CF3A38; --color-accent-deep: #B32F2D; --color-accent-ink: #FFFFFF;
+  --color-coral: #F3504E;        /* Coral Punto: solo viñetas e íconos de lista, nunca texto */
+  --color-whatsapp: #178A43;
+  --color-line-strong: #7A7A7A;  /* bordes de input y casillas */
+  --color-paper: #FFFFFF; --color-paper-2: #F7F7F7; --color-paper-3: #F2F2F2; --color-rule: #E0E0E0;
+  --color-ink: #1E1E1E; --color-ink-2: #333333; --color-muted: #5D5D5D;
+  --color-on-ink: #FFFFFF;
+  --color-on-ink-2: #FFFFFF;     /* antes #E8EEFD: un blanco azulado sobre Profundo da 4,3:1 y no cumple; el texto chico en bandas va en blanco puro */
+}
+
+/* 2 · Regla del blanco grande: bandas con párrafos en Profundo; cierre solo con título en Sonrisa */
+.f4v2 .v-road, .f4v2 .v-commit, .f4v2 .v-badge { background: var(--color-field); color: var(--color-on-ink); }
+.f4v2 .v-close { background: var(--color-field); }
+/* El cierre pasa a Sonrisa solo si no lleva texto chico (legales ni párrafos). Sin :has() queda en Profundo, que también cumple */
+.f4v2 .v-close:not(:has(p, .fg-legal, .rf-legal, .gf-legal, .small, li)) { background: var(--color-field-light); }
+.f4v2 .v-close h2, .f4v2 .v-road h2, .f4v2 .v-commit h2 { color: var(--color-on-ink); }
+.f4v2 :is(.v-road, .v-commit, .v-close, .v-badge) :is(p, li, dd, dt, .lead, .small, .v-note, .fg-legal, .rf-legal, .gf-legal) { color: var(--color-on-ink); }
+.f4v2 :is(.v-road, .v-commit, .v-close, .v-badge) a:not(.v-btn):not(.v-quiet) { color: var(--color-on-ink); }
+.f4v2 :is(.v-road, .v-commit, .v-close, .v-badge) a:not(.v-btn):not(.v-quiet):hover { color: var(--color-on-ink); text-decoration-thickness: 2px; }
+
+/* 3 · Enlaces: Profundo sobre blanco (base); Tinta sobre gris y sobre Bruma (Profundo sobre #F2F2F2 da 4,3:1).
+   Solo enlaces de texto: las tarjetas-enlace (.ct-q, .rf-where, .gf-where, .sv-door) conservan sus colores */
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+          .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero, .fg-table .is-fogaes, .ds-table .is-ds, .f4-acc-panel) a:not([class]):not(:is(.ct-q, .rf-where, .gf-where, .sv-doors) a) { color: var(--color-field-deep); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+          .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero, .fg-table .is-fogaes, .ds-table .is-ds, .f4-acc-panel) a:not([class]):not(:is(.ct-q, .rf-where, .gf-where, .sv-doors) a):hover { color: var(--color-ink); }
+
+/* 4 · Botón principal: rojo, MAYÚSCULAS por CSS (el texto sigue escrito en oración), Asap 700 16 px, 52 px, radio 6 px.
+   Pisa también los tamaños compactos (48 px / 17 px) que fijaban las páginas */
+.f4v2 .v-btn,
+#fg-root .v-btn, #rf-root .v-btn, #sv-root .v-btn, #gf-root .v-btn, #ct-root .v-btn, #ds-root .v-btn, #d1-root .v-btn, .f4h .v-btn {
+  min-height: 52px; padding: var(--space-sm) var(--space-xl); border: 0; border-radius: 6px;
+  background: var(--color-accent); color: var(--color-accent-ink);
+  font: 700 16px/1.2 var(--font-outlier); letter-spacing: 0.04em; text-transform: uppercase; text-align: center; text-decoration: none;
+}
+.f4v2 .v-btn:hover,
+#fg-root .v-btn:hover, #rf-root .v-btn:hover, #sv-root .v-btn:hover, #gf-root .v-btn:hover, #ct-root .v-btn:hover, #ds-root .v-btn:hover, #d1-root .v-btn:hover, .f4h .v-btn:hover { background: var(--color-accent-deep); color: var(--color-accent-ink); }
+.f4v2 .v-btn[aria-disabled="true"] { background: var(--color-paper-3); color: var(--color-muted); }
+.f4v2 .f4-nav .v-btn { min-height: 44px; padding: var(--space-xs) var(--space-lg); font-size: 16px; } /* barra compacta: 44 px */
+
+/* Acción secundaria: botón con contorno. Sobre blanco, Profundo; sobre gris o Bruma, Tinta (Profundo sobre Bruma da 4,3:1); sobre celeste o foto, blanco.
+   Las reglas por fondo empiezan con :is(#…-root, .f4v2) para ganarle a #fg-root .v-quiet y similares */
+.f4v2 .v-quiet,
+#fg-root .v-quiet, #rf-root .v-quiet, #sv-root .v-quiet, #gf-root .v-quiet, #ct-root .v-quiet, #ds-root .v-quiet, #d1-root .v-quiet, .f4h .v-quiet {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+  min-height: 52px; padding: var(--space-sm) var(--space-lg); border: 2px solid currentColor; border-radius: 6px;
+  background: transparent; color: var(--color-field);
+  font: 700 16px/1.2 var(--font-outlier); letter-spacing: 0.04em; text-transform: uppercase; text-align: center; text-decoration: none;
+}
+.f4v2 .v-quiet:hover,
+#fg-root .v-quiet:hover, #rf-root .v-quiet:hover, #sv-root .v-quiet:hover, #gf-root .v-quiet:hover, #ct-root .v-quiet:hover, #ds-root .v-quiet:hover, #d1-root .v-quiet:hover, .f4h .v-quiet:hover { color: var(--color-field-deep); border-color: currentColor; background: var(--color-field-soft); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+          .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero) .v-quiet { color: var(--color-field-deep); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-faq, .v-well, .v-band-photo, .fg-req, .rf-paths, .rf-needs, .sv-inv, .gf-ways, .gf-amount, .h-about, .ds-req, .ds-mut,
+          .fg-hero, .rf-hero, .sv-hero, .gf-hero, .ct-hero, .ds-hero, .v-hero, .h-hero) .v-quiet:hover { color: var(--color-field-deep); background: var(--color-paper); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-road, .v-commit, .v-close, .v-badge, .sv-door, .ct-q) .v-quiet { color: var(--color-on-ink); }
+:is(#fg-root, #rf-root, #sv-root, #gf-root, #ct-root, #ds-root, #d1-root, .f4v2) :is(.v-road, .v-commit, .v-close, .v-badge, .sv-door, .ct-q) .v-quiet:hover { color: var(--color-on-ink); background: color-mix(in oklab, var(--color-on-ink) 14%, transparent); }
+
+/* Foco: anillo de 2 px Profundo; sobre celeste o foto, blanco */
+.f4v2 :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.f4v2 :is(.v-road, .v-commit, .v-close, .v-badge) :focus-visible, .f4v2 :is(.sv-door, .ct-q a):focus-visible { outline-color: var(--color-on-ink); }
+
+/* En móvil el texto en mayúsculas puede ser más ancho que la pantalla: el botón pasa a dos líneas en vez de desbordarse */
+@media (max-width: 40rem) {
+  .f4v2 .v-btn, .f4v2 .v-quiet,
+  #fg-root .v-btn, #rf-root .v-btn, #sv-root .v-btn, #gf-root .v-btn, #ct-root .v-btn, #ds-root .v-btn, #d1-root .v-btn, .f4h .v-btn,
+  #fg-root .v-quiet, #rf-root .v-quiet, #sv-root .v-quiet, #gf-root .v-quiet, #ct-root .v-quiet, #ds-root .v-quiet, #d1-root .v-quiet, .f4h .v-quiet { white-space: normal; padding-inline: var(--space-lg); max-width: 100%; }
+}
+
+/* 5 · Viñetas e íconos de lista en Coral Punto (solo gráfico) */
+.f4v2 .v-ruled dt::before,
+#rf-root .rf-ticks li::before, #gf-root .gf-ticks li::before, #sv-root .sv-check li::before, #sv-root .sv-uses li::before { color: var(--color-coral); }
+
+/* 6 · Acordeón abierto: Bruma con texto Tinta */
+.f4v2 .f4-acc-btn[aria-expanded="true"],
+#fg-root .f4-acc-btn[aria-expanded="true"], #rf-root .f4-acc-btn[aria-expanded="true"], #sv-root .f4-acc-btn[aria-expanded="true"],
+#gf-root .f4-acc-btn[aria-expanded="true"], #ct-root .f4-acc-btn[aria-expanded="true"], #ds-root .f4-acc-btn[aria-expanded="true"], #d1-root .f4-acc-btn[aria-expanded="true"], .f4h .f4-acc-btn[aria-expanded="true"] { background: var(--color-field-soft); color: var(--color-field-deep); }
+.f4v2 .f4-acc-btn[aria-expanded="true"] .bi-chevron-down { color: var(--color-field-deep); }
+
+/* Controles tipo chip: borde Firme #7A7A7A (el celeste claro no llega a 3:1 sobre blanco) */
+#sv-root .sv-chips span { border-color: var(--color-line-strong); color: var(--color-field-deep); }
+
+/* 7 · WhatsApp flotante */
+.f4 .f4-wa, .f4-wa { background: var(--color-whatsapp); }
+/* ===== fin Brandbook v3 ===== */
+/* ===== fin brandbook v3 ===== */

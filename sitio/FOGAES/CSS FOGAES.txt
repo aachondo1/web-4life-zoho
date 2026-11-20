@@ -1,4 +1,4 @@
-/* v2026.11.18-2 */
+/* v2026.11.20-4 */
 /* ===== 4Life · Página FOGAES — pegar TODO este bloque al FINAL del CSS Personalizado ===== */
 /* Parte 1: base .f4v2 (colores, tamaños y espacios). Todo va acotado a .f4v2, así que NO cambia el home publicado ni /simular. Si algún día publicas el Home v4, esta parte ya estará y no se repite. */
 /* Hallmark · scope: Zoho Sites has one Custom CSS; tokens in :root, every rule under .f4v2, appended after the existing CSS so /simular keeps its own rules */
@@ -298,28 +298,18 @@
 .f4v2 .fg-hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-3xl); align-items: center; }
 .f4v2 .fg-hero h1 { max-width: 13ch; margin-bottom: var(--space-lg); }
 .f4v2 .fg-hero .lead { margin-bottom: var(--space-xl); }
-.f4v2 .fg-pie { margin: 0; background: var(--color-paper); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: var(--space-lg) var(--space-xl); border-top: 4px solid var(--color-accent); }
-.f4v2 .fg-big { display: flex; align-items: flex-start; font: 800 clamp(6.5rem, 10.5vw, 9.75rem)/0.82 var(--font-display); letter-spacing: -0.05em; color: var(--color-field); margin: var(--space-xs) 0 var(--space-md); }
-.f4v2 .fg-pct { font-size: 0.5em; line-height: 1; margin: 0.12em 0 0 0.04em; letter-spacing: 0; color: var(--color-accent); }
-.f4v2 .fg-unit { align-self: flex-end; font-size: 0.36em; line-height: 1; margin: 0 0 0.04em 0.18em; letter-spacing: -0.02em; color: var(--color-ink); white-space: nowrap; }
-.f4v2 .fg-vs { font-size: var(--text-lg); line-height: 1.45; color: var(--color-ink-2); margin-bottom: var(--space-lg); }
-.f4v2 .fg-vs strong { color: var(--color-ink); }
-.f4v2 .fg-chip { display: inline-block; padding: 0 8px; margin: 0 2px; border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-accent-ink); font-weight: 700; }
-/* Ejemplo: dos columnas; en la de FOGAES, la parte que no necesitas queda marcada */
-.f4v2 .fg-cmpviz { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-md); }
-.f4v2 .fg-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-sm); }
-.f4v2 .fg-col { display: grid; gap: var(--space-xs); text-align: center; }
-.f4v2 .fg-col b { font: 800 var(--text-title)/1.1 var(--font-display); color: var(--color-ink); }
-.f4v2 .fg-col.is-fogaes b { color: var(--color-field); }
-.f4v2 .fg-colbox { position: relative; height: 116px; display: flex; flex-direction: column; justify-content: flex-end; border-radius: var(--radius-card); overflow: hidden; }
-.f4v2 .fg-fill { height: calc(var(--h, 1) * 100%); background: var(--color-muted); border-radius: var(--radius-card); }
-.f4v2 .fg-col.is-fogaes .fg-fill { background: var(--color-field); border-radius: 0 0 var(--radius-card) var(--radius-card); }
-.f4v2 .fg-ghost { flex: 1; display: grid; place-items: center; border: 2px dashed var(--color-accent); border-bottom: 0; border-radius: var(--radius-card) var(--radius-card) 0 0; background: color-mix(in oklab, var(--color-accent) 8%, var(--color-paper)); }
-.f4v2 .fg-ghost span { font: 800 var(--text-lg)/1 var(--font-display); color: var(--color-accent-deep); }
-.f4v2 .fg-colname { font: 600 var(--text-sm)/1.3 var(--font-body); color: var(--color-ink-2); }
-.f4v2 .fg-save { margin-top: var(--space-md); font-size: var(--text-md); color: var(--color-ink-2); }
-.f4v2 .fg-save strong { color: var(--color-accent-deep); }
-.f4v2 .fg-what .small { margin-bottom: var(--space-lg); }
+/* Tarjeta de la portada (v2026.11.20): los dos beneficios de FOGAES, financiamiento y tasa. Sin filete de color ni cifras de pie */
+.f4v2 .fg-card { margin: 0; background: var(--color-paper); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: var(--space-xl); }
+.f4v2 .fg-card-t { font: 700 var(--text-lg)/1.3 var(--font-display); color: var(--color-ink); }
+.f4v2 .fg-gains { margin-top: var(--space-md); }
+.f4v2 .fg-gain { display: grid; gap: var(--space-xs); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.f4v2 .fg-gain dt { display: flex; align-items: center; gap: var(--space-xs); font: 600 var(--text-sm)/1.3 var(--font-body); color: var(--color-muted); }
+.f4v2 .fg-gain dt .bi { font-size: 1.125rem; color: var(--color-field); }
+.f4v2 .fg-gain dd { display: grid; gap: var(--space-xs); }
+.f4v2 .fg-num { font: 700 var(--text-lg)/1 var(--font-display); color: var(--color-ink); }
+.f4v2 .fg-num b { font-weight: 800; font-size: clamp(2.75rem, 3vw + 1.5rem, 3.75rem); line-height: 1; letter-spacing: -0.03em; color: var(--color-field-deep); white-space: nowrap; }
+.f4v2 .fg-gain-txt { color: var(--color-ink-2); max-width: 34ch; }
+.f4v2 .fg-card-note { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-md); font-size: var(--text-xs); line-height: 1.5; color: var(--color-muted); }
 .f4v2 .fg-what .v-statement { max-width: 26ch; }
 .f4v2 .fg-facts3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .f4v2 .fg-req { background: var(--color-paper-3); }
@@ -346,13 +336,12 @@
 @media (max-width: 60rem) {
   .f4v2 .fg-hero-grid, .f4v2 .fg-facts3 { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   .f4v2 .fg-hero { padding-block: var(--space-xl) var(--space-2xl); }
-  .f4v2 .fg-pie { padding: var(--space-lg); }
+  .f4v2 .fg-card { padding: var(--space-lg); }
 }
 @media (max-width: 40rem) {
   .f4v2 .fg-table { font-size: var(--text-md); }
   .f4v2 .fg-table th, .f4v2 .fg-table td { padding: var(--space-md) var(--space-xs); }
   .f4v2 .fg-table tbody th { width: auto; }
-  .f4v2 .fg-colbox { height: 104px; }
 }
 /* Ritmo más compacto solo en esta página (el sistema .f4v2 trae 144 px por sección) */
 #fg-root { --section-gap: 80px; --section-gap-s: 72px; --text-section: clamp(1.875rem, 1.6vw + 1rem, 2.625rem); --text-display-s: clamp(1.75rem, 1.6vw + 1rem, 2.5rem); }
@@ -387,9 +376,6 @@
 #fg-root .v-btn { min-height: 48px; padding: var(--space-sm) var(--space-lg); font-size: 1.0625rem; }
 #fg-root .v-quiet { min-height: 48px; font-size: 1.0625rem; }
 #fg-root .v-actions { gap: var(--space-lg); }
-#fg-root .fg-big { font-size: clamp(5.5rem, 8vw, 7.75rem); }
-#fg-root .fg-colbox { height: 100px; }
-#fg-root .fg-what .small { margin-bottom: var(--space-sm); }
 #fg-root .fg-what-grid { gap: var(--space-xl); margin-bottom: var(--space-lg); }
 #fg-root .fg-what-photo { max-width: 320px; justify-self: end; width: 100%; }
 #fg-root .v-facts { padding-top: var(--space-md); }
@@ -430,4 +416,73 @@
   #fg-root .fg-table th, #fg-root .fg-table td { padding: var(--space-sm) var(--space-xs); overflow-wrap: break-word; hyphens: auto; }
   #fg-root .fg-table thead th:first-child, #fg-root .fg-table tbody th { width: 30%; }
 }
+/* Brandbook v3 en FOGAES (v2026.11.20): mismos valores que el bloque "Brandbook v3", acotados a esta página por si ese bloque aún no está pegado.
+   El título de "Qué es FOGAES" deja de ser una etiqueta roja: el H2 es la frase grande. Un solo rojo por vista: portada y cierre */
+#fg-root { --color-field: #1A73C8; --color-field-light: #318CDD; --color-field-deep: #135FA8; --color-field-soft: #E8F3FC; --color-gold: #B3D8F6; --color-gold-2: #C2E0F8; --color-focus: #1A73C8; --color-on-ink-2: #FFFFFF; --color-coral: #F3504E; }
+#fg-root .v-ruled dt::before { color: var(--color-coral); }
+#fg-root h2.v-statement { font: 700 var(--text-display-s)/1.1 var(--font-display); color: var(--color-ink); max-width: 30ch; margin-bottom: var(--space-lg); }
+#fg-root .fg-req .v-quiet { color: var(--color-field-deep); }
+#fg-root .v-road .v-quiet { color: var(--color-on-ink); border-color: var(--color-on-ink); }
+#fg-root .v-road .v-quiet:hover { background: color-mix(in oklab, var(--color-on-ink) 14%, transparent); color: var(--color-on-ink); }
+#fg-root .fg-what-grid > .fg-what-text:first-child { grid-column: 1 / -1; } /* si la foto no carga, el texto toma todo el ancho */
+#fg-root .fg-req .v-well { border: var(--rule-hair) solid var(--color-rule); } /* sin filete grueso arriba: borde completo de 1 px, como las tarjetas del brandbook */
+/* Crítica 2 (v2026.11.20-2): la tasa se explica, no se escribe como cifra; tabla apilada en móvil sin cortar palabras */
+#fg-root .fg-claim { font: 700 var(--text-title)/1.2 var(--font-display); color: var(--color-field-deep); }
+@media (max-width: 40rem) {
+  #fg-root .fg-table { table-layout: auto; }
+  #fg-root .fg-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  #fg-root .fg-table tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  #fg-root .fg-table tbody th { grid-column: 1 / -1; width: auto; padding: var(--space-md) var(--space-xs) var(--space-2xs); border: 0; }
+  #fg-root .fg-table td { border: 0; padding: var(--space-xs) var(--space-xs) var(--space-md); hyphens: manual; overflow-wrap: normal; }
+  #fg-root .fg-table td::before { content: attr(data-label); display: block; margin-bottom: var(--space-2xs); font: 600 var(--text-xs)/1.3 var(--font-body); color: var(--color-muted); }
+  #fg-root .fg-table td.is-fogaes::before { color: var(--color-field-deep); }
+}
+/* Crítica 3 (v2026.11.20-4): "¿Puedes Usar FOGAES?" y "Así Funciona" con la misma forma que Crédito tradicional (#ct-root .ct-need / .ct-road), acotadas a #fg-root */
+#fg-root .fg-need { background: var(--color-paper-3); }
+#fg-root .fg-need-head { max-width: 760px; margin-bottom: var(--space-xl); }
+#fg-root .fg-need-head h2 { margin-bottom: var(--space-sm); }
+#fg-root .fg-need-head .lead { max-width: 62ch; }
+#fg-root .fg-need-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: start; }
+#fg-root .fg-need h3 { margin-bottom: var(--space-md); font: 700 var(--text-title)/1.2 var(--font-display); color: var(--color-ink); }
+#fg-root .fg-need .v-well { background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); padding: var(--space-md) var(--space-lg); }
+#fg-root .fg-need-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md) var(--space-xl); margin-top: var(--space-xl); }
+#fg-root .fg-need-cta .fg-alt { margin: 0; }
+#fg-root .fg-need :is(.v-quiet, a:not([class])) { color: var(--color-field-deep); }  /* sobre gris va Celeste Tinta */
+#fg-root .fg-need .v-quiet { border-color: var(--color-field-deep); }
+#fg-root .fg-need .v-quiet:hover { background: var(--color-paper); }
+#fg-root .fg-need-pay { padding: var(--space-lg); background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
+#fg-root .fg-pay > div { padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+#fg-root .fg-pay > div:first-child { padding-top: 0; }
+#fg-root .fg-pay dt { font: 700 var(--text-md)/1.3 var(--font-display); color: var(--color-ink); margin-bottom: var(--space-2xs); }
+#fg-root .fg-pay dd { color: var(--color-ink-2); }
+#fg-root .fg-need-pay .small { margin-top: var(--space-md); color: var(--color-ink-2); font-weight: 400; }
+#fg-root .fg-road-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); grid-template-areas: "intro steps" "foot steps"; grid-template-rows: auto 1fr; column-gap: var(--space-3xl); row-gap: var(--space-xl); align-items: start; }
+#fg-root .fg-road-intro { grid-area: intro; }
+#fg-root .fg-road h2 { margin-bottom: var(--space-xs); }
+#fg-root .fg-road .lead { margin-bottom: 0; }
+#fg-root .fg-road .v-stops { grid-area: steps; display: block; margin: 0; border-top: 0; }
+#fg-root .fg-road-foot { grid-area: foot; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+#fg-root .fg-road .v-stop { position: relative; border-top: 0; padding: 0 0 var(--space-lg) 48px; }
+#fg-root .fg-road .v-stop:last-child { padding-bottom: 0; }
+#fg-root .fg-road .v-stop::before { top: 2px; left: 0; z-index: 1; }
+#fg-root .fg-road .v-stop:first-child::before { background: var(--color-coral); border-color: var(--color-coral); }
+#fg-root .fg-road .v-stop:not(:first-child)::before { background: var(--color-on-ink); border-color: var(--color-on-ink); }
+#fg-root .fg-road .v-stop:not(:last-child)::after { content: ""; position: absolute; left: 7.5px; top: 21px; bottom: -2px; width: 2px; background: var(--color-gold-2); }
+#fg-root .fg-road .v-stop .small { margin-bottom: var(--space-2xs); }
+#fg-root .fg-road .v-stop h3 { margin-bottom: var(--space-2xs); }
+#fg-root .fg-road .v-stop p { max-width: 52ch; }
+#fg-root .fg-privacy { max-width: 46ch; font-size: var(--text-sm); color: var(--color-on-ink-2); }
+#fg-root .fg-privacy a { color: var(--color-on-ink); display: inline-block; padding-block: 12px; margin-block: -12px; }
+#fg-root .fg-table td.is-fogaes { color: var(--color-ink); }  /* texto en tinta: el azul en negrita queda para los enlaces */
+@media (max-width: 60rem) {
+  #fg-root .fg-need-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  #fg-root .fg-road-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "steps" "foot"; grid-template-rows: auto; row-gap: var(--space-lg); }
+}
+@media (max-width: 40rem) {
+  #fg-root .fg-need-pay { padding: var(--space-md); }
+  #fg-root :is(.fg-road-foot, .fg-close) .v-btn { width: 100%; }
+  #fg-root .fg-road-foot { align-items: stretch; }
+  #fg-root .fg-table tbody th { hyphens: manual; }
+}
+#fg-root .fg-cmp h2 { max-width: none; }  /* "FOGAES o Crédito Tradicional" en una línea en escritorio */
 /* ===== fin Página FOGAES ===== */

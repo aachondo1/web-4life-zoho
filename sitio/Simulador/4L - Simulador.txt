@@ -1,4 +1,4 @@
-<!-- v2026.11.18-4 · rediseño sistema .f4v2 (tarjeta en vivo) -->
+<!-- v2026.11.20 · rediseño sistema .f4v2 (tarjeta en vivo) -->
 <div id="s4l-sim" aria-label="Simulador de crédito hipotecario 4Life">
   <div class="s4-prog" id="s4-prog"></div>
 
@@ -346,7 +346,7 @@
   /* VERSION_TYC: versión del texto legal que vio la persona (se guarda en el CRM). La pone el snippet "4L - TyC datos"
      en su atributo data-version; si ese snippet no carga, queda "respaldo" (se mostró el texto corto del simulador). */
   var VERSION_TYC = "respaldo";
-  var VERSION_SIM = "2026.11.18-4"; try { console.info("[4L-Simulador] v" + VERSION_SIM); } catch (e) {}
+  var VERSION_SIM = "2026.11.20"; try { console.info("[4L-Simulador] v" + VERSION_SIM); } catch (e) {}
   /* MOTOR: función motor_4life en Catalyst. Hace todo el cálculo con los parámetros vigentes.
      El dominio de este sitio debe estar en ALLOWED_ORIGINS de la función. */
   /* Páginas finales según la elegibilidad del motor */
@@ -1276,7 +1276,6 @@
   /* Descargar simulación: hoja con la marca 4Life (A4, una página). Se guarda como PDF desde Imprimir. */
   function descargar() {
     var r = actual(); if (!r) return;
-    var w = window.open("", "_blank"); if (!w) return;
     var logo = document.querySelector('img[src*="4life-logo"]:not([src*="reverse"])') || { src: location.origin + "/4life-logo.png" };   /* el logo del header nativo; si no está, el archivo del sitio */
     var hoy = new Date().toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
     var nombre = esc(persona.nombre + " " + persona.apellido + (persona.apellido2 ? " " + persona.apellido2 : ""));
@@ -1343,7 +1342,12 @@
       "<footer><span>4Life Crédito Hipotecario · Tu nuevo hogar comienza aquí.</span><span>Generada el " + hoy + "</span></footer>" +
       '<div class="acc"><button type="button" onclick="window.print()">Guardar como PDF</button></div></div>' +
       "<script>window.onload=function(){(document.fonts?document.fonts.ready:Promise.resolve()).then(function(){setTimeout(function(){window.print()},150)})}<\/script>";
-    w.document.open(); w.document.write(doc); w.document.close();
+    /* Se abre como archivo aparte (blob) y sin vínculo con esta página (noopener): así el cuadro de imprimir
+       corre en su propia pestaña y no congela el simulador. Antes, la ventana escrita con document.write
+       compartía proceso con esta página y el navegador quedaba pegado mientras el cuadro estaba abierto. */
+    var url = URL.createObjectURL(new Blob([doc], { type: "text/html;charset=utf-8" }));
+    window.open(url, "_blank", "noopener");
+    setTimeout(function () { URL.revokeObjectURL(url); }, 120000);
   }
 
   /* ---------- Paso 4: detalle de la propiedad ---------- */
