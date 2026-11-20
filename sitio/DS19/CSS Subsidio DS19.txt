@@ -1,11 +1,11 @@
-/* v2026.11.19-3 */
+/* v2026.11.19-4 */
 /* ===== 4Life · Página Subsidio DS19 — va en el CSS Personalizado DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) y ANTES del bloque "Brandbook v3" ===== */
 /* Brandbook v3. Ritmo: portada con foto y degradado celeste · requisitos en blanco · cómo se paga en gris · pasos en banda celeste · comparación en blanco · mutuaria en banda celeste · preguntas en gris · cierre celeste. Dos bandas celestes nunca seguidas */
 /* La portada usa .ds-cover (no .ds-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores */
 
 /* Escala de páginas de producto */
 #ds-root { --section-gap: 64px; --section-gap-s: 64px; --text-display: clamp(2.25rem, 2.4vw + 1rem, 2.75rem); --text-section: clamp(1.625rem, 1.2vw + 1rem, 2rem); --text-display-s: clamp(1.5rem, 1.2vw + 1rem, 2rem); --text-title: 1.25rem; --text-lead: 1.125rem; --text-lg: 1.125rem;
-  --ds-celeste: #318CDD; --ds-profundo: #1A73C8; --ds-tinta: #135FA8; --ds-bruma: #E8F3FC; --ds-coral: #F3504E; }
+  --ds-celeste: #318CDD; --ds-profundo: #1A73C8; --ds-tinta: #135FA8; --ds-bruma: #E8F3FC; }
 #ds-root .sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 #ds-root ::selection { background: var(--ds-bruma); color: var(--ds-tinta); }
 #ds-root .v-actions { gap: var(--space-md); }
@@ -56,7 +56,7 @@
 #ds-root .ds-bracket span { position: absolute; top: -2px; left: 8px; transform: translateY(-50%); background: var(--color-paper); padding: 0 6px; font: 700 var(--text-sm)/1 var(--font-body); color: var(--color-ink); white-space: nowrap; }
 #ds-root .ds-track { display: flex; gap: 2px; height: 64px; border-radius: var(--radius-card); overflow: hidden; background: var(--color-paper); }
 #ds-root .ds-seg { flex: 0 1 var(--w); min-width: 0; }
-#ds-root .ds-seg.is-aho { background: var(--ds-coral); min-width: 6px; }
+#ds-root .ds-seg.is-aho { background: var(--color-ink-2); min-width: 6px; }
 #ds-root .ds-seg.is-sub { background: var(--ds-profundo); }
 #ds-root .ds-seg.is-cre { background: repeating-linear-gradient(135deg, var(--ds-bruma) 0 10px, #CFE5F8 10px 20px); }
 #ds-root .ds-eq > div { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-sm); border-bottom: 1px solid var(--color-rule); }
@@ -64,7 +64,7 @@
 #ds-root .ds-eq dd { font: 700 var(--text-lg)/1.2 var(--font-display); color: var(--color-ink); white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
 #ds-root .ds-op { flex: none; display: inline-block; width: 0.9em; font-weight: 700; color: var(--color-muted); }
 #ds-root .ds-sw { flex: none; width: 14px; height: 14px; border-radius: 3px; }
-#ds-root .ds-sw.is-aho { background: var(--ds-coral); }
+#ds-root .ds-sw.is-aho { background: var(--color-ink-2); }
 #ds-root .ds-sw.is-sub { background: var(--ds-profundo); }
 #ds-root .ds-sw.is-cre { background: var(--ds-bruma); box-shadow: inset 0 0 0 1.5px var(--ds-profundo); }
 #ds-root .ds-eq-total { border-bottom: 0 !important; border-top: 2px solid var(--color-ink); margin-top: -1px; }
@@ -75,6 +75,10 @@
 /* Cómo funciona · banda Celeste Profundo (lleva párrafos); colores desde el bloque Brandbook v3 */
 #ds-root .v-road h2 { margin-bottom: var(--space-xs); max-width: 20ch; }
 #ds-root .v-road .lead { margin-bottom: var(--space-lg); max-width: 52ch; }
+/* Botón de la banda celeste: blanco con texto celeste, sin rojo (un solo rojo por vista) */
+#ds-root .v-road .ds-btn-white { background: #FFFFFF; color: var(--ds-tinta); }
+#ds-root .v-road .ds-btn-white:hover { background: var(--ds-bruma); color: var(--ds-tinta); }
+#ds-root .ds-req-src { margin-top: var(--space-md); font: 400 var(--text-sm)/1.45 var(--font-body); color: var(--color-muted); }
 #ds-root .v-stops { margin-bottom: var(--space-lg); }
 #ds-root .v-stop { padding-top: var(--space-lg); }
 #ds-root .v-stop h3 { margin-bottom: var(--space-xs); }
@@ -94,7 +98,7 @@
 #ds-root .ds-table td.is-ds { color: var(--ds-tinta); font-weight: 700; }
 #ds-root .ds-reasons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg) var(--gap-columns); margin-top: var(--space-xl); }
 #ds-root .ds-reasons li { position: relative; padding-left: 32px; color: var(--color-ink-2); }
-#ds-root .ds-reasons li::before { content: "\F26A"; position: absolute; left: 0; top: 0; font-family: var(--font-icons); color: var(--ds-coral); line-height: 1.55; }
+#ds-root .ds-reasons li::before { content: "\F26A"; position: absolute; left: 0; top: 0; font-family: var(--font-icons); color: var(--ds-profundo); line-height: 1.55; }
 #ds-root .ds-reasons strong { display: block; color: var(--color-ink); margin-bottom: 2px; }
 
 /* Qué es una mutuaria · banda Celeste Profundo (.v-commit); título y frase grande en blanco */

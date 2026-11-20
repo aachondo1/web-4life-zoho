@@ -1,13 +1,13 @@
-<!-- v2026.11.19-3 · Fotos en Cómo se Paga (ds19-familia.jpg), Mutuaria (ds19-ejecutivo.jpg) y cierre con degradado (ds19-cierre.jpg). · Página Subsidio DS19 (/subsidio-ds19) · brandbook v3: portada con foto de la zona y degradado celeste, un solo rojo por vista, títulos de sección con mayúscula en cada palabra principal. Un solo snippet. Estilos: "CSS Subsidio DS19" en el CSS Personalizado, DESPUÉS del bloque FOGAES y ANTES del bloque "Brandbook v3". Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); centro y biobío aún sin foto: la portada queda en celeste liso. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
+<!-- v2026.11.19-4 · Fotos en Cómo se Paga (ds19-familia.jpg), Mutuaria (ds19-ejecutivo.jpg) y cierre con degradado (ds19-cierre.jpg). · Página Subsidio DS19 (/subsidio-ds19) · brandbook v3: portada con foto de la zona y degradado celeste, un solo rojo por vista (portada y cierre; el resto son enlaces), títulos de sección en oración (solo mayúscula inicial). Un solo snippet. Estilos: "CSS Subsidio DS19" en el CSS Personalizado, DESPUÉS del bloque FOGAES y ANTES del bloque "Brandbook v3". Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); centro y biobío aún sin foto: la portada queda en celeste liso. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
 <div class="f4 f4v2" id="ds-root">
 
 <section class="ds-cover" aria-labelledby="ds-t-hero">
   <figure class="ds-cover-photo" data-ds-photo hidden><img alt="" width="1500" height="1000" fetchpriority="high" decoding="async"></figure>
   <div class="container ds-cover-in">
     <div class="ds-cover-text">
-      <h1 id="ds-t-hero">Casa nueva con subsidio DS19, sin llamados ni esperas</h1>
+      <h1 id="ds-t-hero">Casa nueva con subsidio DS19, sin esperar un llamado</h1>
       <p class="ds-zline" data-ds-zline hidden></p>
-      <p class="lead">Eliges el proyecto, te inscribes ahí mismo y el subsidio va con la vivienda.</p>
+      <p class="lead">El DS19 es el subsidio del Estado para comprar una casa nueva. Eliges el proyecto, te inscribes ahí mismo y el subsidio va con la vivienda.</p>
       <div class="v-actions">
         <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_hero">Simula con DS19</a>
         <a class="v-quiet" href="#ds-t-req" data-track="ds19_hero_requisitos">¿Cumples los requisitos?</a>
@@ -20,7 +20,7 @@
 <section class="v-sec ds-req" aria-labelledby="ds-t-req">
   <div class="container v-why-grid">
     <div>
-      <h2 id="ds-t-req">¿Puedes Usar el DS19?</h2>
+      <h2 id="ds-t-req">¿Puedes usar el DS19?</h2>
       <p class="lead">Si cumples estas condiciones, ya puedes buscar tu proyecto. No necesitas haber ganado un subsidio antes.</p>
     </div>
     <div class="v-well">
@@ -32,9 +32,10 @@
         <div><dt>Precio dentro del tope</dt><dd data-ds-tope>Hasta UF 2.600, o UF 2.800 en comunas seleccionadas, según comuna y año del proyecto.</dd></div>
         <div><dt>Crédito por el saldo</dt><dd>Lo que no cubren tu ahorro y el subsidio se paga con un crédito hipotecario. Eres mayor de 18 años, con cédula vigente (extranjeros con residencia definitiva).</dd></div>
       </dl>
+      <p class="ds-req-src">Fuente: MINVU, programa DS19. Montos y topes referenciales, según comuna y año del proyecto.</p>
     </div>
     <div class="ds-req-cta">
-      <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_requisitos">Simula con DS19</a>
+      <a class="v-quiet" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_requisitos">Simula con DS19</a>
       <p class="ds-req-note">En el simulador ves cómo se paga tu casa y un ejecutivo de <strong>4Life Crédito Hipotecario</strong> revisa tu caso. Todavía no ofrecemos crédito con DS19: te contactamos apenas esté disponible.</p>
     </div>
   </div>
@@ -43,7 +44,7 @@
 <section class="v-sec ds-pago" aria-labelledby="ds-t-pago">
   <div class="container ds-pago-grid">
     <div>
-      <h2 id="ds-t-pago">Cómo se Paga tu Casa</h2>
+      <h2 id="ds-t-pago">Cómo se paga tu casa</h2>
       <p class="lead">Tu ahorro y el subsidio forman el pie. Lo que falta se paga con un crédito hipotecario, por eso el crédito es menor que en una compra sin subsidio.</p>
       <figure class="v-photo ds-pago-photo"><img src="/ds19-familia.jpg" alt="Una familia con sus hijas desempaca cajas en su departamento nuevo" width="1200" height="900" loading="lazy" onerror="this.parentNode.remove()"></figure>
     </div>
@@ -68,7 +69,7 @@
 
 <section class="v-road ds-road" aria-labelledby="ds-t-pasos">
   <div class="container">
-    <h2 id="ds-t-pasos">Cómo Funciona el DS19</h2>
+    <h2 id="ds-t-pasos">Cómo funciona el DS19</h2>
     <p class="lead">No esperas un llamado ni un puntaje: te inscribes todo el año, mientras queden cupos en el proyecto.</p>
     <ol class="v-stops">
       <li class="v-stop"><span class="small">Paso</span><h3>Elige un proyecto DS19</h3><p>En tu ciudad. El MINVU publica el listado y las inmobiliarias también.</p></li>
@@ -76,13 +77,13 @@
       <li class="v-stop"><span class="small">Paso</span><h3>Crédito por el saldo</h3><p>Reservas y apruebas un crédito hipotecario por lo que no cubren tu ahorro y el subsidio.</p></li>
       <li class="v-stop"><span class="small">Paso</span><h3>Escrituras</h3><p>Firmas cuando el proyecto está listo y el subsidio se aplica a tu vivienda.</p></li>
     </ol>
-    <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_pasos">Simula con DS19</a>
+    <a class="v-btn ds-btn-white" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_pasos">Simula con DS19</a>
   </div>
 </section>
 
 <section class="v-sec ds-why" aria-labelledby="ds-t-why">
   <div class="container">
-    <h2 id="ds-t-why">DS19, DS1 o Compra sin Subsidio</h2>
+    <h2 id="ds-t-why">DS19, DS1 o compra sin subsidio</h2>
     <p class="lead">Con el DS19 sabes qué casa compras desde el primer día.</p>
     <div class="ds-table-wrap">
       <table class="ds-table">
@@ -109,7 +110,7 @@
 <section class="v-sec v-commit ds-mut" aria-labelledby="ds-t-mut">
   <div class="container ds-mut-grid">
     <div>
-    <h2 id="ds-t-mut">Qué es una Mutuaria</h2>
+    <h2 id="ds-t-mut">Qué es una mutuaria</h2>
     <p class="v-statement">Una mutuaria presta para tu casa como un banco, y la fiscaliza la misma autoridad.</p>
     <ul class="v-facts ds-facts3">
       <li><strong>Fiscalizada por la CMF.</strong> Una administradora de mutuos hipotecarios otorga créditos hipotecarios y está registrada y fiscalizada por la Comisión para el Mercado Financiero (CMF), como el resto del mercado hipotecario.</li>
@@ -123,7 +124,7 @@
 
 <section class="v-sec v-faq ds-faq" aria-labelledby="ds-t-faq">
   <div class="container v-faq-grid">
-    <div><h2 id="ds-t-faq">Preguntas Frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el subsidio DS19.</p></div>
+    <div><h2 id="ds-t-faq">Preguntas frecuentes</h2><p class="lead">Lo que más nos preguntan sobre el subsidio DS19.</p></div>
     <div class="f4-acc" data-ds-faq>
       <div class="f4-acc-item" data-q="ahorro"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q1">¿Cuánto ahorro necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q1"><p>Depende del precio: UF 40 para viviendas de UF 1.600 a 1.800 y UF 80 para las de más de UF 1.800, en tu cuenta de ahorro para la vivienda. Mientras más ahorro tengas, menor es el crédito.</p></div></div>
       <div class="f4-acc-item" data-q="boletas"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q2">¿Puedo con boletas de honorarios o trabajo por turnos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q2"><p>Sí, se puede revisar. Las boletas, los turnos y los ingresos variables no son motivo para descartarte: en 4Life miramos tu caso completo. El ejecutivo te dice qué documentos necesitas.</p></div></div>
@@ -142,7 +143,7 @@
   <div class="container">
     <div class="v-close-in">
       <div>
-        <h2 id="ds-t-cierre">¿Ya Tienes un Proyecto DS19 en Vista?</h2>
+        <h2 id="ds-t-cierre">¿Ya tienes un proyecto DS19 en vista?</h2>
         <p class="ds-close-lead">Simula con los datos de la cotización y revisamos contigo si calificas.</p>
       </div>
       <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_cierre">Simula con DS19</a>
@@ -170,7 +171,7 @@
   };
   var zona = "";
   try { zona = (new URLSearchParams(location.search).get("zona") || "").toLowerCase(); } catch (e) {}
-  if (!ZONAS[zona]) zona = "";
+  if (!Object.prototype.hasOwnProperty.call(ZONAS, zona)) zona = "";
   function $(s) { return root.querySelector(s); }
   if (zona) {
     var Z = ZONAS[zona], zl = $("[data-ds-zline]");
