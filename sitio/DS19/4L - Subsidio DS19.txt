@@ -1,4 +1,4 @@
-<!-- v2026.11.19-6 · Fotos en Cómo se Paga (ds19-familia.jpg), Mutuaria (ds19-ejecutivo.jpg) y cierre con degradado (ds19-cierre.jpg). · Página Subsidio DS19 (/subsidio-ds19) · brandbook v3: portada con foto de la zona y degradado celeste, un solo rojo por vista (portada y cierre; el resto son enlaces), títulos de sección con mayúscula en cada palabra principal (PRODUCT.md, decidido 19-11-2026). Portada sin foto (centro, biobío): la ecuación del pie ocupa la columna derecha. Un solo snippet. Estilos: "CSS Subsidio DS19" en el CSS Personalizado, DESPUÉS del bloque FOGAES y ANTES del bloque "Brandbook v3". Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); centro y biobío aún sin foto: la portada queda en celeste liso. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
+<!-- v2026.11.19-7 · Fotos en Cómo se Paga (ds19-familia.jpg), Mutuaria (ds19-ejecutivo.jpg) y cierre con degradado (ds19-cierre.jpg). · Página Subsidio DS19 (/subsidio-ds19) · brandbook v3: portada con foto de la zona y degradado celeste, un solo rojo por vista (portada y cierre; el resto son enlaces), títulos de sección con mayúscula en cada palabra principal (PRODUCT.md, decidido 19-11-2026). Portada sin foto (centro, biobío): la ecuación del pie ocupa la columna derecha. Un solo snippet. Estilos: "CSS Subsidio DS19" en el CSS Personalizado, DESPUÉS del bloque FOGAES y ANTES del bloque "Brandbook v3". Zona por URL: ?zona=norte | centro | biobio | sur. Foto por zona: /ds19-norte.jpg (Antofagasta), /ds19-sur.jpg (Valdivia), /ds19-chile.jpg (Coquimbo, sin zona); centro y biobío aún sin foto: la portada queda en celeste liso. Al cambiar una foto, actualiza su texto en ZONAS (foto) y FOTO_GENERAL. Sin formularios: todos los botones van a /simular, donde ocurre la captura. -->
 <div class="f4 f4v2" id="ds-root">
 
 <section class="ds-cover" aria-labelledby="ds-t-hero">
@@ -7,7 +7,7 @@
     <div class="ds-cover-text">
       <h1 id="ds-t-hero">Casa nueva con subsidio DS19, sin esperar un llamado</h1>
       <p class="ds-zline" data-ds-zline hidden></p>
-      <p class="lead">El DS19 es el subsidio del Estado para comprar una casa nueva. Eliges el proyecto, te inscribes ahí mismo y el subsidio va con la vivienda.</p>
+      <p class="lead">El DS19 es el subsidio del Estado para comprar una casa nueva. No postulas a un llamado con fechas: eliges el proyecto, te inscribes ahí mismo y el subsidio va con la vivienda.</p>
       <div class="v-actions">
         <a class="v-btn" href="/simular?producto=ds19&amp;origen=ds19" data-ds-cta data-track="ds19_hero">Simula con DS19</a>
         <a class="v-quiet" href="#ds-t-req" data-track="ds19_hero_requisitos">¿Cumples los requisitos?</a>
@@ -18,7 +18,7 @@
       <p><span>Tu ahorro</span><b>UF 80</b></p>
       <p><i>+</i><span>Subsidio DS19</span><b>UF 350</b></p>
       <p><i>+</i><span>Crédito por el saldo</span><b>UF 1.770</b></p>
-      <p class="is-total"><i>=</i><span>Tu casa nueva</span><b>UF 2.200</b></p>
+      <p class="is-total"><i>=</i><span>Precio de la vivienda</span><b>UF 2.200</b></p>
     </div>
   </div>
 </section>
@@ -61,8 +61,8 @@
   <div class="container ds-pago-grid">
     <div>
       <h2 id="ds-t-pago">Cómo se Paga tu Casa</h2>
-      <p class="lead">Tu ahorro y el subsidio forman el pie. Lo que falta se paga con un crédito hipotecario, por eso el crédito es menor que en una compra sin subsidio.</p>
-      <figure class="v-photo ds-pago-photo"><img src="/ds19-familia.jpg" alt="Una familia con sus hijas desempaca cajas en su departamento nuevo" width="1200" height="900" loading="lazy" onerror="this.parentNode.remove()"></figure>
+      <p class="lead">El pie es lo que pagas sin crédito; aquí lo forman tu ahorro y el subsidio. Lo que falta se paga con un crédito hipotecario, por eso el crédito es menor que en una compra sin subsidio.</p>
+      <figure class="v-photo ds-pago-photo"><img src="/ds19-familia.jpg" alt="Una familia con sus hijas desempaca cajas en su vivienda nueva" width="1200" height="900" loading="lazy" onerror="this.parentNode.remove()"></figure>
     </div>
     <figure class="ds-pay" aria-labelledby="ds-pay-cap">
       <p class="ds-pay-cap" id="ds-pay-cap">Ejemplo: una casa DS19 de <strong>UF 2.200</strong></p>
@@ -106,7 +106,7 @@
         <caption class="sr">Comparación entre DS19, subsidio DS1 y compra sin subsidio</caption>
         <thead><tr><th scope="col"><span class="sr">Tema</span></th><th scope="col" class="is-ds">DS19</th><th scope="col">DS1 (sectores medios)</th><th scope="col">Compra sin subsidio</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Cómo se obtiene</th><td class="is-ds" data-l="DS19">Te inscribes directo en el proyecto, todo el año</td><td data-l="DS1">Postulas a un llamado con fechas y esperas resultados</td><td data-l="Sin subsidio">No aplica</td></tr>
+          <tr><th scope="row">Cómo se obtiene</th><td class="is-ds" data-l="DS19">Te inscribes directo en el proyecto, todo el año</td><td data-l="DS1">Postulas a un llamado con fechas y esperas resultados</td><td data-l="Sin subsidio">Sin aporte del Estado: el pie sale de tu ahorro</td></tr>
           <tr><th scope="row">Qué sabes al partir</th><td class="is-ds" data-l="DS19">La vivienda, su precio y tu subsidio</td><td data-l="DS1">Solo el monto del certificado; la casa se busca después</td><td data-l="Sin subsidio">La vivienda y su precio</td></tr>
           <tr><th scope="row">Riesgo principal</th><td class="is-ds" data-l="DS19">Que se agoten los cupos</td><td data-l="DS1">No salir seleccionado o que venza el certificado</td><td data-l="Sin subsidio">Pie alto y crédito más grande</td></tr>
           <tr><th scope="row">Aporte del Estado</th><td class="is-ds" data-l="DS19">Subsidio y bonos del programa</td><td data-l="DS1">Certificado de subsidio</td><td data-l="Sin subsidio">Ninguno</td></tr>
@@ -143,7 +143,7 @@
     <div class="f4-acc" data-ds-faq>
       <div class="f4-acc-item" data-q="ahorro"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q1">¿Cuánto ahorro necesito?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q1"><p>Depende del precio: UF 40 para viviendas de UF 1.600 a 1.800 y UF 80 para las de más de UF 1.800, en tu cuenta de ahorro para la vivienda. Mientras más ahorro tengas, menor es el crédito.</p></div></div>
       <div class="f4-acc-item" data-q="boletas"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q2">¿Puedo con boletas de honorarios o trabajo por turnos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q2"><p>Sí, se puede revisar. Las boletas, los turnos y los ingresos variables no son motivo para descartarte: en 4Life miramos tu caso completo. El ejecutivo te dice qué documentos necesitas.</p></div></div>
-      <div class="f4-acc-item" data-q="deudas"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q3">¿Qué pasa si tuve deudas?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q3"><p>Una deuda antigua no siempre te deja fuera; lo que más pesa es cómo está tu situación hoy. Cuéntaselo al ejecutivo antes de reservar, para revisarlo con tiempo.</p></div></div>
+      <div class="f4-acc-item" data-q="moras"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q3">¿Puedo si alguna vez tuve moras?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q3"><p>Una mora antigua no siempre te deja fuera; lo que más pesa es cómo está tu situación hoy. Cuéntaselo al ejecutivo antes de reservar, para revisarlo con tiempo.</p></div></div>
       <div class="f4-acc-item" data-q="cupos"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q4">¿Se acaban los cupos?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q4"><p>Sí. Cada proyecto tiene cupos por tramo y la inscripción cierra cuando se agotan. No hay fecha de cierre: te puedes inscribir todo el año mientras queden. En la sala de ventas te dicen cuántos quedan en tu tramo.</p></div></div>
       <div class="f4-acc-item" data-q="ds1"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q5">¿Qué diferencia hay con el DS1?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q5"><p>Con el DS1 postulas a un llamado, esperas resultados y, si sales seleccionado, buscas casa con tu certificado. Con el DS19 eliges primero la vivienda y el subsidio va con ella. Si tienes un DS1 sin usar, también puede servirte en un proyecto DS19: confírmalo en la sala de ventas.</p></div></div>
       <div class="f4-acc-item" data-q="rsh"><h3 class="f4-acc-h"><button class="f4-acc-btn" type="button" aria-expanded="false" aria-controls="ds-q6">¿Qué es el Registro Social de Hogares?<i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3><div class="f4-acc-panel" id="ds-q6"><p>Es el registro del Estado que ubica a tu hogar en un tramo según sus ingresos y otros datos. Para el DS19 sin subsidio previo necesitas estar hasta el tramo del 90 %. Lo revisas en <a href="https://www.registrosocial.gob.cl" target="_blank" rel="noopener">registrosocial.gob.cl</a> con tu ClaveÚnica.</p></div></div>
@@ -177,7 +177,7 @@
   var ZONAS = {
     norte:  { n: "Norte", msg: "Lo que pagas de arriendo puede ser tu dividendo", c: "Arica · Iquique · Antofagasta · Calama · Copiapó · La Serena",
               tope: "hasta UF 2.800 en las comunas seleccionadas del norte; UF 2.600 en las demás. Confírmalo por comuna.", foto: "Vista de Antofagasta, entre los cerros y el mar", faq: ["boletas", "ahorro", "cupos"] },
-    centro: { n: "Centro", msg: "Sal de la casa de tus papás con subsidio", c: "Valparaíso · Viña del Mar · Rancagua · Talca · Curicó",
+    centro: { n: "Centro", msg: "Tu primera casa propia, con el Estado poniendo una parte", c: "Valparaíso · Viña del Mar · Rancagua · Talca · Curicó",
               tope: "hasta UF 2.800 en Valparaíso y Viña del Mar; UF 2.600 en las demás comunas.", foto: "", faq: ["boletas", "ahorro", "cupos"] },
     biobio: { n: "Biobío y Ñuble", msg: "Deja de arrendar en el Gran Concepción", c: "Concepción · Los Ángeles · Chillán",
               tope: "hasta UF 2.800 en Concepción y Los Ángeles; UF 2.600 en las demás comunas.", foto: "", faq: ["ahorro", "cupos", "boletas"] },

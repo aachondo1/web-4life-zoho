@@ -1,4 +1,4 @@
-/* v2026.11.19-13 */
+/* v2026.11.19-14 */
 /* 4Life Crédito Hipotecario · estilos del sitio (brandbook v2, nov 2026: base 4Life Seguros) */
 /* Asap se carga en Código de encabezado (link + preconnect), no aquí con @import */
 
@@ -1742,7 +1742,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 /* ===== fin Home v5 ===== */
 
 
-/* v2026.11.19-6 */
+/* v2026.11.19-7 */
 /* ===== 4Life · Página Subsidio DS19 — va en el CSS Personalizado DESPUÉS del bloque "Página FOGAES" (usa su base .f4v2) y ANTES del bloque "Brandbook v3" ===== */
 /* Brandbook v3. Ritmo: portada con foto y degradado celeste · requisitos en blanco · cómo se paga en gris · pasos en banda celeste · comparación en blanco · mutuaria en banda celeste · preguntas en gris · cierre celeste. Dos bandas celestes nunca seguidas */
 /* La portada usa .ds-cover (no .ds-hero) para que las reglas de heroes claros del bloque Brandbook v3 no le cambien los colores */
@@ -1765,7 +1765,6 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ds-root.ds-has-photo .ds-cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(19,95,168,.92) 0%, rgba(19,95,168,.88) 45%, rgba(49,140,221,.15) 100%); }
 #ds-root .ds-cover-in { min-height: clamp(460px, 40vw, 560px); display: flex; align-items: center; padding-block: var(--space-2xl); }
 #ds-root .ds-cover-text { width: min(620px, 50%); }
-#ds-root:not(.ds-has-photo) .ds-cover-text { width: min(720px, 100%); }
 #ds-root .ds-cover h1 { color: #FFFFFF; max-width: 16ch; margin-bottom: var(--space-md); }
 #ds-root .ds-zline { font: 700 var(--text-title)/1.3 var(--font-display); color: #FFFFFF; margin-bottom: var(--space-sm); max-width: 32ch; }
 #ds-root .ds-zline[hidden] { display: none; }
@@ -1856,6 +1855,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ds-root .v-stops { margin-bottom: var(--space-lg); }
 #ds-root .v-stop { padding-top: var(--space-lg); }
 #ds-root .v-stop h3 { margin-bottom: var(--space-xs); }
+#ds-root .v-stop .small { font-size: 0.9375rem; font-weight: 700; }
 
 /* DS19, DS1 o compra sin subsidio · pausa blanca */
 #ds-root .ds-why { background: var(--color-paper); }
@@ -1880,6 +1880,7 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
 #ds-root .ds-mut h2 { margin-bottom: var(--space-sm); color: #FFFFFF; }
 #ds-root .ds-mut .v-statement { font: 400 var(--text-lead)/1.5 var(--font-body); letter-spacing: 0; color: #FFFFFF; margin-bottom: var(--space-xl); max-width: 52ch; }
 #ds-root .ds-mut-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--space-2xl); align-items: center; }
+#ds-root .ds-mut-grid:not(:has(.ds-mut-photo)) { grid-template-columns: minmax(0, 1fr); }  /* si la foto no carga, sin columna vacía */
 #ds-root .ds-facts3 { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); padding-top: var(--space-md); border-top-color: rgba(255,255,255,.5); }
 #ds-root .ds-mut-photo { aspect-ratio: 4 / 5; box-shadow: var(--shadow-card); }
 #ds-root .ds-mut-photo img { object-position: 50% 40%; }
@@ -1916,7 +1917,9 @@ body:has(#s4l-sim) .f4-topbar,body:has(#s4l-sim) .f4-menu,body:has(#s4l-sim) .f4
   #ds-root .ds-cover-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(19,95,168,1) 0%, rgba(19,95,168,.88) 18%, rgba(49,140,221,.15) 60%); }
   #ds-root .ds-cover-in { position: relative; min-height: 0; padding-block: var(--space-xl); }
   #ds-root.ds-has-photo .ds-cover-in { margin-top: -48px; padding-top: 0; }
-  #ds-root .ds-cover-text, #ds-root:not(.ds-has-photo) .ds-cover-text { width: 100%; }
+  #ds-root .ds-cover-text, #ds-root.ds-no-photo .ds-cover-text { width: 100%; }
+  #ds-root.ds-no-photo .ds-cover-in { flex-direction: column; align-items: stretch; gap: var(--space-xl); }
+  #ds-root.ds-no-photo .ds-cover-eq { flex: none; width: 100%; max-width: 30rem; padding: var(--space-md) var(--space-lg); }
   #ds-root .ds-req .v-well, #ds-root .ds-req-cta { grid-column: auto; grid-row: auto; }
   #ds-root .ds-pago-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   #ds-root .ds-pay { padding: var(--space-lg); }
